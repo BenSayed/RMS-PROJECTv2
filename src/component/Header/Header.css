@@ -59,10 +59,11 @@
   color: #ffffff;
 }
 
-.navbar-item:active {
+.navbar-item.active  {
   color: #FF9500;
   text-decoration: underline;
 }
+
 
 .HeaderContinentlogoButton {
   display: flex;

@@ -23,8 +23,12 @@ body {
   background-color: var(--coler_1);
 }
 .all{
-  padding: 88px;
- 
+  padding-right: 88px;
+  padding-left: 88px;
+  padding-bottom: 44px;
+  padding-top: 20px;
+
+/* width: 1440px; */
   
  
 

@@ -7,7 +7,10 @@ const Section2 = () => {
   return (
     <section className='section2'>
       <div className="features-container">
+        <div> 
         <h2>Features</h2>
+        </div>
+        <div>
         <div className="features">
           <div className="feature">
             <img
@@ -42,6 +45,7 @@ const Section2 = () => {
             </p>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

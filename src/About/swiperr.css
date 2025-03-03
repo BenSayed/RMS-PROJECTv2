@@ -1,0 +1,17 @@
+.swiper {
+  position: relative;
+  width: 986px;
+  height: 400px;
+
+  padding: 24px;
+  gap: 8px;
+  border-radius: 48px;
+
+  display: flex;
+
+  align-content: center;
+}
+ 
+ 
+
+ 

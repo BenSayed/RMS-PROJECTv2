@@ -1,0 +1,109 @@
+footer {
+  bottom: 50%;
+  text-align: center;
+   color: #fff;
+  padding-bottom: 10px;
+padding-top: 20px;
+  display: flex;
+  flex-direction: column; /* لجعل العناصر تحت بعضها */
+  justify-content: center; /* لمحاذاة العناصر عموديًا في منتصف الشاشة */
+  align-items: center;
+}
+
+.logo-container0 {
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.logoo {
+  width: 50px;
+}
+
+.restaurant-name0 {
+  font-family: "Cormorant Upright", serif;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.newsletter0 p {
+  font-size: 36px;
+  margin: 15px 0;
+}
+
+.email-subscribe00 {
+  margin: px 0;
+  position: relative;
+  left: 3.2rem;
+  gap: 10px;
+}
+
+.email-subscribe00 input {
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 16px;
+  outline: none;
+  width: 507px;
+  height: 52px;
+  background-color: #fff3e0;
+  color: #000;
+  border: 1px solid #ff9900;
+}
+
+.email-subscribe00 button {
+  border: none;
+  border-radius: 16px;
+  background-color: #151716;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: "Inter", serif;
+  font-size: 13px;
+  text-wrap: flex;
+  transition: 0.3s;
+  width: 94px;
+  height: 48px;
+  position: relative;
+  right: 6rem;
+  white-space: nowrap;
+  overflow: hidden; /* لإخفاء النص الزائد */
+  text-overflow: ellipsis;
+bottom: -1px;
+}
+
+.email-subscribe00 button:hover {
+  background-color: #ff9900;
+}
+
+.footer-menu0 {
+  margin: 30px 0;
+}
+
+.footer-menu0 a {
+  font-size: 20px;
+  color: #ffffffb0;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+    font-family: "Cormorant Upright", serif;
+
+}
+
+.footer-menu0 a:hover {
+  color: #ffffff;
+ 
+}
+.footer-menu0 a:active {
+  color: #FF9500;
+  text-decoration: underline;
+ 
+}
+
+.copyright0 {
+  font-size: 0.9rem;
+  margin-top: 20px;
+  color: #aaa;
+}
+
+footer p {
+  margin: 0;
+}

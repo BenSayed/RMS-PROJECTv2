@@ -15,12 +15,14 @@
   text-align: center;
   color: #fff;
   font-family: "Cormorant Upright", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 
 .features-container h2 {
   font-size: 88px;
-  margin-bottom: 20px;
-}
+ }
 
 .features {
   display: flex;
@@ -51,7 +53,8 @@ img.no-style {
 
 .feature:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(255, 165, 0, 0.6);
+  box-shadow: 0px 0px 48px 0px #FF950033;
+
 }
 
 .feature img {
