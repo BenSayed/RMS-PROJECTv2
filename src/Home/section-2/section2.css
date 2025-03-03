@@ -1,0 +1,131 @@
+.section2 {
+  color: #fff;
+  text-align: center;
+ 
+  position: relative;
+ 
+  width: 100%;
+  min-height: 450px; /* الحد الأدنى للارتفاع */
+  height: auto; /* السماح للارتفاع بالتكيف مع المحتوى */
+   margin-top: -30px;
+}
+
+.features-container {
+  margin-bottom: 50px;
+  text-align: center;
+  color: #fff;
+  font-family: "Cormorant Upright", sans-serif;
+}
+
+.features-container h2 {
+  font-size: 88px;
+  margin-bottom: 20px;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.feature {
+  background: #1e1e1e;
+  border-radius: 48px;
+  padding: 48px;
+  width: 356px;
+  height: auto; /* السماح للارتفاع بالتكيف */
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img.no-style {
+  box-shadow: 0 10px 30px rgba(255, 165, 0, 0.6);
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(255, 165, 0, 0.6);
+}
+
+.feature img {
+  width: 100%; /* جعل الصورة تتناسب مع العرض */
+  max-width: 252px; /* الحد الأقصى للعرض */
+  height: auto; /* السماح للارتفاع بالتكيف مع العرض */
+  margin-bottom: 15px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.feature img.no-shadow {
+  box-shadow: none;
+  border: none;
+}
+
+.feature img.no-style {
+  box-shadow: none;
+  border: none;
+}
+
+.feature img:hover {
+  transform: scale(1.2);
+}
+
+.feature p {
+  font-size: 32px;
+  margin-top: 10px;
+}
+
+/* استعلامات الوسائط للأجهزة الصغيرة */
+@media (max-width: 768px) {
+  .section2 {
+    padding: 30px 0;
+    height: auto; /* السماح للارتفاع بالتكيف */
+  }
+
+  h2 {
+    font-size: 48px; /* تقليص حجم الخط للأجهزة الصغيرة */
+  }
+
+  .features {
+    gap: 16px;
+  }
+
+  .feature {
+    width: 100%;
+    max-width: 356px;
+    padding: 24px;
+    height: auto;
+  }
+
+  .feature img {
+    width: 80%;
+    max-width: 200px;
+    height: auto;
+  }
+
+  .feature p {
+    font-size: 18px;
+  }
+}
+
+/* في حال كانت الشاشات أصغر من 500px */
+@media (max-width: 500px) {
+  h2 {
+    font-size: 40px; /* حجم أصغر */
+  }
+
+  .feature p {
+    font-size: 16px; /* تقليل حجم النصوص */
+  }
+
+  .feature img {
+    max-width: 150px; /* تقليل حجم الصورة */
+  }
+}
