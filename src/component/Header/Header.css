@@ -1,115 +1,114 @@
-.Header{
-  width: 1312px;
-  height: 59px;
-   padding: 88px;
-   
+.Header {
+  width: 100%; /* استخدام 100% من عرض الحاوية الأب */
+  height: auto; /* السماح للارتفاع بالتمدد حسب المحتوى */
+  padding: 88px; /* استخدام 5% من عرض منفذ العرض للتباعد */
+  box-sizing: border-box; /* تضمين الحشو والحدود في العرض */
 }
 
-.HeaderContinent{
-
-display: flex;
-align-items: center;
-justify-content: space-between
-
-}
-
-
-
-.border{
-  border: 1px solid crimson;
-}
-
-
-.HeaderContinentlogo{
-  width: 891px;
-height: 48px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-
-
-}
-.HeaderContinentlogoImgTitel{
+.HeaderContinent {
   display: flex;
-  gap: 8px;
   align-items: center;
-
+  justify-content: space-between;
+  flex-wrap: wrap; /* السماح للعناصر بالانتقال إلى سطر جديد عند الحاجة */
 }
-.HeaderContinentlogoImgTitel h2{
+
+.HeaderContinentlogo {
+  width: 70%; /* استخدام 70% من عرض الحاوية الأب */
+  height: auto; /* السماح للارتفاع بالتمدد حسب المحتوى */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.HeaderContinentlogoImgTitel {
+  display: flex;
+  gap: 1vw; /* استخدام 1% من عرض منفذ العرض للمسافة بين العناصر */
+  align-items: center;
+}
+
+.HeaderContinentlogoImgTitel h2 {
   font-family: "Cormorant Upright", serif;
   font-weight: 600;
-  font-size: 32px;
-  line-height: 30px;
+  font-size: 2.5vw; /* استخدام 2.5% من عرض منفذ العرض لحجم الخط */
+  line-height: 1.2em; /* استخدام em لارتفاع السطر */
   letter-spacing: 0%;
   text-align: right;
   color: #FFFFFF;
 }
- 
 
-.navbar-list{
+.navbar-list {
   display: flex;
-  gap: 32px;
-  list-style-type: none; /* إزالة النقاط من القوائم */
- 
-  
+  gap: 2vw; /* استخدام 2% من عرض منفذ العرض للمسافة بين العناصر */
+  list-style-type: none;
+  flex-wrap: wrap; /* السماح للعناصر بالانتقال إلى سطر جديد عند الحاجة */
+  justify-content: center; /* توسيط القائمة على الشاشات الصغيرة */
 }
- 
-.navbar-item{ 
 
+.navbar-item {
   color: #FFF4E6BF;
- 
   text-decoration: none;
-  font-size: 20px;
-  transition: color 0.3s, border-bottom 0.3s ease;
+  font-size: 1.5vw; /* استخدام 1.5% من عرض منفذ العرض لحجم الخط */
   font-family: "Cormorant", serif;
   border-bottom: 1px solid transparent;
   box-sizing: border-box;
-  transition: font-size 0.3s ease-in-out; /* سلاسة في الحركة مع تحديد زمن الانتقال */
+  transition: color 0.3s, font-size 0.3s ease-in-out;
 }
-.navbar-item:hover{ 
+
+.navbar-item:hover {
   cursor: pointer;
   color: #ffffff;
-font-size: 20.5px;
 }
+
 .navbar-item:active {
-  color: #FF9500; /* تغيير اللون عند الضغط */
-  text-decoration: underline; /* إضافة الخط تحت النص عند الضغط */
+  color: #FF9500;
+  text-decoration: underline;
 }
-.HeaderContinentlogoButton{
-  width: 176px;
-height: 59px;
-gap: 32px;
 
-}
-.HeaderContinentlogoButton{
+.HeaderContinentlogoButton {
   display: flex;
-  gap: 32px;
   align-items: center;
+  gap: 2vw; /* استخدام 2% من عرض منفذ العرض للمسافة بين العناصر */
+}
 
+.HeaderContinentlogoButton1 {
+  padding: 1vw 2vw; /* استخدام 1% و 2% من عرض منفذ العرض للتباعد */
+  background-color: #FF9500;
+  color: black;
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 1.3vw; /* استخدام 1.3% من عرض منفذ العرض لحجم الخط */
+  line-height: 1.5em; /* استخدام em لارتفاع السطر */
+  letter-spacing: 0%;
+  text-align: center;
+  border: none;
+  border-radius: 3vw; /* استخدام 3% من عرض منفذ العرض لزوايا الزر */
 }
-.HeaderContinentlogoButton1{
-  width: 112px;
-height: 59px;
-gap: 8px;
-border-radius: 48px;
-padding-top: 13px;
-padding-right: 32px;
-padding-bottom: 16px;
-padding-left: 32px;
-background-color: #FF9500;
-color: black;
-font-family: "Inter", serif;
-font-weight: 500;
-font-size: 18px;
-line-height: 27px;
-letter-spacing: 0%;
-text-align: center;
-border: none;
-}
-.HeaderContinentlogoButton2{
-  width: 32px;
-  height: 32px;
+
+.HeaderContinentlogoButton2 {
+  width: 3vw; /* استخدام 3% من عرض منفذ العرض للعرض */
+  height: 3vw; /* استخدام 3% من عرض منفذ العرض للارتفاع */
   cursor: pointer;
-border: none;
-background-color: none;
+  border: none;
+  background-color: transparent;
+}
+
+/* تعديلات للشاشات الصغيرة */
+@media (max-width: 768px) {
+  .HeaderContinentlogo {
+      flex-direction: column; /* ترتيب العناصر عموديًا */
+      align-items: center; /* توسيط العناصر عموديًا */
+  }
+
+  .HeaderContinentlogoButton {
+      width: 100%; /* توسيع الزر ليشغل كامل العرض */
+      justify-content: center; /* توسيط الزر */
+  }
+
+  .HeaderContinentlogoButton1 {
+      width: auto; /* السماح للزر بالتمدد حسب المحتوى */
+  }
+
+  .navbar-list {
+      gap: 1vw; /* تقليل المسافة بين عناصر القائمة */
+  }
 }
