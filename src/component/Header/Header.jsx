@@ -2,6 +2,9 @@ import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 
+import Headerimg1 from  "/public/logo.png";
+import Headerimg2 from  "/HeaderIMG/akar-icons_cart.svg";
+
 const Header = () => {
   return (
     <div className="Header" >
@@ -9,7 +12,7 @@ const Header = () => {
         <div className="HeaderContinent border">
           <div className="HeaderContinentlogo  ">
             <div className="HeaderContinentlogoImgTitel">
-              <img src="public/logo.png" alt="notEror" />
+              <img src={Headerimg1} alt="notEror" />
               <h2>Flavor Haven</h2>{" "}
             </div>
             <div className="HeaderContinentNavBar">
@@ -49,7 +52,7 @@ const Header = () => {
           <div className="HeaderContinentlogoButton  ">
 
           <Link to="/#">
-          <img  className="HeaderContinentlogoButton2" src="public/Header/akar-icons_cart.svg" alt="" /> 
+          <img  className="HeaderContinentlogoButton2" src={Headerimg2}  alt="" /> 
 
       </Link>
             <button className="HeaderContinentlogoButton1">login</button>
