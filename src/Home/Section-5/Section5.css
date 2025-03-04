@@ -92,12 +92,16 @@ width: 576px;
 height: 264px;
 gap: 24px;
 padding: 32px;
-background-color: #1b1b1b;
+background-color: #FFDEB0;
 border-radius: 48px;
 display: flex;
 flex-direction: column;
 flex-wrap: wrap;
 gap: 24px;
+
+}
+.section5Contint1imgcontintcard:hover{
+  background-color: #151716;
 
 }
 .section5Contint1imgcontintcard p{
