@@ -6,19 +6,56 @@ import { Link } from "react-router-dom";
 import Imageprof from "./Rectangle 1161.svg";
 
 const Section5 = () => {
+  // البيانات التي سيتم تكرارها
+  const reviews = [
+    {
+      id: 1,
+      name: "Mark Larrat",
+      position: "Nursing Assistant",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolomod tempor incididunt ut labore et dolomod t et dolore magna aliqua.",
+      image: Imageprof
+    },
+    {
+      id: 2,
+      name: "Anna Smith",
+      position: "Doctor",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolomod tempor incididunt ut labore et dolomod t et dolore magna aliqua.",
+      image: Imageprof
+    },
+    {
+      id: 3,
+      name: "John Doe",
+      position: "Nurse",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolomod tempor incididunt ut labore et dolomod t et dolore magna aliqua.",
+      image: Imageprof
+    },
+    {
+      id: 4,
+      name: "Lisa Ray",
+      position: "Therapist",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolomod tempor incididunt ut labore et dolomod t et dolore magna aliqua.",
+      image: Imageprof
+    },
+    {
+      id: 5,
+      name: "Michael Brown",
+      position: "Medical Assistant",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolomod tempor incididunt ut labore et dolomod t et dolore magna aliqua.",
+      image: Imageprof
+    }
+  ];
+
   return (
     <div>
       <section className="section5">
         <div className="section5Contint1 border">
-          <div className="section5Contint1imgText  ">
+          <div className="section5Contint1imgText">
             <div className="section5Contint1imgTexth1">
               <h1 className="section5Contint1imgTexth11">Hear from our </h1>
               <h1 className="section5Contint1imgTexth112">
-                {" "}
-                Satisfied Clients{" "}
+                Satisfied Clients
               </h1>
               <h1 className="section5Contint1imgTexth11">
-                {" "}
                 have to say{" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -35,119 +72,34 @@ const Section5 = () => {
               </h1>
             </div>
 
-            <img src={Imagesub} alt="" />
+            <div className="section5Contint1imgTextimg">
+              <img src={Imagesub} alt="" />
+              <h2>+8.4k</h2>
+            </div>
+             
           </div>
-          <div className="section5Contint1imgcontint  ">
+          <div className="section5Contint1imgcontint">
             <div className="section5Contint1imgcontintcards">
-              <div className="section5Contint1imgcontintcard">
-                <div className="section5Contint1imgcontintcardStar">
-                  &#9733; &#9733; &#9733; &#9733; &#9733;
-                </div>
-                <p>
-                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolomod tempor
-                  incididunt ut labore et dolomod t et dolore magna aliqua.”
-                </p>
-                <div className="section5Contint1imgcontintcardprofil">
-                  <img src={Imageprof} />
-                  <div className="section5Contint1imgcontintcardprofiltext">
-                    <h2>Mark Larrat </h2>
-                    <p> Nursing Assistant</p>
+              {reviews.map((review) => (
+                <div key={review.id} className="section5Contint1imgcontintcard">
+                  <div className="section5Contint1imgcontintcardStar">
+                    &#9733; &#9733; &#9733; &#9733; &#9733;
+                  </div>
+                  <p>{review.text}</p>
+                  <div className="section5Contint1imgcontintcardprofil">
+                    <img src={review.image} alt="Profile" />
+                    <div className="section5Contint1imgcontintcardprofiltext">
+                      <h2>{review.name}</h2>
+                      <p>{review.position}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-
-
-
-              <div className="section5Contint1imgcontintcard">
-                <div className="section5Contint1imgcontintcardStar">
-                  &#9733; &#9733; &#9733; &#9733; &#9733;
-                </div>
-                <p>
-                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolomod tempor
-                  incididunt ut labore et dolomod t et dolore magna aliqua.”
-                </p>
-                <div className="section5Contint1imgcontintcardprofil">
-                  <img src={Imageprof} />
-                  <div className="section5Contint1imgcontintcardprofiltext">
-                    <h2>Mark Larrat </h2>
-                    <p> Nursing Assistant</p>
-                  </div>
-                </div>
-              </div>
-
-
-
-
-              <div className="section5Contint1imgcontintcard">
-                <div className="section5Contint1imgcontintcardStar">
-                  &#9733; &#9733; &#9733; &#9733; &#9733;
-                </div>
-                <p>
-                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolomod tempor
-                  incididunt ut labore et dolomod t et dolore magna aliqua.”
-                </p>
-                <div className="section5Contint1imgcontintcardprofil">
-                  <img src={Imageprof} />
-                  <div className="section5Contint1imgcontintcardprofiltext">
-                    <h2>Mark Larrat </h2>
-                    <p> Nursing Assistant</p>
-                  </div>
-                </div>
-              </div>
-
-
-
-
-              <div className="section5Contint1imgcontintcard">
-                <div className="section5Contint1imgcontintcardStar">
-                  &#9733; &#9733; &#9733; &#9733; &#9733;
-                </div>
-                <p>
-                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolomod tempor
-                  incididunt ut labore et dolomod t et dolore magna aliqua.”
-                </p>
-                <div className="section5Contint1imgcontintcardprofil">
-                  <img src={Imageprof} />
-                  <div className="section5Contint1imgcontintcardprofiltext">
-                    <h2>Mark Larrat </h2>
-                    <p> Nursing Assistant</p>
-                  </div>
-                </div>
-              </div>
-
-
-
-              <div className="section5Contint1imgcontintcard">
-                <div className="section5Contint1imgcontintcardStar">
-                  &#9733; &#9733; &#9733; &#9733; &#9733;
-                </div>
-                <p>
-                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolomod tempor
-                  incididunt ut labore et dolomod t et dolore magna aliqua.”
-                </p>
-                <div className="section5Contint1imgcontintcardprofil">
-                  <img src={Imageprof} />
-                  <div className="section5Contint1imgcontintcardprofiltext">
-                    <h2>Mark Larrat </h2>
-                    <p> Nursing Assistant</p>
-                  </div>
-                </div>
-              </div>
-
-
-
-              
+              ))}
             </div>
           </div>
         </div>
         <div className="section5Contint2 border">
-          <h2>Are u The Next One!</h2>
+          <h2>Are you The Next One!</h2>
           <Link to="/menu" className="show-all-buttonSection5">
             <span>Join Now</span>
 
