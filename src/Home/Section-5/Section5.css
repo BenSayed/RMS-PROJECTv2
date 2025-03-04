@@ -100,17 +100,21 @@ flex-wrap: wrap;
 gap: 24px;
 
 }
-.section5Contint1imgcontintcard:hover{
-  background-color: #151716;
+ .section5Contint1imgcontintcard.New{
 
-}
+  background-color: #151716;
+  
+ }
+ .section5Contint1imgcontintcard p:hover{
+ 
+ }
 .section5Contint1imgcontintcard p{
   font-family: "Inter", serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0%;
-color: #FFF4E6;  
+color: #000000;  
 }
 .section5Contint1imgcontintcardStar{
   color: #FFB854;
@@ -128,7 +132,7 @@ gap: 8px;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0%;
-  color: #faf4e9;
+  color: #000000;
 }
 
 .section5Contint1imgcontintcardprofiltext p{
@@ -137,7 +141,7 @@ font-weight: 300;
 font-size: 14px;
 line-height: 24px;
 letter-spacing: 0%;
-color: #FFF4E6BF;
+color: #575757bf;
 }
 
  .section5Contint2{
@@ -203,4 +207,20 @@ padding-left: 16px;
   border-radius: 14px;
   margin-left: 8px;
   cursor: pointer;
+}
+
+
+.section5Contint1imgcontintcard.hoveredCard {
+  background-color: #151716; /* تغيير الخلفية */
+  color: white; /* تغيير اللون النصوص */
+  transition: all 0.3s ease; /* إضافة تأثير الانتقال */
+
+}
+
+.section5Contint1imgcontintcard.hoveredCard p {
+  color: white; /* تغيير لون النصوص داخل الكارد */
+}
+
+.section5Contint1imgcontintcard.hoveredCard h2 {
+  color: white; /* تغيير لون العنوان */
 }

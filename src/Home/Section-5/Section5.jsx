@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Section5.css";
 import ImageVac from "./Vector (1).svg";
 import Imagesub from "./Subtract.svg";
@@ -45,6 +45,9 @@ const Section5 = () => {
     }
   ];
 
+  // state لتحديد الكلاس عندما يمر الماوس على العنصر
+  const [hoveredCardId, setHoveredCardId] = useState(null);
+
   return (
     <div>
       <section className="section5">
@@ -76,12 +79,18 @@ const Section5 = () => {
               <img src={Imagesub} alt="" />
               <h2>+8.4k</h2>
             </div>
-             
           </div>
           <div className="section5Contint1imgcontint">
             <div className="section5Contint1imgcontintcards">
               {reviews.map((review) => (
-                <div key={review.id} className="section5Contint1imgcontintcard">
+                <div
+                  key={review.id}
+                  className={`section5Contint1imgcontintcard ${
+                    hoveredCardId === review.id ? "hoveredCard" : ""
+                  }`}
+                  onMouseEnter={() => setHoveredCardId(review.id)} // عند مرور الماوس
+                  onMouseLeave={() => setHoveredCardId(null)} // عند مغادرة الماوس
+                >
                   <div className="section5Contint1imgcontintcardStar">
                     &#9733; &#9733; &#9733; &#9733; &#9733;
                   </div>
