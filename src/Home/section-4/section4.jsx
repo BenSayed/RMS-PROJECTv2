@@ -4,7 +4,7 @@ import image31 from "./1.svg";
 import image32 from "./2.svg";
 import image33 from "./3.svg";
 import image34 from "./4.svg";
-import image35 from "./Vector (1)";
+import image35 from "./Vector (1).svg";
 import { Link } from "react-router-dom";
 
 const Section4 = () => {
