@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap; /* السماح للعناصر بالانتقال إلى سطر جديد عند الحاجة */
+ 
 }
 
 .HeaderContinentlogo {
