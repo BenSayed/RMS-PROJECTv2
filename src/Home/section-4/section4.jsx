@@ -4,6 +4,7 @@ import image31 from "./1.svg";
 import image32 from "./2.svg";
 import image33 from "./3.svg";
 import image34 from "./4.svg";
+import image35 from "./Vector (1);
 import { Link } from "react-router-dom";
 
 const Section4 = () => {
@@ -105,7 +106,7 @@ const Section4 = () => {
             <span>Show All</span>
             
             <div className="icon-container">
-            <img src="src/Home/section-4/Vector (1).svg" alt="" />
+            <img src={image35} alt="" />
         
                 </div>
                       </Link>
