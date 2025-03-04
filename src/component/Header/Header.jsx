@@ -8,8 +8,8 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <div className="Header">
-      <header>
+    <div className="Headerall">
+      <header className="Header">
         <div className="HeaderContinent">
           <div className="HeaderContinentlogo">
             <div className="HeaderContinentlogoImgTitel">

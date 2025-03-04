@@ -19,17 +19,11 @@
 }
 
 body {
- 
+  padding: 44px 88px;
   background-color: var(--coler_1);
+  display: flex
+  ;
+      justify-content: center;
 }
-.all{
-  padding-right: 88px;
-  padding-left: 88px;
-  padding-bottom: 44px;
-  padding-top: 20px;
-
-/* width: 1440px; */
-  
-
-
-}
+ 
+ 

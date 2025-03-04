@@ -40,7 +40,7 @@ const Section1 = () => {
                   <button className="button primary-button">Menu</button>
                   <button className="button secondary-button">Book a table</button>
                 </div>
-              </div>
+              </div>  
             </section>
     </div>
   );

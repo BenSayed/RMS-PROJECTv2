@@ -4,6 +4,7 @@ import image31 from "./1.svg";
 import image32 from "./2.svg";
 import image33 from "./3.svg";
 import image34 from "./4.svg";
+import { Link } from "react-router-dom";
 
 const Section4 = () => {
   return (
@@ -99,21 +100,22 @@ const Section4 = () => {
               </div>
             </div>
           </div>
-          </div>
-          <a href="#" className="show-all-button">
+          <div className="buutonshowall">
+            <Link to="/menu" className="show-all-button" >
             <span>Show All</span>
+            
             <div className="icon-container">
-              <svg
-                width="17"
-                height="17"
-                viewBox="0 0 24 24"
-                fill="white"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M12 2L10.59 3.41 16.17 9H2v2h14.17l-5.58 5.59L12 18l8-8-8-8z" />
-              </svg>
-            </div>
-          </a>
+            <img src="src/Home/section-4/Vector (1).svg" alt="" />
+        
+                </div>
+                      </Link>
+      </div>
+          </div>
+
+    
+
+           
+         
          
       </section>
     </div>

@@ -3,7 +3,7 @@
  display: flex;
  flex-direction: column;
  align-items: center;
-  min-height: 100vh;
+ margin-top: 60px;
  
 }
 
@@ -133,6 +133,9 @@ padding: 8px;
   position: relative;
   top: 10px;
 }
+.buutonshowall{
+
+}
 
 .show-all-button {
   display: flex;
@@ -148,11 +151,11 @@ padding: 8px;
   border-radius: 15px;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+ 
   transition: transform 0.2s, box-shadow 0.2s;
-  position: relative;
+ 
   width: 151px;
-  left: 31.5rem;
+ 
 }
 
 .show-all-button:hover {
@@ -169,6 +172,7 @@ padding: 8px;
   background-color: black;
   border-radius: 14px;
   margin-left: 8px;
+  cursor: pointer;
 }
 
 /* استعلامات الوسائط */

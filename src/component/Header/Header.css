@@ -1,11 +1,18 @@
+
+.Headerall{
+width: 100vw;
+display: flex;
+justify-content: center;
+}
 .Header {
-  width: 100%; /* استخدام 100% من عرض الحاوية الأب */
-  height: auto; /* السماح للارتفاع بالتمدد حسب المحتوى */
-  padding: px; /* استخدام 5% من عرض منفذ العرض للتباعد */
+  width: 1312px;
+ 
   box-sizing: border-box; /* تضمين الحشو والحدود في العرض */
+ 
 }
 
 .HeaderContinent {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,7 +21,7 @@
 }
 
 .HeaderContinentlogo {
-  width: 70%; /* استخدام 70% من عرض الحاوية الأب */
+  width: 891px; /* استخدام 70% من عرض الحاوية الأب */
   height: auto; /* السماح للارتفاع بالتمدد حسب المحتوى */
   display: flex;
   align-items: center;
@@ -23,14 +30,14 @@
 
 .HeaderContinentlogoImgTitel {
   display: flex;
-  gap: 1vw; /* استخدام 1% من عرض منفذ العرض للمسافة بين العناصر */
+  gap: 8px; /* استخدام 1% من عرض منفذ العرض للمسافة بين العناصر */
   align-items: center;
 }
 
 .HeaderContinentlogoImgTitel h2 {
   font-family: "Cormorant Upright", serif;
   font-weight: 600;
-  font-size: 2.5vw; /* استخدام 2.5% من عرض منفذ العرض لحجم الخط */
+  font-size: 32px; /* استخدام 2.5% من عرض منفذ العرض لحجم الخط */
   line-height: 1.2em; /* استخدام em لارتفاع السطر */
   letter-spacing: 0%;
   text-align: right;
@@ -48,7 +55,7 @@
 .navbar-item {
   color: #FFF4E6BF;
   text-decoration: none;
-  font-size: 1.5vw; /* استخدام 1.5% من عرض منفذ العرض لحجم الخط */
+  font-size: 20px; /* استخدام 1.5% من عرض منفذ العرض لحجم الخط */
   font-family: "Cormorant", serif;
   border-bottom: 1px solid transparent;
   box-sizing: border-box;
@@ -73,44 +80,38 @@
 }
 
 .HeaderContinentlogoButton1 {
-  padding: 1vw 2vw; /* استخدام 1% و 2% من عرض منفذ العرض للتباعد */
+  width: 112px;
+  height: 59px;
+ 
+  border-radius: 48px;
+  padding-top: 16px;
+  padding-right: 32px;
+  padding-bottom: 16px;
+  padding-left: 32px;
+  
   background-color: #FF9500;
   color: black;
   font-family: "Inter", serif;
   font-weight: 500;
-  font-size: 1.3vw; /* استخدام 1.3% من عرض منفذ العرض لحجم الخط */
-  line-height: 1.5em; /* استخدام em لارتفاع السطر */
-  letter-spacing: 0%;
+  font-size: 18px; /* استخدام 1.3% من عرض منفذ العرض لحجم الخط */
+
   text-align: center;
   border: none;
-  border-radius: 3vw; /* استخدام 3% من عرض منفذ العرض لزوايا الزر */
-}
+ 
+font-size: 18px;
+line-height: 27px;
+letter-spacing: 0%;
+text-align: center;
+
+ }
 
 .HeaderContinentlogoButton2 {
-  width: 3vw; /* استخدام 3% من عرض منفذ العرض للعرض */
-  height: 3vw; /* استخدام 3% من عرض منفذ العرض للارتفاع */
+  width: 25px; /* استخدام 3% من عرض منفذ العرض للعرض */
+  height: 25px; /* استخدام 3% من عرض منفذ العرض للارتفاع */
   cursor: pointer;
   border: none;
   background-color: transparent;
 }
 
 /* تعديلات للشاشات الصغيرة */
-@media (max-width: 768px) {
-  .HeaderContinentlogo {
-      flex-direction: column; /* ترتيب العناصر عموديًا */
-      align-items: center; /* توسيط العناصر عموديًا */
-  }
-
-  .HeaderContinentlogoButton {
-      width: 100%; /* توسيع الزر ليشغل كامل العرض */
-      justify-content: center; /* توسيط الزر */
-  }
-
-  .HeaderContinentlogoButton1 {
-      width: auto; /* السماح للزر بالتمدد حسب المحتوى */
-  }
-
-  .navbar-list {
-      gap: 1vw; /* تقليل المسافة بين عناصر القائمة */
-  }
-}
+ 

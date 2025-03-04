@@ -7,10 +7,10 @@ import Section4 from './section-4/section4';
 const Home = () => {
   return (
     <div className='HomeAllSection'>
-      {/* <Section1/>
-      <Section2/> */}
+      <Section1/>
+      <Section2/>
       <Section3/>
-      {/* <Section4/> */}
+      <Section4/>
     </div>
   );
 }
