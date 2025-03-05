@@ -24,7 +24,7 @@ const Section1 = () => {
               </div>
       
               <div className="container22">
-                <div className="search-bar">
+                 <div className="search-bar">
                   <input
                     type="text"
                     className="search-input"
@@ -39,7 +39,7 @@ const Section1 = () => {
                 <div className="button-container">
                   <button className="button primary-button">Menu</button>
                   <button className="button secondary-button">Book a table</button>
-                </div>
+                </div> 
               </div>  
             </section>
     </div>

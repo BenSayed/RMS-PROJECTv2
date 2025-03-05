@@ -2,8 +2,7 @@
 .section1{
   
 margin-top:25px;
-width: 100vw;
-height: 588px;
+ height: 588px;
  
 
  
@@ -50,7 +49,7 @@ height: 588px;
 .cotiner_img {
   display: block;
   justify-content: center;
-  width: 100%;
+ 
   text-align: center;
   z-index: 0;
   position: relative;
@@ -59,8 +58,7 @@ height: 588px;
 }
 
 .cotiner_img img {
-  width: 100%; /* التأكد من تناسق العرض مع الشاشة */
-  max-width: 1312px;
+   max-width: 1312px;
   height: auto; /* السماح للارتفاع بالتكيف */
   border-radius: 48px;
   transition: all 0.3s ease; /* إضافة انتقالات سلسة */
@@ -128,8 +126,7 @@ align-items: center;
   width: 256px;
   background-color: #ff9500;
   color: #000000;
-  font-family: Inter;
-  font-size: 20px;
+  font-family: "Inter", serif;  font-size: 20px;
   text-align: center;
  
 }
@@ -137,11 +134,11 @@ align-items: center;
 .secondary-button {
   background-color: #fff5eb;
   color: #000000;
-  font-family: Inter;
-  font-size: 20px;
+  font-family: "Inter", serif;   font-size: 20px;
   text-align: center;
 
 }
+
 
 button.mic-button {
   background-color: #151716;
@@ -153,153 +150,499 @@ button.mic-button {
   cursor: pointer;
 }
 
-/* Media Queries */
+/*
+/* ✅ ✅ ✅ 🌍 Media Queries 🌍 ✅ ✅ ✅ */
 
-/* For screens with width 984px */
-@media  (max-width: 984px)   {
-
-  .section1 {
-    min-height: 850px;
-    height: auto;
+/* 📌 عند الشاشات المتوسطة (أجهزة التابلت 1024px فأقل) */
+@media (max-width: 1400px) {
+ 
+  .section1{
+   
   }
-  .textconteiner h1 {
-    font-size: 120px; 
-  }
+  .Titletextconteiner h1{
 
-  .textconteiner p {
-    font-size: 24px; 
-  }
+    font-weight: 600;
+    font-size: 132px;
 
+  }
+  .textconteiner p{
+ 
+    font-size: 20px;
+
+
+  }
   .cotiner_img img {
-    width: 100%;
-    height: 60%;
-    margin-top: 0;
-  }
+    max-width: 1080px;
+   height: auto; /* السماح للارتفاع بالتكيف */
+   border-radius: 48px;
+   transition: all 0.3s ease; /* إضافة انتقالات سلسة */
+ }.button {
+  width: 200px;
+  height: 60px;
+ 
+ 
+  font-size: 16px;
+  font-weight: 500;
+ 
 
-  .search-input {
-    width: 500px;
-    height: 46px;
-    font-size: 15px;
-    height: 42px;
-  }
-
-  .primary-button,
-  .secondary-button {
-    width: 150px;
-    height: 50px;
-    font-size: 14px;
-    padding: 8px;
-  }
 }
 
-/* For screens with width 646px */
-@media screen and (max-width: 646px) {
+ 
+}
+@media (max-width: 1180px){
+ 
+  .section1{
+   
+  }
+  .Titletextconteiner {
+    margin-top: -30px;
+  }
+  .Titletextconteiner h1{
+
+    font-weight: 600;
+    font-size: 110px;
+
+  }
+  .Titletextconteiner P{
+    white-space: nowrap;
+
+    font-size: 1px;
+    white-space: nowrap;
+
+  }
+  .cotiner_img img {
+    max-width: 950px;
+   
+ }
+
+ .search-bar{
+   
+ 
+ 
+  width: 560px;
+  height: 60px;
+
+   
+ }
+ .primary-button {
+  width: 256px;
+ 
+   font-size: 20px;
+  text-align: center;
+ 
+}
+
+.secondary-button {
+   
+  font-size: 20px;
+  text-align: center;
+
+}
+
+.button {
+  width: 200px;
+  height: 60px;
+ 
+ 
+  font-size: 16px;
+  font-weight: 500;
+ 
+
+}
+
+.container22 {
+  position: relative;
+  top: -6rem;
+  display: flex;
+  flex-direction: column;
   
-  .container {
-    margin-top: 30px;
+align-items: center;
+}
+}
+
+ @media (max-width: 1000px) {
+  .section1{
+     
   }
-  .textconteiner h1 {
+  .Titletextconteiner h1{
+
+    font-weight: 600;
     font-size: 100px;
-  }
+    margin-top: -40px;
 
-  .textconteiner p {
-    font-size: 22px;
   }
+  .textconteiner p{
+ 
+    font-size: 17px;
 
+
+  }
   .cotiner_img img {
-    width: 100%;
-    height: 50%;
-    margin-top: 0;
-  }
+    max-width: 850px;
+   height: auto; /* السماح للارتفاع بالتكيف */
+   border-radius: 48px;
+   transition: all 0.3s ease; /* إضافة انتقالات سلسة */
+ }
+ .search-bar{
+   
+ 
+ 
+  width: 510px;
+  height: 58px;
 
-  .search-input {
-    width: 350px;
-    height: 46px;
-    font-size: 14px;
-    height: 38px;
-  }
-
-  .primary-button,
-  .secondary-button {
-    width: 120px;
-    height: 40px;
-    font-size: 14px;
-    padding: 8px;
-  }
+   
+ }
+ .primary-button {
+  width: 256px;
+ 
+   font-size: 19px;
+  text-align: center;
+ 
 }
 
-/* For screens with width 464px */
-@media screen and (max-width: 464px) {
-  .container {
-    margin-top: 70px;
-  }
-  .textconteiner h1 {
-    font-size: 70px;
-  }
+.secondary-button {
+   
+  font-size: 19px;
+  text-align: center;
 
-  .textconteiner p {
-    font-size: 18px;
-  }
+}
 
+.button {
+  width: 190px;
+  height: 58px;
+ 
+ 
+  font-size: 15px;
+  font-weight: 500;
+ 
+
+}
+
+.container22 {
+  position: relative;
+  top: -5rem;
+  display: flex;
+  flex-direction: column;
+  
+align-items: center;
+}
+ 
+ }
+/* 📌 عند الشاشات الصغيرة (الموبايل 768px فأقل) */
+@media (max-width: 900px) {
+  .Titletextconteiner h1{
+    font-weight: 600;
+    font-size: 85px;
+    position: absolute;
+    padding-top: 15px;
+
+  }
+  .textconteiner p{
+ 
+    font-size: 16px;
+
+margin-top: -19px;
+  }
   .cotiner_img img {
-    width: 100%;
-    height: 45%;
-    margin-top: 0;
-  }
+    max-width: 700px;
+   height: auto; /* السماح للارتفاع بالتكيف */
+   border-radius: 48px;
+   margin-top: 120px;
+   position: relative;
 
-  .search-input {
-    width: 100%;
+   transition: all 0.3s ease; /* إضافة انتقالات سلسة */
+ }
+ .search-bar{
+   
+ 
+ 
+  width: 490px;
+  height: 55px;
+
+   
+ }
+ .primary-button {
+  width: 256px;
+ 
+   font-size: 18px;
+  text-align: center;
+ 
+}
+
+.secondary-button {
+   
+  font-size: 18px;
+  text-align: center;
+
+}
+
+.button {
+  width: 180px;
+  height: 55px;
+ 
+ 
+  font-size: 16px;
+  font-weight: 500;
+ 
+
+}
+
+.container22 {
+  position: relative;
+  top: -4rem;
+  display: flex;
+  flex-direction: column;
+  
+align-items: center;
+}
+ 
+}
+
+/* 📌 عند الموبايلات الصغيرة جدًا (480px فأقل) */
+@media (max-width: 790px) {
+ 
+  .Titletextconteiner h1{
+    position: relative;
+    font-weight: 600;
+    font-size: 75px;
+   
+  position: absolute;
+  }
+  .textconteiner p{
+ 
     font-size: 13px;
-    height: 36px;
-  }
 
-  .primary-button,
-  .secondary-button {
-    width: 110px;
-    height: 40px;
-    font-size: 14px;
-    padding: 8px;
+margin-top: -19px;
   }
-
-  button.mic-button {
-    width: 40px;
-    height: 45px;
-  }
-}
-@media screen and (max-width: 550px) {
-  .container {
-    margin-top: 80px;
-  }
-  .textconteiner h1 {
-    font-size: 60px;
-  }
-
-  .textconteiner p {
-    font-size: 18px;
-  }
-
   .cotiner_img img {
-    width: 100%;
-    height: 40%; /* تقليل حجم الصورة في الشاشات الصغيرة */
-  }
+    max-width: 600px;
+   height: auto; /* السماح للارتفاع بالتكيف */
+ 
+   margin-top: 90px;
+   position: relative;
 
-  .search-input {
-    width: 250px;
-    height: 46px;
-    font-size: 12px;
-    height: 32px;
-  }
+ }
 
-  .primary-button,
-  .secondary-button {
-    width: 120px;
-    height: 40px;
-    font-size: 14px;
-    padding: 8px;
+
+ .search-bar{
+   
+ 
+ 
+  width: 450px;
+  height: 59px;
+
+   
+ }
+ .primary-button {
+  width: 256px;
+ 
+   font-size: 18px;
+  text-align: center;
+ 
+}
+
+.secondary-button {
+   
+  font-size: 18px;
+  text-align: center;
+
+}
+
+.button {
+  width: 150px;
+  height: 44px;
+ 
+ 
+  font-size: 14px;
+  font-weight: 500;
+ 
+
+}
+
+.container22 {
+  position: relative;
+  top: -4rem;
+  display: flex;
+  flex-direction: column;
+  
+align-items: center;
+}
+}
+@media (max-width: 657px){
+   
+  .Titletextconteiner h1{
+    position: relative;
+    font-weight: 600;
+    font-size: 55px;
+    position: absolute;
   }
+  .textconteiner p{
+ 
+    font-size: 11px;
+
+margin-top: -19px;
+  }
+  .cotiner_img img {
+    position: relative;
+
+  
+    max-width: 500px;
+   height: auto; /* السماح للارتفاع بالتكيف */
+ 
+   margin-top: 90px;
+ 
+ }
+}
+@media (max-width: 540px){
+   .Titletextconteiner h1{
+    position: relative;
+    font-weight: 600;
+    font-size: 48px;
+    position: absolute;
+  }
+  .textconteiner p{
+ 
+    font-size: 7px;
+
+margin-top: -19px;
+  }
+  .cotiner_img img {
+    position: relative;
+
+  
+    max-width: 400px;
+   height: auto; /* السماح للارتفاع بالتكيف */
+ 
+   margin-top: 90px;
+ 
+
+ }
+ button.mic-button {
+  background-color: #151716;
+  width: 41px;
+  height: 46px;
+  padding: 4px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+ .search-bar{
+   
+ 
+ 
+  width: 390px;
+  height: 49px;
+
+   
+ }
+ .primary-button {
+  width: 256px;
+ 
+   font-size: 11px;
+  text-align: center;
+ 
+}
+
+.secondary-button {
+   
+  font-size: 14px;
+  text-align: center;
+
+}
+
+.button {
+  width: 120px;
+  height: 40px;
+ 
+ 
+  font-size: 12px;
+  font-weight: 500;
+ 
+
+}
+
+.container22 {
+  position: relative;
+  top: -1.9rem;
+  display: flex;
+  flex-direction: column;
+  
+align-items: center;
+}
+}
+@media (max-width: 430px){
 
   button.mic-button {
-    width: 40px;
-    height: 45px;
+   display: none;
   }
+ button.mic-button img{
+width: 20px;
+
 }
+ 
+  .search-input {
+
+    width:320px  ;
+    height:50px ;
+     
+ border-radius: 20px;
+  }
+ .search-bar{
+   
+  width:320px  ;
+  height:50px ;
+
+   
+ }
+ }
+
+ 
+
+.button {
+  width: 100px;
+  height: 40px;
+ 
+ 
+  font-size: 8px;
+  font-weight: 700;
+ 
+
+}
+
+.container22 {
+  position: relative;
+  top: -1.5rem;
+  display: flex;
+  flex-direction: column;
+  
+align-items: center;
+}
+
+
+  .titletextconteiner{
+    margin-top: -10px;
+  }
+.Titletextconteiner h1{
+  margin-top: -50px;
+    position: relative;
+    font-weight: 600;
+    font-size: 45px;
+    position: absolute;
+  }
+  .textconteiner p{
+ 
+    font-size: 7px;
+
+margin-top: -40px;
+  }
+  .cotiner_img img {
+    position: relative;
+
+  
+    max-width: 350px;
+   height: auto; /* السماح للارتفاع بالتكيف */
+ 
+   margin-top: 80px;
+ 
+ }
+
