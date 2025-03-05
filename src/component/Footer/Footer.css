@@ -8,6 +8,7 @@ padding-top: 20px;
   flex-direction: column; /* لجعل العناصر تحت بعضها */
   justify-content: center; /* لمحاذاة العناصر عموديًا في منتصف الشاشة */
   align-items: center;
+
 }
 
 .logo-container0 {
@@ -26,8 +27,16 @@ padding-top: 20px;
 }
 
 .newsletter0 p {
-  font-size: 36px;
+ 
   margin: 15px 0;
+  font-family: "Inter", serif;
+ ;
+font-weight: 400;
+font-size: 36px;
+line-height: 43.57px;
+letter-spacing: 0%;
+text-align: center;
+
 }
 
 .email-subscribe00 {
@@ -66,7 +75,7 @@ padding-top: 20px;
   white-space: nowrap;
   overflow: hidden; /* لإخفاء النص الزائد */
   text-overflow: ellipsis;
-bottom: -1px;
+bottom: px;
 }
 
 .email-subscribe00 button:hover {

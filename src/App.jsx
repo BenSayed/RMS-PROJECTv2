@@ -6,16 +6,16 @@ import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div >
+    <div className="allapp"  >
       <Header />  
       
       <Routes>
        
-        <Route path="/" element={<Home />} />  
+        {/* <Route path="/" element={<Home />} />   */}
         <Route path="/about" element={<AboutPage />} />  
       </Routes>
       
-      <Footer /> 
+      {/* <Footer />  */}
     </div>
   );
 }
