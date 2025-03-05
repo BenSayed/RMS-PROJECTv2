@@ -575,26 +575,22 @@ align-items: center;
   button.mic-button {
    display: none;
   }
- button.mic-button img{
-width: 20px;
-
-}
+ 
  
   .search-input {
 
-    width:320px  ;
-    height:50px ;
-     
+    
+ 
  border-radius: 20px;
   }
  .search-bar{
-   
-  width:320px  ;
+   border:  1px solid #ff9500;
+  width:330px  ;
   height:50px ;
 
    
  }
- }
+
 
  
 
@@ -645,4 +641,5 @@ margin-top: -40px;
    margin-top: 80px;
  
  }
-
+}
+ 
