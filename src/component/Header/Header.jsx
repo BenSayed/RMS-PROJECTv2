@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import Headerimg1 from "/public/logo.png";
+import Headerimg1 from "/public/logo 1.svg";
 import Headerimg2 from "/HeaderIMG/akar-icons_cart.svg";
 import { Link, useLocation } from "react-router-dom";
 
@@ -75,7 +75,7 @@ const Header = () => {
           </div>
         </div>
 
-        
+
       </header>
     </div>
   );

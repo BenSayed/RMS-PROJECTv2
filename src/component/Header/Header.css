@@ -258,7 +258,7 @@ display: none;
 }
 @media (max-width: 790px){
   .HeaderContinentlogoImgTitel{
-    margin-left:130px;
+    margin-left:150px;
     }
     .HeaderContinentlogoImgTitel h2{
     font-size: 25px;
@@ -269,6 +269,12 @@ display: none;
       cursor: pointer;
       border: none;
       background-color: transparent;
-      margin-left: -90px;
+      margin-left: -80px;
+    }
+    .Header{
+      margin-top: -20px;
+    }
+    .HeaderContinentlogoImgTitel img{
+      width: 40px;
     }
 }
