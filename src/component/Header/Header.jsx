@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import Headerimg1 from "/public/Logo 1.svg";
 import Headerimg2 from "/HeaderIMG/akar-icons_cart.svg";
@@ -6,6 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const location = useLocation();
+  const [shomodel, setshomodel] = useState(false);
 
   return (
     <div className="Headerall">
@@ -72,10 +73,70 @@ const Header = () => {
               />
             </Link>
             <button className="HeaderContinentlogoButton1">login</button>
+            <button  
+             onClick={ ( ) => {
+              setshomodel (true)
+              
+             } }
+              
+           className="icon-menu"></button>
+
+
+            
+            {shomodel && (   
+              
+        <div className="fixed"> 
+          <ul className="model">  
+            <li>
+              <button
+                className="icon-clear" 
+                onClick={() => {
+                  setshomodel(false);
+                }}
+              ></button>
+            </li>
+            <li>
+              <a className="linkmodel" href=""> Home </a>
+            </li>
+            <li>
+              <a className="linkmodel" href=""> Menu </a>
+            </li>
+            <li>
+              <a className="linkmodel" href="">Reservation</a>
+            </li>
+            <li>
+              <a className="linkmodel" href="">About</a>
+            </li>
+            <li>
+              <a className="linkmodel" href=""> Contact us </a>
+            </li>
+
+            <li>
+            <div className="HeaderContinentlogoButtonModel">
+            <Link to="/#">
+              <img
+                className="HeaderContinentlogoButton2model"
+                src={Headerimg2}
+                alt=""
+              />
+            </Link>
+            <button className="HeaderContinentlogoButton1mpdel">login</button>
+            </div>
+
+            </li>
+            
+          </ul>
+            </div>
+
+)}
+            
+        </div> 
+
+
           </div>
-        </div>
+       
 
-
+       
       </header>
     </div>
   );

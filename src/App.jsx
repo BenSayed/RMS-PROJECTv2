@@ -3,12 +3,16 @@ import Home from "./Home/Home";
 import Header from "./component/Header/Header";
 import AboutPage from "./About/About";
 import { Routes, Route } from 'react-router-dom';  
-
+ 
+ 
 function App() {
   return (
+
     <div className="allapp"  >
+
+  
       <Header />  
-      
+     
       <Routes>
        
         <Route path="/" element={<Home />} />  
