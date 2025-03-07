@@ -23,17 +23,18 @@ function App() {
 
   
       <Header />  
- <SignUp/>
+
  {/* <Login/> */}
      
-      {/* <Routes>
+      <Routes>
        
 
         <Route path="/" element={<Home />} />  
         <Route path="/about" element={<AboutPage />} />  
         <Route path="/login" element={<Login/>} />  
+        <Route path="/SignUp" element={ <SignUp/>} />  
 
-      </Routes> */}
+      </Routes>
       
       {/* <Footer />  */}
     </div>

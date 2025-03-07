@@ -7,6 +7,7 @@ import imgegoogel from "./google .svg";
 import imgiphone from "./apple .svg";
 import imgline from "./Line 17.svg";
 import imgline2 from "./Line 16.svg";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -59,8 +60,8 @@ const SignUp = () => {
                 Create an Account
               </h1>
               <p>
-                Already have an account? <a href="#">Login</a>
-              </p>
+  Already have an account? <Link to="/login">Login</Link>
+</p>
         </div>
 
 

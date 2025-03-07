@@ -461,6 +461,11 @@ margin-left: 68px;
   font-size: 12px;
   margin-left: 80px;
 }
+.full-width img {
+  position: absolute;
+  margin-left: 291px;
+
+}
 .lineDive img {
   width: 100px;
 }
@@ -478,11 +483,7 @@ margin-left: 68px;
    width: 330px;
    
 }
-.full-width img {
-  position: absolute;
-  margin-left: 422px;
-  margin-top: 15px;
-}
+ 
  
  
 .submit-btn {

@@ -8,6 +8,7 @@ import imgiphone from "./apple .svg";
 import imglin6 from "./Line 16.svg";
 import imgline from "./Line 17.svg";
 import Recting from "./Rectangle 1162.svg";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -56,8 +57,8 @@ function Login() {
               <div className="welcome-text">
                 <h1>Welcome again!</h1>
                 <p>
-                  Don’t have an account? <a href="#">Sign up</a>
-                </p>
+  Don’t have an account? <Link to="/SignUp">Sign up</Link>
+</p>
               </div>
               <form onSubmit={handleLogin} className="formatcontentee">
                 {error && <p style={{ color: "red" }}>{error}</p>}
