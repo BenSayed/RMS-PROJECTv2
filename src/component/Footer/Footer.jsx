@@ -4,7 +4,7 @@ import Headerimg1 from  "/public/logo.png";
 import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
-    <div>
+    <div className='foterindex'>
       
       <footer>
       <div className="newsletter0">
@@ -23,33 +23,12 @@ const Footer = () => {
         </div>
       </div>
       <nav className="footer-menu0">
-      <ul className="navbar-list">
-                  <li>
-                    <Link to="#" className="navbar-item">
-                      Home
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="#" className="navbar-item">
-                      Menu
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="#" className="navbar-item">
-                      Reservation
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="#" className="navbar-item">
-                      About
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="#" className="navbar-item">
-                      Contact us
-                    </Link>
-                  </li>
-                </ul>
+        <a href="#">Home</a>  
+        <a href="#">Menu</a>
+        <a href="#">Reservation</a>
+        <a href="#">About</a>
+        <a href="#">Contact_Us</a>
+      
       </nav>
       <div className="copyright0">
         <p>
@@ -58,8 +37,10 @@ const Footer = () => {
           purposes without prior written permission from Flavor Haven.
         </p>
       </div>
-    </footer>
+      <div className='line0'>
 
+      </div>
+    </footer>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import axios from "axios";
 import eyeImage from "./Mdi_eye-outline.svg";
 import imgegoogel from "./google .svg";
 import imgiphone from "./apple .svg";
+import imglin6 from "./Line 16.svg";
 import imgline from "./Line 17.svg";
 import Recting from "./Rectangle 1162.svg";
 
@@ -90,7 +91,7 @@ function Login() {
                 <div className="lineDive">
                   <img src={imgline} alt="" />
                   <h3>or login with</h3>
-                  <img src={imgline} alt="" />
+                  <img src={imglin6} alt="" />
                 </div>
 
                 <div className="social-buttons">

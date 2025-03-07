@@ -5,6 +5,7 @@ import AboutPage from "./About/About";
 import { Routes, Route } from 'react-router-dom';  
 import Login from "./login/Login";
 import axios from "axios";
+import SignUp from "./Sign up/SignUp";
  
  
 const api = axios.create({
@@ -22,16 +23,17 @@ function App() {
 
   
       <Header />  
- 
+ <SignUp/>
+ {/* <Login/> */}
      
-      <Routes>
+      {/* <Routes>
        
 
         <Route path="/" element={<Home />} />  
         <Route path="/about" element={<AboutPage />} />  
         <Route path="/login" element={<Login/>} />  
 
-      </Routes>
+      </Routes> */}
       
       {/* <Footer />  */}
     </div>

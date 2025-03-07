@@ -1,0 +1,495 @@
+.SignUpPage {
+  display: flex; /* تكبير مساحة العرض لتوسيط المحتوى */
+  justify-content: center; /* توسيط المحتوى أفقياً */
+  align-items: center; /* توسيط المحتوى عمودياً */
+  height: 700px;
+ 
+}
+.border{
+  border: 1px solid crimson;
+}
+form{
+
+}
+
+.input-group{
+  width: 520px;
+height: 52px;
+display: flex;
+ 
+gap: 16px;
+}
+.input-group input{
+ 
+  
+width: 252px;
+height: 52px;
+border-radius: 16px;
+padding: 16px;
+gap: 10px;
+border: 1px solid #ff9500;
+ }
+
+.input-groupsuinuo{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.showPassword{
+  display: flex;
+}
+.full-width img{ 
+ position: absolute;
+margin-left: 470px;
+margin-top: 15px;
+}
+ .full-width input {
+  border: 1px solid #ff9500;
+
+  width: 520px;
+height: 52px;
+border-radius: 16px;
+padding: 16px;
+gap: 10px;
+border-width: 1px;
+
+ }
+
+
+
+.containerSignUp {
+  display: flex; /* تقسيم الشاشة إلى قسمين */
+            background-color: #fff4e6; /* لون خلفية أبيض */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* تكبير الظل حول الحاوية */
+  border-radius: 20px; /* تصغير الحواف بجعلها مستديرة */
+  overflow: hidden; /* تصغير العناصر التي تخرج عن الحدود */
+  gap: 60px;
+  width: 1312px;
+    height: 670px;
+    align-items: center;
+ padding: 24px;  
+}
+
+.buutonandlinesuinuo
+.sectionSignUptexttt{
+   display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.sectionSignUptexttt{
+  margin-left: -57px;
+}
+.sectionSignUpbuttonandform{
+
+
+  width: 520px;
+height: 495px;
+gap: 24px;
+
+}
+.form-sectionSignUp {
+   flex: 0.8; /* تكبير نسبة الحاوية النصية */
+  padding: 21px;
+  width: 520px;
+  height: 637px;
+  gap: 32px;
+  display: flex
+  ;
+   margin-top: -150px;
+      flex-direction: column;
+      align-items: center;
+  
+}
+
+.image-section3 {
+ 
+ 
+width: 728px;
+height: 680px;
+border-radius: 48px;
+
+ 
+
+}
+
+.image-section3 img {
+ 
+  width: 728px;
+  height: 680px;
+  border-radius: 48px;
+  margin-left: -25px;
+ 
+border-radius: 48px;
+padding: 24px;
+gap: 16px;
+
+}
+
+
+.form-sectionSignUp h1 {
+  font-size: 64px; /* تكبير حجم الخط */
+  margin-bottom: -10px; /* تصغير المسافة السفلية */
+  color: #151716;
+}
+
+.form-sectionSignUp p {
+  margin-bottom: -8px; /* تكبير المسافة السفلية بين النصوص */
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+}
+
+.form-sectionSignUp p a {
+  color: #ff9500; /* لون برتقالي للنص */
+  text-decoration: none; /* تصغير الخط السفلي الافتراضي */
+  border-bottom: 1px solid orange; /* تكبير خط سفلي يدوي */
+}
+
+.form-sectionSignUp form {
+  display: flex; /* عرض الحقول بشكل عمودي */
+  flex-direction: column; /* تصغير ترتيب العناصر أفقياً */
+  color: #151716;
+  width: 520px;
+height: 495px;
+ 
+
+}
+
+
+
+
+.checkbox-group {
+  display: flex; /* عرض المربع والنص بجانب بعضهما */
+  align-items: center; /* تكبير محاذاة النص والمربع عمودياً */
+  margin-bottom: 15px; /* تكبير المسافة السفلية */
+  border: 0px solid #ff9500; /* لون الإطار الافتراضي */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 8px;
+  width: 19px;
+  height: 19px;
+  cursor: pointer;
+  border: 2px solid #ff9500;
+  border-radius: 4px;
+  appearance: none;
+  outline: none;
+}
+.checkbox-group input[type="checkbox"]:checked {
+  background-color: #ff9500;
+  border-color: #ff9500;
+}
+.social-buttons
+{
+    display: flex ;
+
+
+}
+.lineDive2 {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  padding-top: 20px;
+  padding-bottom: 26px;
+}
+
+.lineDive2 img {
+  width: 190px;
+}
+
+.lineDive2 span {
+  margin: 0 10px; /* تكبير المسافة حول النص */
+  color: black; /* لون رمادي للنص */
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.social-login {
+  display: flex; /* عرض الأزرار بجانب بعضها */
+  gap: 22px; /* تكبير المسافة بين الأزرار */
+  margin-bottom: 20px; /* تكبير المسافة السفلية */
+}
+
+.social-login button {
+   padding: 10px; /* تكبير المسافة الداخلية للأزرار */
+  border: 1px solid #ff9500; /* تكبير الحدود حول الأزرار */
+  border-radius: 16px; /* تصغير الحواف بجعلها مستديرة */
+  display: flex; /* عرض النصوص والأيقونات جنباً إلى جنب */
+  align-items: center; /* تكبير المحاذاة عمودياً */
+  justify-content: center; /* تكبير المحاذاة أفقياً */
+  gap: 4px; /* تكبير المسافة بين النصوص والأيقونات */
+
+  cursor: pointer; /* تكبير إمكانية الضغط على الزر */
+}
+
+.social-login img {
+  width: 20px; /* تصغير حجم الأيقونات */
+  height: 20px; /* تصغير حجم الأيقونات */
+}
+
+.submit-btn {
+  margin-top: 20px;
+  padding: 10px; /* تكبير المسافة الداخلية للزر */
+  background-color: #ff9500; /* لون برتقالي للزر */
+  border: none; /* تصغير الحدود الافتراضية للزر */
+  border-radius: 13px; /* تصغير الحواف بجعلها مستديرة */
+  cursor: pointer; /* تكبير إمكانية الضغط على الزر */
+  height: 52px;
+}
+.submit-btn:hover {
+  background-color: darkorange; /* تكبير اللون عند التمرير على الزر */
+}
+
+
+
+
+
+/* الشاشات الأكبر من 900 بكسل */
+@media (max-width: 1440px) {
+  .containerSignUp {
+ 
+    width: 1207px;
+}
+.image-section3 img {
+object-fit: cover;
+width: 633px;
+    height: 680px;
+}
+}
+@media (max-width: 1024px) {
+  .containerSignUp {
+ 
+    width: 797px;
+}
+.image-section3 img {
+  object-fit: cover;
+  width: 309px;
+  /* height: 680px; */
+}
+
+.image-section3 {
+  width: 172px;
+  height: 680px;
+}
+.form-sectionSignUp {
+  flex: 0.8;
+  padding: 21px;
+  width: 376px;
+  
+  height: auto;
+}
+
+.form-sectionSignUp h1 {
+  font-size: 50px;
+  margin-bottom: -15px;
+  color: #151716;
+  white-space: nowrap;
+}
+
+.form-sectionSignUp {
+ margin-left: 60px;
+  width: 376px;
+  height: auto;
+  margin-top: -10px;
+}
+.sectionSignUptexttt {
+  margin-left: -135px;
+}
+.input-group {
+  width: 457px;
+}
+.full-width input {
+   width: 458px;
+}
+.full-width img {
+  position: absolute;
+  margin-left: 422px;
+  margin-top: 15px;
+}
+.lineDive img {
+  width: 163px;
+}
+.social-buttons {
+width: 419px;
+margin-left: 20px;
+}
+.submit-btn {
+width: 450px;
+}
+}
+
+@media (max-width: 768px) {
+
+
+  
+  .containerSignUp {
+    width: 536px;
+    align-content: center;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+
+ 
+.image-section3{
+ display: none;
+}
+
+.image-section3 {
+  width: 172px;
+  height: 680px;
+}
+.form-sectionSignUp {
+  flex: 0.8;
+  padding: 21px;
+  width: 376px;
+  
+  height: auto;
+}
+
+.form-sectionSignUp h1 {
+  font-size: 50px;
+  margin-bottom: -15px;
+  color: #151716;
+  white-space: nowrap;
+}
+
+.form-sectionSignUp {
+ margin-left: 60px;
+  width: 376px;
+  height: auto;
+  margin-top: -10px;
+}
+.sectionSignUptexttt {
+  margin-left: -135px;
+}
+.input-group {
+  width: 457px;
+}
+.full-width input {
+   width: 458px;
+}
+.full-width img {
+  position: absolute;
+  margin-left: 422px;
+  margin-top: 15px;
+}
+.lineDive img {
+  width: 163px;
+}
+.social-buttons {
+width: 419px;
+margin-left: 20px;
+}
+.submit-btn {
+width: 450px;
+}
+}
+
+@media (max-width: 425px) {
+
+
+  .form-sectionSignUp p {
+    margin-bottom: -14px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+
+  }
+  .containerSignUp {
+    width: 365px;
+    align-content: center;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+
+ 
+.image-section3{
+ display: none;
+}
+
+.image-section3 {
+  width: 172px;
+  height: 680px;
+}
+.form-sectionSignUp {
+  flex: 0.8;
+  padding: 21px;
+  width: 376px;
+  
+  height: auto;
+}
+
+.form-sectionSignUp h1 {
+  font-size: 40px;
+  margin-bottom: -15px;
+  color: #151716;
+  white-space: nowrap;
+}
+
+.form-sectionSignUp {
+ margin-left: 60px;
+  width: 376px;
+  height: auto;
+  margin-top: -10px;
+}
+.sectionSignUptexttt {
+  margin-left: -59px;
+  text-align: center;
+}
+.input-group {
+  width: 257px;
+  margin-left: 75px;
+}
+
+.input-group input {
+  width: 148px;
+}
+.full-width{
+margin-left: 68px;
+}
+.checkbox-group {
+  display: flex
+;
+  align-items: center;
+  margin-bottom: -10px;
+  border: 0px solid #ff9500;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  margin-left: 80px;
+}
+.lineDive img {
+  width: 100px;
+}
+.lineDive{
+  margin-left: 65px;
+}
+
+.social-buttons {
+  width: 302px;
+  margin-left: 82px;
+}
+
+
+.full-width input {
+   width: 330px;
+   
+}
+.full-width img {
+  position: absolute;
+  margin-left: 422px;
+  margin-top: 15px;
+}
+ 
+ 
+.submit-btn {
+width: 450px;
+}
+.submit-btn {
+  width: 310px;
+  margin-left: 77px;
+}
+}
