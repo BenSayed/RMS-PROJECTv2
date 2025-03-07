@@ -465,6 +465,11 @@ object-fit: cover;
   font-size: 20px;
 
 }
+
+.formatcontentee P {
+  margin-left: 90px ;
+  font-size: 12px;
+ }
 }
 
 
@@ -576,5 +581,6 @@ object-fit: cover;
   font-size: 20px;
 
 }
+ 
 }
 
