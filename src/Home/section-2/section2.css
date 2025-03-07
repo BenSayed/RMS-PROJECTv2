@@ -90,15 +90,21 @@ img.no-style {
 /* استعلامات الوسائط للأجهزة الصغيرة */
 @media (max-width: 768px) {
   .section2 {
-    margin-top: -19rem;
+    margin-top: -5rem;
    }
 
-  h2 {
-    font-size: 48px; /* تقليص حجم الخط للأجهزة الصغيرة */
+   .features-container h2 {
+    font-size: 46px;
+    margin-bottom: -10px;
+}
+  .features {
+    gap: 16px;
   }
 
+ 
+
   .features {
-    gap: 55px;
+    gap: 16px;
   }
 
   .feature {
