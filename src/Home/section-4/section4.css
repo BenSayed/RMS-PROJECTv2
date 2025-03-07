@@ -3,16 +3,11 @@
  display: flex;
  flex-direction: column;
  align-items: center;
- margin-top: 60px;
- margin-bottom: 30px;
+  
  
 }
 
-.food-selection {
-  height: 116px;
-  
-  margin-top: 20px;
-}
+ 
 
 .food-selection h2 {
   font-size: 90px;
@@ -22,7 +17,7 @@
 }
 
 .navbar22 {
-  margin-top: -2px;
+  margin-top: -38px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,14 +78,25 @@ padding: 8px;
   width: 100%;
   height: 60%;
   object-fit: cover;
-}
 
+}
+.cardtextandheart{
+  display: flex;
+   gap: 50px;
+  
+   
+}
+.cardtextandheart img {
+  width: 29px;
+  height: 25px;
+}
 .card .content {
   display: flex;
   height: 38%;
   justify-content: space-between;
   align-items: center;
   padding: 19px;
+  flex-direction: column;
 }
 
 .card .text {
@@ -114,8 +120,34 @@ padding: 8px;
   color: #333;
   margin: -15px 0 0 0;
   line-height: 21px;
+  margin-top: -5px;
 }
 
+.cardhandelstartandprise{
+  display: flex;
+  gap: 50px;
+  margin-top: -10px;
+
+}
+.cardhandelstartandprise .stadprisersan{
+  color: #ffb854;
+  font-weight: bold;
+  font-size: 23px;
+  position: relative;
+  top: 15px;
+  display: flex
+  ;
+      gap: 10px
+
+}
+.cardhandelstartandprise h2{
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+  margin: 0;
+  text-align: right;
+ 
+}
 .card .price {
   font-size: 40px;
   font-weight: bold;
@@ -155,8 +187,7 @@ padding: 8px;
  
   transition: transform 0.2s, box-shadow 0.2s;
  
-  width: 151px;
- 
+  
 }
 
 .show-all-button:hover {
@@ -177,108 +208,381 @@ padding: 8px;
 }
 
 /* استعلامات الوسائط */
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .food-selection h2 {
-    font-size: 70px;
+    font-size: 55px;
   }
 
-  .navbar button {
-    width: 45px;
-    height: 50px;
-  }
+
+  .navbar22 {
+
+    width: 742px;
+    height: 83px;
+     
+}
 
   .card {
-    width: 260px;
-    height: 350px;
+    width: 227px;
+    height: 303px;
+    border-radius: 30px;
+            width: 227px;
+        height: 303px;
+        border-radius: 30px;
   }
 
   .cards {
     justify-content: space-evenly;
     gap: 20px;
   }
+  .card p {
+   
+    margin-top: -9px;
+  }
 
   .show-all-button {
     width: 140px;
     left: 25rem;
   }
+
+  .stadprisersan {
+    color: #ffb854;
+     font-size: 16px;
+   
+    display: flex;
+    gap: 10px;
+  }
+
+  .cardhandelstartandprise .stadprisersan {
+    color: #ffb854;
+    font-weight: bold;
+    font-size: 23px;
+    position: relative;
+    top: 11px;
+    display: flex
+;
+    gap: 1px;
+}
+.cardhandelstartandprise h2 {
+  font-size: 37px;
+}
+  .card h3 {
+    font-size: 21px;
+  }
+  
 }
 
-@media (max-width: 992px) {
-  .food-selection h2 {
-    font-size: 60px;
-  }
-
-  .navbar button {
-    width: 40px;
-    height: 45px;
-  }
-
-  .cards {
-    gap: 15px;
-    justify-content: center;
-  }
-
-  .card {
-    width: 220px;
-    height: 300px;
-  }
-
-  .show-all-button {
-    width: 130px;
-    left: 20rem;
-  }
-}
-
+/* استعلامات الوسائط */
 @media (max-width: 768px) {
   .food-selection h2 {
-    font-size: 50px;
+    font-size: 45px;
   }
 
-  .navbar button {
-    width: 40px;
-    height: 45px;
+
+  .navbar22 {
+
+    width: 642px;
+    height: 73px;
+     
+}
+
+  .card {
+    width: 450px;
+    height: 403px;
+    border-radius: 30px;
+     
+    border-radius: 30px;
+
+
+  }
+  .cardhandelstartandprise {
+    display: flex
+;
+    gap: 94px;
+    margin-top: 3px;
+}
+
+.card p {
+  margin-top: -7px;
+  font-size: 21px;
+}
+
+ 
+
+  .cardsection{
+    width: 900px;
+ overflow: hidden;
+    overflow-x: scroll;  /* تفعيل الاسكرول الأفقي */
+     scroll-behavior: smooth;  /* تجعل التمرير ناعماً */
+     max-width: 740px;
+     padding-left: 20px;
+     padding-right: 20px;
   }
 
   .cards {
-    gap: 15px;
-    flex-direction: row; /* ترتيب البطاقات في صفين */
+    overflow: hidden;
+    overflow-x: scroll;  /* تفعيل الاسكرول الأفقي */
+     scroll-behavior: smooth;  /* تجعل التمرير ناعماً */
+    display: flex;
     justify-content: space-evenly;
-  }
+    gap: -10px;
+    width: 1200px;
+    
+  
+   }
 
-  .card {
-    width: 45%; /* كل بطاقة تأخذ نصف العرض */
-    height: 280px;
+   .cardsection::-webkit-scrollbar {
+    display: none;
   }
-
+ 
   .show-all-button {
-    width: 120px;
-    left: 15rem;
+    width: 140px;
+    left: 25rem;
   }
+
+  .stadprisersan {
+    color: #ffb854;
+     font-size: 16px;
+   
+    display: flex;
+    gap: 10px;
+  }
+
+  .cardhandelstartandprise .stadprisersan {
+    color: #ffb854;
+    font-weight: bold;
+    font-size: 23px;
+    position: relative;
+    top: 11px;
+    display: flex
+;
+    gap: 1px;
+}
+.cardhandelstartandprise h2 {
+  font-size: 37px;
+}
+  .card h3 {
+    font-size: 27px;
+  }
+  
+}
+ 
+/* استعلامات الوسائط */
+@media (max-width: 425px) {
+  .food-selection h2 {
+    font-size: 35px;
+  }
+
+
+  .navbarscroll{
+    width: 425px;
+    min-width: 425px; 
+     overflow: hidden;
+    overflow-x: scroll;  /* تفعيل الاسكرول الأفقي */
+     scroll-behavior: smooth;  /* تجعل التمرير ناعماً */
+   
+  }
+
+
+  .navbar22 {
+
+    width: 742px;
+    height: 172px;
+    margin-bottom: -40px;
+    overflow: hidden;
+    overflow-x: scroll;  /* تفعيل الاسكرول الأفقي */
+     scroll-behavior: smooth;  /* تجعل التمرير ناعماً */
+     padding-left: 20px;
+     padding-right: 20px;
+     
 }
 
-@media (max-width: 480px) {
-  .food-selection h2 {
-    font-size: 40px;
-  }
+.navbarscroll::-webkit-scrollbar {
+  display: none;
+}
 
-  .navbar button {
-    width: 35px;
-    height: 40px;
+ 
+
+  .cardsection{
+    width: 900px;
+ overflow: hidden;
+    overflow-x: scroll;  /* تفعيل الاسكرول الأفقي */
+     scroll-behavior: smooth;  /* تجعل التمرير ناعماً */
+     max-width: 424px;
+     padding-left: 20px;
+     padding-right: 20px;
   }
 
   .cards {
-    flex-direction: column;
-    gap: 15px;
-    justify-content: center;
+    overflow: hidden;
+    overflow-x: scroll;  /* تفعيل الاسكرول الأفقي */
+     scroll-behavior: smooth;  /* تجعل التمرير ناعماً */
+    display: flex;
+    justify-content: space-evenly;
+    gap: -10px;
+    width: 1200px;
+    
+  
+   }
+
+   .card {
+    width: 350px;
+    height: 403px;
+    border-radius: 30px;
+     
+    border-radius: 30px;
+
+
   }
 
-  .card {
-    width: 90%; /* عرض البطاقة بنسبة كبيرة */
-    height: 250px;
+   .cardsection::-webkit-scrollbar {
+    display: none;
   }
+  .card p {
+    margin-top: -7px;
+    font-size: 21px;
+}
 
   .show-all-button {
-    width: 110px;
-    left: 10rem;
+    width: 140px;
+    left: 25rem;
   }
+
+  .stadprisersan {
+    color: #ffb854;
+     font-size: 16px;
+   
+    display: flex;
+    gap: 10px;
+  }
+
+  .cardhandelstartandprise .stadprisersan {
+    color: #ffb854;
+    font-weight: bold;
+    font-size: 23px;
+    position: relative;
+    top: 11px;
+    display: flex
+;
+    gap: 1px;
 }
+.cardhandelstartandprise h2 {
+  font-size: 37px;
+}
+.card h3 {
+  font-size: 27px;
+}
+   
+ 
+}
+ 
+/* استعلامات الوسائط */
+@media (max-width: 375px) {
+  .food-selection h2 {
+    font-size: 35px;
+    margin-bottom: -5px;
+  }
+
+
+  .navbarscroll{
+    width: 375px;
+    min-width: 375px; 
+     overflow: hidden;
+    overflow-x: scroll;  /* تفعيل الاسكرول الأفقي */
+     scroll-behavior: smooth;  /* تجعل التمرير ناعماً */
+   
+  }
+
+
+  .navbar22 {
+
+    width: 742px;
+    height: 132px;
+    margin-top: 5px;
+    margin-bottom: -20px;
+    overflow: hidden;
+    overflow-x: scroll;  /* تفعيل الاسكرول الأفقي */
+     scroll-behavior: smooth;  /* تجعل التمرير ناعماً */
+     padding-left: 20px;
+     padding-right: 20px;
+     
+}
+
+.navbarscroll::-webkit-scrollbar {
+  display: none;
+}
+
+ 
+
+  .cardsection{
+    width: 900px;
+ overflow: hidden;
+    overflow-x: scroll;  /* تفعيل الاسكرول الأفقي */
+     scroll-behavior: smooth;  /* تجعل التمرير ناعماً */
+     max-width: 375px;
+     padding-left: 20px;
+     padding-right: 20px;
+  }
+
+  .cards {
+    overflow: hidden;
+    overflow-x: scroll;  /* تفعيل الاسكرول الأفقي */
+     scroll-behavior: smooth;  /* تجعل التمرير ناعماً */
+    display: flex;
+    justify-content: space-evenly;
+    gap: -10px;
+    width: 1200px;
+    
+  
+   }
+
+   .card {
+    width: 350px;
+    height: 403px;
+    border-radius: 30px;
+     
+    border-radius: 30px;
+
+
+  }
+
+   .cardsection::-webkit-scrollbar {
+    display: none;
+  }
+  .card p {
+    margin-top: -7px;
+    font-size: 21px;
+}
+
+  .show-all-button {
+    width: 140px;
+    left: 25rem;
+  }
+
+  .stadprisersan {
+    color: #ffb854;
+     font-size: 16px;
+   
+    display: flex;
+    gap: 10px;
+  }
+
+  .cardhandelstartandprise .stadprisersan {
+    color: #ffb854;
+    font-weight: bold;
+    font-size: 23px;
+    position: relative;
+    top: 11px;
+    display: flex
+;
+    gap: 1px;
+}
+.cardhandelstartandprise h2 {
+  font-size: 37px;
+}
+.card h3 {
+  font-size: 27px;
+}
+   
+ 
+}
+ 
