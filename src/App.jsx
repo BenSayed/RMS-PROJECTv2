@@ -22,16 +22,16 @@ function App() {
 
   
       <Header />  
-    <Login/>
+ 
      
-      {/* <Routes>
+      <Routes>
        
 
         <Route path="/" element={<Home />} />  
         <Route path="/about" element={<AboutPage />} />  
         <Route path="/login" element={<Login/>} />  
 
-      </Routes> */}
+      </Routes>
       
       {/* <Footer />  */}
     </div>
