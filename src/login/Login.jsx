@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Login.css";
-import Header from "/src/Component/Header/Header";
-import axios from "axios";
+ import axios from "axios";
 
 import eyeImage from "./Mdi_eye-outline.svg";
 import imgegoogel from "./google .svg";
