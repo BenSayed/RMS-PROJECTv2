@@ -8,12 +8,12 @@ import axios from "axios";
 import SignUp from "./Sign up/SignUp";
  
  
-const api = axios.create({
-  baseURL: 'http://flavorhaven.runasp.net/api/User/Login', // استبدلها بالرابط الصحيح
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
+// const api = axios.create({
+//   baseURL: 'http://flavorhaven.runasp.net/api/User/Login', // استبدلها بالرابط الصحيح
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+// });
 
 
 function App() {

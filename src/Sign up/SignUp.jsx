@@ -34,7 +34,8 @@ const SignUp = () => {
       return;
     }
     try {
-      const response = await axios.post("/api/User/Register", {
+      
+      const response = await axios.post("http://localhost:5174/api/User/Register", {
         firstName: formData.firstName,
         lastName: formData.lastName,
         email: formData.email,
