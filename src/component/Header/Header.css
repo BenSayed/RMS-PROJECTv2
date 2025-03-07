@@ -479,7 +479,19 @@ button.icon-menu{
    
 }
 .HeaderContinent{
-  width: 330px;
+  width: 410px;
 }
  
+}
+@media (max-width: 375px) {
+  .HeaderContinent{
+    width: 362px;
+  }
+
+}
+@media (max-width: 375px) {
+  .HeaderContinent{
+    width: 338px;
+  }
+
 }

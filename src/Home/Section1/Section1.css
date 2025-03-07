@@ -641,3 +641,251 @@ button.mic-button img {
   align-items: center;
 }
 }
+
+@media (max-width: 320px) {
+  .cotiner_img img {
+    width: 300px;
+    height: 488px;
+    object-fit: cover;
+    border-radius: 48px;
+         
+    border-radius: 28px;
+    object-position: 50% 40%;
+ }
+
+.cotiner_img {
+ 
+  margin-top: -900px;
+}
+.textconteiner{
+  display: flex;
+  align-items: center;
+  margin-top: -30px;
+  
+}
+ 
+.textconteiner p {
+ 
+   width: 300px;
+   height: 38px;
+   
+
+ 
+font-size: 13px;
+line-height: 100%;
+letter-spacing: -4%;
+text-align: center;
+
+
+}
+.Titletextconteiner{
+  width: 361px;
+  height: 160px;
+  display: block;
+  
+
+}
+.Titletextconteiner h1 {
+  font-weight: 700;
+  font-size: 55px;
+  white-space: pre-line;
+  margin-bottom: -60px;
+  margin-top: -10px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+margin-top: -10px;
+position: absolute;
+ }
+
+
+.search-bar {
+  display: flex
+;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 4px 4px 4px 16px;
+  margin-bottom: 16px;
+  border-radius: 16px;
+ 
+  
+  width: 340px;
+height: 52px;
+ 
+
+}
+
+.primary-button {
+   background-color: #ff9500;
+  color: #000000;
+  font-family: "Inter", serif;
+   text-align: center;
+   font-size: 10px;
+}
+button.secondary-button{
+  color: #000000;
+  font-family: "Inter", serif;
+  font-size: 11px;
+  text-align: center;
+  white-space: nowrap;
+}
+.button-container .button {
+  width: 130px;
+  height: 60px;
+   
+}
+
+button.mic-button {
+  background-color: #151716;
+  width: 50px;
+  height: 46px;
+  padding: 10px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+}
+button.mic-button img {
+   width: 20px;
+  height: 26px;
+ 
+  cursor: pointer;
+}
+.button-container .button {
+  width: 141px;
+  height: 48px;
+  font-size: 17px;
+}
+.container22 {
+  position: relative;
+  top: -9.0rem;
+  display: flex
+;
+  flex-direction: column;
+  align-items: center;
+}
+}
+
+
+
+@media (max-width: 375px) {
+  .cotiner_img img {
+    width: 250px;
+    height: 488px;
+    object-fit: cover;
+    border-radius: 48px;
+         
+    border-radius: 28px;
+    object-position: 50% 40%;
+ }
+
+.cotiner_img {
+ 
+  margin-top: -103px;
+}
+.textconteiner{
+  display: flex;
+  align-items: center;
+  margin-top: -35px;
+  
+}
+ 
+.textconteiner p {
+ 
+   width: 250px;
+   height: 38px;
+   
+
+ 
+font-size: 12px;
+line-height: 100%;
+letter-spacing: -4%;
+text-align: center;
+
+
+}
+.Titletextconteiner{
+  width: 361px;
+  height: 160px;
+  display: block;
+  
+
+}
+.Titletextconteiner h1 {
+  font-weight: 700;
+  font-size: 44px;
+  white-space: pre-line;
+  margin-bottom: -60px;
+  margin-top: -10px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+margin-top: -10px;
+position: absolute;
+ }
+
+
+.search-bar {
+  display: flex
+;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 4px 4px 4px 16px;
+  margin-bottom: 16px;
+  border-radius: 16px;
+ 
+  
+  width: 300px;
+height: 52px;
+ 
+
+}
+
+.primary-button {
+   background-color: #ff9500;
+  color: #000000;
+  font-family: "Inter", serif;
+   text-align: center;
+   font-size: 10px;
+}
+button.secondary-button{
+  color: #000000;
+  font-family: "Inter", serif;
+  font-size: 11px;
+  text-align: center;
+  white-space: nowrap;
+}
+.button-container .button {
+  width: 1px;
+  height: 60px;
+   
+}
+
+button.mic-button {
+  background-color: #151716;
+  width: 50px;
+  height: 46px;
+  padding: 10px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+}
+button.mic-button img {
+   width: 20px;
+  height: 26px;
+ 
+  cursor: pointer;
+}
+.button-container .button {
+  width: 141px;
+  height: 48px;
+  font-size: 17px;
+}
+.container22 {
+  position: relative;
+  top: -9.0rem;
+  display: flex
+;
+  flex-direction: column;
+  align-items: center;
+}
+}
