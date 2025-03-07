@@ -2,11 +2,18 @@ import React, { useState } from "react";
 import "./Header.css";
 import Headerimg1 from "/public/Logo 1.svg";
 import Headerimg2 from "/HeaderIMG/akar-icons_cart.svg";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const location = useLocation();
   const [shomodel, setshomodel] = useState(false);
+
+  const navigate = useNavigate(); // استخدام دالة التنقل
+
+  // دالة للانتقال إلى صفحة تسجيل الدخول
+  const handleLoginClick = () => {
+    navigate('/login'); // عند الضغط على الزر سيتم الانتقال إلى /login
+  };
 
   return (
     <div className="Headerall">
@@ -72,7 +79,7 @@ const Header = () => {
                 alt=""
               />
             </Link>
-            <button className="HeaderContinentlogoButton1">login</button>
+            <button className="HeaderContinentlogoButton1"  onClick={handleLoginClick} >login</button>
             <button  
              onClick={ ( ) => {
               setshomodel (true)

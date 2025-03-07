@@ -1,0 +1,580 @@
+.sectionlogin {
+
+}
+
+.sectionlogin1{
+ padding: 44px;
+}
+.PageLogin {
+   font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+.PageLogincontainer {
+  display: flex;
+  width: 1312px;
+  height: 728px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 33px;
+  overflow: hidden;
+  background-color: #fff4e6;
+ padding: 24px;
+ gap: 26px;
+align-items: center ;
+ 
+}
+
+.border{
+  border: 1px solid crimson;
+}
+.PageLoginform-section {
+  width: 520px;
+  height: 526px;
+ display: flex;
+ flex-direction: column;
+  
+  
+}
+.formatcontenteeInput{
+  width: 520px;
+ 
+}
+.formatcontenteeInput h3{
+  font-family: "Inter", serif;
+font-weight: 400;
+font-size: 14px;
+line-height: 16.94px;
+letter-spacing: 0%;
+text-decoration: underline;
+text-decoration-style: solid;
+ color: #FF9500;
+text-decoration-thickness: Auto;
+ margin-top: -10px;
+ margin-bottom: 15px;
+}
+ 
+.PageLoginform-section input[type="email"],
+.PageLoginform-section input[type="password"] {
+  width: 520px;
+  height: 52px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ff9500;
+  border-radius: 16px;
+  font-size: 16px;
+  position: relative;
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-container input {
+  width: 100%;
+}
+
+.password-container .eye-icon {
+  position: absolute;
+  top: 27px;
+  right: 20px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+
+.eye-icon {
+  cursor: pointer;
+}
+
+.PageLoginform-section .remember {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.PageLoginform-section .remember input[type="checkbox"] {
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border: 2px solid #ff9500;
+  border-radius: 4px;
+  appearance: none;
+  outline: none;
+}
+
+.remember input[type="checkbox"]:checked {
+  background-color: #ff9500;
+  border-color: #ff9500;
+}
+
+.remember input[type="checkbox"]:hover {
+}
+
+.PageLoginform-section button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff9500;
+  color: #787373;
+  border-radius: 60px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.PageLoginform-section button:hover {
+  background-color: #efc96d;
+}
+
+.PageLoginform-section .social-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.social-buttons button {
+  flex: 1;
+  margin: 0 12px;
+  padding: 15px 20px;
+  border: 1px solid #ff9500;
+  background-color: white;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 247px;
+  height: 52px;
+}
+
+.social-buttons button img {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  margin-right: 5px;
+  position: relative;
+  top: 0px;
+}
+
+.PageLoginform-section .login-btn {
+  margin-top: 20px;
+width: 520px;
+  height: 59px;
+  padding: 12px;
+  background-color: #ff9500;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.PageLoginform-section.login-btn img {
+  width: 15px;
+  height: 15px;
+  margin-left: 10px;
+}
+
+.PageLoginform-section .login-btn:hover {
+  background-color: #e65a00;
+}
+
+.image-section020 {
+   
+  border-radius: 48px;
+}
+
+.image-section020 img{
+  width: 728px;
+  height: 680px;
+  border-radius: 48px;
+  margin-bottom: -15px;
+}
+
+
+.lineDive {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin-left: -10px;
+}
+
+.lineDive img {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.lineDive h3 {
+  font-size: 16px;
+  font-family: "Inter", serif;
+  color: #151716d3;
+  white-space: nowrap;
+}
+
+.welcome-text {
+  width: 520px;
+ margin-top: -67px;
+
+}
+
+.welcome-text h1{
+  font-family: "Cormorant Upright", serif;
+
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 77.5px;
+  letter-spacing: 0%;
+  color: #151716;
+}
+.welcome-text p{
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24.2px;
+  letter-spacing: 0%;
+  font-family: "Inter", serif;
+  color: #151716;
+  margin-top: -55px;
+  
+}
+
+.welcome-text a{
+  color: #FF9500
+}
+.formatcontentee{
+  width: 520px;
+height: 384px;
+ 
+}
+/* Responsive design */
+
+@media (max-width: 1440px) {
+
+  .sectionlogin1 {
+    padding: 25px;
+}
+.PageLogincontainer {
+ 
+  width: 1250px;
+}
+
+.image-section020 img {
+  width: 649px;
+   object-fit: cover;
+   object-position: center 5px ;
+ 
+}
+ 
+}
+
+
+@media (max-width: 1420px) {
+
+  .sectionlogin1 {
+    padding: 25px;
+}
+.PageLogincontainer {
+  width: 1114px;
+ }
+
+.image-section020 img {
+  width: 530px;
+  height: 692px;
+  object-fit: cover;
+  object-position: right;
+}
+ 
+}
+
+ 
+ 
+
+ 
+@media (max-width: 1024px) {
+
+   
+  .PageLoginform-section {
+    width: 408px;
+}
+  .formatcontenteeInput {
+    width: 408px;
+
+  }
+
+  .PageLoginform-section input[type="email"], .PageLoginform-section input[type="password"] {
+    width: 412px;
+
+  .sectionlogin1 {
+    padding: 25px;
+}
+  }
+
+  .PageLoginform-section .social-buttons {
+   
+    width: 420px;
+
+  }
+  .PageLoginform-section .login-btn {
+     width: 414px;
+  }
+
+  .lineDive img {
+ 
+    width: 137px;
+  }
+
+ 
+.PageLogincontainer {
+  width: 804px;
+  height: 671px;
+}
+
+.image-section020 img {
+  width: 330px;
+  height: 620px;
+  object-fit: cover;
+}
+}
+
+
+@media (max-width: 768px) {
+
+
+  .image-section020 img {
+     display: none;
+  }
+
+  .PageLoginform-section {
+    width: 481px;
+    margin-left: 50px;
+}
+.PageLogincontainer {
+  width: 549px;
+  height: 671px;
+}
+
+}
+
+
+@media (max-width: 430px) {
+
+
+  .welcome-text h1 {
+    font-family: "Cormorant Upright", serif;
+    font-weight: 700;
+    font-size: 41px;
+
+  }
+
+  .welcome-text {
+    width: 520px;
+ 
+    margin-left: 39px;
+}
+.formatcontenteeInput {
+  width: 344px;
+  margin-left: 40px;
+}
+
+
+.PageLoginform-section input[type="email"], .PageLoginform-section input[type="password"] {
+  width: 308px;
+}
+
+  .image-section020 img {
+     display: none;
+  }
+
+  .PageLoginform-section {
+    width: 481px;
+    margin-left: -50px;
+}
+
+
+
+
+.PageLogincontainer {
+  width: 329px;
+ 
+}
+
+
+
+.PageLoginform-section {
+  width: 408px;
+}
+.formatcontenteeInput {
+  width: 408px;
+
+}
+
+.welcome-text p {
+ 
+  font-size: 18px;
+   
+  margin-top: -46px;
+}
+.formatcontenteeInput {
+  width: 314px;
+}
+
+.PageLoginform-section .social-buttons {
+ 
+  width: 420px;
+
+}
+.PageLoginform-section .login-btn {
+   width: 414px;
+}
+
+ 
+.lineDive img {
+  width: 100px;
+}
+.lineDive {
+  display: flex
+;
+  align-items: center;
+  justify-items: center;
+  margin-left: 35px;
+}
+
+.PageLogincontainer {
+width: 804px;
+height: 671px;
+}
+
+.image-section020 img {
+width: 330px;
+height: 620px;
+object-fit: cover;
+}
+.PageLoginform-section .social-buttons {
+  width: 275px;
+  margin-left: 50px;
+}
+
+.PageLoginform-section .login-btn {
+  width: 300px;
+  margin-left: 50px;
+  font-size: 20px;
+
+}
+}
+
+
+
+
+@media (max-width: 375px) {
+
+
+  .welcome-text h1 {
+    font-family: "Cormorant Upright", serif;
+    font-weight: 700;
+    font-size: 34px;
+
+  }
+
+  .welcome-text {
+    width: 520px;
+ 
+    margin-left: 39px;
+}
+.formatcontenteeInput {
+  width: 257px;
+ }
+
+ 
+
+.PageLoginform-section input[type="email"], .PageLoginform-section input[type="password"] {
+  width: 256px;
+}
+
+  .image-section020 img {
+     display: none;
+  }
+
+  .PageLoginform-section {
+    width: 481px;
+    margin-left: -50px;
+}
+
+
+
+
+.PageLogincontainer {
+  width: 329px;
+ 
+}
+
+
+
+.PageLoginform-section {
+  width: 408px;
+}
+.formatcontenteeInput {
+  width: 257px;
+
+}
+
+.welcome-text p {
+ 
+  font-size: 16px;
+   
+  margin-top: -46px;
+}
+ 
+
+.PageLoginform-section .social-buttons {
+ 
+  width: 420px;
+
+}
+.PageLoginform-section .login-btn {
+   width: 414px;
+}
+
+ 
+.lineDive img {
+  width: 86px;
+}
+.lineDive {
+  display: flex
+;
+  align-items: center;
+  justify-items: center;
+  margin-left: 23px;
+}
+
+.lineDive h3 {
+  font-size: 15px;
+}
+.PageLogincontainer {
+width: 804px;
+height: 671px;
+}
+
+.image-section020 img {
+width: 330px;
+height: 620px;
+object-fit: cover;
+}
+.PageLoginform-section .social-buttons {
+  width: 275px;
+  margin-left: 24px;
+  margin-top: 5px;
+}
+
+.PageLoginform-section .login-btn {
+  width: 273px;
+  margin-left: 39px;
+  font-size: 20px;
+
+}
+}
+

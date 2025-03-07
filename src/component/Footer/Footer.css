@@ -41,9 +41,15 @@ text-align: center;
 
 .email-subscribe00 {
   margin: px 0;
-  position: relative;
-  left: 3.2rem;
+   
   gap: 10px;
+}
+
+
+.email-subscribe00 {
+ position: relative;
+
+ left: 50px;
 }
 
 .email-subscribe00 input {
@@ -139,5 +145,10 @@ footer p {
   text-align: center;
 }
 
+.email-subscribe00 {
+  margin: 0px;
+  position: none;
+ 
+}
 
 }
