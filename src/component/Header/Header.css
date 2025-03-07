@@ -171,7 +171,8 @@ padding-top: 0.2rem;
 
 
 }
-.fixed ul.model li :hover,:last-child {
+ 
+header.fixed ul.model li:last-child {
    color: wheat;
    border-bottom: none;
 
@@ -194,6 +195,7 @@ text-align: center;
 }
 header .icon-clear {
    all: unset;
+   color: wheat;
  
 }
  header .icon-clear:active{
@@ -201,7 +203,6 @@ scale :0.9 ;
  }
  header .icon-clear:hover{
  border: none;
-  
 cursor: pointer;
 
  }

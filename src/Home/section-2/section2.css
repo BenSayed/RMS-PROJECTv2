@@ -7,7 +7,7 @@
   width: 100%;
   min-height: 450px; /* الحد الأدنى للارتفاع */
   height: auto; /* السماح للارتفاع بالتكيف مع المحتوى */
-   margin-top: -1rem;
+   margin-top: -8rem;
    padding-left: 44px;
    padding-right: 44px;
 }
@@ -144,8 +144,8 @@ img.no-style {
   }
 
   .feature {
-    width: 100%;
-    max-width: 351px;
+   
+   
   
 
     width: 361px;
