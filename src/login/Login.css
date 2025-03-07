@@ -462,7 +462,8 @@ object-fit: cover;
 .PageLoginform-section .login-btn {
   width: 300px;
   margin-left: 50px;
-  font-size: 20px;
+ 
+  font-size: 16px;
 
 }
 
@@ -488,7 +489,7 @@ object-fit: cover;
   .welcome-text {
     width: 520px;
  
-    margin-left: 39px;
+    margin-left: 67px;
 }
 .formatcontenteeInput {
   width: 257px;
@@ -578,7 +579,7 @@ object-fit: cover;
 .PageLoginform-section .login-btn {
   width: 273px;
   margin-left: 39px;
-  font-size: 20px;
+  font-size: 16px;
 
 }
  
