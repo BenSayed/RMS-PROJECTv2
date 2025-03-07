@@ -81,8 +81,7 @@ function Login() {
               <div className="lineDive  ">
                 <img src={imgline} alt="" />
                 <h3>or login with</h3>
-                <img src="src/LoginPage/login/Line 16.svg" alt="" />
-              </div>
+                <img src={imgline} alt="" />              </div>
 
               <div className="social-buttons  ">
                 <button>
