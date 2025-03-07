@@ -8,13 +8,15 @@ import imgiphone from "./apple .svg";
 import imglin6 from "./Line 16.svg";
 import imgline from "./Line 17.svg";
 import Recting from "./Rectangle 1162.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // استيراد useNavigate
 
 function Login() {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+
+  const navigate = useNavigate(); // تهيئة الدالة navigate
 
   const togglePassword = () => {
     setPasswordVisible(!passwordVisible);
@@ -37,7 +39,7 @@ function Login() {
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
         alert("Login successful!!");
-        window.location.href = "/Home";
+        navigate("/"); // استخدام navigate للتوجيه إلى الصفحة الرئيسية
       } else {
         setError("Login failed. Please check your credentials.");
       }
@@ -57,8 +59,8 @@ function Login() {
               <div className="welcome-text">
                 <h1>Welcome again!</h1>
                 <p>
-  Don’t have an account? <Link to="/SignUp">Sign up</Link>
-</p>
+                  Don’t have an account? <Link to="/SignUp">Sign up</Link>
+                </p>
               </div>
               <form onSubmit={handleLogin} className="formatcontentee">
                 {error && <p style={{ color: "red" }}>{error}</p>}
