@@ -7,7 +7,9 @@
   width: 100%;
   min-height: 450px; /* الحد الأدنى للارتفاع */
   height: auto; /* السماح للارتفاع بالتكيف مع المحتوى */
-   margin-top: 10rem;
+   margin-top: -1rem;
+   padding-left: 44px;
+   padding-right: 44px;
 }
 
 .features-container {
@@ -88,23 +90,22 @@ img.no-style {
 /* استعلامات الوسائط للأجهزة الصغيرة */
 @media (max-width: 768px) {
   .section2 {
-    padding: 30px 0;
-    height: auto; /* السماح للارتفاع بالتكيف */
-  }
+    margin-top: -19rem;
+   }
 
   h2 {
     font-size: 48px; /* تقليص حجم الخط للأجهزة الصغيرة */
   }
 
   .features {
-    gap: 16px;
+    gap: 55px;
   }
 
   .feature {
     width: 100%;
     max-width: 356px;
     padding: 24px;
-    height: auto;
+    height: 430px;
   }
 
   .feature img {
@@ -114,21 +115,50 @@ img.no-style {
   }
 
   .feature p {
-    font-size: 18px;
+    font-size: 30px;
   }
 }
 
-/* في حال كانت الشاشات أصغر من 500px */
-@media (max-width: 500px) {
+ 
+@media (max-width: 375px) {
+  .section2 {
+    margin-top: -80px;
+   }
+
   h2 {
-    font-size: 40px; /* حجم أصغر */
+    font-size: 48px; /* تقليص حجم الخط للأجهزة الصغيرة */
   }
 
-  .feature p {
-    font-size: 16px; /* تقليل حجم النصوص */
+  .features-container h2 {
+    font-size: 46px;
+    margin-bottom: -10px;
+}
+  .features {
+    gap: 16px;
+  }
+
+  .feature {
+    width: 100%;
+    max-width: 351px;
+  
+
+    width: 361px;
+height: 436.0393371582031px;
+gap: 16px;
+border-radius: 48px;
+border-width: 1px;
+padding: 48px;
+
   }
 
   .feature img {
-    max-width: 150px; /* تقليل حجم الصورة */
+    width: 80%;
+    max-width: 200px;
+    height: auto;
+  }
+
+  .feature p {
+    font-size: 24px;
   }
 }
+
