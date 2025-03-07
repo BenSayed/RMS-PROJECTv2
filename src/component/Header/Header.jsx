@@ -127,7 +127,9 @@ const Header = () => {
                 alt=""
               />
             </Link>
-            <button className="HeaderContinentlogoButton1mpdel" onClick={handleLoginClick} >login</button>
+            <button className="HeaderContinentlogoButton1mpdel" onClick={() => { handleLoginClick(); setshomodel(false); }}>
+  login
+</button>
             </div>
 
             </li>

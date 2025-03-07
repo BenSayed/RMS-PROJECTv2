@@ -478,7 +478,10 @@ object-fit: cover;
 
 @media (max-width: 375px) {
 
-
+  .formatcontentee P {
+    margin-left: 70px ;
+    font-size: 12px;
+   }
   .welcome-text h1 {
     font-family: "Cormorant Upright", serif;
     font-weight: 700;
