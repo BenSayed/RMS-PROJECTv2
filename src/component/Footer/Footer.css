@@ -116,3 +116,28 @@ bottom: px;
 footer p {
   margin: 0;
 }
+
+@media (max-width: 425px) {
+  .footer-menu0 {
+    margin: 6px 0;
+}
+
+.email-subscribe00 input {
+  padding: 10px;
+   border-radius: 16px;
+   width: 287px;
+  height: 54px;
+ 
+}
+.newsletter0 p {
+  margin: 15px 0;
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 43.57px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+
+}

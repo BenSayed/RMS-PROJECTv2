@@ -24,15 +24,18 @@ gap: 16px;
 .section5Contint1imgText{
   width: 720px;
 height: 649px;
- }
+display: flex;
+flex-direction: column;
+  }
 
 .section5Contint1imgText img{
-margin-top: -236px;
+margin-top: -160px;
 }
 
 .section5Contint1imgTexth1{
   width: 400px;
   height: 234px;
+ margin-top: -60px;
  
   
 }
@@ -43,6 +46,7 @@ margin-top: -236px;
   letter-spacing: 0%;
   text-align: center;
 color: #151716;
+margin-bottom: -60px;
 }
 .section5Contint1imgTexth112 {
   font-weight: 700;
@@ -51,6 +55,7 @@ color: #151716;
   letter-spacing: 0%;
   text-align: center;
 color: #FF9500;
+margin-bottom: -50px;
 ;
 }
 .section5Contint1imgTextimg h2 {
@@ -152,6 +157,8 @@ justify-content: space-between;
 border-radius: 48px;
 padding: 24px;
 background: #151716;
+
+align-items: center;
 
 }
 .section5Contint2 h2{
