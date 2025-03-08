@@ -73,7 +73,7 @@ const Section4 = () => {
                 <div className="content">
                   <div className="cardtextandheart">
                     <h3>{food.title}</h3>
-                    <img src={image36} alt="Heart Icon" />
+                    <img className="imgcardef" src={image36} alt="Heart Icon" />
                   </div>
 
                   <div className="cardpargraph">
@@ -100,7 +100,7 @@ const Section4 = () => {
             <Link to="/menu" className="show-all-button">
               <span>Show All</span>
               <div className="icon-container">
-                <img src={image35} alt="Arrow Icon" />
+                <img src={image35}  alt="Arrow Icon" />
               </div>
             </Link>
           </div>
