@@ -115,7 +115,7 @@ const Header = () => {
               <a className="linkmodel" href="">About</a>
             </li>
             <li>
-              <a className="linkmodel" href=""> Contact us </a>
+              <a className="linkmodel" href="/Contautus"> Contact us </a>
             </li>
 
             <li>
