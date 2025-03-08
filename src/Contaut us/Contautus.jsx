@@ -38,7 +38,7 @@ const Contautus = () => {
                   </div>
                 </div>
 
-                <button type="button" onClick={handleBackToHome}>Back to Home</button> {/* إضافة الحدث عند الضغط */}
+                <button style={{color : 'black' }} type="button" onClick={handleBackToHome}>Back to Home</button> {/* إضافة الحدث عند الضغط */}
               </form>
             </div>
           </div>

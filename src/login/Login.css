@@ -471,6 +471,10 @@ object-fit: cover;
   margin-left: 90px ;
   font-size: 12px;
  }
+ 
+ .PageLogincontainer {
+border-radius: 28px;
+ }
 }
 
 
