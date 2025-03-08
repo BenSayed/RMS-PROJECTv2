@@ -448,6 +448,10 @@ font-size: 14px;
 .TextBoxContautusForm button {
   width: 334px;
 }
+.ContautusPagecontinttextandform {
+ 
+  border-radius: 21px;
+}
 
 }
 
@@ -531,7 +535,10 @@ font-size: 14px;
 .TextBoxContautusForm button {
   width: 292px;
 }
-
+.ContautusPagecontinttextandform {
+ 
+  border-radius: 21px;
+}
 
 
 }

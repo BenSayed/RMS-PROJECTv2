@@ -15,6 +15,11 @@ const Header = () => {
     navigate('/login'); // عند الضغط على الزر سيتم الانتقال إلى /login
   };
 
+  // دالة لإغلاق المودال
+  const handleLinkClick = () => {
+    setshomodel(false); // إغلاق المودال عند النقر على أي رابط
+  };
+
   return (
     <div className="Headerall">
       <header className="Header">
@@ -79,73 +84,66 @@ const Header = () => {
                 alt=""
               />
             </Link>
-            <button className="HeaderContinentlogoButton1"  onClick={handleLoginClick} >login</button>
-            <button  
-             onClick={ ( ) => {
-              setshomodel (true)
-              
-             } }
-              
-           className="icon-menu"></button>
+            <button className="HeaderContinentlogoButton1" onClick={handleLoginClick}>login</button>
+            <button
+              onClick={() => {
+                setshomodel(true);
+              }}
+              className="icon-menu"
+            ></button>
 
+            {shomodel && (
+              <div className="fixed">
+                <ul className="model">
+                  <li>
+                    <button
+                      className="icon-clear"
+                      onClick={() => {
+                        setshomodel(false); // إغلاق المودال عند الضغط على زر "icon-clear"
+                      }}
+                    ></button>
+                  </li>
+                  <li>
+                    <Link className="linkmodel" to="/" onClick={handleLinkClick}>Home</Link>
+                  </li>
+                  <li>
+                    <Link className="linkmodel" to="/menu" onClick={handleLinkClick}>Menu</Link>
+                  </li>
+                  <li>
+                    <Link className="linkmodel" to="/reservation" onClick={handleLinkClick}>Reservation</Link>
+                  </li>
+                  <li>
+                    <Link className="linkmodel" to="/About" onClick={handleLinkClick}>About</Link>
+                  </li>
+                  <li>
+                    <Link className="linkmodel" to="/Contautus" onClick={handleLinkClick}>Contact us</Link>
+                  </li>
 
-            
-            {shomodel && (   
-              
-        <div className="fixed"> 
-          <ul className="model">  
-            <li>
-              <button
-                className="icon-clear" 
-                onClick={() => {
-                  setshomodel(false);
-                }}
-              ></button>
-            </li>
-            <li>
-              <a className="linkmodel" href=""> Home </a>
-            </li>
-            <li>
-              <a className="linkmodel" href=""> Menu </a>
-            </li>
-            <li>
-              <a className="linkmodel" href="">Reservation</a>
-            </li>
-            <li>
-              <a className="linkmodel" href="">About</a>
-            </li>
-            <li>
-              <a className="linkmodel" href="/Contautus"> Contact us </a>
-            </li>
-
-            <li>
-            <div className="HeaderContinentlogoButtonModel">
-            <Link to="/#">
-              <img
-                className="HeaderContinentlogoButton2model"
-                src={Headerimg2}
-                alt=""
-              />
-            </Link>
-            <button className="HeaderContinentlogoButton1mpdel" onClick={() => { handleLoginClick(); setshomodel(false); }}>
-  login
-</button>
-            </div>
-
-            </li>
-            
-          </ul>
-            </div>
-
-)}
-            
-        </div> 
-
-
+                  <li>
+                    <div className="HeaderContinentlogoButtonModel">
+                      <Link to="/#">
+                        <img
+                          className="HeaderContinentlogoButton2model"
+                          src={Headerimg2}
+                          alt=""
+                        />
+                      </Link>
+                      <button
+                        className="HeaderContinentlogoButton1mpdel"
+                        onClick={() => {
+                          handleLoginClick();
+                          setshomodel(false); // إغلاق المودال بعد النقر على login
+                        }}
+                      >
+                        login
+                      </button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
-       
-
-       
+        </div>
       </header>
     </div>
   );
