@@ -61,8 +61,8 @@ const Header = () => {
                   </li>
                   <li>
                     <Link
-                      to="/contact"
-                      className={`navbar-item ${location.pathname === "/contact" ? "active" : ""}`}
+                      to="/Contautus"
+                      className={`navbar-item ${location.pathname === "/Contautus" ? "active" : ""}`}
                     >
                       Contact us
                     </Link>

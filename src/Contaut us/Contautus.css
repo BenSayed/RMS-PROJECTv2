@@ -1,0 +1,537 @@
+
+
+.ContautusPage{
+  display: flex;
+  justify-content: center;
+  padding: 22px 88px;
+  width: 100%;
+  height: auto;
+}
+.ContautusPagecontint{
+   width: 100%;
+  gap: 16px;
+  height: auto;
+  display: flex;
+   align-items: center;
+  justify-content: center;
+
+}
+.border{
+  border: 1px solid crimson;
+}
+.ContautusPagecontinttextandform{
+  width: 571px;
+  height: 621px;
+ background-color: #FFF4E6;
+  border-radius: 48px;
+  padding: 24px;
+  
+}
+ 
+ 
+.ContautusPagecontintimg img {
+  width: 725px;
+height: 621px;
+object-fit: cover;
+border-radius: 48px;
+
+
+}
+
+.ContautusPagecontinttextandformgroup{
+  width: 523px;
+height: 573px;
+gap: 32px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+.TextBoxContautus{
+  width: 523px;
+  height: 110px;
+  min-height: 110px;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  
+}
+.TextBoxContautus h2 {
+  font-family: "Cormorant Upright", serif;
+  font-weight: 700;
+font-size: 64px;
+line-height: 100%;
+letter-spacing: 0%;
+color: #151716;
+margin-top: 5px;
+ 
+}
+.TextBoxContautus p{
+ font-weight: 400;
+font-size: 20px;
+line-height: 100%;
+letter-spacing: 0%;
+ font-family: "Inter", serif;
+ color: #151716;
+ margin-top: -50px;
+}
+
+.TextBoxContautusForm{
+  width: 523px;
+height: 431px;
+
+gap: 24px;
+
+  
+}
+.TextBoxContautusForm form{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.FormContautusIndex1{
+  width: 523px;
+  height: 52px;
+  display: flex;
+  gap: 16px;
+  
+}
+.FormContautusIndex1 input{
+  width: 253.5px;
+  height: 52px;
+  gap: 10px;
+  border-radius: 16px;
+  border-width: 1px;
+  padding-top: 2px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+  padding-left: 16px;
+  border: 1px solid #FF9500;
+}
+.FormContautusIndex2{
+width: 523px;
+height: 264px;
+display: flex;
+flex-direction: column;
+gap: 16px;
+}
+.FormContautusIndex2 input{
+  width: 523px;
+  height: 52px;
+  gap: 10px;
+  border-radius: 16px;
+  border-width: 1px;
+  padding-top: 2px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+  padding-left: 16px;
+  border: 1px solid #FF9500;
+
+  
+}
+.FormContautusIndex2 textarea{
+  width: 523px;
+  height: 96px;
+  gap: 10px;
+  border-radius: 16px;
+  border-width: 1px;
+  padding-top: 16px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+  padding-left: 16px;
+  border: 1px solid #FF9500;
+
+
+   margin-bottom: 20px;
+
+}
+.checkboxform{
+  width: 327px;
+height: 24px;
+ margin-bottom: 20px;
+  display: flex;
+ 
+   align-items: center;
+   justify-content: center;
+   margin-top: -10px;
+   margin-left: -0px;
+}
+
+
+.checkboxform input {
+  width: 20px;
+  width: 20px;
+  
+}
+.checkboxform label{
+font-family: "Inter", serif;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+letter-spacing: 0%;
+text-align: center;
+ 
+ }
+
+form  input[type="checkbox"]:checked + .checkboxform1 {
+  background-color: #ffe600; /* اللون عند التحديد */
+ }
+
+/* إضافة علامة صح عند التحديد */
+ form input[type="checkbox"]:checked + .checkboxform1::before {
+  content: "✔";
+  position: absolute;
+  top: 0;
+  left: 4px;
+  color: rgb(187, 12, 12);
+  font-size: 16px;
+}
+.TextBoxContautusForm button{
+  width: 523px;
+height: 59px;
+gap: 8px;
+border-radius: 16px;
+padding: 16px;
+
+background-color: #FF9500;
+border: none;
+font-family: "Inter", serif;
+font-weight: 500;
+font-size: 18px;
+line-height: 27px;
+letter-spacing: 0%;
+text-align: center;
+cursor: pointer;
+
+}
+
+@media (max-width: 1250px) {
+
+  .ContautusPagecontintimg img {
+    width: 440px;
+  }
+
+}
+@media (max-width: 1024px) {
+
+  .ContautusPagecontintimg img {
+    width: 440px;
+  }
+  
+  .ContautusPagecontinttextandformgroup {
+    width: 328px;
+  }
+  .TextBoxContautus {
+    width: 336px;
+    height: 110px;
+    min-height: 110px;
+    gap: 8px;
+    display: flex
+;
+    flex-direction: column;
+  }
+  .TextBoxContautus h2 {
+    font-family: "Cormorant Upright", serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #151716;
+    margin-top: 33px;
+  }
+  .TextBoxContautus p {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    font-family: "Inter", serif;
+    color: #151716;
+    margin-top: -34px;
+}
+.FormContautusIndex1 input {
+  width: 162.5px;
+}
+.TextBoxContautusForm {
+  width: 329px;
+}
+.FormContautusIndex1 {
+  width: 162px;
+  gap: 9px;
+}
+.FormContautusIndex2 {
+  width: 344px;
+}
+.FormContautusIndex2 input {
+  width: 336px;
+  height: 104px;
+}
+.TextBoxContautusForm form {
+  display: flex
+;
+  flex-direction: column;
+  gap: 9px;
+}
+.FormContautusIndex2 textarea {
+  width: 336px;
+}
+form .checkboxform input {
+  width: 19px;
+}
+form .checkboxform {
+  gap: 3px;
+}
+form .checkboxform label {
+font-size: 14px;
+}
+.TextBoxContautusForm button {
+  width: 334px;
+}
+
+}
+
+@media (max-width: 768px) {
+
+  .ContautusPagecontintimg {
+  display: none;
+  }
+  
+  .ContautusPagecontinttextandformgroup {
+    width: 531px;
+  }
+  .TextBoxContautus {
+    width: 336px;
+    height: 110px;
+    min-height: 110px;
+    gap: 8px;
+    display: flex
+;
+text-align: center;
+    flex-direction: column;
+  }
+  .TextBoxContautus h2 {
+    font-family: "Cormorant Upright", serif;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #151716;
+    margin-top: 33px;
+  }
+  .TextBoxContautus p {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    font-family: "Inter", serif;
+    color: #151716;
+    margin-top: -34px;
+}
+.FormContautusIndex1 input {
+  width: 204.5px;
+}
+.TextBoxContautusForm {
+  width: 329px;
+}
+.FormContautusIndex1 {
+  width: 162px;
+  gap: 9px;
+}
+.FormContautusIndex2 {
+  width: 344px;
+}
+.FormContautusIndex2 input {
+  width: 388px;
+}
+.TextBoxContautusForm form {
+  display: flex
+
+;
+margin-left: -30px;
+
+  flex-direction: column;
+  gap: 9px;
+}
+.FormContautusIndex2 textarea {
+  width: 388px;
+}
+form .checkboxform input {
+  width: 19px;
+}
+form .checkboxform {
+  gap: 3px;
+}
+form .checkboxform label {
+font-size: 14px;
+}
+.TextBoxContautusForm button {
+  width: 388px;
+}
+
+}
+
+
+
+@media (max-width: 425px) {
+
+  .ContautusPagecontintimg {
+    display: none;
+  }
+  
+  .ContautusPagecontinttextandformgroup {
+    width: 328px;
+  }
+  .TextBoxContautus {
+    width: 336px;
+    height: 110px;
+    min-height: 110px;
+    gap: 8px;
+    display: flex
+;
+margin-bottom: -20px;
+    flex-direction: column;
+  }
+  .TextBoxContautus h2 {
+    font-family: "Cormorant Upright", serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #151716;
+    margin-top: 33px;
+  }
+  .TextBoxContautus p {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    font-family: "Inter", serif;
+    color: #151716;
+    margin-top: -34px;
+}
+.FormContautusIndex1 input {
+  width: 162.5px;
+}
+.TextBoxContautusForm {
+  width: 329px;
+  margin-left: 50px;
+}
+.FormContautusIndex1 {
+  width: 162px;
+  gap: 9px;
+}
+.FormContautusIndex2 {
+  width: 344px;
+}
+.FormContautusIndex2 input {
+  width: 336px;
+  height: 104px;
+}
+.TextBoxContautusForm form {
+  display: flex
+;
+  flex-direction: column;
+  gap: 9px;
+}
+.FormContautusIndex2 textarea {
+  width: 336px;
+}
+form .checkboxform input {
+  width: 19px;
+}
+form .checkboxform {
+  gap: 3px;
+}
+form .checkboxform label {
+font-size: 14px;
+}
+.TextBoxContautusForm button {
+  width: 334px;
+}
+
+}
+
+@media (max-width: 375px) {
+  .ContautusPagecontinttextandform {
+    width: 338px;
+  }
+
+
+  .ContautusPagecontinttextandformgroup {
+    width: 328px;
+  }
+  .TextBoxContautus {
+    width: 336px;
+    height: 110px;
+    min-height: 110px;
+    gap: 8px;
+    display: flex
+;
+margin-bottom: -20px;
+margin-left: -38px;
+    flex-direction: column;
+  }
+  .TextBoxContautus h2 {
+    font-family: "Cormorant Upright", serif;
+    font-weight: 700;
+    font-size: 33px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #151716;
+    margin-top: 33px;
+    
+  }
+  .TextBoxContautus p {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    font-family: "Inter", serif;
+    color: #151716;
+    margin-top: -27px;
+
+}
+.FormContautusIndex1 input {
+  width: 140.5px;
+}
+.TextBoxContautusForm {
+  width: 280px;
+  margin-left: 2px;
+}
+.FormContautusIndex1 {
+  width: 162px;
+  gap: 9px;
+}
+.FormContautusIndex2 {
+  width: 200px;
+}
+.FormContautusIndex2 input {
+  width: 292px;
+  height: 104px;
+}
+.TextBoxContautusForm form {
+  display: flex
+;
+  flex-direction: column;
+  gap: 9px;
+}
+.FormContautusIndex2 textarea {
+  width: 292px;
+}
+form .checkboxform input {
+  width: 19px;
+}
+form .checkboxform {
+  gap: 3px;
+  margin-left: -20px;
+}
+form .checkboxform label {
+font-size: 14px;
+}
+.TextBoxContautusForm button {
+  width: 292px;
+}
+
+
+
+}

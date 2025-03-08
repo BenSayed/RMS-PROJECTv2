@@ -10,7 +10,7 @@ padding-right: 88px;
 }
 
 .Header {
-  width: 1312px;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -25,7 +25,7 @@ padding-right: 88px;
 
 /* ✅ قسم اللوجو والقائمة */
 .HeaderContinentlogo {
-  width: 891px;
+  width: 66%;
   display: flex;
   align-items: center;
   justify-content: space-between;
