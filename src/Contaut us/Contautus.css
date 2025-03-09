@@ -422,6 +422,7 @@ margin-bottom: -20px;
 }
 .FormContautusIndex2 {
   width: 344px;
+  height: 360px;
 }
 .FormContautusIndex2 input {
   width: 336px;
@@ -435,6 +436,7 @@ margin-bottom: -20px;
 }
 .FormContautusIndex2 textarea {
   width: 336px;
+  height: 319px;
 }
 form .checkboxform input {
   width: 19px;
@@ -449,10 +451,9 @@ font-size: 14px;
   width: 334px;
 }
 .ContautusPagecontinttextandform {
- 
-  border-radius: 21px;
-}
-
+  width: 571px;
+  height: 688px;
+border-radius: 21px;
 }
 
 @media (max-width: 375px) {
