@@ -450,7 +450,8 @@ padding: 8px;
   .card .content {
     display: flex
 ;
-   }
+    margin-left: -8px;
+}
 
    
    .cardsection::-webkit-scrollbar {
@@ -473,13 +474,12 @@ padding: 8px;
     display: flex;
     gap: 10px;
   }
-
   .cardhandelstartandprise .stadprisersan {
     color: #ffb854;
     font-weight: bold;
-    font-size: 23px;
+    font-size: 19px;
     position: relative;
-    top: 11px;
+    top: 15px;
     display: flex
 ;
     gap: 1px;
