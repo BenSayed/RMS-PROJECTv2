@@ -38,18 +38,8 @@ const AboutPage = () => {
       <section className="About-section1">
 
 
-      <div   style={{
-        width: "1312px",
-        height: "660px",
-        maskImage:` url("${aboutImg6}")`,
-        WebkitMaskImage:` url("${ aboutImg6}") `, // دعم لمتصفح كروم وسفاري
-        maskSize: "cover",
-        maskRepeat: "no-repeat",
-        maskPosition: "center",
-        overflow: "hidden",
-        marginTop : "26px" 
-      }}
-  className="video-boorder   " 
+      <div   
+  className="video-boorder" 
 >  
         <video 
           src={videoImg2}
@@ -57,9 +47,7 @@ const AboutPage = () => {
           loop
           muted
           className="videoaAbout"
-
-          
-       
+ 
         />
       </div>
 
@@ -72,7 +60,7 @@ const AboutPage = () => {
           </h2>
         </div>
          
-        <div className="textGroup">
+      <div className="textGroup">
           <h4>
             {" "}
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -94,7 +82,7 @@ const AboutPage = () => {
             src={aboutImg1}
             alt=""
           />
-            </div>
+            </div>  
         
       </section>
       <section className="About-section2">
@@ -206,7 +194,7 @@ const AboutPage = () => {
               <span> Chef John </span>
             </div>
           </div>
-          <div className="section3Groupvid">
+            <div className="section3Groupvid">
             <video
               src={videoImg1}
               autoPlay
@@ -220,7 +208,7 @@ const AboutPage = () => {
               ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua.
             </p>
-          </div>
+          </div>  
         </div>
       </section>
       <section className="About-section4">
@@ -265,7 +253,7 @@ const AboutPage = () => {
             <img src={aboutImg2} alt="" />{" "}
           </button>
         </div>
-      </section>
+      </section>  
     </div>
   );
 };
