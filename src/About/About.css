@@ -1,16 +1,40 @@
 .AboutPage {
-  padding: 10px;
+ 
+
+  padding: 22px 88px;
+  display: flex
+;
+  align-items: center;
+  flex-direction: column;
+
 }
 
 .About-section1 {
-  height: 120vh;
-}
+ }
 
 .About-section1 {
   margin-left: 25px;
+  
 }
 .adderssSection span {
   color: #ff9500;
+
+}
+.adderssSection{
+
+
+  width: 596px;
+height: 274px;
+ position: absolute;
+z-index: 1;
+top: 112px;
+ left:105px ;
+ border-radius: 0px 0px 48px 48px;
+ 
+}
+.adderssSection23 {
+  background-color: #ff9500;
+ width: 90px;
 }
 .adderssSection p {
   font-size: 20px;
@@ -31,25 +55,25 @@
   width: 560px;
   color: #fff4e6;
 }
+ 
 .video-boorder {
-  width: 1300px;
-  height: 675px;
-  position: relative;
-  top: -220px;
-  right: 10px;
-  -webkit-mask-image: url("src/page-index/About/Subtract.svg"); /* الصورة اللي هتستخدمها كـ mask */
-  mask-image: url("src/page-index/About/Subtract.svg");
-  -webkit-mask-size: cover;
-  mask-size: cover;
-  -webkit-mask-position: center;
-  mask-position: center;
-  overflow: hidden; /* علشان الفيديو ميتعداش حدود الإطار */
+ background-color: transparent;
+ box-shadow: 0px 0px 0px transparent !important;
+
+ filter: none !important;
+ outline: none;
 }
 .videoaAbout {
-  position: relative;
-  top: 11px;
-  width: 1311px;
-  object-fit: cover; /* علشان الفيديو يملأ الإطار */
+ box-shadow: 0px 0px 0px transparent !important;
+}.videoaAbout {
+  border-radius: 48px;
+   width: 1245px;
+  height: auto;
+}
+.textgrops12{
+    /* margin-top: 190px; */
+    position: relative;
+    top: 182px;
 }
 .textGroup {
   width: 360px;
@@ -63,19 +87,26 @@
   background-color: #ffdeb04d;
   border: 1px solid #f68b2e;
   position: relative;
-  top: -24rem;
-  left: 56rem;
+  top: -14rem;
+  left: 55rem;
+  backdrop-filter: blur(46px) ;
+
+box-shadow: 0px 4px 8px 0px #00000040;
+
 }
 
 .textGroup h4 {
   color: #fff4e6;
-  font-size: 16px;
-  font-family: "Inter", serif;
-  font-weight: 400;
-  line-height: 24px;
-  text-align: center;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
+ 
+   
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+letter-spacing: 0%;
+text-align: center;
+
+
+  
 }
 .textGroup1 {
   width: 96px;
@@ -88,8 +119,8 @@
   opacity: 0px;
   background-color: #5c4e3d;
   position: relative;
-  top: -34rem;
-  left: 36rem;
+  top: -21rem;
+  left: 37rem;
 }
 .textGrouoImg {
   width: 40px;
@@ -103,7 +134,7 @@
 }
 
 .About-section2 {
-  height: 95vh;
+   margin-top: -290px;
 }
 .textAboutS2 {
   display: flex;
@@ -112,12 +143,19 @@
   justify-content: center;
   align-items: center;
 }
+ 
 .textAboutS2 p {
   color: #ffffff;
-  font-size: 20px;
+ 
   font-family: "Inter", serif;
-  font-weight: 400px;
-  margin-bottom: -20px;
+   
+  font-family: Inter;
+font-weight: 400;
+font-size: 20px;
+line-height: 100%;
+letter-spacing: -4%;
+text-align: center;
+
 }
 .textAboutS2 span {
   color: #ff9500;
@@ -127,7 +165,47 @@
   font-size: 64px;
   font-weight: 700;
   margin-bottom: 30px;
+  color: #ffffff;
+  margin-top: -8px;
 }
+
+
+
+.s3.textAboutS2 {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+ .s3.textAboutS2 p {
+  color: #ffffff;
+ 
+  font-family: "Inter", serif;
+   
+  font-family: Inter;
+font-weight: 400;
+font-size: 20px;
+line-height: 100%;
+letter-spacing: -4%;
+text-align: center;
+
+}
+.s3.textAboutS2 span {
+  color: #ff9500;
+}
+.s3.textAboutS2 h2 {
+  font-family: "Cormorant Upright", serif;
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #ffffff;
+  margin-top: -8px;
+}
+
+
+
 
 .ContenerTextImgAbout {
   position: relative;
@@ -170,6 +248,7 @@
 
   align-content: center;
 }
+
 .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -181,15 +260,14 @@
 }
 
 .About-section3 {
-  height: 130vh;
+  height: 817px
 }
 .AboutSectionGroup3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  padding-left: 79px;
-  padding-right: 40px;
+ gap: 140px;
 }
 
 .imgSection3 {
@@ -233,6 +311,7 @@
   font-weight: 700;
   line-height: 38.75px;
   text-align: center;
+  margin-top: 7px;
 
   font-family: "Cormorant Upright", serif;
 }
@@ -263,9 +342,10 @@
   margin-top: 20px;
 }
 .About-section4 {
-  height: 140vh;
+  height: 817px;
   background-color: #fff4e6;
   padding: 20px;
+  width: 100vw;
 }
 .About-section4 h2 {
   margin-top: 30px;
@@ -306,13 +386,20 @@
   height: 120px;
 
   border-radius: 48px;
-  backdrop-filter: blur(26px);
+  backdrop-filter: blur(40px);
 
   background-color: #ffdeb02d;
   border: 1px solid #ff9500;
   position: relative;
-  top: -100px;
+  top: -46px ;
   left: -75px;
+  
+}
+.section4Group2{
+  margin-top: 111px;
+}
+.section4Group3{
+  margin-top: 111px;
 }
 .section4Group2Text {
   width: 351px;
@@ -434,5 +521,6 @@
 .section4FristclassButten2 {
   position: relative;
   top: -25rem;
-  left: 74rem;
+ 
+  left: 82rem;
 }
