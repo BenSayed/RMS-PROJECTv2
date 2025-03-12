@@ -42,7 +42,7 @@ const Header = () => {
                   </li>
                   <li>
                     <Link
-                      to="/menu"
+                      to="/MenuItems"
                       className={`navbar-item ${location.pathname === "/menu" ? "active" : ""}`}
                     >
                       Menu
@@ -107,7 +107,7 @@ const Header = () => {
                     <Link className="linkmodel" to="/" onClick={handleLinkClick}>Home</Link>
                   </li>
                   <li>
-                    <Link className="linkmodel" to="/menu" onClick={handleLinkClick}>Menu</Link>
+                    <Link className="linkmodel" to="/MenuItems" onClick={handleLinkClick}>Menu</Link>
                   </li>
                   <li>
                     <Link className="linkmodel" to="/reservation" onClick={handleLinkClick}>Reservation</Link>

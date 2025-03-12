@@ -7,6 +7,7 @@ import Login from "./login/Login";
 import axios from "axios";
 import SignUp from "./Sign up/SignUp";
 import Contautus from "./Contaut us/Contautus";
+import MenuItems from "./MenuPages/MenuItems1/MenuItems";
  
  
 // const api = axios.create({
@@ -26,7 +27,9 @@ function App() {
       <Header />  
 
 
-     
+
+
+      
       <Routes>
        
 
@@ -35,9 +38,11 @@ function App() {
         <Route path="/login" element={<Login/>} />  
         <Route path="/SignUp" element={ <SignUp/>} />  
         <Route path="/Contautus" element={ <Contautus/>} />  
+        <Route path="/MenuItems" element={ <MenuItems/>} />  
 
 
-      </Routes>
+
+      </Routes> 
       
       {/* <Footer />  */}
     </div>

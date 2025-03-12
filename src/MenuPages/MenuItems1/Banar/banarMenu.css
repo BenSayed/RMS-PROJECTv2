@@ -1,0 +1,686 @@
+.banner-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff4e6;
+  border-radius: 48px;
+  padding: 20px 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 1360px;
+  height: 424px;
+  margin: 44px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -64px;
+  align-items: center;
+  justify-content: center;
+ 
+}
+.imggg {
+  position: absolute;
+  margin-left: -1100px;
+}
+
+.banner-decor {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background-color: #ff9800;
+  left: 0;
+}
+
+.banner-decor-top {
+  top: 0;
+}
+
+.banner-decor-bottom {
+  bottom: 0;
+}
+
+.banner-content {
+  flex: 1;
+  padding: 20px;
+  width: 589px;
+  height: 343px;
+  top: 40px;
+  padding-right: 24px;
+  padding-left: 24px;
+  gap: 16px;
+}
+
+.banner-title {
+  color: #151716;
+  font-family: Cormorant Upright;
+  font-weight: 700px;
+  font-size: 96px;
+  line-height: 116.26px;
+  letter-spacing: 0%;
+  margin-top: -35px;
+}
+
+.banner-list {
+  margin-top: 29px;
+  list-style: none;
+  padding: 0;
+  color: #444;
+  font-size: 18px;
+  line-height: 1.6;
+  width: 493px;
+  height: 95px;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: 0%;
+  color: #151716bf;
+  list-style-type: disc; /* يجعل النقاط دائرية • */
+  padding-left: 20px; /* يبعد النص عن النقاط قليلاً */
+}
+
+.banner-list li {
+  margin-bottom: 1px;
+}
+
+.banner-price-section {
+  text-align: center;
+}
+
+.banner-price {
+  font-size: 40px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 15px;
+  width: 175px;
+  height: 155px;
+  top: 176px;
+  left: 1072px;
+  font-family: Cormorant Upright;
+  font-weight: 700;
+  font-size: 128px;
+  line-height: 155.01px;
+  letter-spacing: 0%;
+  color: #000000;
+  margin-top: 5px;
+  position: absolute;
+  z-index: 5; /* أقل من السعر */
+}
+.banner-button {
+  color: #151716;
+  background: #ff9500;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0%;
+  width: 176px;
+  height: 56px;
+  margin-top: -120px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 16px;
+  padding-top: 4px;
+  padding-right: 4px;
+  padding-bottom: 4px;
+  padding-left: 16px;
+  align-items: center;
+  position: absolute;
+  margin-left: 50px;
+  border: none;
+}
+
+.arrow {
+  font-size: 20px;
+  width: 48px;
+  height: 48px;
+  gap: 10px;
+  border-radius: 16px;
+  padding: 10px;
+  color: #fff4e6;
+  background-color: #151716;
+}
+
+.banner-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-image {
+  width: 529px;
+  height: 326px;
+  border-radius: 50%;
+  z-index: 2;
+  margin-left: 10px;
+}
+.banner-image2 {
+  width: 142px;
+  height: 119px;
+  top: 256px;
+  margin-top: 200px;
+  z-index: 1;
+  margin-top: -50px;
+  margin-left: -140px;
+  position: absolute;
+}
+.banner-image1 {
+  width: 185px;
+  height: 173px;
+  top: 42px;
+  left: 858px;
+  z-index: 1;
+  margin-top: -160px;
+  margin-left: -250px;
+}
+
+.banner-decor-horizontal1 {
+  position: absolute;
+  width: 1000px;
+  height: 24px;
+  background-color: #ff9500;
+  z-index: 1;
+  left: 100%;
+  transform: translateX(-50%);
+  border-radius: 34px 0 0 30px;
+  margin-top: -50px;
+}
+.banner-decor-horizontal2 {
+  position: absolute;
+  width: 1000px;
+  height: 24px;
+  background-color: #ff9500;
+  z-index: 1;
+  left: 100%;
+  transform: translateX(-50%);
+  border-radius: 34px 0 0 30px;
+  margin-top: 10px;
+}
+.banner-decor-horizontal3 {
+  position: absolute;
+  width: 1000px;
+  height: 24px;
+  background-color: #ff9500;
+  z-index: 1;
+  left: 100%;
+  transform: translateX(-50%);
+  border-radius: 34px 0 0 30px;
+  margin-top: 70px;
+}
+
+.banner-decor-vertical1 {
+  position: absolute;
+  width: 24px;
+  height: 724px;
+  background-color: #ff9500;
+  z-index: 1;
+  left: 67%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.banner-decor-vertical2 {
+  position: absolute;
+  width: 24px;
+  height: 724px;
+  background-color: #ff9500;
+  z-index: 1;
+  left: 53%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.banner-decor-vertical3 {
+  position: absolute;
+  width: 24px;
+  height: 724px;
+  background-color: #ff9500;
+  z-index: 1;
+  left: 60%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+/* Container لتحديد موقع الدوتس والأسهم */
+.banner-navigation {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  bottom: var(--dots-position, -25px); /* يمكن التحكم في هذه القيمة */
+}
+
+/* تصميم النقاط (dots) */
+.banner-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #fff4e6; /* لون عادي */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: -30px;
+}
+
+.banner-dot.active {
+  background-color: #ffb854; /* لون النقطة النشطة */
+}
+
+/* تصميم الأزرار (الأسهم) */
+.banner-arrow1 {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #fff4e6;
+  cursor: pointer;
+  transition: color 0.3s;
+  margin-top: -15px;
+  margin-left: -15px;
+}
+.banner-arrow {
+  background: none;
+  margin-top: -15px;
+  margin-right: -15px;
+}
+
+.imgg {
+  margin-left: 20px;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .banner-container {
+    flex-direction: column;
+    width: 361px;
+    height: 580px;
+    margin: 32px;
+    margin-bottom: -32px;
+  justify-content: center;
+  align-items: center;
+ left: 190px;
+  }
+
+  .banner-content {
+    width: 100%;
+    padding: 16px;
+    margin-top: 16px;
+  }
+
+  .banner-title {
+    width: 276.08001708984375px;
+    height: 130px;
+    font-family: Cormorant Upright;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: #151716;
+    margin: 390px;
+    font-size: 53.76px;
+    margin-left: -10px;
+  }
+
+  .banner-list {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #151716bf;
+    width: 276.08001708984375px;
+    height: 55px;
+    margin-top: -350px;
+    margin-left: -10px;
+  }
+  .banner-list li {
+    margin-bottom: 3px;
+  }
+
+  .banner-price {
+ 
+    line-height: 77.5px;
+    margin-top: 290px;
+    display: flex;
+    margin-left: -830px;
+    font-family: Cormorant Upright;
+    font-weight: 700;
+    font-size: 77.68px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000000;
+  }
+
+  .banner-image {
+    width: 290px;
+    height: 240px;
+    margin-top: 320px;
+    margin-left: -30px;
+  }
+  .banner-image1 {
+    width: 122px;
+    height: 115px;
+    margin-top: 190px;
+    margin-left: -120px;
+  }
+  .banner-image2 {
+    width: 100px;
+    height: 110px;
+    margin-top: 190px;
+    margin-left: -210px;
+  }
+  .banner-decor-horizontal1 {
+    width: 904.8800048828125px;
+    height: 13.4399995803833px;
+    margin-top: 250px;
+  }
+  .banner-decor-horizontal2 {
+    width: 904.8800048828125px;
+    height: 13.4399995803833px;
+    margin-top: 330px;
+  }
+  .banner-decor-horizontal3 {
+    width: 904.8800048828125px;
+    height: 13.4399995803833px;
+    margin-top: 290px;
+  }
+  .banner-decor-vertical1 {
+    width: 0;
+    height: 0;
+  }
+  .banner-decor-vertical2 {
+    width: 0;
+    height: 0;
+  }
+  .banner-decor-vertical3 {
+    width: 0;
+    height: 0;
+  }
+  .banner-decor {
+    width: 100%;
+    height: 20px;
+  }
+  .banner-decor-top {
+    top: 0;
+  }
+  .banner-decor-bottom {
+    bottom: 0;
+  }
+  .banner-price-section {
+    text-align: center;
+  }
+  .banner-button {
+    width: 118.2719955444336px;
+    height: 37.63199996948242px;
+    left: 122px;
+    border-radius: 10.75px;
+    justify-content: space-between;
+    padding-top: 2.69px;
+    padding-right: 2.69px;
+    padding-bottom: 2.69px;
+    padding-left: 10.75px;
+    margin-top: -470px;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 12.1px;
+    line-height: 18.14px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-left: -15px;
+  }
+  .banner-navigation {
+    margin-top: -6px;
+  }
+  .banner-dot {
+    margin-top: -18px;
+  }
+  .banner-arrow {
+    margin-top: 0;
+  }
+  .banner-arrow1 {
+    margin-top: 0;
+  }
+  .arrow {
+    width: 32.25600051879883px;
+    height: 32.25600051879883px;
+    border-radius: 10.75px;
+    gap: 6.72px;
+    padding: 6.72px;
+  }
+
+  .arrow img {
+    width: 8.947007979813048px;
+    height: 11.865360056942775px;
+    top: 0.82px;
+    left: 9.09px;
+  }
+}
+@media (max-width:  425px) {
+  .banner-container {
+ 
+    width: 361px;
+    height: 580px;
+ 
+ 
+ left:10px;
+ margin: 32px; 
+ 
+  }
+
+  .banner-content {
+    width: 100%;
+    padding: 16px;
+    margin-top: 16px;
+  }
+
+  .banner-title {
+    width: 276.08001708984375px;
+    height: 130px;
+    font-family: Cormorant Upright;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: #151716;
+    margin: 390px;
+    font-size: 53.76px;
+    margin-left: -10px;
+  }
+
+  .banner-list {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #151716bf;
+    width: 276.08001708984375px;
+    height: 55px;
+    margin-top: -350px;
+    margin-left: -10px;
+  }
+  .banner-list li {
+    margin-bottom: 3px;
+  }
+
+  .banner-price {
+ 
+    line-height: 77.5px;
+    margin-top: 290px;
+    display: flex;
+    margin-left: -830px;
+    font-family: Cormorant Upright;
+    font-weight: 700;
+    font-size: 77.68px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000000;
+  }
+
+  .banner-image {
+    width: 290px;
+    height: 240px;
+    margin-top: 320px;
+    margin-left: -30px;
+  }
+  .banner-image1 {
+    width: 122px;
+    height: 115px;
+    margin-top: 190px;
+    margin-left: -120px;
+  }
+  .banner-image2 {
+    width: 100px;
+    height: 110px;
+    margin-top: 190px;
+    margin-left: -210px;
+  }
+  .banner-decor-horizontal1 {
+    width: 904.8800048828125px;
+    height: 13.4399995803833px;
+    margin-top: 250px;
+  }
+  .banner-decor-horizontal2 {
+    width: 904.8800048828125px;
+    height: 13.4399995803833px;
+    margin-top: 330px;
+  }
+  .banner-decor-horizontal3 {
+    width: 904.8800048828125px;
+    height: 13.4399995803833px;
+    margin-top: 290px;
+  }
+  .banner-decor-vertical1 {
+    width: 0;
+    height: 0;
+  }
+  .banner-decor-vertical2 {
+    width: 0;
+    height: 0;
+  }
+  .banner-decor-vertical3 {
+    width: 0;
+    height: 0;
+  }
+  .banner-decor {
+    width: 100%;
+    height: 20px;
+  }
+  .banner-decor-top {
+    top: 0;
+  }
+  .banner-decor-bottom {
+    bottom: 0;
+  }
+  .banner-price-section {
+    text-align: center;
+  }
+  .banner-button {
+    width: 118.2719955444336px;
+    height: 37.63199996948242px;
+    left: 122px;
+    border-radius: 10.75px;
+    justify-content: space-between;
+    padding-top: 2.69px;
+    padding-right: 2.69px;
+    padding-bottom: 2.69px;
+    padding-left: 10.75px;
+    margin-top: -470px;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 12.1px;
+    line-height: 18.14px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-left: -15px;
+  }
+  .banner-navigation {
+    margin-top: -6px;
+  }
+  .banner-dot {
+    margin-top: -18px;
+  }
+  .banner-arrow {
+    margin-top: 0;
+  }
+  .banner-arrow1 {
+    margin-top: 0;
+  }
+  .arrow {
+    width: 32.25600051879883px;
+    height: 32.25600051879883px;
+    border-radius: 10.75px;
+    gap: 6.72px;
+    padding: 6.72px;
+  }
+
+  .arrow img {
+    width: 8.947007979813048px;
+    height: 11.865360056942775px;
+    top: 0.82px;
+    left: 9.09px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .banner-container {
+ 
+    width: 1190px;
+   
+    margin-left: 80px;
+   
+
+  }
+  .banner-title {
+    color: #151716;
+    font-family: Cormorant Upright;
+    font-weight: 700px;
+    font-size: 83px;
+    line-height: 89.26px;
+    letter-spacing: 0%;
+    margin-top: -23px;
+    margin-left: 79px;
+
+
+  }
+  .banner-list {
+    margin-top: 29px;
+    list-style: none;
+    padding: 0;
+    color: #444;
+    font-size: 18px;
+    line-height: 1.6;
+    width: 493px;
+    height: 95px;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19.36px;
+    letter-spacing: 0%;
+    color: #151716bf;
+    list-style-type: disc;
+    padding-left: 105px;
+}
+.banner-price {
+  font-size: 130px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 15px;
+  width: 175px;
+  height: 155px;
+  top: 176px;
+  left: 991px;
+}
+}
+
+@media (max-width:  1024px){
+  .banner-container{
+    margin: 22px;
+  }
+}
+
+
+@media (max-width: 320px){
+  .banner-container{
+    
+ margin: 22px;
+  }
+}
+@media (max-width: 375px){
+  .banner-container{
+   left: -15px;
+  }
+}
