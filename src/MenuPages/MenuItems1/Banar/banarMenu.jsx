@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./banarMenu.css";
-
 // استيراد الصور من المجلد الحالي
  import BannerImage1 from "./Group 34526.svg";
 import BannerImage2 from "./Image copy.svg";
