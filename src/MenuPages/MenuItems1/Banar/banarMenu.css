@@ -615,57 +615,6 @@
   }
 }
 
-@media (max-width: 1366px) {
-  .banner-container {
- 
-    width: 1190px;
-   
-    margin-left: 80px;
-   
-
-  }
-  .banner-title {
-    color: #151716;
-    font-family: Cormorant Upright;
-    font-weight: 700px;
-    font-size: 83px;
-    line-height: 89.26px;
-    letter-spacing: 0%;
-    margin-top: -23px;
-    margin-left: 79px;
-
-
-  }
-  .banner-list {
-    margin-top: 29px;
-    list-style: none;
-    padding: 0;
-    color: #444;
-    font-size: 18px;
-    line-height: 1.6;
-    width: 493px;
-    height: 95px;
-    font-family: Inter;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19.36px;
-    letter-spacing: 0%;
-    color: #151716bf;
-    list-style-type: disc;
-    padding-left: 105px;
-}
-.banner-price {
-  font-size: 130px;
-  font-weight: bold;
-  color: #222;
-  margin-bottom: 15px;
-  width: 175px;
-  height: 155px;
-  top: 176px;
-  left: 991px;
-}
-}
-
 @media (max-width:  1024px){
   .banner-container{
     margin: 22px;
