@@ -1119,7 +1119,7 @@ margin-left: 0px;
 border-radius: 38.4px;
 border-width: 0.8px;
 padding: 19.2px;
-left: -36px;
+left: -39px;
 
  }
 .ContenerTextImgAbout {
@@ -1235,5 +1235,60 @@ height: 440px;
   top: -50px;
   left: 1px;
 }
+}
+@media (max-width: 375px) {
+
+  .textGroup {
+    width: 255px;
+    height: 138px;
+    top: -9rem;
+    left: 4rem;
+}
+.swiper {
+  position: relative;
+  width: 361px;
+  height: 550px;
+  margin-left: 0px;
+  border-radius: 38.4px;
+  border-width: 0.8px;
+  padding: 19.2px;
+  left: -44px;
+}
+.section4FristclassButten2 {
+  position: relative;
+  top: -25rem;
+  left: 17rem;
+}
+.About-section4 {
+  height: 749px;
+  background-color: #fff4e6;
+  padding: 20px;
+  width: 111vw;
+  margin-top: 409px;
+}
+
+.vidSection3 {
+  width: 338px;
+  height: 179.517578px;
+  border-radius: 38.4px;
+}
+.section4Group1 img {
+  width: 225px;
+  height: 407px;
+  margin-left: 50px;
+}
+.section4Group1Text {
+  width: 330px;
+  height: 120px;
+  border-radius: 30px;
+  backdrop-filter: blur(40px);
+  background-color: #ffdeb02d;
+  border: 1px solid #ff9500;
+  position: relative;
+  top: -71px;
+  left: -9px;
+}
+
+
 }
 
