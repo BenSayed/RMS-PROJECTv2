@@ -592,15 +592,16 @@
   .banner-navigation {
     margin-top: -6px;
   }
-  .banner-dot {
-    margin-top: -18px;
-  }
+
   .banner-arrow {
     margin-top: 0;
   }
   .banner-arrow1 {
     margin-top: 0;
   }
+  .banner-dot {
+    margin-top: -43px;
+}
   .arrow {
     width: 32.25600051879883px;
     height: 32.25600051879883px;
