@@ -211,7 +211,7 @@ const AboutPage = () => {
           </div>  
         </div>
       </section>
-      {/* <section className="About-section4">
+      <section className="About-section4">
         <h2>
           Celebrated <span>Excellence </span>
         </h2>
@@ -253,7 +253,7 @@ const AboutPage = () => {
             <img src={aboutImg2} alt="" />{" "}
           </button>
         </div>
-      </section>   */}
+      </section>  
     </div>
   );
 };
