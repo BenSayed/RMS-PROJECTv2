@@ -1,0 +1,218 @@
+ 
+
+ .MenuExporPage{
+  margin-top: 111px;
+ }
+.MenuExporSction {
+  padding: 64px 64px;
+  width: 100%;
+  display: flex
+;
+  flex-direction: column;
+  align-items: center;
+}
+.food-selection0 h2 {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.1px;
+  color: white;
+  margin: 57px;
+  margin-bottom: 1px;
+  font-family: "Cormorant Upright", serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+
+.cardss {
+  display: flex;
+ justify-content: center;
+   gap: 26px; /* المسافة بين البطاقات */
+  padding-top: -30px; /* المسافة من النافبار */
+  flex-wrap: wrap; /* يسمح بالتفاف العناصر إذا زاد عددها */
+ cursor: pointer;
+ width: 101%;
+ 
+gap: 24px;
+justify-content: flex-start;
+
+}
+
+ 
+.cardd {
+  background-color: #fff4e6; /* لون خلفية البطاقة */
+  border-radius: 48px; /* تدوير الزوايا */
+  box-shadow: 10 10px 10px rgba(0, 0, 0, 0.1); /* الظل */
+  width: 310px;
+  height: 381px;
+  overflow: hidden; /* قص المحتوى الزائد */
+  display: flex;
+  flex-direction: column;
+}
+
+.cardd img {
+  width: 100%; /* عرض الصورة بالكامل */
+  height: 60%; /* تقليل ارتفاع الصورة إلى 60% من البطاقة */
+  object-fit: cover; /* ملء الصورة دون تشويه */
+}
+
+.cardd .content {
+  display: flex;
+  height: 38%; /* الجزء الأبيض يمثل 40% من البطاقة */
+  justify-content: space-between; /* توزيع العناصر أفقيًا */
+  align-items: center; /* محاذاة عمودية */
+  padding: 19px; /* الحشوة داخل البطاقة */
+}
+
+.cardd .text {
+  display: flex;
+  flex-direction: column; /* عرض النصوص عموديًا */
+  gap: px; /* المسافة بين النصوص */
+}
+
+.cardd h3 {
+  font-size: 32px; /* حجم عنوان البطاقة */
+  font-family: Cormorant Upright;
+
+  position: relative; /* لجعل الحركات تعمل */
+  top: -3px; /* لتحريك العنوان لأعلى */
+  left: -9px; /* لتحريك العنوان إلى اليمين */
+  text-overflow: ellipsis; /* يضيف ثلاث نقاط (...) إذا تجاوز النص العرض المتاح */
+  white-space: nowrap; /* يمنع التفاف النص إلى السطر التالي */
+  overflow: hidden; /* يخفي أي نص يتجاوز الحد المحدد */
+  margin: 0 0 8px 0; /* إزالة الهوامش العلوية 
+  والجانبية وجعل الهامش السفلي 8px */
+}
+.cardd p {
+  font-size: 16px;
+  /* font-weight: bold; */
+  font-family: Inter;
+  color: black;
+  margin: 0;
+  margin: 0px 0 15px 0;
+  line-height: 10px;
+  line-height: 21px;
+  word-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+  width: 272px;
+  height: 38px;
+}
+.cardd .stars {
+  color: #ffb854; /* لون النجوم */
+  font-weight: bold;
+  color: #ffb854; /* لون النجوم */
+  font-size: 20px; /* حجم النجوم - يمكنك زيادته أو تقليله */
+  position: relative; /* لجعل تأثير التحريك يعمل */
+  top: -2px; /* تحريك النجوم لأسفل - يمكنك تعديل القيمة حسب الحاجة */
+}
+.cardd .price {
+  font-size: 40px; /* حجم النص */
+  font-weight: bold; /* سمك النص */
+  color: black; /* لون السعر */
+  margin: 0;
+  font-weight: bold; /* سمك النص */
+
+  text-align: right; /* اجعليها right أو left أو center حسب الاتجاه المطلوب */
+
+  position: relative;
+  top: 47px; /* لتحريكه لأسفل */
+  left: -63px; /* لتحريكه لليمين */
+  font-family: Cormorant Upright;
+}
+.cardd .heart img {
+  width: 42px;
+  height: 42px;
+  font-size: 11px;
+  color: black;
+  font-weight: bold;
+  text-align: right;
+  position: relative;
+  top: -34px;
+  left: -110px;
+}
+
+
+ 
+
+@media (max-width: 1440px) {
+  .cardss {
+
+   }
+   .cardd {
+    background-color: #fff4e6;
+    border-radius: 48px;
+    box-shadow: 10 10px 10px rgba(0, 0, 0, 0.1);
+    width: 289px;
+    height: 355px;
+    overflow: hidden;
+    display: flex
+;
+    flex-direction: column;
+}
+.cardd .price {
+ 
+  top: 38px;
+  left: -72px;
+  font-family: Cormorant Upright;
+}
+}
+
+
+@media (max-width: 1366px) {
+  .cardss {
+width: 105%;
+   }
+   .cardd {
+    background-color: #fff4e6;
+    border-radius: 48px;
+    box-shadow: 10 10px 10px rgba(0, 0, 0, 0.1);
+    width: 289px;
+    height: 355px;
+    overflow: hidden;
+    display: flex
+;
+    flex-direction: column;
+}
+.cardd .price {
+ 
+  top: 38px;
+  left: -72px;
+  font-family: Cormorant Upright;
+}
+}
+@media (max-width: 425px) {
+  .food-selection0 h2 {
+    font-size: 54px;
+  }
+}
+ 
+@media (max-width: 375px) {
+  .food-selection0 h2 {
+    font-size: 44px;
+  }
+  .MenuExporSction {
+    padding: 64px 64px;
+    width: 100%;
+    display: flex
+;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -20px;
+}
+
+}
+ 
+@media (max-width: 320px) {
+  .food-selection0 h2 {
+    font-size: 35px;
+  }
+  .MenuExporSction {
+    padding: 64px 64px;
+    width: 100%;
+    display: flex
+;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -46px;
+}
+
+}
