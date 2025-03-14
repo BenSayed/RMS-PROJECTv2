@@ -1,5 +1,5 @@
 // @ts-ignore
-import React from "react";
+import React, { useEffect } from "react";
 import "./About.css";
 import aboutImg1 from "./Vector.svg" ;
 import aboutImg2 from "./Group.svg" ;
@@ -10,11 +10,11 @@ import aboutImg6 from "./Subtract2copy.png" ;
 import aboutImg7 from "./curve text.svg" ;
 import aboutImg8 from "./mingcute_arrow-up-line.svg" ;
 import aboutImg9 from "./rules-restaurant-london-united-kingdom-2000x1500 1.svg" ;
+import aboutImg9Mo from "./rules-restaurant-london-united-kingdom-2000x1500 1Mobil.svg" ;
+
 import videoImg1 from "./8901901-hd_1920_1080_25fps.mp4" ;
 import videoImg2 from "./8902154-hd_1920_1080_25fps.mp4" ;
-
-
-
+ 
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -25,7 +25,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper/modules";
-// import required modules
+ // import required modules
 
 // src/config.js
  

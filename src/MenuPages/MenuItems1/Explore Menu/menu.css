@@ -49,7 +49,7 @@
   margin-left: -90px;
   padding: 0 16px 0 0;
 }
-p {
+.paragraph {
   font-family: Inter;
   font-weight: 400;
   font-size: 16px;
@@ -103,16 +103,17 @@ p {
   border-radius: 50%;
 }
 
-h2 {
+.head2{
   font-family: Cormorant Upright;
   font-weight: 700;
-  size: 64px;
+font-size:64px;
+ 
   line-height: 77.5px;
   letter-spacing: 0%;
   color: #fff4e6;
   margin-top: 64px;
 }
-.heart {
+.hearttt {
   width: 59px;
   height: 49px;
   font-size: 11px; /* حجم النص */
@@ -246,7 +247,7 @@ h2 {
     gap: 9.29px;
     padding: 9.29px;
   }
-  .menu-container h2 {
+  .menu-container .head2 {
     font-family: Cormorant Upright;
     font-weight: 700;
     size: 64px;
@@ -314,7 +315,7 @@ h2 {
     gap: 9.29px;
     padding: 9.29px;
   }
-  .menu-container h2 {
+  .menu-container .head2{
     font-family: Cormorant Upright;
     font-weight: 700;
     size: 64px;
