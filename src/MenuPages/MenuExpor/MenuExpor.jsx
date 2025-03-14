@@ -2,6 +2,9 @@ import React from 'react';
 import "./MenuExpor.css";
 import Banner from '../MenuItems1/Banar/banarMenu';
 
+import heartImg from './solar_heart-bold (2).svg';
+import imgSrc from './Rectangle 1153 (1).svg';
+
 const MenuExpor = () => {
   return (
     <div  >
@@ -16,129 +19,77 @@ const MenuExpor = () => {
           <div className="cardss">
             <Card
               id="1"
-              imgSrc="src/MenuPages/MenuExpor/Rectangle 1153 (1).svg"
+              imgSrc={imgSrc}
               altText="Wagyu Steak"
               title="Wagyu Steak"
               description="250g of lean steak with sous smashed potato or rice"
-              price="78$"
-              heartImg="src/MenuPages/MenuExpor/solar_heart-bold (2).svg"
+              price="90$"
+              heartImg={heartImg}
             />
-                <Card
-              id="2"
-              imgSrc="src/MenuPages/MenuExpor/Rectangle 1153 (1).svg"
-              altText="Wagyu Steak"
-              title="Wagyu Steak"
-              description="250g of lean steak with sous smashed potato or rice"
-              price="78$"
-              heartImg="src/MenuPages/MenuExpor/solar_heart-bold (2).svg"
-            />
-                <Card
+              <Card
               id="1"
-              imgSrc="src/MenuPages/MenuExpor/Rectangle 1153 (1).svg"
+              imgSrc={imgSrc}
               altText="Wagyu Steak"
               title="Wagyu Steak"
               description="250g of lean steak with sous smashed potato or rice"
-              price="78$"
-              heartImg="src/MenuPages/MenuExpor/solar_heart-bold (2).svg"
-            />
-                <Card
+              price="33$"
+              heartImg={heartImg}
+            /><Card
+            id="1"
+            imgSrc={imgSrc}
+            altText="Wagyu Steak"
+            title="Wagyu Steak"
+            description="250g of lean steak with sous smashed potato or rice"
+            price="43$"
+            heartImg={heartImg}
+          /><Card
+          id="1"
+          imgSrc={imgSrc}
+          altText="Wagyu Steak"
+          title="Wagyu Steak"
+          description="250g of lean steak with sous smashed potato or rice"
+          price="28$"
+          heartImg={heartImg}
+        /><Card
+        id="1"
+        imgSrc={imgSrc}
+        altText="Wagyu Steak"
+        title="Wagyu Steak"
+        description="250g of lean steak with sous smashed potato or rice"
+        price="78$"
+        heartImg={heartImg}
+      /><Card
+      id="1"
+      imgSrc={imgSrc}
+      altText="Wagyu Steak"
+      title="Wagyu Steak"
+      description="250g of lean steak with sous smashed potato or rice"
+      price="78$"
+      heartImg={heartImg}
+    /><Card
+    id="1"
+    imgSrc={imgSrc}
+    altText="Wagyu Steak"
+    title="Wagyu Steak"
+    description="250g of lean steak with sous smashed potato or rice"
+    price="78$"
+    heartImg={heartImg}
+  /><Card
+  id="1"
+  imgSrc={imgSrc}
+  altText="Wagyu Steak"
+  title="Wagyu Steak"
+  description="250g of lean steak with sous smashed potato or rice"
+  price="78$"
+  heartImg={heartImg}
+/><Card
               id="1"
-              imgSrc="src/MenuPages/MenuExpor/Rectangle 1153 (1).svg"
+              imgSrc={imgSrc}
               altText="Wagyu Steak"
               title="Wagyu Steak"
               description="250g of lean steak with sous smashed potato or rice"
               price="78$"
-              heartImg="src/MenuPages/MenuExpor/solar_heart-bold (2).svg"
-            />
-                <Card
-              id="1"
-              imgSrc="src/MenuPages/MenuExpor/Rectangle 1153 (1).svg"
-              altText="Wagyu Steak"
-              title="Wagyu Steak"
-              description="250g of lean steak with sous smashed potato or rice"
-              price="78$"
-              heartImg="src/MenuPages/MenuExpor/solar_heart-bold (2).svg"
-            />
-                <Card
-              id="1"
-              imgSrc="src/MenuPages/MenuExpor/Rectangle 1153 (1).svg"
-              altText="Wagyu Steak"
-              title="Wagyu Steak"
-              description="250g of lean steak with sous smashed potato or rice"
-              price="78$"
-              heartImg="src/MenuPages/MenuExpor/solar_heart-bold (2).svg"
-            />
-                <Card
-              id="1"
-              imgSrc="src/MenuPages/MenuExpor/Rectangle 1153 (1).svg"
-              altText="Wagyu Steak"
-              title="Wagyu Steak"
-              description="250g of lean steak with sous smashed potato or rice"
-              price="78$"
-              heartImg="src/MenuPages/MenuExpor/solar_heart-bold (2).svg"
-            />
-                <Card
-              id="1"
-              imgSrc="src/MenuPages/MenuExpor/Rectangle 1153 (1).svg"
-              altText="Wagyu Steak"
-              title="Wagyu Steak"
-              description="250g of lean steak with sous smashed potato or rice"
-              price="78$"
-              heartImg="src/MenuPages/MenuExpor/solar_heart-bold (2).svg"
-            />
-                <Card
-              id="1"
-              imgSrc="src/MenuPages/MenuExpor/Rectangle 1153 (1).svg"
-              altText="Wagyu Steak"
-              title="Wagyu Steak"
-              description="250g of lean steak with sous smashed potato or rice"
-              price="78$"
-              heartImg="src/MenuPages/MenuExpor/solar_heart-bold (2).svg"
-            />
-                <Card
-              id="1"
-              imgSrc="src/MenuPages/MenuExpor/Rectangle 1153 (1).svg"
-              altText="Wagyu Steak"
-              title="Wagyu Steak"
-              description="250g of lean steak with sous smashed potato or rice"
-              price="78$"
-              heartImg="src/MenuPages/MenuExpor/solar_heart-bold (2).svg"
-            />
-                <Card
-              id="1"
-              imgSrc="src/MenuPages/MenuExpor/Rectangle 1153 (1).svg"
-              altText="Wagyu Steak"
-              title="Wagyu Steak"
-              description="250g of lean steak with sous smashed potato or rice"
-              price="78$"
-              heartImg="src/MenuPages/MenuExpor/solar_heart-bold (2).svg"
-            />
-                <Card
-              id="1"
-              imgSrc="src/MenuPages/MenuExpor/Rectangle 1153 (1).svg"
-              altText="Wagyu Steak"
-              title="Wagyu Steak"
-              description="250g of lean steak with sous smashed potato or rice"
-              price="78$"
-              heartImg="src/MenuPages/MenuExpor/solar_heart-bold (2).svg"
-            />
-                <Card
-              id="1"
-              imgSrc="src/MenuPages/MenuExpor/Rectangle 1153 (1).svg"
-              altText="Wagyu Steak"
-              title="Wagyu Steak"
-              description="250g of lean steak with sous smashed potato or rice"
-              price="78$"
-              heartImg="src/MenuPages/MenuExpor/solar_heart-bold (2).svg"
-            />
-                <Card
-              id="1"
-              imgSrc="src/MenuPages/MenuExpor/Rectangle 1153 (1).svg"
-              altText="Wagyu Steak"
-              title="Wagyu Steak"
-              description="250g of lean steak with sous smashed potato or rice"
-              price="78$"
-              heartImg="src/MenuPages/MenuExpor/solar_heart-bold (2).svg"
+              heartImg={heartImg}
             />
       
       
