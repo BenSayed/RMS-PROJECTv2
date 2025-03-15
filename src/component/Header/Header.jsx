@@ -1,24 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Header.css";
 import Headerimg1 from "/public/Logo 1.svg";
 import Headerimg2 from "/HeaderIMG/akar-icons_cart.svg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import ComHeader from "./ComHeader";
 
 const Header = () => {
   const location = useLocation();
-  const [shomodel, setshomodel] = useState(false);
-
-  const navigate = useNavigate(); // استخدام دالة التنقل
+  const [showModel, setShowModel] = useState(false); // state لإظهار/إخفاء ComHeader
+  const navigate = useNavigate();
+  const comHeaderRef = useRef(null); // ref لتتبع ComHeader
 
   // دالة للانتقال إلى صفحة تسجيل الدخول
   const handleLoginClick = () => {
-    navigate('/login'); // عند الضغط على الزر سيتم الانتقال إلى /login
+    navigate("/login");
   };
 
-  // دالة لإغلاق المودال
-  const handleLinkClick = () => {
-    setshomodel(false); // إغلاق المودال عند النقر على أي رابط
+  // دالة لإغلاق ComHeader عند النقر خارج المكون
+  const handleClickOutside = (event) => {
+    if (comHeaderRef.current && !comHeaderRef.current.contains(event.target)) {
+      setShowModel(false);
+    }
   };
+
+  // إضافة event listener لتتبع النقر خارج المكون
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="Headerall">
@@ -35,7 +46,9 @@ const Header = () => {
                   <li>
                     <Link
                       to="/"
-                      className={`navbar-item ${location.pathname === "/" ? "active" : ""}`}
+                      className={`navbar-item ${
+                        location.pathname === "/" ? "active" : ""
+                      }`}
                     >
                       Home
                     </Link>
@@ -43,7 +56,9 @@ const Header = () => {
                   <li>
                     <Link
                       to="/MenuItems"
-                      className={`navbar-item ${location.pathname === "/menu" ? "active" : ""}`}
+                      className={`navbar-item ${
+                        location.pathname === "/menu" ? "active" : ""
+                      }`}
                     >
                       Menu
                     </Link>
@@ -51,7 +66,9 @@ const Header = () => {
                   <li>
                     <Link
                       to="/reservation"
-                      className={`navbar-item ${location.pathname === "/reservation" ? "active" : ""}`}
+                      className={`navbar-item ${
+                        location.pathname === "/reservation" ? "active" : ""
+                      }`}
                     >
                       Reservation
                     </Link>
@@ -59,7 +76,9 @@ const Header = () => {
                   <li>
                     <Link
                       to="/About"
-                      className={`navbar-item ${location.pathname === "/About" ? "active" : ""}`}
+                      className={`navbar-item ${
+                        location.pathname === "/About" ? "active" : ""
+                      }`}
                     >
                       About
                     </Link>
@@ -67,7 +86,9 @@ const Header = () => {
                   <li>
                     <Link
                       to="/Contautus"
-                      className={`navbar-item ${location.pathname === "/Contautus" ? "active" : ""}`}
+                      className={`navbar-item ${
+                        location.pathname === "/Contautus" ? "active" : ""
+                      }`}
                     >
                       Contact us
                     </Link>
@@ -84,62 +105,21 @@ const Header = () => {
                 alt=""
               />
             </Link>
-            <button className="HeaderContinentlogoButton1" onClick={handleLoginClick}>login</button>
             <button
-              onClick={() => {
-                setshomodel(true);
-              }}
+              className="HeaderContinentlogoButton1"
+              onClick={handleLoginClick}
+            >
+              login
+            </button>
+            <button
+              onClick={() => setShowModel(!showModel)} // تبديل حالة showModel
               className="icon-menu"
             ></button>
 
-            {shomodel && (
-              <div className="fixed">
-                <ul className="model">
-                  <li>
-                    <button
-                      className="icon-clear"
-                      onClick={() => {
-                        setshomodel(false); // إغلاق المودال عند الضغط على زر "icon-clear"
-                      }}
-                    ></button>
-                  </li>
-                  <li>
-                    <Link className="linkmodel" to="/" onClick={handleLinkClick}>Home</Link>
-                  </li>
-                  <li>
-                    <Link className="linkmodel" to="/MenuItems" onClick={handleLinkClick}>Menu</Link>
-                  </li>
-                  <li>
-                    <Link className="linkmodel" to="/reservation" onClick={handleLinkClick}>Reservation</Link>
-                  </li>
-                  <li>
-                    <Link className="linkmodel" to="/About" onClick={handleLinkClick}>About</Link>
-                  </li>
-                  <li>
-                    <Link className="linkmodel" to="/Contautus" onClick={handleLinkClick}>Contact us</Link>
-                  </li>
-
-                  <li>
-                    <div className="HeaderContinentlogoButtonModel">
-                      <Link to="/SalesPages">
-                        <img
-                          className="HeaderContinentlogoButton2model"
-                          src={Headerimg2}
-                          alt=""
-                        />
-                      </Link>
-                      <button
-                        className="HeaderContinentlogoButton1mpdel"
-                        onClick={() => {
-                          handleLoginClick();
-                          setshomodel(false); // إغلاق المودال بعد النقر على login
-                        }}
-                      >
-                        login
-                      </button>
-                    </div>
-                  </li>
-                </ul>
+            {/* إظهار ComHeader إذا كانت showModel تساوي true */}
+            {showModel && (
+              <div ref={comHeaderRef}>
+                <ComHeader onClose={() => setShowModel(false)} />
               </div>
             )}
           </div>

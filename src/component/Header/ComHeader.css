@@ -1,0 +1,226 @@
+.ComHeader1 {
+  display: flex
+;
+  align-items: flex-start;
+  position: fixed;
+  top: -2px;
+  left: 37px;
+  z-index: 9999;
+}
+.ComHeader1.closed {
+  display: none; /* أو visibility: hidden; أو أي طريقة أخرى لإخفاء العنصر */
+}
+ 
+.border{
+  border: 1px solid crimson;
+}
+
+.ComHeader{
+  padding-top: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.ComHeaderCard {
+  width: 697px;
+  height: 366px;
+  border-bottom-right-radius: 48px;
+  border-bottom-left-radius: 48px;
+  background-color: #FFF4E6;
+  display: flex
+;
+  flex-direction: column;
+  gap: 29px;
+  padding: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  animation: fade-in-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+/* تعريف الأنميشن fade-in-top */
+@-webkit-keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.ComHeaderCardPro {
+  width: 265px;
+  height: 64px;
+  display: flex;
+  gap: 20px;
+}
+
+.ComHeaderCardPro h2 {
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0%;
+  text-align: right;
+}
+
+.ComHeaderCardNav {
+  width: 265px;
+  height: 220px;
+}
+
+.ComHeaderCardNavUi li {
+  list-style: none;
+  gap: 16px;
+  font-family: "Cormorant Upright", serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0%;
+  color: #151716BF;
+}
+
+.ComHeaderCardNavUi li a {
+  text-decoration: none;
+  color: #151716BF;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease; /* إضافة تأثير التحول */
+}
+
+.ComHeaderCardNavUi li a:hover {
+  color: #FF9500;
+}
+
+.ComHeaderCardNavUi {
+  width: 93px;
+  height: 214px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  white-space: nowrap;
+  margin-top: 1px;
+  margin-left: -35px;
+}
+.ComHeaderCardNav img {
+  margin-left: 310px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 304px;
+  left: 310px;
+  cursor: pointer;
+}
+
+@media (max-width: 425px) {
+
+  .ComHeader1 {
+    display: flex
+;
+    align-items: flex-start;
+    position: fixed;
+    top: -2px;
+    left: 16px;
+    z-index: 9999;
+}
+.ComHeaderCard {
+  width: 393px;
+  height: 366px;
+  border-bottom-right-radius: 48px;
+  border-bottom-left-radius: 48px;
+  background-color: #FFF4E6;
+  display: flex
+;
+  flex-direction: column;
+  gap: 29px;
+  padding: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  animation: fade-in-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+.ComHeaderCardNav img {
+  margin-left: 9px;
+}
+}
+@media (max-width: 375px) {
+
+  .ComHeader1 {
+    display: flex
+;
+    align-items: flex-start;
+    position: fixed;
+    top: -2px;
+    left: 38px;
+    z-index: 9999;
+}
+
+  .ComHeaderCardNav img {
+    margin-left: 238px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 304px;
+    left: 20px;
+    cursor: pointer;
+}
+.ComHeaderCard {
+  width: 330px;
+  height: 366px;
+  border-bottom-right-radius: 48px;
+  border-bottom-left-radius: 48px;
+  background-color: #FFF4E6;
+  display: flex
+;
+  flex-direction: column;
+  gap: 29px;
+  padding: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  animation: fade-in-top 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+}
+@media (max-width: 375px) {
+  .ComHeader1 {
+    display: flex
+;
+    align-items: flex-start;
+    position: fixed;
+    top: -2px;
+    left: 18px;
+    z-index: 9999;
+}
+  .ComHeaderCard {
+    width: 297px;
+    height: 366px;
+  }
+  .ComHeaderCardNav img {
+    margin-left: 208px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 304px;
+    left: 20px;
+    cursor: pointer;
+}
+
+}
+}
