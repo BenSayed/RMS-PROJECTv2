@@ -77,7 +77,7 @@ const Header = () => {
             </div>
           </div>
           <div className="HeaderContinentlogoButton">
-            <Link to="/#">
+            <Link to="/SalesPages">
               <img
                 className="HeaderContinentlogoButton2"
                 src={Headerimg2}

@@ -27,10 +27,10 @@ function App() {
 
   
       <Header />  
-<SalesPages/>
+
  
       {/* <MenuExpor/> */}
-       {/* <Routes>
+       <Routes>
        
 
         <Route path="/" element={<Home />} />  
@@ -40,11 +40,11 @@ function App() {
         <Route path="/Contautus" element={ <Contautus/>} />  
         <Route path="/MenuItems" element={ <MenuItems/>} />  
         <Route path="/MenuExpor" element={ <MenuExpor/>} />  
+        <Route path="/SalesPages" element={ <SalesPages/>} />  
 
 
 
-
-      </Routes>   */}
+      </Routes>   
       
       {/* <Footer />  */}
     </div>
