@@ -15,13 +15,19 @@
   border: 1px solid crimson;
 }
 
-.ComHeader{
+.ComHeader {
   padding-top: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed; /* إضافة position: fixed; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* إضافة خلفية شفافة */
+  z-index: 9998; /* تحديد z-index أقل من ComHeader1 */
 }
-
 
 .ComHeaderCard {
   width: 697px;
