@@ -590,7 +590,7 @@ gap: 20px;
     width: 385px;
     height: 161px;
 }
-}
+
 .ComboOptionsCardSalesCard img {
   margin-left: -20px;
   margin-top: 5px;
@@ -766,6 +766,17 @@ gap: 20px;
   text-align: center;
   margin-top: -1px;
   margin-left: -27px;
+}
+.button-actoion button {
+  width: 28.05px;
+  height: 28.05px;
+  border-radius: 9px;
+  background-color: #ff9500;
+  border: none;
+  color: #fff4e6;
+  font-size: 30px;
+  font-weight: 90px;
+  text-align: center;
 }
 
 }
