@@ -586,9 +586,20 @@ gap: 20px;
   .last-textt {
     display: none;
   }
+  .ComboOptionsCardSalesCard {
+    width: 385px;
+    height: 161px;
+}
+}
+.ComboOptionsCardSalesCard img {
+  margin-left: -20px;
+  margin-top: 5px;
+  width: 179px;
+  height: 161px;
+}
   .CartSection2 {
     max-width: 322px;
-    max-height: 108px;
+    max-height: 113px;
     display: flex
 ;
     justify-content: space-between;
