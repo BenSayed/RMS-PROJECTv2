@@ -1,0 +1,154 @@
+.DeliveryLoginpage {
+  padding: 44px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.DeliveryLoginpagecontiner {
+  width: 490px;
+  height: 500px;
+
+  border-radius: 16px;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.DeliveryLoginpagecontiner h2 {
+  font-family: "Cormorant Upright", serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58.13px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+.DeliveryLoginpagecontinerform {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-direction: column;
+}
+.DeliveryLoginpagecontinerform input {
+  width: 430px;
+  height: 50px;
+  border-radius: 16px;
+  border: none;
+  border: 1px solid #ff9500;
+}
+.DeliveryLoginpagecontinerform h4 {
+  color: #ffdeb0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.94px;
+  letter-spacing: 0%;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  font-family: "Inter", serif;
+  text-decoration-thickness: Auto;
+  margin-left: -310px;
+  margin-top: -15px;
+}
+.DeliveryLoginpagecontiner button {
+  width: 361px;
+  height: 52px;
+  gap: 8px;
+  border-radius: 16px;
+  padding: 16px;
+  background-color: #ff9500;
+  border: none;
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 18px;
+
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .DeliveryLoginpagecontiner {
+    width: 90%;
+    max-width: 460px; /* تعديل أقصى عرض */
+  }
+ .DeliveryLoginpagecontiner{
+  margin-top: -90px;
+ }
+
+  .DeliveryLoginpagecontiner h2 {
+    font-size: 48px;
+  }
+
+  .DeliveryLoginpagecontinerform input {
+    width: 80vw; /* جعل المدخلات أصغر في الشاشات الكبيرة */
+  }
+
+  .DeliveryLoginpagecontiner button {
+    width: 90%;
+  }
+
+  .DeliveryLoginpagecontinerform h4 {
+    font-size: 12px;
+    margin-left: -30rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .DeliveryLoginpage {
+    padding: 20px;
+  }
+
+  .DeliveryLoginpagecontiner {
+    width: 90%;
+    max-width: 400px; /* تحديد أقصى عرض مناسب */
+  }
+
+  .DeliveryLoginpagecontiner h2 {
+    font-size: 48px;
+  }
+
+  .DeliveryLoginpagecontinerform input {
+    width: 80vw;
+  }
+
+  .DeliveryLoginpagecontiner button {
+    width: 100%;
+  }
+
+  .DeliveryLoginpagecontinerform h4 {
+    font-size: 12px;
+    margin-left: -19rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .DeliveryLoginpage {
+    padding: 15px;
+  }
+
+  .DeliveryLoginpagecontiner {
+    width: 100%;
+    max-width: 350px; /* تحديد أقصى عرض مناسب للأجهزة الصغيرة */
+  }
+
+  .DeliveryLoginpagecontiner h2 {
+    font-size: 48px;
+  }
+
+  .DeliveryLoginpagecontinerform input {
+    width: 75vw;
+    height: 52px;
+  }
+
+  .DeliveryLoginpagecontiner button {
+    width: 75vw;
+height: 52px;
+    font-size: 16px;
+  }
+
+  .DeliveryLoginpagecontinerform h4 {
+    font-size: 14px;
+    margin-left: -48vw;
+  }
+}

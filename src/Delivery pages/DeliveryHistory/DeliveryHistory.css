@@ -1,0 +1,256 @@
+.DeliveryHistory{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+
+}
+.DeliveryHistoryContet{
+ width: 361px;
+  height: 780px;
+  /* border: 1px solid chocolate; */
+ 
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.DeliveryHistorhider h2{
+  font-family: "Inter", serif;
+color: #FF9500;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 43.57px;
+  letter-spacing: 0%;
+ margin-bottom: 5px;
+  
+}
+.DeliveryHistorbuttonsDivScrole{
+
+  overflow-x: auto;  /* تفعيل الاسكرول الأفقي */
+  white-space: nowrap;  /* منع التفاف النص */
+  scroll-behavior: smooth;  /* تجعل التمرير ناعماً */
+  display: flex;
+ 
+}
+
+.DeliveryHistorbuttonsDivScrole::-webkit-scrollbar {
+  display: none;
+}
+ 
+
+ 
+
+.DeliveryHistorbuttonsDiv{
+  display: flex;
+  gap: 10px;
+  width: 500px;
+ 
+}
+ 
+
+.DeliveryHistorbuttonsAll{
+  width: 41px;
+  height: 33px;
+  border-radius: 8px;
+  gap: 10px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  background-color: #FF9500;
+  border: none;
+  font-family: "Inter", serif;
+color: aliceblue;
+font-weight: 400;
+font-size: 14px;
+line-height: 16.94px;
+letter-spacing: 0%;
+
+  cursor: pointer;
+}
+.DeliveryHistorbuttonsBUT{
+  width: 137px;
+height: 33px;
+border-radius: 8px;
+gap: 10px;
+padding-top: 8px;
+padding-right: 12px;
+padding-bottom: 8px;
+padding-left: 12px;
+background-color: #FFF4E6 ;
+
+border: none;
+font-family: "Inter", serif;
+color: #FFAA33;
+font-weight: 400;
+font-size: 14px;
+line-height: 16.94px;
+letter-spacing: 0%;
+
+cursor: pointer;
+}
+.DeliveryHistorbuttonsBUT2{
+  width: 100px;
+  height: 33px;
+  border-radius: 8px;
+  gap: 10px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  background-color: #FFF4E6 ;
+  
+  border: none;
+  font-family: "Inter", serif;
+  color: #FFAA33;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.94px;
+  letter-spacing: 0%;
+  
+  cursor: pointer;
+}
+.DeliveryHistoryCards{
+  display: flex;
+  flex-direction: column;
+width: 361px;
+margin-top: 15px;
+gap: 16px
+;
+ 
+}
+.DeliveryHistoryCardOntheway{
+  width: 361px;
+  height: 123px;
+  border-radius: 24px;
+  padding: 24px;
+  gap: 24px;
+  background:#FFF4E6;
+}
+.DeliveryHistoryCardOnthewayContent{
+display: flex;
+gap:24px;
+ 
+}
+.DeliveryHistoryCardOnthewayContent img {
+  margin-top: -30px;
+}
+.DeliveryHistoryCardOnthewayContent h2{
+  font-family: "Inter", serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29.05px;
+  letter-spacing: 0%;
+  color: #FF9500;
+  margin-bottom: 5px;
+  
+}
+.DeliveryHistoryCardOnthewayContent p{
+  font-family: "Inter", serif;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: 0%;
+  color: #151716;
+}
+.DeliveryHistoryCardOnthewayContent span{
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: 0%;
+  
+  color: #FFB854;
+}
+.DeliveryHistoryCardDoneContent{
+  display: flex;
+  gap:24px;
+}
+.DeliveryHistoryCardDone{
+  width: 361px;
+  height: 123px;
+  border-radius: 24px;
+  padding: 24px;
+  gap: 24px;
+  background:#FFF4E6;
+}
+.DeliveryHistoryCardDoneContentText{
+
+}
+.DeliveryHistoryCardDone img{
+  margin-top: -30px;
+}
+.DeliveryHistoryCardDone h2{
+  font-family: "Inter", serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29.05px;
+  letter-spacing: 0%;
+  color: #FF9500;
+  margin-bottom: 5px;
+}
+.DeliveryHistoryCardDone p{
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: 0%;
+  color: #151716;
+}
+.DeliveryHistoryCardDone span{
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: 0%;
+  
+  color: #34C759;
+}
+.DeliveryHistoryCardCanceled{
+  width: 361px;
+  height: 123px;
+  border-radius: 24px;
+  padding: 24px;
+  gap: 24px;
+  background:#FFF4E6;
+}
+.DeliveryHistoryCardCanceled img{
+  margin-top: -30px;
+}
+.DeliveryHistoryCardCanceled h2{
+  font-family: "Inter", serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29.05px;
+  letter-spacing: 0%;
+  color: #FF9500;
+  margin-bottom: 5px;
+}
+.DeliveryHistoryCardCanceled p{
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: 0%;
+  color: #151716;
+}
+.DeliveryHistoryCardCanceled span{
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: 0%;
+  
+  color: #FF3B30;
+}
+ 
+.DeliveryHistoryCardCanceledContent{
+  display: flex;
+  gap:24px;
+}
+.DeliveryHistoryCardCanceledContentText{
+
+}

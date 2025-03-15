@@ -9,6 +9,7 @@ import SignUp from "./Sign up/SignUp";
 import Contautus from "./Contaut us/Contautus";
 import MenuItems from "./MenuPages/MenuItems1/MenuItems";
 import MenuExpor from "./MenuPages/MenuExpor/MenuExpor";
+import SalesPages from "./pageSales1/SalesPages";
  
  
 // const api = axios.create({
@@ -26,12 +27,10 @@ function App() {
 
   
       <Header />  
-
-
-
-      <MenuExpor/>
-       
-      {/* <Routes>
+<SalesPages/>
+ 
+      {/* <MenuExpor/> */}
+       {/* <Routes>
        
 
         <Route path="/" element={<Home />} />  

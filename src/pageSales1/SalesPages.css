@@ -1,0 +1,760 @@
+.slaespageshero {
+  gap:0px;
+  /* display: flex
+; */
+  width: 100%;
+  justify-content: center;
+}
+
+.salesComboOptions{
+  display: flex
+  ;
+      justify-content: center;
+  
+}
+
+.SalesPages {
+  padding: 22px 64px;
+  height: 150vh;
+  font-family: "Cormorant Upright", serif;
+  margin-left: 20px;
+}
+
+.allcardsection1{
+  display: flex
+  ;
+      flex-direction: column;
+      gap: 20px;
+  
+}
+.SalesCard {
+  width: 868px;
+  height: auto;
+  position: relative;
+
+  padding: 20px;
+  gap: 8px;
+  border-radius: 48px;
+  background-color: #fff4e6;
+}
+
+.CartSection {
+  padding: 0px;
+  max-width: 820px;
+  max-height: 58px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+.CartSection h2 {
+  color: #151716;
+  font-size: 46px;
+  margin-top: -13px;
+}
+.last-textt {
+  color: #151716bf;
+  font-size: 24px;
+  font-family: "Inter", serif;
+  display: flex;
+  gap: 100px;
+
+  margin-right: 50px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29.05px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.CartSection2 {
+  max-width: 820px;
+  max-height: 90px;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #ffce8a;
+  border-radius: 32px;
+}
+.car-img-text {
+  width: 154.23px;
+  height: 88px;
+  gap: 10px;
+  border-radius: 32.76px 0px 0px 32.76px;
+  opacity: 0px;
+  white-space: nowrap;
+}
+
+.car-img-text h2 {
+  color: #151716;
+  font-size: 24px;
+  margin-top: 10px;
+}
+.car-img-text p {
+  color: #151716;
+  font-size: 10px;
+  font-family: "Inter", serif;
+  margin-top: -25px;
+}
+.cart-text {
+  text-align: left;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cost-qty-div {
+  display: flex;
+  margin-top: 20px;
+  margin-right: 10px;
+  gap: 64px;
+  align-items: center;
+}
+.button-actoion {
+  display: flex;
+  border: 1px solid #ff9500;
+  padding: 3px;
+  border-radius: 9px;
+    align-items: center;
+  width: 118.06px;
+  height: 35.73px;
+
+  justify-content: space-between;
+}
+.cost-qty-div .button-actoion h2 {
+  font-family: "Roboto", serif;
+  font-size: 25px;
+  color: #474747;
+}
+.button-actoion button {
+  width: 28.05px;
+  height: 28.05px;
+  border-radius: 9px;
+  background-color: #ff9500;
+  border: none;
+  color: #fff4e6;
+  font-size: 30px;
+  font-weight: 90px;
+  text-align: center;
+}
+.cost-qty-div h3 {
+  color: #151716;
+  font-size: 32px;
+}
+.SalesCardWrite {
+  width: 424px;
+  height: 238px;
+  position: relative;
+  padding: 20px;
+  /* left: -15px; */
+  border-radius: 48px;
+  margin-left: 30px;
+  background-color: #fff4e6;
+  display: flex
+  ;
+      flex-direction: column;
+}
+.SalesCardWrite textarea {
+  width: 376px;
+  height: 96px;
+  padding: 16px 2px 2px 16px;
+  gap: 10px;
+  border-radius: 16px;
+  border: 1px solid #ff9500;
+  color: #fff4e6;
+  font-family: "Cormorant Upright", serif;
+}
+.SalesCardWrite h2{
+  font-family: "Cormorant Upright", serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  
+}
+.ComboOptions {
+  position: relative;
+ }
+.ComboOptions h1 {
+  color: #fff4e6;
+  font-size: 48px;
+}
+.OrderSummary {
+  width: 424px;
+  height: 397px;
+  padding: 24px;
+  gap: 16px;
+  border-radius: 48px;
+  opacity: 0px;
+  background-color: #fff4e6;
+  position: relative;
+
+  left: 12px;
+}
+.ComboOptionsCardSalesCards{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+}
+.ComboOptionsCardSalesCard {
+  width: 424px;
+height: 200px;
+border-radius: 48px;
+padding: 16px;
+
+display: flex
+;
+    align-items: center;
+  gap:15px
+   ;
+    border-radius: 48px;
+    opacity: 0px;
+    background-color: #fff4e6;
+}
+.ComboOptionsCardSalesCard img{
+  margin-left: -20px;
+  margin-top: 5px;
+}
+.ComboOptionsCardSalesCardcontentstars
+{
+  display: flex;
+  gap: 40px
+  ;
+  margin-top: -35px;
+
+
+}
+.ComboOptionsCardSalesCardcontentstars h3
+{
+ color: #FFB854;
+
+font-size: 17px;
+}
+.ComboOptionsCardSalesCardcontentstars h4{
+  font-family: "Cormorant Upright", serif;
+font-weight: 700;
+font-size: 40px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+margin-top: -10px;
+ 
+
+}
+
+
+.ComboOptionsCardSalesCardcontent h2 {
+  font-family: "Cormorant Upright", serif;
+    font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  margin-top: 50px;
+  text-align: left;
+
+  
+}
+.ComboOptionsCardSalesCardcontent p {
+  width: 180px;
+height: 57px;
+opacity: 0.75;
+font-family: "Inter", serif;
+font-weight: 400;
+font-size: 16px;
+line-height: 100%;
+letter-spacing: 0%;
+
+margin-top: -15px;
+}
+
+ .border{
+  border: 1px solid crimson;
+ }
+ .salessection2{
+  display: flex;
+  justify-content: space-between;
+ }
+ .ComboOptionsCardSales{
+  width: 868px;
+height: 420px;
+gap: 20px;
+
+ }
+
+.cardT {
+  background-color: #fff6e6;
+  border-radius: 16px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-title { 
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #151716;
+    margin-top: 3px;
+}
+
+
+.details {
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+
+  color: #151716bf;
+
+  font-family: "Inter", serif;
+
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400px;
+  line-height: 19.36px;
+
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+  padding-top: 10px;
+  font-weight: 400px;
+  line-height: 19.36px;
+
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+
+  font-family: "Inter", serif;
+}
+
+.add-items {
+  background-color: transparent;
+  border: 1px solid #ffa500;
+  color: #ffa500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  width: 376px;
+  height: 64px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-items:hover {
+  background-color: #ffa500;
+  color: white;
+}
+
+.checkout {
+  background-color: #ffa500;
+  border: none;
+  color: #151716;
+  padding: 10px 12px;
+  border-radius: 8px;
+  width: 376px;
+  height: 64px;
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.36px;
+  font-family: "Inter", serif;
+
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.checkout:hover {
+  background-color: #e69500;
+}
+.WSC-text h2 {
+  color: #151716;
+  font-size: 32px;
+  position: relative;
+  top: 20px;
+}
+.WSC-text p {
+  color: #151716c4;
+  font-size: 16px;
+  position: relative;
+  left: 14rem;
+  bottom: 9rem;
+}
+.WSC-text {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.WSC-start {
+  color: #ff9500;
+  position: relative;
+  top: -4rem;
+  left: 50px;
+  display: flex;
+  font-size: 20px;
+}
+.WSC-start h2 {
+  font-size: 40px;
+  position: relative;
+  top: -25px;
+  left: 13px;
+}
+
+ 
+@media (max-width: 1366px) {
+  .OrderSummary {
+    width: 337px;
+  }
+  .checkout {
+    background-color: #ffa500;
+    border: none;
+    color: #151716;
+    padding: 10px 12px;
+    border-radius: 8px;
+    width: 294px;
+  }
+  .add-items {
+    background-color: transparent;
+    border: 1px solid #ffa500;
+    color: #ffa500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: 290px;
+  }
+  .ComboOptionsCardSalesCard {
+    width: 410px;
+  }
+  .ComboOptionsCardSales {
+    width: 838px;
+}
+}
+@media (max-width: 1024px) {
+  .SalesCardWrite {
+    width: 312px;
+  }
+  .SalesCardWrite textarea {
+    width: 270px;
+  }
+  .SalesCardWrite h2 {
+    font-family: "Cormorant Upright", serif;
+    font-weight: 700;
+    font-size: 28px;
+  }
+  .car-img-text p {
+    color: #151716;
+    font-size: 11px;
+    font-family: "Inter", serif;
+    margin-top: -20px;
+    width: 126px;
+    white-space: pre-line;
+}
+.cost-qty-div h3 {
+  color: #151716;
+  font-size: 32px;
+  /* margin-left: 44px; */
+  position: relative;
+  left: 54px;
+}
+.ComboOptions h1 {
+  color: #fff4e6;
+  font-size: 48px;
+  margin-left: 174px;
+}
+.OrderSummary {
+  width: 389px;
+  margin-top: 28px;
+}
+.ComboOptions h1 {
+  color: #fff4e6;
+  font-size: 48px;
+  margin-left: 71px;
+}
+.ComboOptionsCardSales {
+  width: 443px;
+}
+.ComboOptions h1 {
+  color: #fff4e6;
+  font-size: 48px;
+  margin-left: 75px;
+}
+
+
+
+
+}
+
+@media (max-width: 768px) {
+  .slaespageshero {
+    gap: 0px;
+    display: flex
+  ;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .SalesCard {
+    width: 550px;
+    height: 305px;
+    position: relative;
+    padding: 20px;
+    gap: 8px;
+    border-radius: 32px;
+        background-color: #fff4e6;
+}
+
+.slaespageshero {
+  gap: 25px;
+}
+.SalesCardWrite {
+  width: 466px;
+ 
+  border-radius: 32px;
+  margin-left: 8px;
+}
+.SalesCardWrite textarea {
+  width: 419px;
+}
+
+.salesComboOptions {
+  display: flex
+;
+  justify-content: center;
+  flex-direction: column-reverse;
+    align-items: center;
+  gap: 30px;
+}
+.OrderSummary {
+  width: 389px;
+  margin-top: 422px;
+}
+.add-items {
+  background-color: transparent;
+  border: 1px solid #ffa500;
+  color: #ffa500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  width: 342px;
+}
+
+.checkout {
+  background-color: #ffa500;
+  border: none;
+  color: #151716;
+  padding: 10px 12px;
+  border-radius: 8px;
+  width: 343px;
+}
+.OrderSummary {
+  width: 389px;
+  margin-top: 422px;
+  margin-left: -57px;
+  margin-bottom: 34px;
+}
+.OrderSummary {
+  width: 389px;
+  margin-top: 30px;
+  margin-left: -16px;
+  margin-bottom: -27px;
+}
+
+
+
+.ComboOptionsCardSales {
+  width: 443px;
+  margin-left: 53px;
+ }
+
+
+}
+@media (max-width: 425px) {
+
+  .SalesCard {
+    width: 361px;
+    height: auto;
+  }
+  .last-textt {
+    display: none;
+  }
+  .CartSection2 {
+    max-width: 322px;
+    max-height: 108px;
+    display: flex
+;
+    justify-content: space-between;
+    border: 2px solid #ffce8a;
+    border-radius: 26px;
+}
+.car-img-text{
+  width: 149px;
+  height: 108px;
+}
+.car-img-text h2 {
+  color: #151716;
+  font-size: 19px;
+  margin-top: -17px;
+}
+.car-img-text p {
+  color: #151716;
+  font-size: 8px;
+  font-family: "Inter", serif;
+  margin-top: -83px;
+  width: 177px;
+  white-space: pre-line;
+}
+
+.cost-qty-div {
+  display: flex
+;
+  margin-top: 51px;
+  margin-right: 10px;
+  gap: 71px;
+  align-items: center;
+  margin-left: -61px;
+}
+.button-actoion {
+  display: flex
+;
+  border: 1px solid #ff9500;
+  padding: 3px;
+  border-radius: 9px;
+  align-items: center;
+  width: 103.06px;
+  height: 38.73px;
+  justify-content: space-between;
+}
+.SalesCardWrite {
+  width: 361px;
+  border-radius: 32px;
+  margin-left: 0px;
+  height: 190px;
+}
+.OrderSummary {
+  width: 366px;
+  margin-top: 30px;
+  margin-left: -35px;
+  margin-bottom: -27px;
+}
+.add-items {
+  background-color: transparent;
+  border: 1px solid #ffa500;
+  color: #ffa500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  width: 317px;
+}
+
+    .checkout {
+        background-color: #ffa500;
+        border: none;
+        color: #151716;
+        padding: 10px 12px;
+        border-radius: 8px;
+        width: 319px;
+    }
+
+    .ComboOptionsCardSalesCards {
+      display: flex
+  ;
+      flex-wrap: wrap;
+      gap: 17px;
+      margin-left: -30px;
+  }
+  .ComboOptionsCardSales {
+    width: 334px;
+    margin-left: -2px;
+}
+
+
+.SalesCardWrite h2 {
+  font-family: "Cormorant Upright", serif;
+  font-weight: 700;
+  font-size: 25px;
+}
+.SalesCardWrite textarea {
+  height: 68px;
+  width: 322px;
+}
+
+
+.ComboOptionsCardSalesCardcontentstars h3 {
+  color: #FFB854;
+  font-size: 22px;
+  
+}
+
+
+.ComboOptionsCardSalesCardcontentstars {
+  display: flex
+;
+  gap: 40px;
+  margin-top: -29px
+}
+
+
+.ComboOptionsCardSalesCardcontentstars h4 {
+  font-family: "Cormorant Upright", serif;
+  font-weight: 700;
+  font-size: 43px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  margin-top: -1px;
+  margin-left: -27px;
+}
+.ComboOptions h1 {
+  color: #fff4e6;
+  font-size: 48px;
+  margin-left: -27px;
+}
+
+.ComboOptionsCardSalesCard {
+  width: 385px;
+}
+.ComboOptionsCardSalesCardcontent h2 {
+  font-family: "Cormorant Upright", serif;
+  font-weight: 700;
+  font-size: 29px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  margin-top: 50px;
+  text-align: left;
+}
+.ComboOptionsCardSalesCardcontent p {
+  width: 169px;
+  height: 57px;
+  opacity: 0.75;
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin-top: -15px;
+}
+.ComboOptionsCardSalesCardcontentstars h3 {
+  color: #FFB854;
+  font-size: 20px;
+}
+.ComboOptionsCardSalesCardcontentstars h4 {
+  font-family: "Cormorant Upright", serif;
+  font-weight: 700;
+  font-size: 37px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  margin-top: -1px;
+  margin-left: -27px;
+}
+
+}

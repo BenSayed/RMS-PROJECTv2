@@ -1,0 +1,200 @@
+.DeliveryHome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 19px;
+  padding-bottom: 30px;
+}
+.DeliveryHomeHeader {
+  display: flex;
+  gap: 16px;
+}
+.DeliveryHomeHeader h2 {
+  font-family: "Cormorant Upright", serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43.6px;
+  letter-spacing: 0%;
+  color: #ff9500;
+  margin-top: 12px;
+}
+.DeliveryHomeCards {
+  width: 361px;
+
+  /* border: 1px solid red; */
+  gap: 15px;
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+}
+
+.DeliveryHomeCards:active {
+  cursor: pointer; /* تغيير المؤشر عند السحب */
+}
+
+.DeliveryHomeCard {
+  width: 361px;
+  height: 199px;
+
+  border-radius: 24px;
+  padding: 24px;
+  background-color: #fff4e6;
+}
+.DeliveryHomeCardContintText h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29.05px;
+  letter-spacing: 0%;
+  font-family: "Inter", serif;
+  color: #ff9500;
+  margin-bottom: 1px;
+}
+.DeliveryHomeCardContintText span {
+  color: #34c759;
+}
+.DeliveryHomeCardContintttttt {
+  display: flex;
+  gap: 30px;
+}
+.DeliveryHomeCardContintttttt p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: 0%;
+  font-family: "Inter", serif;
+}
+.DeliveryHomeCardContintText {
+  display: flex;
+  gap: -30rem;
+  flex-wrap: wrap;
+}
+.DeliveryHomeCardContint button {
+  width: 323px;
+  height: 52px;
+  gap: 8px;
+  border-radius: 16px;
+  padding: 16px;
+  background-color: #ff9500;
+  border: none;
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 27px;
+  letter-spacing: 0%;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.DeliveryHomeCardContintCircel {
+  transform: translate(320px, -25px);
+  position: absolute;
+}
+.DeliveryHomeCardTakawey {
+  width: 361px;
+
+  /* border: 1px solid seashell; */
+  max-width: 509px;
+}
+.DeliveryHomeCardTakaweytext h2 {
+  color: #ff9500;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38.73px;
+  letter-spacing: 0%;
+  font-family: "Inter", serif;
+  text-align: left;
+}
+.DeliveryHomeCardTakaweyCard {
+  width: 361px;
+  height: 123px;
+  gap: 24px;
+  border-radius: 24px;
+  padding: 24px;
+  background-color: #fff4e6;
+  display: flex;
+}
+.DeliveryHomeCardTakaweyCard img {
+  width: 64px;
+  height: 90px;
+  margin-top: -20px;
+}
+.DeliveryHomeCards2 {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  width: 361px;
+  gap: 16px;
+}
+
+.DeliveryHomeCardTakaweyCardContenttext h2 {
+  font-family: "Inter", serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29.05px;
+  letter-spacing: 0%;
+  color: #ff9500;
+  margin-bottom: 1px;
+}
+.DeliveryHomeCardTakaweyCardContenttext p {
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22.36px;
+  letter-spacing: 4%;
+  color: #151716;
+}
+.DeliveryHomeCardTakaweyCardContenttext span {
+  color: #ff9500;
+}
+
+.DeliveryHomeCards3 {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+
+.DeliveryHomeCardDoneCardContenttext h2 {
+  font-family: "Inter", serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29.05px;
+  letter-spacing: 0%;
+  color: #ff9500;
+  margin-bottom: 1px;
+}
+.DeliveryHomeCardDoneCardContenttext p {
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22.36px;
+  letter-spacing: 4%;
+  color: #151716;
+}
+.DeliveryHomeCardDoneCardContenttext span {
+  color: #34c759;
+}
+.DeliveryHomeCardDoneCard {
+  width: 361px;
+  height: 123px;
+  gap: 24px;
+  border-radius: 24px;
+  padding: 24px;
+  background-color: #fff4e6;
+  display: flex;
+}
+.DeliveryHomeCardDoneCard img {
+  width: 64px;
+  height: 90px;
+  margin-top: -20px;
+}
+.DeliveryHomeCardDone {
+  width: 361px;
+
+  /* border: 1px solid seashell; */
+  max-width: 509px;
+}
+
+
+

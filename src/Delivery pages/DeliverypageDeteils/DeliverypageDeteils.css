@@ -1,0 +1,252 @@
+.DeliverypageDeteils {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.DeliverypageDeteilscard {
+  width: 361px;
+  height: 1099px;
+  top: 119px;
+  left: 16px;
+  border-radius: 24px;
+  padding: 24px;
+  gap: 24px;
+  background-color: #fff4e6;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.DeliverypageDeteilsD1 {
+  display: flex;
+  width: 313px;
+  height: 84px;
+  gap: 16px;
+}
+.DeliverypageDeteilsD1text h4 {
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: 0%;
+  color: #151716;
+  margin-top: -15px;
+}
+.DeliverypageDeteilsD1text p {
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: 0%;
+  color: #151716;
+  margin-top: -15px;
+}
+.DeliverypageDeteilsD1 h2 {
+  font-family: "Inter", serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29.05px;
+  letter-spacing: 0%;
+  color: #ff9500;
+}
+.DeliverypageDeteilsD1imicon {
+  margin-top: 57px;
+}
+.divlinedrivry {
+  width: 320px;
+  height: 4px;
+  background-color: #ff9500;
+  border-radius: 10px;
+}
+.divlinedrivry2 {
+  width: 320px;
+  height: 4px;
+  background-color: #ff9500;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+.DeliverypageDeteilsD2Invoice {
+  width: 295px;
+  height: 285px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.DeliverypageDeteilsD2Invoice h1 {
+  font-family: "Inter", serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29.05px;
+  letter-spacing: 0%;
+  color: #ff9500;
+}
+.DeliverypageDeteilsD2InvoiceText {
+  width: 295px;
+  height: 98px;
+  display: flex;
+  justify-content: space-between;
+}
+.DeliverypageDeteilsD2InvoiceText h3 {
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.94px;
+  letter-spacing: 0%;
+  color: #ff9500;
+}
+.DeliverypageDeteilsD2InvoiceTextMeal {
+  width: 119px;
+  height: 98px;
+  display: flex;
+
+  flex-direction: column;
+  gap: 8px;
+}
+.DeliverypageDeteilsD2InvoiceTextMealtext h2 {
+  margin-bottom: 5px;
+}
+.DeliverypageDeteilsD2InvoiceText h2 {
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: 0%;
+  color: #151716;
+}
+.DeliverypageDeteilsD2InvoiceTextPace {
+}
+
+.DeliverypageDeteilsD2InvoiceTextPrice {
+}
+.DeliverypageDeteilsD2InvoiceTextPacetext h2 {
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.DeliverypageDeteilsD2InvoiceTextPricetext h2 {
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.DeliverypageDeteilsD2Invoice2Text {
+  width: 295px;
+  height: 134px;
+  gap: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+.DeliverypageDeteilsD2Invoice2Text h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.41px;
+  letter-spacing: 0%;
+  color: #15171659;
+  margin-bottom: 4px;
+}
+.DeliverypageDeteilsD2InvoiceTextPricetexttotel {
+  display: flex;
+  justify-content: space-between;
+
+  width: 295px;
+  height: 29px;
+}
+.DeliverypageDeteilsD2InvoiceTextPricetexttotel h2 {
+  font-family: "Inter", serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29.05px;
+  letter-spacing: 0%;
+  color: black;
+}
+.DeliverypageDeteilsD2InvoiceTextPricetextEsttime {
+  display: flex;
+  justify-content: space-between;
+
+  width: 295px;
+  height: 17px;
+}
+.DeliverypageDeteilsD2InvoiceTextPricetextEsttime h3 {
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16.94px;
+  letter-spacing: 0%;
+  color: #15171680;
+}
+.DeliverypageDeteilsD3Notis {
+  width: 295px;
+  height: 121px;
+}
+.DeliverypageDeteilsD3Notis h2 {
+  font-family: "Inter", serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29.05px;
+  letter-spacing: 0%;
+  color: #ff9500;
+}
+.DeliverypageDeteilsD3Notis p {
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: 0%;
+  color: #151716;
+  margin-top: -10px;
+}
+.DeliverypageDeteilsD4Notis {
+  width: 295px;
+  height: 205px;
+}
+.DeliverypageDeteilsD4Notis h2 {
+  font-family: "Inter", serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29.05px;
+  letter-spacing: 0%;
+  color: #ff9500;
+}
+.DeliverypageDeteilsD4Notis iframe {
+  width: 295px;
+  height: 160px;
+  border-radius: 10px;
+}
+
+.DeliverypageDeteilsD5buttone {
+  width: 323px;
+  height: 160px;
+  gap: 16px;
+  padding-bottom: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.DeliverypageDeteilsD5buttone button {
+  width: 323px;
+  height: 64px;
+  border-radius: 16px;
+  padding: 16px;
+  border: none;
+}
+.DeliverypageDeteilsD5buttone1 {
+  background-color: #ff9500;
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 27px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.DeliverypageDeteilsD5buttone2 {
+  background-color: #34c759;
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 27px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.linedrevry {
+  margin-top: 10px;
+}
