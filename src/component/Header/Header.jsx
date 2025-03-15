@@ -121,7 +121,7 @@ const Header = () => {
 
                   <li>
                     <div className="HeaderContinentlogoButtonModel">
-                      <Link to="/#">
+                      <Link to="/SalesPages">
                         <img
                           className="HeaderContinentlogoButton2model"
                           src={Headerimg2}
