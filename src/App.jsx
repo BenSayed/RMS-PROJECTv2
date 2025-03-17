@@ -24,7 +24,7 @@ import CheefuiPage from "./chiefUiPage/CheefuiPage.jsx";
 function App() {
   return (
     <div className="allapp">
-      {/* <Header />    */}
+      <Header />   
       {/* <CheefuiPage/> */}
       {/* <OrderPage /> */}
       {/* <ComHeader /> */}
