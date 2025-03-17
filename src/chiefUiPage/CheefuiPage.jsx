@@ -139,7 +139,7 @@ const CheefuiPage = () => {
 
   return (
     <div className="CheefuiPage">
-      <div className="CheefuiPageContint">
+       <div className="CheefuiPageContint">
         <div className="CheefuiPageContintHeader  ">
           <div className="CheefuiPageContintHeaderLogo  ">
             <img src="src/chiefUiPage/Logo Header.svg" alt="Logo" />
