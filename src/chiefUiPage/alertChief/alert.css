@@ -1,0 +1,356 @@
+.order-containerfrist {
+    display: flex
+;
+    justify-content: center;
+    align-content: center;
+    padding: 64px;
+}
+
+
+.order-container {
+  width: 1040px;
+  height: 740px;
+  top: 4818px;
+  left: 20246px;
+  border-radius: 48px;
+  background: #fff4e6;
+ 
+ 
+}
+
+.heade {
+  font-size: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 48px;
+  background-color: red;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer; /* يجعل المؤشر يظهر كيد عند تمرير الماوس */
+}
+
+.status-dot:hover {
+  background-color: rgb(247, 243, 37);
+}
+
+.lif{
+  margin-left: 120px;
+}
+.righ{
+  margin-left: 30px;
+}
+.lbel {
+  color: black;
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+ 
+}
+.labl {
+  color: black;
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+ 
+}
+
+.time,
+.order-date {
+  font-weight: bold;
+  color:#E88800;
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+}
+
+.icons {
+ margin-left: 140px;
+}
+.iconn {
+  width: 32px;
+  height: 32px;
+  top: 5.33px;
+  left: 2.67px;
+  color: #ff9500;
+ 
+}
+.icoon {
+  width: 32px;
+  height: 32px;
+  left: 2.67px;
+  color: #ff9500;
+  margin-left: 27px;
+ 
+}
+
+.order-list {
+  margin-top: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.order-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+.order-item {
+  width: 992px;
+  height: 240px;
+  gap: 24px;
+  border-radius: 48px;
+  padding: 24px;
+  background: #151716;
+  margin: 20px;
+}
+
+.order-image {
+  width: 193px;
+  height: 108px;
+  border-radius: 32px;
+  background: #d9d9d9;
+}
+.order-detils {
+  width: 127;
+  height: 74;
+  gap: 16px;
+}
+.order-labl {
+  width: 127;
+  height: 39;
+  font-family: "Cormorant Upright", serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38.75px;
+  letter-spacing: 0%;
+  text-align: center;
+  display: flex;
+  color: #fff4e6;
+  margin-left: 260px;
+  margin-top: -120px;
+}
+.ordr-value  {
+  width: 127;
+  height: 19;
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #fff4e6;
+  margin-left: -340px;
+  list-style: none;
+}
+.order-lbel {
+  width: 68;
+  height: 39;
+  font-family: "Cormorant Upright", serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38.75px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #fff4e6;
+  margin-top: -105px;
+  margin-left: 80px;
+}
+.order-vale {
+  width: 68;
+  height: 19;
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #fff4e6;
+  margin-top: 8px;
+  margin-left: 75px;
+}
+.order-details {
+  flex: 1;
+  text-align: center;
+  font-size: 16px;
+}
+
+.order-details.notes {
+  width: 263;
+  height: 93;
+  gap: 16px;
+}
+.order-label {
+  font-family: "Cormorant Upright", serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38.75px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #fff4e6;
+  margin-left: 600px;
+  margin-top: -104px;
+}
+.order-value {
+  width: 263;
+  height: 38;
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #fff4e6;
+  margin-left: 600px;
+  line-height: 1.6;
+  list-style: none;
+}
+.progress-container {
+  width: 944px;
+  height: 29px;
+  gap: 8px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  background: #fff4e6;
+  margin-top: 5px;
+  width: 944;
+  height: 4;
+  border-radius: 48px;
+  margin-top: 10px;
+}
+
+.progress {
+  display: block;
+  width: 50%;
+  height: 100%;
+  background: #ffb854;
+  border-radius: 3px;
+}
+.ordr-steps {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-top: 5px;
+  width: 944;
+  height: 17;
+  color: #ffdeb0;
+}
+.order-steps {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-top: 5px;
+  width: 944;
+  height: 17;
+  color: #fff4e6;
+}
+.order-step {
+  color: #ffb854;
+}
+
+.order-actions {
+  width: 928;
+  height: 64;
+  top: 593px;
+  left: 56px;
+  gap: 64px;
+  margin-top: 20px;
+}
+
+/* button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 10px;
+} */
+
+button.StartCooking {
+  width: 200px;
+  height: 64px;
+  gap: 10px;
+  border-radius: 16px;
+  padding-top: 12px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  background: #34c759;
+  width: 134;
+  height: 24;
+  font-family: "Inter", serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24.2px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ebf9ee;
+  margin-left: 50px;
+  border: none;
+  margin-right: 50px;
+}
+
+button.DelayOrder {
+  border: none;
+  width: 200px;
+  height: 64px;
+  gap: 10px;
+  border-radius: 16px;
+  padding-top: 12px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  background: #ff9500;
+  width: 115;
+  height: 24;
+  font-family: "Inter", serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24.2px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #fff4e6;
+  margin-left: 130px;
+  margin-right: 50px;
+}
+button.cancel {
+  border: none;
+  width: 200px;
+  height: 64px;
+  gap: 10px;
+  border-radius: 16px;
+  padding-top: 12px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  background: #ff3b30;
+  width: 68;
+  height: 24;
+  font-family: "Inter", serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24.2px;
+  letter-spacing: 0%;
+  margin-left: 130px;
+  text-align: center;
+  color: #fff4e6;
+}

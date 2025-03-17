@@ -30,7 +30,7 @@ const Footer = () => {
         <a href="#">Contact_Us</a>
       
       </nav>
-      <div className="copyright0">
+      {/* <div className="copyright0">
         <p>
           &copy; 2025 Flavor Haven. All rights reserved. No content from this
           website may be copied, reproduced, or distributed for commercial
@@ -39,7 +39,7 @@ const Footer = () => {
       </div>
       <div className='line0'>
 
-      </div>
+      </div> */}
     </footer>
     </div>
   );

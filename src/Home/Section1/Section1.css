@@ -95,7 +95,7 @@ align-items: center;
 }
 
 /* Button container */
-.button-container {
+.button-container2 {
   display: flex;
   gap: 16px;
 
@@ -104,36 +104,32 @@ align-items: center;
 
 /* Button styles */
  
- .button-container .button {
-  width: 252px;
-  height: 64px;
  
-  padding: 16px 24px;
-  border-radius: 16px;
-  font-size: 21px;
-  font-weight: 500;
-  cursor: pointer;
-  border: none;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-}
 
 
-button .button-container .primary-button {
+.button-container2 .primary-button {
   width: 256px;
   background-color: #ff9500;
   color: #000000;
   font-family: "Inter", serif;  font-size: 20px;
   text-align: center;
- 
+  width: 252px;
+  height: 64px;
+  border-radius: 16px;
+  border:  none;
+
+
 }
 
-button .button-container.secondary-button {
+.button-container2 .secondary-button {
   background-color: #fff5eb;
   color: #000000;
   font-family: "Inter", serif;   font-size: 20px;
   text-align: center;
+  width: 252px;
+  height: 64px;
+  border-radius: 16px;
+  border:  none;
 
 }
 
@@ -146,7 +142,9 @@ button.mic-button {
   border: none;
   border-radius: 16px;
   cursor: pointer;
+
 }
+
 
 /*
 /* ✅ ✅ ✅ 🌍 Media Queries 🌍 ✅ ✅ ✅ */

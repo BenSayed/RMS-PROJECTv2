@@ -11,7 +11,9 @@ import MenuItems from "./MenuPages/MenuItems1/MenuItems";
 import MenuExpor from "./MenuPages/MenuExpor/MenuExpor";
 import SalesPages from "./pageSales1/SalesPages";
 import ComHeader from "./component/Header/ComHeader";
-
+import OrderPage from "./chiefUiPage/alertChief/alert";
+ import CheefuiPage from "./chiefUiPage/CheefuiPage.jsx";
+ 
 // const api = axios.create({
 //   baseURL: 'http://flavorhaven.runasp.net/api/User/Login', // استبدلها بالرابط الصحيح
 //   headers: {
@@ -23,12 +25,13 @@ function App() {
   return (
     <div className="allapp">
         
-      <Header />  
-
+     {/* <Header />    */}
+<CheefuiPage/>
+{/* <OrderPage/> */}
       {/* <ComHeader /> */}
       {/* <MenuExpor/> */}
-      
-      <Routes>
+    
+       {/* <Routes>
        
 
         <Route path="/" element={<Home />} />  
@@ -42,7 +45,7 @@ function App() {
 
 
 
-      </Routes>   
+      </Routes>     */}
 
       {/* <Footer />  */}
     </div>

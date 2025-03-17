@@ -53,7 +53,7 @@ const Section1 = () => {
             </button>
           </div>
 
-          <div className="button-container">
+          <div className="button-container2">
             <button className="button primary-button">Menu</button>
             <button className="button secondary-button">Book a table</button>
           </div>

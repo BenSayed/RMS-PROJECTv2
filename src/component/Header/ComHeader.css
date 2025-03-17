@@ -111,7 +111,8 @@
   transition: color 0.2s ease, transform 0.2s ease; /* إضافة تأثير التحول */
 }
 
-.ComHeaderCardNavUi li a:hover {
+ .active-link 
+  {
   color: #FF9500;
 }
 
@@ -137,6 +138,7 @@
 }
 
 @media (max-width: 425px) {
+  
 
   .ComHeader1 {
     display: flex

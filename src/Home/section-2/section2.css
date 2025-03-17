@@ -8,8 +8,8 @@
   min-height: 450px; /* الحد الأدنى للارتفاع */
   height: auto; /* السماح للارتفاع بالتكيف مع المحتوى */
    margin-top: -8rem;
-   padding-left: 44px;
-   padding-right: 44px;
+   padding-left: 64px;
+   padding-right: 64px;
 }
 
 .features-container {

@@ -1,0 +1,300 @@
+.CheefuiPage{
+ 
+}
+ 
+.CheefuiPageContint {
+  
+  margin-top: 30px;
+  padding-top: 20px;
+  padding-left: 64px;
+  padding-right: 64px;
+  display: flex
+;
+   flex-direction: column; 
+ }
+.CheefuiPageContintHeader {
+  width: 100%;
+  height: 48px;
+  display: flex
+;
+  justify-content: space-between;
+  align-items: center;
+}
+.border{
+  border: 1px solid crimson;
+}
+.CheefuiPageContintHeaderLogo{
+  width: 226px;
+  height: 48px;
+  gap: 259px;
+  
+}
+.CheefuiPageContintHeaderTimer{
+  width: 150px;
+  height: 30px;
+  
+}
+.currentTime1{
+  color: #ffffff;
+  text-align: center;
+ 
+  font-family: "Inter", serif;
+ 
+font-weight: 500;
+font-size: 24px;
+line-height: 30px;
+letter-spacing: 0%;
+text-align: right;
+margin-top: -1px;
+
+}
+
+.CheefuiPageContintHearobutton{
+  width: 400px;
+  height: 100px;
+}
+
+.buttonchifpage {
+  padding-top: 20px;
+  display: flex; /* استخدام flexbox */
+  align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
+  gap: 20px; /* المسافة بين العناصر */
+  
+  margin-left: 10px;
+
+}
+.button1chifpage {
+  margin-left: -10px;
+  width: 50px;
+  height: 50px;
+
+  border-radius: 16px;
+  padding: 16px;
+  background: #ff9500;
+  border: none;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.chifSelectpage {
+  height: 48px;
+  padding-left: 17px;
+  display: flex; /* استخدام flexbox */
+  justify-content: space-between; /* توزيع العناصر بالتساوي */
+  align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
+  gap: px; /* المسافة بين العناصر */
+  border-radius: 16px;
+
+  border-width: 1px;
+  border: 1px solid #ff9500;
+  background-color: #ff950000;
+  color: beige;
+}
+
+.optionselect {
+  color: black;
+}
+
+ 
+.chifSelectpage option {
+  font-size: 10px;      /* حجم النص داخل كل خيار */
+  padding: 10px;        /* المسافة الداخلية لكل خيار */
+  background-color: #FFF4E6 ;  /* خلفية كل خيار */
+  color: #313131;          /* لون النص داخل الخيارات */
+}
+
+.button1chifpage img{
+  width: 75px;
+  height: 30px;
+  margin-top: -6px;
+}
+
+.CheefuiPageContintCared {
+  display: flex
+;
+  margin-top: 5px;
+  gap: 15px;
+}
+.NewOrders{
+  width: 100%;
+height: 569px;
+
+}
+.chifNewOrderscardsContainer{
+  height: 435px;
+  overflow: hidden;
+  overflow-y: scroll;  /* تفعيل الاسكرول الأفقي */
+   scroll-behavior: smooth;  /* تجعل التمرير ناعماً */
+   max-height: auto;
+}
+.chifNewOrderscardsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.NewOrderslines{
+  width: 100%;
+  height: 569px;
+  border-left: 1px solid rgb(182, 182, 182);
+}
+.InProgresslines{
+  width: 100%;
+  height: 569px;
+  border-left: 1px solid rgb(179, 179, 179);
+}
+.InProgress{
+  width: 100%;
+height: 569px;
+ 
+}
+.ReadytoServe{
+  width: 100%;
+height: 569px;
+ 
+}
+
+.cardchifuipageprosser {
+  max-height: 447px;
+  width: 415px;
+  height: 120px;
+  border-radius: 48px;
+  background-color: #fff4e6;
+  box-sizing: border-box;
+  flex-shrink: 0; /* منع الكروت من الانكماش */
+  display: flex;
+  justify-content: space-between;
+}
+.cardchifuipageprosserImg {
+  margin-left: -5px;
+}
+.cardchifuipageprosserTextt {
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: -70px;
+}
+
+.cardchifuipageprosserTextt p {
+  color: #333333;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.36px;
+  letter-spacing: 0%;
+  font-family: "Inter", serif;
+  margin-top: -25px;
+}
+.cardchifuipageprosserTextt h3 {
+  font-family: "Cormorant Upright", serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38.75px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.cardchifuipageprosserIcon {
+  margin-top: 40px;
+  width: 48;
+  height: 48;
+  position: relative;
+  left: -30px;
+}
+
+.chifNewOrdersText h2{
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58.13px;
+  letter-spacing: 0%;
+  text-align: center;
+
+  color: antiquewhite;
+  font-family: "Cormorant Upright", serif;
+  padding-bottom: 30px;
+}
+.chifNewOrderscardsContainer{
+  margin-top: -47px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chifReadytoServeText h2{
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58.13px;
+  letter-spacing: 0%;
+  text-align: center;
+   font-family: "Cormorant Upright", serif;
+
+  padding-bottom: 30px;
+  font-family: "Cormorant Upright", serif;
+  color: #ff9500;
+ }
+
+
+ .chifInProgressText h2{
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58.13px;
+  letter-spacing: 0%;
+  text-align: center;
+
+  color: antiquewhite;
+  font-family: "Cormorant Upright", serif;
+  color: #ffce8a;
+  padding-bottom: 30px;
+}
+@media (max-width: 1366px) {
+  .cardchifuipageprosser {
+    max-height: 447px;
+    width: 390px;
+  }
+  .cardchifuipageprosserTextt {
+    display: flex
+;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -44px;
+}
+
+
+}
+@media (max-width: 1024px) {
+  .cardchifuipageprosser {
+    max-height: 447px;
+    width: 486px;
+}
+  .cardchifuipageprosserTextt {
+    display: flex
+;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -110px;
+}
+.CheefuiPageContintCared {
+  display: flex
+;
+  margin-top: 5px;
+  gap: 15px;
+  flex-direction: column;
+}
+.NewOrderslines {
+  display: none;
+}
+.InProgresslines {
+  display: none;
+}
+.chifNewOrderscardsContainer {
+  margin-top: -47px;
+  display: flex
+;
+  flex-direction: column;
+  gap: 20px;
+  align-content: center;
+  align-items: center;
+}
+}
