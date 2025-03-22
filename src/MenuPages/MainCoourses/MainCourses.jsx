@@ -1,14 +1,14 @@
 import React from 'react';
-import "./MenuExpor.css";
+import "./MainCoourses.css";
 import Banner from '../MenuItems1/Banar/banarMenu';
 
 import heartImg from './solar_heart-bold (2).svg';
 import imgSrc from './Rectangle 1153 (1).svg';
 
-const MenuExpor = () => {
+const MainCourses = () => {
   return (
     <div  >
- 
+  <Banner/>
     <div className="MenuExporPage">
         
         <div className="food-selection0">
@@ -123,4 +123,4 @@ const Card = ({ id, imgSrc, altText, title, description, price, heartImg }) => {
   );
 };
 
-export default MenuExpor;
+export default MainCourses;

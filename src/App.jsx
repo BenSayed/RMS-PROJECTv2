@@ -8,8 +8,7 @@ import axios from "axios";
 import SignUp from "./Sign up/SignUp";
 import Contautus from "./Contaut us/Contautus";
 import MenuItems from "./MenuPages/MenuItems1/MenuItems";
-import MenuExpor from "./MenuPages/MenuExpor/MenuExpor";
-import SalesPages from "./pageSales1/SalesPages";
+ import SalesPages from "./pageSales1/SalesPages";
 import ComHeader from "./component/Header/ComHeader";
 import OrderPage from "./chiefUiPage/alertChief/alert";
 import CheefuiPage from "./chiefUiPage/CheefuiPage.jsx";
@@ -19,7 +18,8 @@ import DeliveryHistory from "./Delivery pages/DeliveryHistory/DeliveryHistory";
 import DeliverypageDeteils from "./Delivery pages/DeliverypageDeteils/DeliverypageDeteils";
 import ComHeaderMobile from "./component/HeaderMobile/ComHeaderMobile";
 import HeaderMobilee from "./component/HeaderMobile/HeaderMobilee";
- // const api = axios.create({
+import MainCourses from "./MenuPages/MainCoourses/MainCourses";
+   // const api = axios.create({
 //   baseURL: 'http://flavorhaven.runasp.net/api/User/Login', // استبدلها بالرابط الصحيح
 //   headers: {
 //     'Content-Type': 'application/json',
@@ -29,8 +29,8 @@ import HeaderMobilee from "./component/HeaderMobile/HeaderMobilee";
 function App() {
   return (
     <div className="allapp">
-      {/* <Header /> */}
- <HeaderMobilee/>
+      <Header />
+ {/* <HeaderMobilee/> */}
       {/* <CheefuiPage/> */}
       {/* <OrderPage /> */}
       {/* <ComHeader /> */}
@@ -43,24 +43,26 @@ function App() {
       {/* <DeliverypageDeteils /> */}
 {/* 
       <Home />  */}
+
+
+
       
-      <Routes>
+       <Routes>
        
 
-        <Route path="/" element={  <DeliveryHome />   } />       {/* <DeliveryLogin/> */}        {/* <DeliveryHome/> */}
+        <Route path="/" element={  <Home />   } />        
         <Route path="/about" element={<AboutPage />} />  
-        <Route path="/login" element={<Login/>} />  
+        <Route path="/login" element={<Login/>} />    
         <Route path="/SignUp" element={ <SignUp/>} />  
         <Route path="/Contautus" element={ <Contautus/>} />  
         <Route path="/MenuItems" element={ <MenuItems/>} />  
-        <Route path="/MenuExpor" element={ <MenuExpor/>} />  
+        <Route path="/MainCourses" element={ <MainCourses/>} />  
         <Route path="/SalesPages" element={ <SalesPages/>} />  
         <Route path="/DeliverypageDeteils" element={ <DeliverypageDeteils/>} />
         <Route path="/DeliveryHome" element={ <DeliveryHome/>} />  
         <Route path="/DeliveryHistory" element={ <DeliveryHistory/>} />
 
-      </Routes>  
-
+      </Routes>                  
       {/* <Footer />  */}
     </div>
   );

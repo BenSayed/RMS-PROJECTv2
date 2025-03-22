@@ -527,6 +527,11 @@ text-align: center;
  
   left: 82rem;
 }
+.section4FristclassButten1 {
+  position: relative;
+  top: -25rem;
+  left: 1rem;
+}
 
 @media (max-width: 1400px) {
   .section4FristclassButten1 {

@@ -3,6 +3,7 @@ import "./Section1.css";
 import imgeHome1 from "/HomeIMG/Section1IMG/Rectangle 1152.svg"; // صورة سطح المكتب
 import imgeHome2 from "/HomeIMG/Section1IMG/Vector.svg";
 import imgMobile from "./Rectangle 1152.svg"; // صورة الموبايل (يفترض أن تكون موجودة في نفس المجلد)
+import { Link } from "react-router-dom";
 
 const Section1 = () => {
   // تخزين رابط الصورة في حالة (state)
@@ -54,7 +55,9 @@ const Section1 = () => {
           </div>
 
           <div className="button-container2">
-            <button className="button primary-button">Menu</button>
+          <Link to="/MenuItems">
+      <button className="button primary-button">Menu</button>
+    </Link>
             <button className="button secondary-button">Book a table</button>
           </div>
         </div>

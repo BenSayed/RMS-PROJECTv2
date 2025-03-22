@@ -1,13 +1,15 @@
 import React from 'react';
+import "./MenuItems.css" ;
  import Banner from './Banar/banarMenu';
-import MenuExpor from './Explore Menu/explor';
+ import MainCourses from './Explore Menu/ExploreMenu';
+import ExploreMenu from './Explore Menu/ExploreMenu';
    
 const MenuItems = () => {
   return (
-    <div>
+    <div className='MenuItems'>
  
- <Banner/>
- {/* <MenuExpor/> */}
+ <Banner/>  
+ <ExploreMenu/>
  
        </div>
   );

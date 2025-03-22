@@ -52,7 +52,7 @@ const ComHeader = ({ onClose }) => {
               <li>
                 <Link
                   className={`linkmodel ${activeLink === "Menu" ? "active" : ""}`}
-                  to="/menu"
+                  to="/MenuItems"
                   onClick={() => handleLinkClick("Menu")}
                 >
                   Menu
