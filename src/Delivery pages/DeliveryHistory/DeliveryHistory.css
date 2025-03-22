@@ -147,14 +147,15 @@ gap:24px;
   margin-bottom: 5px;
   
 }
-.DeliveryHistoryCardOnthewayContent p{
+.DeliveryHistoryCardOnthewayContent p {
   font-family: "Inter", serif;
-
   font-weight: 500;
   font-size: 16px;
   line-height: 19.36px;
   letter-spacing: 0%;
   color: #151716;
+  position: relative;
+  top: -10px;
 }
 .DeliveryHistoryCardOnthewayContent span{
   font-family: "Inter", serif;
@@ -209,6 +210,26 @@ gap:24px;
   
   color: #34C759;
 }
+.DeliveryHistoryCardDoneContentText{
+  margin-top: -25px;
+}
+.DeliveryHistoryCardDone p {
+
+ 
+    position: relative;
+    top: -10px;
+}
+
+.DeliveryHistoryCardCanceled p {
+ 
+    color: #151716;
+    position: relative;
+    top: -10px;
+
+}
+.DeliveryHistoryCardCanceledContentText{
+  margin-top: -25px;
+}
 .DeliveryHistoryCardCanceled{
   width: 361px;
   height: 123px;
@@ -253,4 +274,7 @@ gap:24px;
 }
 .DeliveryHistoryCardCanceledContentText{
 
+}
+.DeliveryHistoryCardOnthewayContentText{
+  margin-top: -25px;
 }

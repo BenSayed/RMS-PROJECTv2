@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./ComHeader.css";
+import "./ComHeader.Mobil.css";
 import imgcar from "./Ellipse 1924.svg";
 import imgcar22 from "./akar-icons_cart.svg";
 import { Link } from "react-router-dom";
 
-const ComHeader = ({ onClose }) => {
+const ComHeaderMobile = ({ onClose }) => {
   const [activeLink, setActiveLink] = useState(null);
-  const cardRef = useRef(null); // إنشاء مرجع للإشارة إلى الكارد
+  const cardRef = useRef(null); // تعريف المرجع للإشارة إلى الكارد
 
   // التعامل مع النقرات خارج الكارد
   useEffect(() => {
@@ -32,8 +32,8 @@ const ComHeader = ({ onClose }) => {
 
   return (
     <div className="ComHeader">
-      <div className="ComHeader1">
-        <div className="ComHeaderCard" ref={cardRef}> {/* إضافة المرجع هنا */}
+      <div className="ComHeader12">
+        <div className="ComHeaderCard2" ref={cardRef}> {/* إضافة المرجع هنا */}
           <div className="ComHeaderCardPro">
             <img src={imgcar} alt="" />
             <h2>Ronald Richards</h2>
@@ -43,7 +43,7 @@ const ComHeader = ({ onClose }) => {
               <li>
                 <Link
                   className={`linkmodel ${activeLink === "Home" ? "active" : ""}`}
-                  to="/"
+                  to="/DeliveryHome"
                   onClick={() => handleLinkClick("Home")}
                 >
                   Home
@@ -51,47 +51,32 @@ const ComHeader = ({ onClose }) => {
               </li>
               <li>
                 <Link
-                  className={`linkmodel ${activeLink === "Menu" ? "active" : ""}`}
-                  to="/menu"
-                  onClick={() => handleLinkClick("Menu")}
+                  className={`linkmodel ${activeLink === "History" ? "active" : ""}`}
+                  to="/DeliveryHistory"
+                  onClick={() => handleLinkClick("History")}
                 >
-                  Menu
+                  History
                 </Link>
               </li>
               <li>
                 <Link
-                  className={`linkmodel ${activeLink === "Reservation" ? "active" : ""}`}
+                  className={`linkmodel ${activeLink === "Chat" ? "active" : ""}`}
                   to="/reservation"
-                  onClick={() => handleLinkClick("Reservation")}
+                  onClick={() => handleLinkClick("Chat")}
                 >
-                  Reservation
+                  Chat
                 </Link>
               </li>
               <li>
                 <Link
-                  className={`linkmodel ${activeLink === "About" ? "active" : ""}`}
+                  className={`linkmodel ${activeLink === "Map" ? "active" : ""}`}
                   to="/about"
-                  onClick={() => handleLinkClick("About")}
+                  onClick={() => handleLinkClick("Map")}
                 >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`linkmodel ${activeLink === "Contact us" ? "active" : ""}`}
-                  to="/Contautus"
-                  onClick={() => handleLinkClick("Contact us")}
-                >
-                  Contact us
+                  Map
                 </Link>
               </li>
             </ul>
-            <Link
-              to="/SalesPages"
-              onClick={() => handleLinkClick("SalesPages")}
-            >
-              <img src={imgcar22} alt="" />
-            </Link>
           </div>
         </div>
       </div>
@@ -99,4 +84,4 @@ const ComHeader = ({ onClose }) => {
   );
 };
 
-export default ComHeader;
+export default ComHeaderMobile;

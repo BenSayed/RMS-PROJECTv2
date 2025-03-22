@@ -78,7 +78,7 @@ const DeliverypageDeteils = () => {
         <div className="DeliverypageDeteilsD1">
           <div className="DeliverypageDeteilsD1Img">
             <img
-              src="src/page-index/Delivery pages/DeliverypageDeteils/Rectangle 1191 (4).svg"
+              src="src/Delivery pages/DeliverypageDeteils/Rectangle 1191 (4).svg"
               alt="error"
             />
           </div>
@@ -89,13 +89,13 @@ const DeliverypageDeteils = () => {
           </div>
           <div className="DeliverypageDeteilsD1imicon">
             <img
-              src="src/page-index/Delivery pages/DeliverypageDeteils/Vector (9).svg"
+              src="src/Delivery pages/DeliverypageDeteils/Vector (9).svg"
               alt=""
             />
           </div>
         </div>
         <img
-          src="src/page-index/Delivery pages/DeliverypageDeteils/Line 59.svg"
+          src="src/Delivery pages/DeliverypageDeteils/Line 59.svg"
           alt=""
         />
 

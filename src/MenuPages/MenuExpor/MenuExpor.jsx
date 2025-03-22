@@ -8,7 +8,7 @@ import imgSrc from './Rectangle 1153 (1).svg';
 const MenuExpor = () => {
   return (
     <div  >
-      <Banner /> 
+ 
     <div className="MenuExporPage">
         
         <div className="food-selection0">

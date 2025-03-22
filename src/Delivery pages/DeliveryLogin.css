@@ -1,3 +1,4 @@
+ 
 .DeliveryLoginpage {
   padding: 44px;
   display: flex;
@@ -15,14 +16,42 @@
   align-items: center;
   flex-direction: column;
 }
-.DeliveryLoginpagecontiner h2 {
+.DeliveryLoginpagecontinerimg img {
+  width: 117px;
+  height: 150px;
+  margin-top: 102px;
+}
+ .DeliveryLoginpagecontinerimg {
+  display: flex
+;
+ 
+ 
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+ 
+}
+.DeliveryLoginpagecontinerimg p {
+  font-family: "Cormorant Upright", serif;
+  font-weight: 300;
+  font-size: 22px;
+  color: #ffffffcf;
+  margin-top: -44px;
+}
+
+
+.DeliveryLoginpagecontinerimg h2 {
   font-family: "Cormorant Upright", serif;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 38px;
   line-height: 58.13px;
   letter-spacing: 0%;
   text-align: center;
   color: rgb(255, 255, 255);
+  margin-top: -4px;
+}
+.DeliveryLoginpagecontinerform input ::placeholder{
+  color: #ffffff;
 }
 .DeliveryLoginpagecontinerform {
   display: flex;
@@ -125,7 +154,8 @@
 @media (max-width: 480px) {
   .DeliveryLoginpage {
     padding: 15px;
-  }
+    margin-top: 31px;
+}
 
   .DeliveryLoginpagecontiner {
     width: 100%;
@@ -133,8 +163,8 @@
   }
 
   .DeliveryLoginpagecontiner h2 {
-    font-size: 48px;
-  }
+    font-size: 44px;
+}
 
   .DeliveryLoginpagecontinerform input {
     width: 75vw;
@@ -143,9 +173,10 @@
 
   .DeliveryLoginpagecontiner button {
     width: 75vw;
-height: 52px;
+    height: 52px;
     font-size: 16px;
-  }
+    margin-top: -5px;
+}
 
   .DeliveryLoginpagecontinerform h4 {
     font-size: 14px;

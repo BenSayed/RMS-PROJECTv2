@@ -1,29 +1,39 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // استيراد useNavigate
 import "./DeliveryHome.css";
 
 // DeliveryCard component to avoid repetition
-const DeliveryCard = ({ name, location, status, imgSrc }) => (
-  <div className="DeliveryHomeCard">
-    <div className="DeliveryHomeCardContintCircel">
-      <img
-        src="src/page-index/Delivery pages/Delivery Home/Ellipse 1919.svg"
-        alt=""
-      />
-    </div>
-    <div className="DeliveryHomeCardContint">
-      <div className="DeliveryHomeCardContintttttt">
-        <img src={imgSrc} alt={name} />
-        <div className="DeliveryHomeCardContintText">
-          <h2>{name}</h2>
-          <p>
-            {location} <br /> State: <span>{status}</span>
-          </p>
-        </div>
+const DeliveryCard = ({ name, location, status, imgSrc }) => {
+  const navigate = useNavigate(); // تعريف navigate لاستخدامه في التوجيه
+
+  // دالة للتوجيه إلى صفحة DeliveryPageDetails
+  const handleAccept = () => {
+    navigate("/DeliverypageDeteils"); // التوجيه إلى الصفحة المطلوبة
+  };
+
+  return (
+    <div className="DeliveryHomeCard">
+      <div className="DeliveryHomeCardContintCircel">
+        <img
+          src="src/page-index/Delivery pages/Delivery Home/Ellipse 1919.svg"
+          alt=""
+        />
       </div>
-      <button>Accept</button>
+      <div className="DeliveryHomeCardContint">
+        <div className="DeliveryHomeCardContintttttt">
+          <img src={imgSrc} alt={name} />
+          <div className="DeliveryHomeCardContintText">
+            <h2>{name}</h2>
+            <p>
+              {location} <br /> State: <span>{status}</span>
+            </p>
+          </div>
+        </div>
+        <button onClick={handleAccept}>Accept</button> {/* إضافة onClick هنا */}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const DeliveryHome = () => {
   const cardData = [
@@ -32,28 +42,21 @@ const DeliveryHome = () => {
       location: "Assiut, City, street 24",
       status: "Ready to deliver",
       imgSrc:
-        "src/page-index/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
+        "src/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
     },
     {
       name: "Mohamed Ali",
       location: "Assiut, City, street 24",
       status: "Ready to deliver",
       imgSrc:
-        "src/page-index/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
+        "src/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
     },
     {
       name: "Mohamed Ali",
       location: "Assiut, City, street 24",
       status: "Ready to deliver",
       imgSrc:
-        "src/page-index/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
-    },
-    {
-      name: "Mohamed Ali",
-      location: "Assiut, City, street 24",
-      status: "Ready to deliver",
-      imgSrc:
-        "src/page-index/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
+        "src/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
     },
   ];
 
@@ -63,44 +66,8 @@ const DeliveryHome = () => {
       location: "Assiut, City, street 24",
       status: "On the way",
       imgSrc:
-        "src/page-index/Delivery pages/Delivery Home/Rectangle 1191 (2).svg",
+        "src/Delivery pages/Delivery Home/Rectangle 1191 (2).svg",
     },
-    {
-      name: "Mohamed Ali",
-      location: "Assiut, City, street 24",
-      status: "On the way",
-      imgSrc:
-        "src/page-index/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
-    },
-    {
-      name: "Mohamed Ali",
-      location: "Assiut, City, street 24",
-      status: "On the way",
-      imgSrc:
-        "src/page-index/Delivery pages/Delivery Home/Rectangle 1191 (3).svg",
-    },
-    {
-      name: "Mohamed Ali",
-      location: "Assiut, City, street 24",
-      status: "On the way",
-      imgSrc:
-        "src/page-index/Delivery pages/Delivery Home/Rectangle 1191 (2).svg",
-    },
-    {
-      name: "Mohamed Ali",
-      location: "Assiut, City, street 24",
-      status: "On the way",
-      imgSrc:
-        "src/page-index/Delivery pages/Delivery Home/Rectangle 1191 (2).svg",
-    },
-    {
-      name: "Mohamed Ali",
-      location: "Assiut, City, street 24",
-      status: "On the way",
-      imgSrc:
-        "src/page-index/Delivery pages/Delivery Home/Rectangle 1191 (2).svg",
-    },
-    // Add more data as needed
   ];
 
   const doneData = [
@@ -109,51 +76,15 @@ const DeliveryHome = () => {
       location: "Assiut, City, street 24",
       status: "Done",
       imgSrc:
-        "src/page-index/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
+        "src/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
     },
-    {
-      name: "Ali Ali",
-      location: "Assiut, City, street 24",
-      status: "Done",
-      imgSrc:
-        "src/page-index/Delivery pages/Delivery Home/Rectangle 1191 (2).svg",
-    },
-    {
-      name: "Ali Ali",
-      location: "Assiut, City, street 24",
-      status: "Done",
-      imgSrc:
-        "src/page-index/Delivery pages/Delivery Home/Rectangle 1191 (3).svg",
-    },
-    {
-      name: "Ali Ali",
-      location: "Assiut, City, street 24",
-      status: "Done",
-      imgSrc:
-        "src/page-index/Delivery pages/Delivery Home/Rectangle 1191 (3).svg",
-    },
-    {
-      name: "Ali Ali",
-      location: "Assiut, City, street 24",
-      status: "Done",
-      imgSrc:
-        "src/page-index/Delivery pages/Delivery Home/Rectangle 1191 (3).svg",
-    },
-    {
-      name: "Ali Ali",
-      location: "Assiut, City, street 24",
-      status: "Done",
-      imgSrc:
-        "src/page-index/Delivery pages/Delivery Home/Rectangle 1191 (3).svg",
-    },
-    // Add more data as needed
   ];
 
   return (
     <div className="DeliveryHome">
       <div className="DeliveryHomeHeader">
         <img
-          src="src/page-index/Delivery pages/Delivery Home/Rectangle 1191.png"
+          src="src/Delivery pages/Delivery Home/Rectangle 1191.png"
           alt="Profile"
         />
         <h2>Ahmed Mahmoud</h2>

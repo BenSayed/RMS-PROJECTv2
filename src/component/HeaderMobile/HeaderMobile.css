@@ -1,0 +1,499 @@
+/* ✅ تنسيق الهيدر الأساسي */
+.Headerall {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+padding-left: 64px;
+padding-right: 64px;
+
+}
+
+.Header {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ✅ ترتيب المحتوى داخل الهيدر */
+.HeaderContinent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* ✅ قسم اللوجو والقائمة */
+.HeaderContinentlogo {
+  width: 66%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ✅ اللوجو + العنوان */
+.HeaderContinentlogoImgTitel {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.HeaderContinentlogoImgTitel h2 {
+  font-family: "Cormorant Upright", serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.2em;
+  color: #ffffff;
+}
+
+/* ✅ القائمة */
+.navbar-list {
+  display: flex;
+  gap: 2vw;
+  list-style-type: none;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.navbar-item {
+  color: #fff4e6bf;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Cormorant", serif;
+  border-bottom: 1px solid transparent;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-item:hover {
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.navbar-item.active {
+  color: #ff9500;
+  text-decoration: underline;
+}
+
+/* ✅ زرار اللوجو */
+.HeaderContinentlogoButton {
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+}
+
+.HeaderContinentlogoButton1 {
+  width: 112px;
+  height: 59px;
+  border-radius: 48px;
+  background-color: #ff9500;
+  color: black;
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  border: none;
+cursor: pointer;
+}
+
+.HeaderContinentlogoButton2 {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+
+
+/* ✅ ✅ ✅ 🌍 Media Queries 🌍 ✅ ✅ ✅ */
+
+
+
+header .fixed{
+  position: fixed;
+inset:  0;
+background-color: #2525259f;
+position: absolute;
+z-index: 999;
+ }
+
+   @keyframes mymov {
+    0% {scale: 0;}
+      60% {scale: 1.2;}
+    100% {scale: 1;}
+  }
+ul.model {
+    width: 85%; 
+    margin-left:  auto ;
+    margin-right: auto;
+    margin-top: 2rem;
+    border-radius: 10px ;
+    padding:  1rem 2rem; 
+    background-color: #151716;
+
+    animation: mymov 0.5s 1;
+  }
+
+
+  .fixed ul li a {
+  text-decoration: none; 
+  color: white; 
+}
+.fixed ul.model {
+  list-style: none;
+
+ }
+.fixed ul.model li {
+ 
+border-bottom:  0.5px solid rgba(255, 255, 255, 0.521);
+padding-bottom:  0.77rem;
+  font-family: "Cormorant", serif;
+  padding-top: 0.5rem;
+  transition: 0.2;
+
+}
+.fixed ul.model li:last-child {
+ 
+ border:  none;
+
+}
+.fixed ul.model li:first-child {
+ 
+ text-align: right; 
+ border:  none;
+ padding-bottom:  0;
+padding-top: 0.2rem;
+
+}
+.fixed ul.model li :hover {
+   
+  color: #FF9500;
+   border-bottom: 1px solid #FF9500;
+
+
+}
+ 
+header.fixed ul.model li:last-child {
+   color: wheat;
+   border-bottom: none;
+
+scale: none;
+}
+
+.fixed ul.model li :hover :first-child {
+ all:  unset;
+}
+
+
+ header .icon-menu{
+ all: unset;
+ color: rgb(255, 255, 255);
+ height: 2.4rem;
+width: 2.4rem;
+ justify-content: center;
+text-align: center;
+  transition: 0.2s;
+}
+header .icon-clear {
+   all: unset;
+   color: wheat;
+ 
+}
+ header .icon-clear:active{
+scale :0.9 ;
+ }
+ header .icon-clear:hover{
+ border: none;
+cursor: pointer;
+
+ }
+header .icon-menu:hover{
+   
+cursor: pointer;
+
+ }
+ header .icon-menu:active{
+scale :0.9 ;
+ }
+ 
+button.icon-menu {
+   display:  none;
+
+}
+
+.HeaderContinentlogoButtonModel{
+  display: flex;
+  align-items: center;
+  gap: 5vw;
+}
+.HeaderContinentlogoButton2model{
+ 
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+.HeaderContinentlogoButton1mpdel{
+  width: 65px;
+  height: 30px;
+  border-radius: 48px;
+  background-color: #ff9500;
+  color: black;
+  font-family: "Inter", serif;
+  font-weight: 500;
+  font-size: 12px;
+  text-align: center;
+  border: none;
+  
+
+}
+.HeaderContinentlogoButton3Model{
+
+}
+
+
+
+@media (max-width: 1428px) {
+ 
+
+  .HeaderContinentlogoButton1 {
+    width: 99px;
+    height: 49px;
+    border-radius: 48px;
+    background-color: #ff9500;
+    color: black;
+    font-family: "Inter", serif;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+}
+.HeaderContinentlogo {
+  width: 813px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+}
+
+@media (max-width: 1104px) {
+  .HeaderContinentlogo {
+    width: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .HeaderContinentlogoButton1 {
+    width: 79px;
+    height: 43px;
+    border-radius: 48px;
+    background-color: #ff9500;
+    color: black;
+    font-family: "Inter", serif;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+}
+  
+
+
+}
+
+@media (max-width: 1260px) {
+
+  .HeaderContinentlogo {
+    width: 720px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .navbar-item {
+ 
+    font-size: 18px;
+flex-wrap: wrap;
+
+  }
+
+}
+@media (max-width: 1054px) {
+  .HeaderContinentlogo {
+    width: 600px;
+ }
+
+  .navbar-item {
+ 
+    font-size: 17px;
+flex-wrap: wrap;
+
+  }
+
+  .HeaderContinentlogoImgTitel h2 {
+ 
+ 
+      font-family: "Cormorant Upright", serif;
+      font-weight: 600;
+      font-size: 19px;
+      line-height: 1.2 ;
+  }
+
+  .HeaderContinentlogoButton1 {
+    width: 83px;
+    height: 43px;
+    border-radius: 48px;
+    background-color: #ff9500;
+    color: black;
+    font-family: "Inter", serif;
+    font-weight: 500;
+    font-size: 15px;
+     
+}
+ 
+
+
+}
+
+@media (max-width: 960px) {
+  .HeaderContinentlogoImgTitel img{
+    width: 35px;
+    height: 35px;
+  }
+ 
+  .HeaderContinentlogo {
+    width: 500px;
+ }
+    .navbar-item {
+      font-size: 14px;
+  }
+
+}
+
+
+@media (max-width: 860px){
+  .navbar-item {
+ 
+    font-size: 13px;
+flex-wrap: wrap;
+
+  }
+
+  .HeaderContinentlogo {
+    width: 450px;
+ }
+
+  .HeaderContinentlogoImgTitel h2 {
+ 
+ 
+      font-family: "Cormorant Upright", serif;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.2 ;
+  }
+
+  .HeaderContinentlogoButton1 {
+    width: 75px;
+    height: 33px;
+    border-radius: 48px;
+    background-color: #ff9500;
+    color: black;
+    font-family: "Inter", serif;
+    font-weight: 500;
+    font-size: 15px;
+     
+}
+}
+@media (max-width: 768px) {
+  .Header{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+.navbar-list { 
+display: none;
+}
+
+button.icon-menu {
+  display:  block;
+font-size: 30px;
+}
+
+.HeaderContinentlogo {
+  width: 291px;
+}
+.HeaderContinentlogoButton2{
+  display: none;
+
+}
+.HeaderContinentlogoButton1{
+  display: none;
+
+}
+}
+@media (max-width: 540px) {
+ 
+  .HeaderContinentlogoImgTitel {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+ 
+  }
+  .Header {
+    width: 800px;
+    box-sizing: border-box;
+    display: flex;
+  }
+  .HeaderContinentlogo {
+    width: 250px;
+ 
+  }
+}
+@media (max-width: 490px) {
+
+  .Header {
+    width: 1100px;
+    box-sizing: border-box;
+    display: flex;
+  }
+.HeaderContinentlogo{
+  width: 180px;
+margin-left: 30px;
+ 
+}
+
+button.icon-menu{
+  font-size: 25px;
+  margin-right: 20px;
+ 
+
+ }
+.HeaderContinentlogoImgTitel img{
+  width: 35px;
+  height: 35px;
+}
+
+.HeaderContinentlogoImgTitel h2 {
+  font-family: "Cormorant Upright", serif;
+  font-weight: 600;
+  font-size: 25px;
+   
+}
+.HeaderContinent{
+  width: 410px;
+}
+ 
+}
+@media (max-width: 375px) {
+  .HeaderContinent{
+    width: 362px;
+  }
+
+}
+@media (max-width: 375px) {
+  .HeaderContinent{
+    width: 338px;
+  }
+
+}

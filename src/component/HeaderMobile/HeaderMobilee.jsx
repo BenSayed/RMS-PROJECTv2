@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./Header.css";
+import "./HeaderMobile.css";
 import Headerimg1 from "/public/Logo 1.svg";
 import Headerimg2 from "/HeaderIMG/akar-icons_cart.svg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import ComHeader from "./ComHeader";
+import ComHeader from "./ComHeaderMobile";
 
-const Header = () => {
+const HeaderMobilee = () => {
   const location = useLocation();
   const [showModel, setShowModel] = useState(false); // state لإظهار/إخفاء ComHeader
   const navigate = useNavigate();
@@ -129,4 +129,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderMobilee;

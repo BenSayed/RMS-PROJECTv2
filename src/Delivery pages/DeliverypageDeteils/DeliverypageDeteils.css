@@ -176,6 +176,7 @@
 .DeliverypageDeteilsD3Notis {
   width: 295px;
   height: 121px;
+  margin-top: 18px;
 }
 .DeliverypageDeteilsD3Notis h2 {
   font-family: "Inter", serif;
@@ -249,4 +250,34 @@
 }
 .linedrevry {
   margin-top: 10px;
+}
+
+
+.DeliverypageDeteilsD2InvoiceTextMealtext{
+  margin-top: -27px;
+}
+
+.DeliverypageDeteilsD2Invoice2Text {
+  width: 295px;
+  height: 134px;
+  gap: 4px;
+  display: flex
+;
+  justify-content: space-between;
+  margin-top: 11px;
+}
+
+.DeliverypageDeteilsD2InvoiceText {
+  width: 295px;
+  height: 98px;
+  display: flex
+;
+  justify-content: space-between;
+  margin-top: -33px;
+}
+
+.DeliverypageDeteilsD3Notis {
+  width: 295px;
+  height: 121px;
+  margin-top: 18px;
 }

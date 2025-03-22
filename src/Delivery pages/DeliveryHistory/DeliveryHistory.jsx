@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./DeliveryHistory.css";
 
 const DeliveryHistory = () => {
@@ -6,33 +6,36 @@ const DeliveryHistory = () => {
   const deliveryData = [
     {
       state: "Ontheway",
-      imgSrc: "src/page-index/Delivery pages/DeliveryHistory/Rectangle 1191 (5).svg",
+      imgSrc: "src/Delivery pages/DeliveryHistory/Rectangle 1191 (5).svg",
       name: "Mohamed Ahmed",
       address: "Assiut, City, street 24",
       status: "On the way",
     },
     {
       state: "Done",
-      imgSrc: "src/page-index/Delivery pages/DeliveryHistory/Rectangle 1191 (6).svg",
-      name: "Ahmed Sayed",
+      imgSrc: "src/Delivery pages/DeliveryHistory/Rectangle 1191 (5).svg",
+      name: "Mohamed Ahmed",
       address: "Assiut, City, street 24",
-      status: "Done!",
+      status: "Done",
     },
     {
       state: "Canceled",
-      imgSrc: "src/page-index/Delivery pages/DeliveryHistory/Rectangle 1191 (7).svg",
-      name: "ali",
+      imgSrc: "src/Delivery pages/DeliveryHistory/Rectangle 1191 (5).svg",
+      name: "Mohamed Ahmed",
       address: "Assiut, City, street 24",
       status: "Canceled",
     },
-    {
-      state: "Canceled",
-      imgSrc: "src/page-index/Delivery pages/DeliveryHistory/Rectangle 1191 (7).svg",
-      name: "ali",
-      address: "Assiut, City, street 24",
-      status: "Canceled",
-    },
+    // يمكنك إضافة المزيد من البيانات هنا
   ];
+
+  // حالة لتحديد الفلتر النشط (الزر الذي تم الضغط عليه)
+  const [filter, setFilter] = useState("All");
+
+  // دالة لتصفية الكروت بناءً على الحالة
+  const filteredData =
+    filter === "All"
+      ? deliveryData
+      : deliveryData.filter((card) => card.state === filter);
 
   return (
     <div className="DeliveryHistory">
@@ -43,15 +46,35 @@ const DeliveryHistory = () => {
 
         <div className="DeliveryHistorbuttonsDivScrole">
           <div className="DeliveryHistorbuttonsDiv">
-            <button className="DeliveryHistorbuttonsAll">All</button>
-            <button className="DeliveryHistorbuttonsBUT">Complete Orders</button>
-            <button className="DeliveryHistorbuttonsBUT2">On the way</button>
-            <button className="DeliveryHistorbuttonsBUT2">Canceled</button>
+            <button
+              className="DeliveryHistorbuttonsAll"
+              onClick={() => setFilter("All")}
+            >
+              All
+            </button>
+            <button
+              className="DeliveryHistorbuttonsBUT"
+              onClick={() => setFilter("Done")}
+            >
+              Complete Orders
+            </button>
+            <button
+              className="DeliveryHistorbuttonsBUT2"
+              onClick={() => setFilter("Ontheway")}
+            >
+              On the way
+            </button>
+            <button
+              className="DeliveryHistorbuttonsBUT2"
+              onClick={() => setFilter("Canceled")}
+            >
+              Canceled
+            </button>
           </div>
         </div>
 
         <div className="DeliveryHistoryCards">
-          {deliveryData.map((card, index) => (
+          {filteredData.map((card, index) => (
             <div
               className={`DeliveryHistoryCard${card.state}`}
               key={index}
