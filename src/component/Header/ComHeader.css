@@ -29,7 +29,7 @@
   z-index: 9998; /* تحديد z-index أقل من ComHeader1 */
 }
 
-.ComHeaderCard {
+.ComHeaderCard23 {
   width: 697px;
   height: 366px;
   border-bottom-right-radius: 48px;
@@ -149,7 +149,7 @@
     left: 16px;
     z-index: 9999;
 }
-.ComHeaderCard {
+.ComHeaderCard23 {
   width: 393px;
   height: 366px;
   border-bottom-right-radius: 48px;
@@ -189,7 +189,7 @@
     left: 20px;
     cursor: pointer;
 }
-.ComHeaderCard {
+.ComHeaderCard23 {
   width: 330px;
   height: 366px;
   border-bottom-right-radius: 48px;
@@ -216,10 +216,11 @@
     left: 18px;
     z-index: 9999;
 }
-  .ComHeaderCard {
-    width: 297px;
-    height: 366px;
-  }
+.ComHeaderCard23 {
+  width: 337px;
+  height: 366px;
+  margin-left: 1px;
+}
   .ComHeaderCardNav img {
     margin-left: 208px;
     width: 40px;
@@ -230,5 +231,5 @@
     cursor: pointer;
 }
 
-}
+
 }

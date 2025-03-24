@@ -33,7 +33,7 @@ const ComHeader = ({ onClose }) => {
   return (
     <div className="ComHeader">
       <div className="ComHeader1">
-        <div className="ComHeaderCard" ref={cardRef}> {/* إضافة المرجع هنا */}
+        <div className="ComHeaderCard23" ref={cardRef}> {/* إضافة المرجع هنا */}
           <div className="ComHeaderCardPro">
             <img src={imgcar} alt="" />
             <h2>Ronald Richards</h2>
@@ -61,7 +61,7 @@ const ComHeader = ({ onClose }) => {
               <li>
                 <Link
                   className={`linkmodel ${activeLink === "Reservation" ? "active" : ""}`}
-                  to="/reservation"
+                  to="/Reservation"
                   onClick={() => handleLinkClick("Reservation")}
                 >
                   Reservation

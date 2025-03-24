@@ -19,6 +19,7 @@ import DeliverypageDeteils from "./Delivery pages/DeliverypageDeteils/Deliverypa
 import ComHeaderMobile from "./component/HeaderMobile/ComHeaderMobile";
 import HeaderMobilee from "./component/HeaderMobile/HeaderMobilee";
 import MainCourses from "./MenuPages/MainCoourses/MainCourses";
+import Reservation from "./Reservation/ReservationN";
    // const api = axios.create({
 //   baseURL: 'http://flavorhaven.runasp.net/api/User/Login', // استبدلها بالرابط الصحيح
 //   headers: {
@@ -61,6 +62,9 @@ function App() {
         <Route path="/DeliverypageDeteils" element={ <DeliverypageDeteils/>} />
         <Route path="/DeliveryHome" element={ <DeliveryHome/>} />  
         <Route path="/DeliveryHistory" element={ <DeliveryHistory/>} />
+        <Route path="/Reservation" element={ <Reservation/>} />
+
+
 
       </Routes>                  
       {/* <Footer />  */}

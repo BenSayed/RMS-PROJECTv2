@@ -67,7 +67,7 @@ const Header = () => {
                     <Link
                       to="/reservation"
                       className={`navbar-item ${
-                        location.pathname === "/reservation" ? "active" : ""
+                        location.pathname === "/Reservation" ? "active" : ""
                       }`}
                     >
                       Reservation
