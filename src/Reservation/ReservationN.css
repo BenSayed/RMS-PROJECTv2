@@ -70,6 +70,20 @@ max-width:   1041px;
   height: 52px;
  color: #15171680;
 }
+.reservation-forminput{
+  border-radius: 16px;
+  border: 1px solid #ff9500;
+  width: 248px;
+  /* color: dimgrey; */
+  padding: 10px 30px 8px 10px;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="black" d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 18px;
+  height: 52px;
+ color: #15171680;
+}
 
 .confirm-button button {
   background-color: orange;
@@ -210,6 +224,19 @@ max-width:   1041px;
   background-size: 18px;
   height: 48px;
 }
+.reservation-forminput {
+  border-radius: 16px;
+  border: 1px solid #ff9500;
+  width: 325px;
+  /* color: dimgrey; */
+  padding: 10px 30px 8px 10px;
+  appearance: none;
+   background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 18px;
+  height: 53px;
+  color: #15171680;
+}
 
 
 }
@@ -217,6 +244,19 @@ max-width:   1041px;
 
 @media (max-width: 375px) {
 
+  .reservation-forminput {
+    border-radius: 16px;
+    border: 1px solid #ff9500;
+    width: 268px;
+    /* color: dimgrey; */
+    padding: 10px 30px 8px 10px;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 18px;
+    height: 51px;
+    color: #15171680;
+}
 
   .reservation-image img {
     max-width: 279px;
