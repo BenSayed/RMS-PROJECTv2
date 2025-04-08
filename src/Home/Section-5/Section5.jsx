@@ -107,7 +107,7 @@ const Section5 = () => {
             </div>
           </div>
         </div>
-        <div className="section5Contint2 border">
+        <div className="section5Contint2">
           <h2>Are you The Next One!</h2>
           <Link to="/menu" className="show-all-buttonSection5">
             <span>Join Now</span>

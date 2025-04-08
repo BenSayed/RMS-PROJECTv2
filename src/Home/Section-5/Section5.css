@@ -405,10 +405,11 @@ max-height: 900px;
   .section5Contint1imgTextimg img {
     max-width: 240px;
   }
-
-  .section5Contint1imgTextimg h2 {
-    font-size: 24px;
-  }
+ .section5Contint1imgTextimg h2 {
+  font-size: 24px;
+  margin-top: -71px;
+  margin-left: 233px;
+}
 
   .section5Contint1imgcontintcard {
     padding: 16px;
