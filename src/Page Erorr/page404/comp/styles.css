@@ -1,0 +1,407 @@
+ 
+.container_burger {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+ 
+
+/* تنسيق البرجر */
+.burger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 120px;
+  height: 200px;
+   
+}
+
+ 
+.burger img {
+  width: 100px;
+  position: absolute;
+  transition: transform 0.5s ease-in-out;
+}
+
+ 
+/* حركة تطاير البرجر */
+ 
+#top-bun{
+  top: 30px;
+  width: 165%;
+  left: -25px;
+}
+ 
+
+#tomato1{
+  position: absolute;
+  width: 40%;
+  transition: transform 1s ease;
+  top: 110px;
+  left: 10px;
+}
+#tomato2{
+  position: absolute;
+  width: 40%;
+  transition: transform 1s ease;
+  top: 100px;
+  left: 100px;
+}
+#tomato3{
+  position: absolute;
+  width: 40%;
+  transition: transform 1s ease;
+  top: 100px;
+  left: 50px;
+}
+#cucumber1{
+  position: absolute;
+  width: 30%;
+  transition: transform 1s ease;
+  top: 100px;
+  left: 80px;
+}
+#cucumber2{
+  position: absolute;
+  width: 40%;
+  transition: transform 1s ease;
+  top: 100px;
+  left: 90px;
+}
+#cucumber3{
+  position: absolute;
+  width: 40%;
+  transition: transform 1s ease;
+  top: 100px;
+  left: 30px;
+}
+#cucumber4{
+  position: absolute;
+  width: 30%;
+  transition: transform 1s ease;
+  top: 100px;
+  left: -10px;
+}
+#patty{
+  position: absolute;
+  width: 140%;
+  transition: transform 1s ease;
+  top: 145px;
+  left: -20px;
+}
+
+#lettuce{
+  position: absolute;
+  width: 140%;
+  transition: transform 1s ease;
+  top: 155px;
+  left: -20px;
+}
+#onion{
+  position: absolute;
+  width: 130%;
+  transition: transform 1s ease;
+  top: 150px;
+  left: -20px;
+}
+#cheese{
+  position: absolute;
+  width: 130%;
+  transition: transform 1s ease;
+  top: 160px;
+  left: -20px;
+}
+
+#bottom-bun{
+  top: 150px;
+  width: 155%;
+  left: -20px;
+}
+ 
+#top-bun { z-index:13; }
+#cucumber1 { z-index: 12; }
+#cucumber2 { z-index: 11; }
+#cucumber3 { z-index: 10; }
+#cucumber4 { z-index: 9; }
+#tomato1 { z-index: 8; }
+#tomato2{ z-index: 7;}
+#tomato3{ z-index: 6;}
+#patty { z-index: 5; }
+#onion  { z-index: 4; }
+#cheese { z-index: 3; }
+#lettuce { z-index: 2; }
+#bottom-bun { z-index: 1; }
+
+/* جعل التصميم مرنًا ومتجاوبًا */
+@media (max-width: 768px) {
+  .container_burger {
+    top: 40%;
+    width: 90%;
+  }
+  .burger {
+    width: 100px;
+    height: 180px;
+  }
+  .burger img {
+    width: 80px;
+  }
+  #top-bun{
+    top: 60px;
+    width: 165%;
+    left: -25px;
+  }
+   
+  
+  #tomato1{
+    position: absolute;
+    width: 40%;
+    transition: transform 1s ease;
+    top: 120px;
+    left: 10px;
+  }
+  #tomato2{
+    position: absolute;
+    width: 40%;
+    transition: transform 1s ease;
+    top: 130px;
+    left: 60px;
+  }
+  #tomato3{
+    position: absolute;
+    width: 40%;
+    transition: transform 1s ease;
+    top: 130px;
+    left: 50px;
+  }
+  #cucumber1{
+    position: absolute;
+    width: 30%;
+    transition: transform 1s ease;
+    top: 130px;
+    left: 70px;
+  }
+  #cucumber2{
+    position: absolute;
+    width: 40%;
+    transition: transform 1s ease;
+    top: 130px;
+    left: 50px;
+  }
+  #cucumber3{
+    position: absolute;
+    width: 40%;
+    transition: transform 1s ease;
+    top: 130px;
+    left: 30px;
+  }
+  #cucumber4{
+    position: absolute;
+    width: 30%;
+    transition: transform 1s ease;
+    top: 130px;
+    left: -10px;
+  }
+} 
+
+@media (max-width: 720px) {
+  .burger {
+    width: 90px;
+    height: 160px;
+  }
+  .burger img {
+    width: 75px;
+  }
+ 
+}
+@media (max-width: 650px) {
+  .container_burger {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+}
+}
+
+@media (max-width: 600px) {
+  .burger {
+    width: 80px;
+    height: 140px;
+  }
+  .burger img {
+    width: 70px;
+  }
+ 
+}
+
+@media (max-width: 500px) {
+  .burger {
+    width: 70px;
+    height: 120px;
+  }
+  .burger img {
+    width: 60px;
+  }
+
+  #top-bun{
+    top: 90px;
+    width: 165%;
+    left: -25px;
+  }
+   
+  
+  #tomato1{
+    position: absolute;
+    width: 40%;
+    transition: transform 1s ease;
+    top: 140px;
+    left: -10px;
+  }
+  #tomato2{
+    position: absolute;
+    width: 40%;
+    transition: transform 1s ease;
+    top: 140px;
+    left: 30px;
+  }
+  #tomato3{
+    position: absolute;
+    width: 40%;
+    transition: transform 1s ease;
+    top: 140px;
+    left: 10px;
+  }
+  #cucumber1{
+    position: absolute;
+    width: 30%;
+    transition: transform 1s ease;
+    top: 140px;
+    left: 10px;
+  }
+  #cucumber2{
+    position: absolute;
+    width: 40%;
+    transition: transform 1s ease;
+    top: 140px;
+    left: 40px;
+  }
+  #cucumber3{
+    position: absolute;
+    width: 40%;
+    transition: transform 1s ease;
+    top: 140px;
+    left: 25px;
+  }
+  #cucumber4{
+    position: absolute;
+    width: 30%;
+    transition: transform 1s ease;
+    top: 150px;
+    left: -15px;
+  }
+   
+}
+
+@media (max-width: 425px) {
+  .burger {
+    width: 60px;
+    height: 100px;
+  }
+  .burger img {
+    width: 50px;
+  }
+  .container_burger {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-48%, -120%);
+}
+ 
+}
+
+@media (max-width: 375px) {
+  .burger {
+    width: 50px;
+    height: 90px;
+  }
+  .burger img {
+    width: 45px;
+  }
+ 
+  #top-bun{
+    top: 100px;
+    width: 165%;
+    left: -25px;
+  }
+  #tomato2{
+    position: absolute;
+    width: 40%;
+    transition: transform 1s ease;
+    top: 140px;
+    left: 20px;
+  }
+  #cucumber2{
+    position: absolute;
+    width: 40%;
+    transition: transform 1s ease;
+    top: 140px;
+    left: 25px;
+  }
+  .container_burger {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-45%, -140%);
+}
+}
+
+@media (max-width: 320px) {
+  .burger {
+    width: 40px;
+    height: 80px;
+  }
+  .burger img {
+    width: 40px;
+  }
+  #top-bun{
+    top: 110px;
+    width: 165%;
+    left: -25px;
+  }
+  #tomato2{
+    position: absolute;
+    width: 40%;
+    transition: transform 1s ease;
+    top: 140px;
+    left: 10px;
+  }
+  #cucumber2{
+    position: absolute;
+    width: 40%;
+    transition: transform 1s ease;
+    top: 140px;
+    left: 10px;
+  }
+  .container_burger {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-45%, -180%);
+}
+}

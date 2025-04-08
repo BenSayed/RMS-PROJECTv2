@@ -1,0 +1,32 @@
+@media (max-width: 1024px) {
+.numberErorr {
+    font-size: 470.22px;
+    color: var(--coler_2);
+}
+.text-ERorr {
+    margin-bottom: -40rem;
+    margin-left: -5rem;
+}
+}
+
+@media (max-width: 420px) {
+  .numberErorr {
+    font-size: 400px;
+ margin-top: 10%;
+ position: absolute;
+}
+.text-ERorr {
+  margin-bottom: -70rem;
+  margin-left: 5rem;
+}}
+
+@media (max-width: 360px) {
+  .numberErorr {
+    font-size: 350px;
+ margin-top: 20%;
+ position: absolute;
+}
+.text-ERorr {
+  margin-bottom: -70rem;
+  margin-left: 5rem;
+}}

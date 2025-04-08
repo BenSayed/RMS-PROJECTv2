@@ -19,9 +19,9 @@
 .border{
   border: 1px solid crimson;
 }
-.ContautusPagecontinttextandform{
+.ContautusPagecontinttextandform {
   width: 571px;
-  height: 621px;
+  height: auto;
  background-color: #FFF4E6;
   border-radius: 48px;
   padding: 24px;
@@ -38,9 +38,10 @@ border-radius: 48px;
 
 }
 
-.ContautusPagecontinttextandformgroup{
-  width: 523px;
-height: 573px;
+.ContautusPagecontinttextandform {
+  width: 571px;
+  height: 666px;
+
 gap: 32px;
 
 display: flex;
@@ -206,6 +207,11 @@ cursor: pointer;
 
 }
 
+@media (max-width: 1366px) {
+  .ContautusPagecontinttextandform{
+height: 660px;
+  }
+}
 @media (max-width: 1250px) {
 
   .ContautusPagecontintimg img {
@@ -380,6 +386,7 @@ font-size: 14px;
   
   .ContautusPagecontinttextandformgroup {
     width: 328px;
+ 
   }
   .TextBoxContautus {
     width: 336px;
@@ -452,7 +459,7 @@ font-size: 14px;
 }
 .ContautusPagecontinttextandform {
   width: 571px;
-  height: 688px;
+  height: 730px;
 border-radius: 21px;
 }
 

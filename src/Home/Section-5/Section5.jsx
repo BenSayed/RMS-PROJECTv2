@@ -51,7 +51,7 @@ const Section5 = () => {
   return (
     <div>
       <section className="section5">
-        <div className="section5Contint1 border">
+        <div className="section5Contint1    ">
           <div className="section5Contint1imgText">
             <div className="section5Contint1imgTexth1">
               <h1 className="section5Contint1imgTexth11">Hear from our </h1>

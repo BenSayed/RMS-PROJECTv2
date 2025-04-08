@@ -1,4 +1,3 @@
-import Footer from "./component/Footer/Footer";
 import Home from "./Home/Home";
 import Header from "./component/Header/Header";
 import AboutPage from "./About/About";
@@ -8,7 +7,7 @@ import axios from "axios";
 import SignUp from "./Sign up/SignUp";
 import Contautus from "./Contaut us/Contautus";
 import MenuItems from "./MenuPages/MenuItems1/MenuItems";
- import SalesPages from "./pageSales1/SalesPages";
+import SalesPages from "./pageSales1/SalesPages";
 import ComHeader from "./component/Header/ComHeader";
 import OrderPage from "./chiefUiPage/alertChief/alert";
 import CheefuiPage from "./chiefUiPage/CheefuiPage.jsx";
@@ -20,7 +19,11 @@ import ComHeaderMobile from "./component/HeaderMobile/ComHeaderMobile";
 import HeaderMobilee from "./component/HeaderMobile/HeaderMobilee";
 import MainCourses from "./MenuPages/MainCoourses/MainCourses";
 import Reservation from "./Reservation/ReservationN";
-   // const api = axios.create({
+import Footer from "./component/Footer/Footer";
+// import Erorr404 from "./Page Erorr/page404/Erorr404";
+// import PageErorr500 from "./Page Erorr/Page500/pageErorr500";
+// import Erorr404 from "./Page Erorr/page404/Erorr404";
+// const api = axios.create({
 //   baseURL: 'http://flavorhaven.runasp.net/api/User/Login', // استبدلها بالرابط الصحيح
 //   headers: {
 //     'Content-Type': 'application/json',
@@ -31,7 +34,7 @@ function App() {
   return (
     <div className="allapp">
       <Header />
- {/* <HeaderMobilee/> */}
+      {/* <HeaderMobilee/> */}
       {/* <CheefuiPage/> */}
       {/* <OrderPage /> */}
       {/* <ComHeader /> */}
@@ -39,35 +42,31 @@ function App() {
 
       {/* <MenuItem/> */}
       {/* <DeliveryLogin/> */}
-      {/* <DeliveryHome/> */}
-      {/* <DeliveryHistory /> */}
+      {/* <DeliveryHome/>
+      <DeliveryHistory /> */}
       {/* <DeliverypageDeteils /> */}
-{/* 
-      <Home />  */}
 
+      {/* <PageErorr500/> */}
+      {/* <Erorr404/> */}
+      {/* <Home />
+       */}
 
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/Contautus" element={<Contautus />} />
+        <Route path="/MenuItems" element={<MenuItems />} />
+        <Route path="/MainCourses" element={<MainCourses />} />
+        <Route path="/SalesPages" element={<SalesPages />} />
+        <Route path="/DeliverypageDeteils" element={<DeliverypageDeteils />} />
+        <Route path="/DeliveryHome" element={<DeliveryHome />} />
+        <Route path="/DeliveryHistory" element={<DeliveryHistory />} />
+        <Route path="/Reservation" element={<Reservation />} />
+      </Routes>
 
-      
-       <Routes>
-       
-
-        <Route path="/" element={  <Home />   } />        
-        <Route path="/about" element={<AboutPage />} />  
-        <Route path="/login" element={<Login/>} />    
-        <Route path="/SignUp" element={ <SignUp/>} />  
-        <Route path="/Contautus" element={ <Contautus/>} />  
-        <Route path="/MenuItems" element={ <MenuItems/>} />  
-        <Route path="/MainCourses" element={ <MainCourses/>} />  
-        <Route path="/SalesPages" element={ <SalesPages/>} />  
-        <Route path="/DeliverypageDeteils" element={ <DeliverypageDeteils/>} />
-        <Route path="/DeliveryHome" element={ <DeliveryHome/>} />  
-        <Route path="/DeliveryHistory" element={ <DeliveryHistory/>} />
-        <Route path="/Reservation" element={ <Reservation/>} />
-
-
-
-      </Routes>                  
-      {/* <Footer />  */}
+      <Footer />
     </div>
   );
 }

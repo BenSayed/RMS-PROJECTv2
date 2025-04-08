@@ -1,32 +1,27 @@
 footer {
-  bottom: 50%;
   text-align: center;
   color: #fff;
-  padding-bottom: 10px;
-  padding-top: 20px;
+  padding: 40px 20px 20px;
   display: flex;
-  flex-direction: column; /* لجعل العناصر تحت بعضها */
-  justify-content: center; /* لمحاذاة العناصر عموديًا في منتصف الشاشة */
+  flex-direction: column;
   align-items: center;
-  width: 1440px;
-  height: 476px;
-  top: 4203px;
- 
+  width: 100%;
+  background-color: #151716;
+  position: relative;
 }
-.foterindex{
-  display: flex
-  ;
-      justify-content: center;
+
+.foterindex {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .logo-container0 {
-  margin-bottom: -10px;
-  width: 226px;
-  height: 48px;
-  gap: 8px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 101px;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .logoo {
@@ -35,108 +30,79 @@ footer {
 }
 
 .restaurant-name0 {
-  width: 170px;
-  height: 30px;
-  font-family: Cormorant Upright;
+  font-family: "Cormorant Upright", serif;
   font-weight: 600;
   font-size: 32px;
-  line-height: 30px;
-  letter-spacing: 0%;
-  text-align: center;
   color: #ffffff;
-  margin-left: 150px;
-  margin-top: -43px;
+}
+
+.newsletter0 {
+  text-align: center;
+  margin-bottom: 24px;
+  padding: 0 16px;
+  max-width: 700px;
 }
 
 .newsletter0 p {
-  width: 507px;
-  height: 88px;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
-  font-size: 36px;
-  line-height: 43.57px;
-  letter-spacing: 0%;
-  text-align: center;
+  font-size: 24px;
   color: #fff4e6;
-  margin-top: 24px;
-  margin-bottom: 16px;
-  margin-left:55px;
+  margin: 20px 0;
 }
 
 .email-subscribe00 {
-  margin-left: 43px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .email-subscribe00 input {
-  gap: 10px;
-  width: 507px;
-  height: 52px;
-  justify-content: space-between;
+  width: 320px;
+  max-width: 100%;
+  height: 48px;
   border-radius: 16px;
-  border-width: 1px;
-  background: #fff4e6;
   border: 1px solid #ff9500;
+  background: #fff4e6;
   padding: 10px;
-  border-radius: 16px;
-  outline: none;
-  width: 507px;
-  height: 52px;
-  font-family: Inter;
-  font-weight: 300;
+  font-family: Inter, sans-serif;
   font-size: 16px;
-  line-height: 19.36px;
-  letter-spacing: 0%;
-  text-align: left;
-  color: #15171640;
+  color: #151716;
+  outline: none;
 }
 
 .email-subscribe00 button {
-  border: none;
+  height: 48px;
+  padding: 0 20px;
+  border:1px solid #ff9500;
   border-radius: 16px;
   background: #151716;
-  color: #ffffff;
-  cursor: pointer;
-  font-family: "Inter", serif;
-  font-size: 13px;
-  text-wrap: flex;
-  transition: 0.3s;
-  position: relative;
-  right: 96px;
-  white-space: nowrap;
-  overflow: hidden; /* لإخفاء النص الزائد */
-  text-overflow: ellipsis;
-  width: 94px;
-  height: 48px;
-  gap: 10px;
-  border-radius: 16px;
-  padding: 10px;
-  align-items: center;
-  font-family: Inter;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0%;
-  text-align: center;
   color: #fff4e6;
-  margin-top: -1px;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  white-space: nowrap;
+
 }
 
 .footer-menu0 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
   margin-top: 32px;
-  width: 520px;
-  height: 30.000011444091797px;
-  gap: 48px;
-  margin-right: 50px;
 }
 
 .footer-menu0 a {
-  font-size: 20px;
+  font-size: 18px;
   color: #fff4e6bf;
-  margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.3s;
   font-family: "Cormorant Upright", serif;
+  transition: 0.3s;
 }
 
 .footer-menu0 a:hover {
@@ -146,125 +112,89 @@ footer {
 
 .copyright0 {
   margin-top: 20px;
-  color: #aaa;
-  width: 1178px;
-  height: 30px;
+  padding: 0 16px;
+  max-width: 1000px;
 }
 
 .copyright0 p {
-  margin-top: 20px;
-  color: #aaa;
-  font-family: Inter;
-  font-weight: 400;
+  font-family: Inter, sans-serif;
   font-size: 12px;
-  line-height: 30px;
-  letter-spacing: 0%;
-  text-align: right;
   color: #fff4e6;
-}
-.line0 {
-  width: 1440px;
-  height: 2px;
-  top: 474px;
-  background: #ff9500;
-  margin-top: 37px;
-}
-
-@media (max-width: 1366px) {
-}
-@media (max-width: 1024px) {
-  .line0 {
-    width: 1093px;
-  
-  }
-  .copyright0 p {
-    margin-top: 0px;
-    color: #aaa;
-    font-family: Inter;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 30px;
-    text-align: center;
-}
-
-}
-@media (max-width: 425px) {
-  footer {
-    width: 393px;
-    height: 400px;
-    top: 5250px;
-    padding: 88px;
-    margin: 88px;
-  }
-  .restaurant-name0 {
-    width: 170px;
-    height: 30px;
-    font-family: Cormorant Upright;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 30px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #ffffff;
-    margin-left: 146px;
-    margin-top: -43px;
-}
-.newsletter0 p {
-  width: 507px;
-  height: 88px;
-  font-family: Inter;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 43.57px;
-  letter-spacing: 0%;
+  line-height: 1.8;
   text-align: center;
-  color: #fff4e6;
-  margin-top: 24px;
-  margin-bottom: 16px;
-  margin-left: 55px;
-}
-.email-subscribe00 input {
-  gap: 10px;
-  width: 507px;
-  height: 52px;
-  justify-content: space-between;
-  border-radius: 16px;
-  border-width: 1px;
-  background: #fff4e6;
-  border: 1px solid #ff9500;
-  padding: 10px;
-  border-radius: 16px;
-  outline: none;
-  width: 306px;
-  height: 52px;
-  font-family: Inter;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 19.36px;
-  letter-spacing: 0%;
-  text-align: left;
-  color: #15171640;
-}
-.email-subscribe00 {
-  margin-left: 123px;
-}
-.footer-menu0 a {
-  font-size: 11px;
-  color: #fff4e6bf;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-  font-family: "Cormorant Upright", serif;
-}
-.footer-menu0 {
-  margin-top: 32px;
-  width: 520px;
-  height: 30.000011444091797px;
-  gap: 48px;
-  margin-right: -27px;
 }
 
+.line0 {
+  width: 100%;
+  height: 2px;
+  background: #ff9500;
+  margin-top: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
 
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .restaurant-name0 {
+    font-size: 28px;
+  }
 
+  .newsletter0 p {
+    font-size: 20px;
+  }
+
+  .footer-menu0 a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logoo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .restaurant-name0 {
+    font-size: 24px;
+  }
+
+  .newsletter0 p {
+    font-size: 18px;
+  }
+
+  .email-subscribe00 {
+    flex-direction: column;
+  }
+
+  .email-subscribe00 input,
+  .email-subscribe00 button {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .email-subscribe00 button {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  .restaurant-name0 {
+    font-size: 20px;
+  }
+
+  .newsletter0 p {
+    font-size: 16px;
+  }
+
+  .footer-menu0 a {
+    font-size: 14px;
+  }
+
+  .email-subscribe00 input{
+    max-width: 100%;
+  }  
+  .email-subscribe00 button {
+    max-width: 50%;
+  }
 }

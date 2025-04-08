@@ -1,0 +1,177 @@
+ 
+
+ /* الحاوية الرئيسية للكوكيز */
+.contai {
+  position: absolute; /* ضروري لتحديد المواقع */
+  top: 30%; /* توسيط عموديًا */
+  left: 50%; /* توسيط أفقيًا */
+  transform: translate(-40%, -50%); /* تصحيح الموقع إلى المركز */
+  width: 200px; /* عرض الحاوية */
+  height: 200px; /* ارتفاع الحاوية */
+  display: flex; /* تحسين التنظيم الداخلي */
+  justify-content: center; /* توسيط المحتوى أفقيًا */
+  align-items: center; /* توسيط المحتوى عموديًا */
+}
+
+/* إعدادات الكوكي الثابتة */
+#static-cookie {
+  position: absolute; /* موقع الصورة */
+  top: -200%; /* توسيط عموديًا */
+  right: -160%; /* توسيط أفقيًا */
+  transform: translate(-50%, 50%); /* لتصحيح الموقع */
+  width: 400px; /* حجم الكوكيز */
+}
+
+/* إعدادات الكوكيز المتحركة */
+#moving-cookie {
+  position: absolute; /* لتحديد موقع الصورة */
+  top: 0%; /* توسيط عموديًا */
+  right: -185%; /* البداية من اليسار */
+  width: 450px; /* حجم الكوكيز المتحركة */
+  animation: rotate 4s linear infinite; /* حركة الدوران */
+}
+#crumbs{
+  left:-170 ;
+}
+/* حركة الدوران */
+@keyframes rotate {
+  0% {
+    transform: translate(0, -50%) rotate(0deg); /* البداية */
+  }
+  50% {
+    transform: translate(150px, -50%) rotate(180deg); /* المنتصف */
+  }
+  100% {
+    transform: translate(0, -50%) rotate(0deg); /* العودة للبداية */
+   }
+}
+@media (max-width: 1024px){
+  #static-cookie {
+    position: absolute; /* موقع الصورة */
+    top: -170%; /* توسيط عموديًا */
+    right: -100%; /* توسيط أفقيًا */
+    transform: translate(-50%, 50%); /* لتصحيح الموقع */
+    width: 350px; /* حجم الكوكيز */
+  }
+  
+  /* إعدادات الكوكيز المتحركة */
+  #moving-cookie {
+    position: absolute; /* لتحديد موقع الصورة */
+    top: 0%; /* توسيط عموديًا */
+    right: -130%; /* البداية من اليسار */
+    width: 400px; /* حجم الكوكيز المتحركة */
+    animation: rotate 4s linear infinite; /* حركة الدوران */
+  }
+  #crumbs{
+    left:-170 ;
+  }
+}
+@media (max-width: 768px) {
+  #static-cookie {
+    position: absolute; /* موقع الصورة */
+    top: -170%; /* توسيط عموديًا */
+    right: -130%; /* توسيط أفقيًا */
+    transform: translate(-50%, 50%); /* لتصحيح الموقع */
+    width: 350px; /* حجم الكوكيز */
+  }
+  
+  /* إعدادات الكوكيز المتحركة */
+  #moving-cookie {
+    position: absolute; /* لتحديد موقع الصورة */
+    top: 0%; /* توسيط عموديًا */
+    right: -150%; /* البداية من اليسار */
+    width: 400px; /* حجم الكوكيز المتحركة */
+    animation: rotate 4s linear infinite; /* حركة الدوران */
+  }
+  #crumbs{
+    left:-170 ;
+  }
+    
+}
+@media (max-width: 520px) {
+  #static-cookie {
+    position: absolute; /* موقع الصورة */
+    top: -140%; /* توسيط عموديًا */
+    right: -130%; /* توسيط أفقيًا */
+    transform: translate(-50%, 50%); /* لتصحيح الموقع */
+    width: 300px; /* حجم الكوكيز */
+  }
+  
+  /* إعدادات الكوكيز المتحركة */
+  #moving-cookie {
+    position: absolute; /* لتحديد موقع الصورة */
+    top: 10%; /* توسيط عموديًا */
+    right: -150%; /* البداية من اليسار */
+    width: 350px; /* حجم الكوكيز المتحركة */
+    animation: rotate 4s linear infinite; /* حركة الدوران */
+  }
+  #crumbs{
+    left:-170 ;
+  }
+
+}
+@media (max-width: 400px) {
+  #static-cookie {
+    position: absolute; /* موقع الصورة */
+    top: -110%; /* توسيط عموديًا */
+    right: -100%; /* توسيط أفقيًا */
+    transform: translate(-50%, 50%); /* لتصحيح الموقع */
+    width: 250px; /* حجم الكوكيز */
+  }
+  
+  /* إعدادات الكوكيز المتحركة */
+  #moving-cookie {
+    position: absolute; /* لتحديد موقع الصورة */
+    top: 10%; /* توسيط عموديًا */
+    right: -130%; /* البداية من اليسار */
+    width: 300px; /* حجم الكوكيز المتحركة */
+    animation: rotate 4s linear infinite; /* حركة الدوران */
+  }
+  #crumbs{
+    left:-170 ;
+  }
+
+}
+@media (max-width: 375px) {
+  #static-cookie {
+    position: absolute;  
+    top: -75%; 
+    right: -75%; 
+    transform: translate(-50%, 50%); /* لتصحيح الموقع */
+    width: 200px;  
+  }
+  
+  /* إعدادات الكوكيز المتحركة */
+  #moving-cookie {
+    position: absolute; /* لتحديد موقع الصورة */
+    top:20%; /* توسيط عموديًا */
+    right: -100%; /* البداية من اليسار */
+    width: 250px; /* حجم الكوكيز المتحركة */
+    animation: rotate 4s linear infinite; /* حركة الدوران */
+  }
+  #crumbs{
+    left:-170 ;
+  }
+}
+@media (max-width: 320px) {
+  #static-cookie {
+    position: absolute;  
+    top: -50%; 
+    right: -55%; 
+    transform: translate(-50%, 50%); /* لتصحيح الموقع */
+    width: 150px;  
+  }
+  
+  /* إعدادات الكوكيز المتحركة */
+  #moving-cookie {
+    position: absolute; /* لتحديد موقع الصورة */
+    top: 25%; /* توسيط عموديًا */
+    right: -75%; /* البداية من اليسار */
+    width: 200px; /* حجم الكوكيز المتحركة */
+    animation: rotate 4s linear infinite; /* حركة الدوران */
+  }
+  #crumbs{
+    left:10 ;
+  }
+}
+ 
