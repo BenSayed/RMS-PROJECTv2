@@ -1,6 +1,6 @@
-import Button from "@mui/material/Button/Button";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import "./textBOX.css"
+import { Button } from "@mui/material";
 const TextBoxe = () => {
   return (
     <div>

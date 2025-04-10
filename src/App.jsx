@@ -20,20 +20,13 @@ import HeaderMobilee from "./component/HeaderMobile/HeaderMobilee";
 import MainCourses from "./MenuPages/MainCoourses/MainCourses";
 import Reservation from "./Reservation/ReservationN";
 import Footer from "./component/Footer/Footer";
-// import Erorr404 from "./Page Erorr/page404/Erorr404";
-// import PageErorr500 from "./Page Erorr/Page500/pageErorr500";
-// import Erorr404 from "./Page Erorr/page404/Erorr404";
-// const api = axios.create({
-//   baseURL: 'http://flavorhaven.runasp.net/api/User/Login', // استبدلها بالرابط الصحيح
-//   headers: {
-//     'Content-Type': 'application/json',
-//   },
-// });
-
+import PageEror404 from "./Page Erorr/page404/PageEror404";
+import PageErorr500 from "./Page Erorr/Page500/pageErorr500";
+ 
 function App() {
   return (
     <div className="allapp">
-      <Header />
+      {/* <Header /> */}
       {/* <HeaderMobilee/> */}
       {/* <CheefuiPage/> */}
       {/* <OrderPage /> */}
@@ -51,6 +44,9 @@ function App() {
       {/* <Home />
        */}
 
+       {/* <PageEror404/> */}
+       <PageErorr500/>
+{/* 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
@@ -64,9 +60,9 @@ function App() {
         <Route path="/DeliveryHome" element={<DeliveryHome />} />
         <Route path="/DeliveryHistory" element={<DeliveryHistory />} />
         <Route path="/Reservation" element={<Reservation />} />
-      </Routes>
+      </Routes> */}
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
