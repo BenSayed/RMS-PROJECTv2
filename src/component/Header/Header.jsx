@@ -109,7 +109,7 @@ const Header = () => {
               className="HeaderContinentlogoButton1"
               onClick={handleLoginClick}
             >
-              login
+              Login
             </button>
             <button
               onClick={() => setShowModel(!showModel)} // تبديل حالة showModel

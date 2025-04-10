@@ -42,14 +42,17 @@ padding: 8px;
   transition: background-color 0.3s ease-in-out;
   flex-grow: 1;
   width: 180px;
-  height: 60px;
+  height: 68px;
 }
 
-.navbar22 button:hover {
-  background-color: #ffb347;
-  color: aliceblue;
+.navbarscroll .navbar224  {
+background-color: #ff9500;
+color: white;
 }
+.navbar225:hover{
+  background-color: #ffe6c5;
 
+}
 .cards {
   display: flex;
   justify-content: space-between;
@@ -65,13 +68,13 @@ padding: 8px;
   background-color: #fff4e6;
   border-radius: 48px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-  width: 290px;
+  width: 310px;
   height: 381px;
   overflow: hidden;
-  display: flex;
+  display: flex
+;
   flex-direction: column;
   margin-bottom: 20px;
-  
 }
 
 .card img {
@@ -80,11 +83,14 @@ padding: 8px;
   object-fit: cover;
 
 }
-.cardtextandheart{
-  display: flex;
-   gap: 50px;
-  
-   
+.cardtextandheart {
+  display: flex
+;
+  /* gap: 50px; */
+  width: 247px;
+  height: 42px;
+  margin-left: -8px;
+  justify-content: space-between;
 }
 .cardtextandheart img {
   width: 29px;
@@ -106,47 +112,63 @@ padding: 8px;
 }
 
 .card h3 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   position: relative;
   top: -3px;
-  left: -9px;
+  left: -12px;
   margin: 0 0 8px 0;
 }
 
 .card p {
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
+  color: #1517167c;
   margin: -15px 0 0 0;
   line-height: 21px;
   margin-top: -5px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 132%;
+  letter-spacing: 0%;
+  font-family: "Inter", serif;
+}
+.cardpargraph{
+  max-width: 247px;
+  max-height: 36px;
+ 
+    margin-left: -20px;
 }
 
-.cardhandelstartandprise{
-  display: flex;
+
+.cardhandelstartandprise {
+  display: flex
+;
   gap: 50px;
-  margin-top: -10px;
-
+  margin-top: -4px;
+  max-width: 278px;
+  height: 30px;
 }
-.cardhandelstartandprise .stadprisersan{
+.cardhandelstartandprise .stadprisersan {
   color: #ffb854;
   font-weight: bold;
   font-size: 23px;
   position: relative;
-  top: 15px;
+  top: 8px;
   display: flex
-  ;
-      gap: 10px
-
+;
+  gap: 10px;
+  left: -30px;
 }
-.cardhandelstartandprise h2{
+
+.cardhandelstartandprise h2 {
   font-size: 40px;
   font-weight: bold;
   color: black;
   margin: 0;
   text-align: right;
- 
+  position: relative;
+  left: 13px;
+  top: -3px;
 }
 .imgcardef{
 
@@ -174,23 +196,23 @@ padding: 8px;
 }
 
 .show-all-button {
-  display: flex;
+  display: flex
+;
   align-items: center;
   justify-content: center;
   background-color: #ff9500;
   color: black;
-  font-size: 16px;
+  font-size: 18px;
   font-family: Arial, sans-serif;
   padding: 2px 5px;
   margin: 27px;
   border: none;
-  border-radius: 15px;
+  border-radius: 16px;
   cursor: pointer;
   text-decoration: none;
- 
   transition: transform 0.2s, box-shadow 0.2s;
- 
-  
+  width: 151px;
+  height: 56px;
 }
 
 .show-all-button:hover {
@@ -199,15 +221,18 @@ padding: 8px;
 }
 
 .show-all-button .icon-container {
-  display: flex;
+  display: flex
+;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   background-color: black;
   border-radius: 14px;
-  margin-left: 8px;
+  margin-left: 12px;
   cursor: pointer;
+  position: relative;
+  left: 7px;
 }
 
 /* استعلامات الوسائط */
@@ -260,10 +285,13 @@ padding: 8px;
     font-weight: bold;
     font-size: 23px;
     position: relative;
-    top: 11px;
+    top: 15px;
     display: flex
 ;
-    gap: 1px;
+    gap: 10px;
+    position: relative;
+    left: -10px;
+    top: 11px;
 }
 .cardhandelstartandprise h2 {
   font-size: 37px;
@@ -375,7 +403,10 @@ padding: 8px;
     font-size: 38px;
   }
 
- 
+  .card h3 {
+    font-size: 27px;
+    margin-left: 14px;
+}
   
 
   .navbarscroll{
@@ -461,9 +492,8 @@ padding: 8px;
     margin-top: -7px;
     font-size: 14px;
 }
-
-  .show-all-button {
-    width: 140px;
+.show-all-button {
+  width: 154px;
     left: 25rem;
   }
 
@@ -487,11 +517,11 @@ padding: 8px;
 .cardhandelstartandprise h2 {
   font-size: 37px;
 }
-.card h3 {
-  font-size: 27px;
+.cardpargraph {
+  max-width: 247px;
+  max-height: 36px;
+  margin-left: 4px;
 }
-   
- 
 }
  
 /* استعلامات الوسائط */

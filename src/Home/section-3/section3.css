@@ -1,6 +1,6 @@
 .section3 {
   font-family: "Cormorant Upright", serif;
-  background-color: #faf4e9;
+  background-color: #FFF4E6;
    
   display: flex;
   justify-content: center;
@@ -56,15 +56,28 @@
 }
 
 .description {
-  background-color: rgba(255, 222, 176, 0.3);
+  background-color: #ffdeb025;
+  backdrop-filter: blur(26px) ;
+
   border: 1px solid #f68b2e;
   border-radius: 48px;
   padding: 20px;
   max-width: 640px;
   margin: 1px auto;
-  font-size: 18px;
-  line-height: 1.5;
+ 
   color: #000;
+  font-family: "Inter", serif;
+
+  font-family: Inter;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+letter-spacing: 0%;
+text-align: center;
+position: relative;
+z-index: 299;
+margin-top: -36px;
+
  }
 
 .chef-image::after {

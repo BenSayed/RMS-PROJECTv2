@@ -329,7 +329,13 @@ button.secondary-button{
 }
 }
 
-
+@media (max-width: 1024px) {
+  .section1 {
+    margin-top: 25px;
+    height: 588px;
+    margin-bottom: 17px;
+}
+  }
 @media (max-width: 1000px) {
   .cotiner_img img {
     max-width: 810px;
@@ -426,7 +432,11 @@ button.mic-button img {
      transition: all 0.3sease;
 }
 
- 
+.section1 {
+  margin-top: 25px;
+  height: auto;
+  margin-bottom: 34px;
+}
 .textconteiner p {
  
   word-wrap: break-word;
@@ -524,6 +534,16 @@ button.mic-button img {
 
 
 @media (max-width: 425px) {
+  .section2 {
+    margin-top: -7rem;
+}
+
+  .section1 {
+    margin-top: 25px;
+    height: auto;
+    margin-bottom: 0px;
+}
+
   .cotiner_img img {
     width: 361px;
     height: 488px;
