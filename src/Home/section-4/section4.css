@@ -1,19 +1,14 @@
 .section4 {
   font-family: "Cormorant Upright", serif;
- display: flex;
- flex-direction: column;
- align-items: center;
-  
- 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
- 
 
 .food-selection h2 {
   font-size: 90px;
   font-weight: 700;
   color: white;
- 
 }
 
 .navbar22 {
@@ -23,12 +18,9 @@
   align-items: center;
   gap: 8px;
   margin-bottom: 13px;
- 
   width: 923px;
-height: 83px;
- 
-padding: 8px;
-
+  height: 83px;
+  padding: 8px;
 }
 
 .navbar22 button {
@@ -45,23 +37,20 @@ padding: 8px;
   height: 68px;
 }
 
-.navbarscroll .navbar224  {
-background-color: #ff9500;
-color: white;
+.navbarscroll .navbar224 {
+  background-color: #ff9500;
+  color: white;
 }
-.navbar225:hover{
-  background-color: #ffe6c5;
 
+.navbar225:hover {
+  background-color: #ffe6c5;
 }
+
 .cards {
   display: flex;
   justify-content: space-between;
   gap: 22px;
   margin-top: 19px;
- 
- 
-  
-
 }
 
 .card {
@@ -69,40 +58,39 @@ color: white;
   border-radius: 48px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
   width: 310px;
-  height: 381px;
+  min-height: 381px;
   overflow: hidden;
-  display: flex
-;
+  display: flex;
   flex-direction: column;
   margin-bottom: 20px;
 }
 
-.card img {
-  width: 100%;
-  height: 60%;
-  object-fit: cover;
-
+.cardtextandheart img {
+  width: 29px;
+  height: 29px;
+  margin-right: -23px;
 }
+
 .cardtextandheart {
-  display: flex
-;
-  /* gap: 50px; */
+  display: flex;
   width: 247px;
   height: 42px;
   margin-left: -8px;
   justify-content: space-between;
 }
+
 .cardtextandheart img {
   width: 29px;
   height: 25px;
 }
+
 .card .content {
   display: flex;
-  height: 38%;
-  justify-content: space-between;
-  align-items: center;
-  padding: 19px;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 38%;
+  padding: 19px;
 }
 
 .card .text {
@@ -114,83 +102,67 @@ color: white;
 .card h3 {
   font-size: 28px;
   font-weight: 700;
-  position: relative;
-  top: -3px;
-  left: -12px;
-  margin: 0 0 8px 0;
+  margin: 0;
+  height: 32px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card p {
   color: #1517167c;
-  margin: -15px 0 0 0;
-  line-height: 21px;
-  margin-top: -5px;
-  font-family: Inter;
+  margin-left: 14px;
+  font-family: "Inter", serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 132%;
   letter-spacing: 0%;
-  font-family: "Inter", serif;
+  max-height: 38px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
-.cardpargraph{
+
+.cardpargraph {
   max-width: 247px;
   max-height: 36px;
- 
-    margin-left: -20px;
+  margin-left: -20px;
 }
-
 
 .cardhandelstartandprise {
-  display: flex
-;
-  gap: 50px;
-  margin-top: -4px;
-  max-width: 278px;
-  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 8px;
 }
+
 .cardhandelstartandprise .stadprisersan {
   color: #ffb854;
   font-weight: bold;
   font-size: 23px;
-  position: relative;
-  top: 8px;
-  display: flex
-;
+  display: flex;
   gap: 10px;
-  left: -30px;
 }
 
-.cardhandelstartandprise h2 {
-  font-size: 40px;
-  font-weight: bold;
-  color: black;
-  margin: 0;
-  text-align: right;
-  position: relative;
-  left: 13px;
-  top: -3px;
-}
-.imgcardef{
-
-}
+.cardhandelstartandprise h2,
 .card .price {
   font-size: 40px;
   font-weight: bold;
   color: black;
   margin: 0;
   text-align: right;
-  position: relative;
-  top: 45px;
-  left: 5px;
 }
 
 .card .stars {
   color: #ffb854;
   font-weight: bold;
   font-size: 23px;
-  position: relative;
-  top: 10px;
 }
+
+/* باقي الكود كما هو بدون تغيير لاستعلامات الوسائط والتنسيقات الإضافية */
+
 .buutonshowall{
 
 }

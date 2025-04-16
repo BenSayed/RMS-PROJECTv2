@@ -22,32 +22,45 @@ import Reservation from "./Reservation/ReservationN";
 import Footer from "./component/Footer/Footer";
 import PageEror404 from "./Page Erorr/page404/PageEror404";
 import PageErorr500 from "./Page Erorr/Page500/pageErorr500";
+import DeliveryProfile from "./Delivery pages/DeliveryProfile/DeliveryProfile";
+import WatingPage from "./Wating Page/WatingPage";
  
 function App() {
   return (
     <div className="allapp">
-      {/* <Header /> */}
-      {/* <HeaderMobilee/> */}
-      {/* <CheefuiPage/> */}
-      {/* <OrderPage /> */}
-      {/* <ComHeader /> */}
-      {/* <MenuExpor/> */}
 
-      {/* <MenuItem/> */}
-      {/* <DeliveryLogin/> */}
-      {/* <DeliveryHome/>
-      <DeliveryHistory />  */}
-      {/* <DeliverypageDeteils /> */}
-
-      {/* <PageErorr500/> */}
-      {/* <Erorr404/> */}
-      {/* <Home />
-       */}
+   
+ 
 
        {/* <PageEror404/> */}
-       <PageErorr500/>
-{/* 
-      <Routes>
+       {/* <PageErorr500/> */}
+
+       
+       {/* <Routes>
+        <Route path="/" element={<CheefuiPage/>} />
+        <Route path="/OrderPage" element={ <OrderPage/>} />
+      
+      </Routes> */}
+
+
+
+      {/* <HeaderMobilee/> */}
+
+
+
+       {/* <Routes>
+        <Route path="/" element={<DeliveryHome/>} />
+        <Route path="/DeliveryLogin" element={ <DeliveryLogin/>} />
+        <Route path="/DeliveryHistory" element={ <DeliveryHistory/>} />
+        <Route path="/DeliverypageDeteils" element={ <DeliverypageDeteils/>} />
+        <Route path="/DeliveryProfile" element={ <DeliveryProfile/>} />
+
+      </Routes> */}
+
+
+
+      <Header />
+      {/* <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/login" element={<Login />} />
@@ -62,7 +75,8 @@ function App() {
         <Route path="/Reservation" element={<Reservation />} />
       </Routes> */}
 
-      {/* <Footer /> */}
+<WatingPage/>
+      <Footer />
     </div>
   );
 }

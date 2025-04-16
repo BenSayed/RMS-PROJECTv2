@@ -1,0 +1,242 @@
+/* استيراد الخط من Google Fonts */
+  
+
+.timer-container {
+    position: absolute;
+    top: 90px;
+    right: 250px;
+    width: 133px;
+    height: 36px;
+    background: #151716;
+    padding: 10px 20px;
+    border-radius: 21px;
+    font-size: 39px;
+    color: #fff4e6;
+    font-family: 'Cormorant Upright', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 25px rgba(255, 149, 0, 1), 0 0 20px rgba(255, 149, 0, 0.8);
+    animation: fadeIn 2s ease-in-out;  /* إضافة الأنميشن للظهور */
+}
+
+/* الأنميشن لإظهار العداد */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* progress-line animation عند hover */
+.progress-bar.hoverable:hover .progress-line {
+  animation: moveProgress 2s ease-in-out forwards;
+}
+
+@keyframes moveProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* لو عايزة ترجع للوضع الأصلي بعد ما تشيلي المؤشر */
+.progress-bar.hoverable .progress-line {
+  width: 60%;
+  transition: width 0.5s ease-in-out;
+}
+
+
+.image-container {
+    margin-top: 100px;
+    margin-bottom: 0px;
+    animation: slideIn 2s ease-out;  /* إضافة الأنميشن للصورة */
+}
+
+.image-container img {
+    width: 315px;
+    margin-bottom: 1px;
+    animation: fadeInImage 2s ease-out; /* إضافة الأنميشن للصورة */
+}
+
+/* الأنميشن للصورة */
+@keyframes fadeInImage {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.text-container {
+    margin-top: -37px;
+    margin-bottom: -30px;
+    font-size: 44px;
+    font-weight: 700;
+    animation: slideInText 3s ease-out; /* الأنميشن للنص */
+    color: #fffaf3;
+    font-family: "Cormorant Upright", serif;
+}
+
+/* الأنميشن للنص */
+@keyframes slideInText {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.progress-bar {
+    position: relative;
+    width: 750px;
+    height: 7px;
+    background-color: #fff4e6;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px auto;
+    margin-top: 65px;
+    animation: progressBarAnimation 5s ease-in-out infinite; /* الأنميشن للشريط */
+}
+
+/* الأنميشن للشريط */
+/* @keyframes progressBarAnimation {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+} */
+
+.progress-line {
+    position: absolute;
+    height: 100%;
+    width: 60%;
+    background: #ff9500;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.9);
+    transition: width 0.5s ease-in-out;
+}
+
+.dot-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 25px;
+    animation: fadeInDots 2s ease-in-out;  /* إضافة الأنميشن للدائرة */
+}
+
+/* الأنميشن للدوائر */
+@keyframes fadeInDots {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.dot {
+    width: 25px;
+    height: 25px;
+    background-color: #ff9500;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+}
+
+.step {
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    margin-top: 53px;
+    white-space: nowrap;
+    font-family: 'Cormorant Upright', serif;
+    animation: fadeInTextStep 3s ease-out;  /* الأنميشن للنص */
+}
+
+/* الأنميشن للنص أسفل الدوائر */
+@keyframes fadeInTextStep {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+  .progress-bar {
+    position: relative;
+    width: 555px;
+  }
+    .step {
+      font-size: 14px;
+      color: white;
+      text-align: center;
+      margin-top: 53px;
+
+
+    }
+    .timer-container {
+      position: absolute;
+      top: -26px;
+      right: 176px;
+    }
+
+
+}
+@media (max-width: 425px) {
+  .image-container img {
+    width: 277px;
+    margin-bottom: 20px;
+  }
+  .timer-container {
+    position: absolute;
+    top: -41px;
+    right: 46px;
+  }
+  .text-container {
+    margin-top: -37px;
+    margin-bottom: -30px;
+    font-size: 28px;
+  }
+  .progress-bar {
+    position: relative;
+    width: 325px;
+  }
+  
+  .dot {
+    width: 20px;
+    height: 20px;
+  }
+
+  .step {
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    margin-top: 53px;
+  }
+
+}
+
+

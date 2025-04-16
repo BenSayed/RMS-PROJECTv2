@@ -1,125 +1,53 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import "./MainCoourses.css";
 import Banner from '../MenuItems1/Banar/banarMenu';
-
-import heartImg from './solar_heart-bold (2).svg';
-import imgSrc from './Rectangle 1153 (1).svg';
+import CardComponent from "/src/component/Card/CardComponent.jsx"; // ← استدعاء الكمبوننت الموحدة
 
 const MainCourses = () => {
+  const [menuItems, setMenuItems] = useState([]);
+
+  const baseUrl = 'http://flavorhaven.runasp.net';
+  const categoryId = 'fb7bcef1-dd70-41bd-964d-c7a2f531ac30';
+  const userId = '3fa85f64-5717-4562-b3fc-2c963f66afa6';
+
+  useEffect(() => {
+    const fetchMenuItems = async () => {
+      try {
+        const response = await axios.get(`${baseUrl}/api/Menu/GetMenuItemsByCategory/${categoryId}?userId=${userId}`);
+        setMenuItems(response.data);
+      } catch (error) {
+        console.error("Error fetching menu items:", error);
+      }
+    };
+
+    fetchMenuItems();
+  }, []);
+
   return (
-    <div  >
-  <Banner/>
-    <div className="MenuExporPage">
-        
+    <div>
+      <Banner />
+      <div className="MenuExporPage">
         <div className="food-selection0">
-            <h2>Main Courses</h2>
-          </div>
+          <h2>Main Courses</h2>
+        </div>
         <section className='MenuExporSction'>
-        
           <div className="cardss">
-            <Card
-              id="1"
-              imgSrc={imgSrc}
-              altText="Wagyu Steak"
-              title="Wagyu Steak"
-              description="250g of lean steak with sous smashed potato or rice"
-              price="90$"
-              heartImg={heartImg}
-            />
-              <Card
-              id="1"
-              imgSrc={imgSrc}
-              altText="Wagyu Steak"
-              title="Wagyu Steak"
-              description="250g of lean steak with sous smashed potato or rice"
-              price="33$"
-              heartImg={heartImg}
-            /><Card
-            id="1"
-            imgSrc={imgSrc}
-            altText="Wagyu Steak"
-            title="Wagyu Steak"
-            description="250g of lean steak with sous smashed potato or rice"
-            price="43$"
-            heartImg={heartImg}
-          /><Card
-          id="1"
-          imgSrc={imgSrc}
-          altText="Wagyu Steak"
-          title="Wagyu Steak"
-          description="250g of lean steak with sous smashed potato or rice"
-          price="28$"
-          heartImg={heartImg}
-        /><Card
-        id="1"
-        imgSrc={imgSrc}
-        altText="Wagyu Steak"
-        title="Wagyu Steak"
-        description="250g of lean steak with sous smashed potato or rice"
-        price="78$"
-        heartImg={heartImg}
-      /><Card
-      id="1"
-      imgSrc={imgSrc}
-      altText="Wagyu Steak"
-      title="Wagyu Steak"
-      description="250g of lean steak with sous smashed potato or rice"
-      price="78$"
-      heartImg={heartImg}
-    /><Card
-    id="1"
-    imgSrc={imgSrc}
-    altText="Wagyu Steak"
-    title="Wagyu Steak"
-    description="250g of lean steak with sous smashed potato or rice"
-    price="78$"
-    heartImg={heartImg}
-  /><Card
-  id="1"
-  imgSrc={imgSrc}
-  altText="Wagyu Steak"
-  title="Wagyu Steak"
-  description="250g of lean steak with sous smashed potato or rice"
-  price="78$"
-  heartImg={heartImg}
-/><Card
-              id="1"
-              imgSrc={imgSrc}
-              altText="Wagyu Steak"
-              title="Wagyu Steak"
-              description="250g of lean steak with sous smashed potato or rice"
-              price="78$"
-              heartImg={heartImg}
-            />
-      
-      
-       
-            {/* يمكنك إضافة المزيد من البطاقات هنا */}
+            {menuItems.map((item) => (
+              <CardComponent
+                key={item.id}
+                id={item.id}
+                imgSrc={item.imagePath || 'https://via.placeholder.com/150'}
+                altText={item.name}
+                title={item.name}
+                description={item.description}
+                price={`${item.price}$`}
+              />
+            ))}
           </div>
         </section>
-    </div>
-    </div>
-  );
-};
-
-const Card = ({ id, imgSrc, altText, title, description, price, heartImg }) => {
-  return (
-    <section className="ExploreMenuCard" id={id}>
-      <div className="cardd">
-        <img src={imgSrc} alt={altText} />
-        <div className="content">
-          <div className="text">
-            <h3>{title}</h3>
-            <p>{description}</p>
-            <div className="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
-          </div>
-          <div className="price">{price}</div>
-          <div className="heart">
-            <img src={heartImg} alt={altText} />
-          </div>
-        </div>
       </div>
-    </section>
+    </div>
   );
 };
 
