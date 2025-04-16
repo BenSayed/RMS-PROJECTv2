@@ -60,7 +60,7 @@ function App() {
 
 
       <Header />
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/login" element={<Login />} />
@@ -73,9 +73,11 @@ function App() {
         <Route path="/DeliveryHome" element={<DeliveryHome />} />
         <Route path="/DeliveryHistory" element={<DeliveryHistory />} />
         <Route path="/Reservation" element={<Reservation />} />
-      </Routes> */}
+        <Route path="/WatingPage" element={<WatingPage/>} />
 
-<WatingPage/>
+      </Routes>
+
+
       <Footer />
     </div>
   );
