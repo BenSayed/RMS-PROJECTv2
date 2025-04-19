@@ -2,22 +2,12 @@
     display: flex
 ;
     justify-content: center;
+    align-items: center;
     align-content: center;
  }
 
-.overlayAlert{
 
-}
-
-.order-container {
-  width: 1040px;
-  max-height: 745px;
-  top: 4818px;
-  left: 20246px;
-  border-radius: 48px;
-  background: #fff4e6;
-  height: auto;
-}
+ 
 
 .heade {
   font-size: 16px;
@@ -221,15 +211,15 @@
   line-height: 1.6;
   list-style: none;
 }
-.progress-container {
+.progress-container2 {
   width: 944px;
   height: 29px;
   gap: 8px;
+  margin-top: -32px;
 }
 
 .progress-bar {
-  min-width: 943px;;
-  width: 943px;
+  width: 100%;
   height: 5px;
   background: #fff4e6;
   margin-top: 5px;
@@ -238,7 +228,6 @@
   border-radius: 48px;
   margin-top: 10px;
 }
-
 
 .progress {
   display: block;
@@ -260,7 +249,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 14px;
-  margin-top: 5px;
+  margin-top: -4px;
   width: 944;
   height: 17;
   color: #fff4e6;
@@ -274,13 +263,12 @@
   height: 64;
   top: 593px;
   left: 56px;
-  gap: 1px;
-  margin-top: 10px;
+  gap: 100px;
+  margin-top: 20px;
   display: flex
 ;
-  padding-bottom: 20px;
+  justify-content: center;
 }
-
 /* button {
   padding: 12px 20px;
   border: none;
@@ -291,30 +279,7 @@
   margin: 10px;
 } */
 
-button.StartCooking {
-  width: 200px;
-  height: 64px;
-  gap: 10px;
-  border-radius: 16px;
-  padding-top: 12px;
-  padding-right: 16px;
-  padding-bottom: 12px;
-  padding-left: 16px;
-  background: #34c759;
-  width: 134;
-  height: 24;
-  font-family: "Inter", serif;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 24.2px;
-  letter-spacing: 0%;
-  text-align: center;
-  color: #ebf9ee;
-   border: none;
- }
-
 button.DelayOrder {
-  border: none;
   width: 200px;
   height: 64px;
   gap: 10px;
@@ -324,6 +289,30 @@ button.DelayOrder {
   padding-bottom: 12px;
   padding-left: 16px;
   background: #ff9500;
+  width: 134;
+  height: 24;
+  font-family: "Inter", serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24.2px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ebf9ee;
+  /* margin-left: 50px; */
+  border: none;
+  /* margin-right: 50px; */
+}
+button.Cancel {
+  border: none;
+  width: 200px;
+  height: 64px;
+  gap: 10px;
+  border-radius: 16px;
+  padding-top: 12px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  background: #ff3b30;
   width: 115;
   height: 24;
   font-family: "Inter", serif;
@@ -335,7 +324,7 @@ button.DelayOrder {
   color: #fff4e6;
  
 }
-button.cancel {
+button.Complete {
   border: none;
   width: 200px;
   height: 64px;
@@ -345,7 +334,7 @@ button.cancel {
   padding-right: 16px;
   padding-bottom: 12px;
   padding-left: 16px;
-  background: #ff3b30;
+  background: #007AFF;
   width: 68;
   height: 24;
   font-family: "Inter", serif;
@@ -357,24 +346,22 @@ button.cancel {
   color: #fff4e6;
 }
 
-
 @media (max-width: 1366px) {
- 
+  .order-container {
+    width: 1040px;
+    height: AUTO;
+}
   .order-list {
     margin-top: 20px;
     max-height: 312px;
   }
-  .order-container {
-    width: 1040px;
-    height: auto;
-}
-.orderPageOverlay {
-  position: absolute;
-  box-shadow: 0px 120px 999px rgb(0 0 0 / 91%);
-  /* display: flex
-; */
-  left: 152px;
-  top: 200px;
-}
+  .orderPageOverlay {
+    position: absolute;
+    box-shadow: 0px 120px 999px rgb(0 0 0 / 91%);
+    /* display: flex
+  ; */
+    left: 152px;
+    top: 200px;
+  }
  
 }

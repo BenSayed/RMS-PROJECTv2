@@ -24,6 +24,7 @@ import PageEror404 from "./Page Erorr/page404/PageEror404";
 import PageErorr500 from "./Page Erorr/Page500/pageErorr500";
 import DeliveryProfile from "./Delivery pages/DeliveryProfile/DeliveryProfile";
 import WatingPage from "./Wating Page/WatingPage";
+import OrderPageProssesing from "./chiefUiPage/alertChief - Prosessing/alertProsessing";
  
 function App() {
   return (
@@ -35,15 +36,14 @@ function App() {
        {/* <PageEror404/> */}
        {/* <PageErorr500/> */}
 
-       
-       {/* <Routes>
-        <Route path="/" element={<CheefuiPage/>} />
-        <Route path="/OrderPage" element={ <OrderPage/>} />
+       {/* <OrderPageProssesing/> */}
       
-      </Routes> */}
+       <Routes>
+        <Route path="/" element={<CheefuiPage/>} />
+       </Routes>
 
 
-
+ 
       {/* <HeaderMobilee/> */}
 
 
@@ -57,9 +57,9 @@ function App() {
 
       </Routes> */}
 
+ 
 
-
-      <Header />
+       {/* <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
@@ -78,7 +78,8 @@ function App() {
       </Routes>
 
 
-      <Footer />
+      <Footer />  */}
+      {/* <WatingPage/> */}
     </div>
   );
 }

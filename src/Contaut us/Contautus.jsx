@@ -139,7 +139,6 @@ const Contautus = () => {
                 </div>
 
                 <button type="submit" style={{ color: 'black' }}>Send Message</button>
-                <button type="button" style={{ color: 'black' }} onClick={handleBackToHome}>Back to Home</button>
               </form>
             </div>
           </div>

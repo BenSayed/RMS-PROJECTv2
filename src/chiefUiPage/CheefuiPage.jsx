@@ -1,159 +1,136 @@
 import "./CheefuiPage.css";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import * as signalR from "@microsoft/signalr";
+import OrderPage from "./alertChief/alert.jsx";
+import OrderPageProssesing from "./alertChief - Prosessing/alertProsessing.jsx";
+import AlertChiefReady from "./alertChief - Redy/alertChiefRedy.jsx";
 
-// مكون لعرض الوقت الحالي
 const TimeDisplay = () => {
   const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString());
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date().toLocaleTimeString());
-    }, 1000); // تحديث الوقت كل ثانية
+    }, 1000);
 
-    return () => clearInterval(timer); // تنظيف المؤقت عند إلغاء التثبيت
+    return () => clearInterval(timer);
   }, []);
 
   return <h3 className="currentTime1">{currentTime}</h3>;
 };
 
-// مكون رئيسي
 const CheefuiPage = () => {
   const [selectedOption, setSelectedOption] = useState("");
-  const [showSelect, setShowSelect] = useState(false); // الحالة الجديدة للتحكم في العرض
+  const [showSelect, setShowSelect] = useState(false);
+  const [newOrdersData, setNewOrdersData] = useState([]);
+  const [inProgressData, setInProgressData] = useState([]);
+  const [readyToServeData, setReadyToServeData] = useState([]);
+  const [selectedOrderId, setSelectedOrderId] = useState(null);
+  const [selectedInProgressOrderId, setSelectedInProgressOrderId] = useState(null);
+  const [selectedReadyOrderId, setSelectedReadyOrderId] = useState(null);
 
-  // وظيفة لتغيير الحالة عند النقر على الزر
-  const handleButtonClick = () => {
-    setShowSelect(!showSelect); // عكس حالة الـ select عند النقر على الزر
+  const handleCardClick = (id) => {
+    setSelectedOrderId(id);
   };
 
-  const newOrdersData = [
-    {
-      id: 1,
-      image: "src/chiefUiPage/Rectangle 1153 (1).svg",
-      title: "fd54es",
-      items: 4,
-      icon: "src/chiefUiPage/Vector (3).svg",
-    },
-    {
-      id: 2,
-      image: "src/chiefUiPage/Rectangle 1153 (2).svg",
-      title: "fd54es",
-      items: 1,
-      icon: "src/chiefUiPage/ic_baseline-delivery-dining.svg",
-    },
-    {
-      id: 3,
-      image: "src/chiefUiPage/Rectangle 1153.svg",
-      title: "fd54es",
-      items: 8,
-      icon: "src/chiefUiPage/Vector (3).svg",
-    },
-    {
-      id: 4,
-      image: "src/chiefUiPage/Rectangle 1153.svg",
-      title: "fd54es",
-      items: 8,
-      icon: "src/chiefUiPage/Vector (3).svg",
-    },
- 
-  ];
+  const closeOrderPage = () => {
+    setSelectedOrderId(null);
+  };
 
+  const handleInProgressCardClick = (id) => {
+    setSelectedInProgressOrderId(id);
+  };
 
-  const inProgressData = [
-    {
-      id: 1,
-      image: "src/chiefUiPage/Rectangle 1153 (1).svg",
-      title: "fd54es",
-      items: 4,
-      icon: "src/chiefUiPage/Vector (4).svg",
-    },
+  const closeInProgressAlert = () => {
+    setSelectedInProgressOrderId(null);
+  };
 
-    {
-      id: 2,
-      image: "src/chiefUiPage/Rectangle 1153.svg",
-      title: "fd54es",
-      items: 7,
-      icon: "src/chiefUiPage/Vector (5).svg",
-    },
-    {
-      id: 2,
-      image: "src/chiefUiPage/Rectangle 1153.svg",
-      title: "fd54es",
-      items: 7,
-      icon: "src/chiefUiPage/Vector (5).svg",
-    },
-    {
-      id: 2,
-      image: "src/chiefUiPage/Rectangle 1153.svg",
-      title: "fd54es",
-      items: 7,
-      icon: "src/chiefUiPage/Vector (5).svg",
-    },
-    {
-      id: 2,
-      image: "src/chiefUiPage/Rectangle 1153.svg",
-      title: "fd54es",
-      items: 7,
-      icon: "src/chiefUiPage/Vector (5).svg",
-    },
+  const handleReadyCardClick = (id) => {
+    setSelectedReadyOrderId(id);
+  };
 
-  ];
+  const closeReadyAlert = () => {
+    setSelectedReadyOrderId(null);
+  };
 
-  const readyToServeData = [
-    {
-      id: 1,
-      image: "src/chiefUiPage/Rectangle 1153 (1).svg",
-      title: "fd54es",
-      items: 4,
-      icon: "src/chiefUiPage/Vector (6).svg",
-    },
-    {
-      id: 2,
-      image: "src/chiefUiPage/Rectangle 1153 (2).svg",
-      title: "fd54es",
-      items: 4,
-      icon: "src/chiefUiPage/ic_baseline-delivery-dining (1).svg",
-    },
-    {
-      id: 3,
-      image: "src/chiefUiPage/Rectangle 1153.svg",
-      title: "fd54es",
-      items: 4,
-      icon: "src/chiefUiPage/Vector (6).svg",
-    },
-    {
-      id: 3,
-      image: "src/chiefUiPage/Rectangle 1153.svg",
-      title: "fd54es",
-      items: 4,
-      icon: "src/chiefUiPage/Vector (6).svg",
-    },
-    {
-      id: 3,
-      image: "src/chiefUiPage/Rectangle 1153.svg",
-      title: "fd54es",
-      items: 4,
-      icon: "src/chiefUiPage/Vector (6).svg",
-    },
-  ];
+  const handleButtonClick = () => {
+    setShowSelect(!showSelect);
+  };
+
+  const fetchOrders = async () => {
+    try {
+      const response = await axios.get("http://flavorhaven.runasp.net/api/Order/GetGroupedActiveOrders");
+      const { Paid = [], InProgress = [], Ready = [] } = response.data;
+
+      const mapOrderToCard = (order, iconSrc) => ({
+        id: order.id,
+        image: "src/chiefUiPage/Rectangle 1153.svg",
+        title: order.transactionId || "Order",
+        items: order.orderItems.length,
+        icon: iconSrc,
+      });
+
+      setNewOrdersData(Paid.map((order) => mapOrderToCard(order, "src/chiefUiPage/Vector (3).svg")));
+      setInProgressData(InProgress.map((order) => mapOrderToCard(order, "src/chiefUiPage/Vector (4).svg")));
+      setReadyToServeData(Ready.map((order) => mapOrderToCard(order, "src/chiefUiPage/Vector (6).svg")));
+    } catch (error) {
+      console.error("Error fetching orders:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchOrders();
+
+    const connection = new signalR.HubConnectionBuilder()
+      .withUrl("http://flavorhaven.runasp.net/orderHub")
+      .withAutomaticReconnect()
+      .build();
+
+    connection.start()
+      .then(() => {
+        console.log("✅ SignalR connected.");
+      })
+      .catch((err) => {
+        console.error("❌ SignalR connection error:", err);
+      });
+
+    connection.on("ReceiveNewOrder", (order) => {
+      console.log("📦 New order received:", order);
+      fetchOrders();
+    });
+
+    connection.on("OrderStatusUpdated", (order) => {
+      console.log("🟢 Order status updated:", order);
+      fetchOrders();
+    });
+
+    connection.onclose((err) => {
+      console.warn("⚠️ SignalR connection closed:", err);
+    });
+
+    return () => {
+      connection.stop();
+    };
+  }, []);
 
   return (
     <div className="CheefuiPage">
-       <div className="CheefuiPageContint">
-        <div className="CheefuiPageContintHeader  ">
-          <div className="CheefuiPageContintHeaderLogo  ">
+      <div className="CheefuiPageContint">
+        <div className="CheefuiPageContintHeader">
+          <div className="CheefuiPageContintHeaderLogo">
             <img src="src/chiefUiPage/Logo Header.svg" alt="Logo" />
           </div>
-          <div className="CheefuiPageContintHeaderTimer  ">
-            <TimeDisplay /> {/* عرض الوقت */}
+          <div className="CheefuiPageContintHeaderTimer">
+            <TimeDisplay />
           </div>
         </div>
-        <div className="CheefuiPageContintHearobutton  ">
+
+        <div className="CheefuiPageContintHearobutton">
           <div className="buttonchifpage">
             <button className="button1chifpage" onClick={handleButtonClick}>
               <img src="src/chiefUiPage/Vector (2).svg" alt="Button Icon" />
             </button>
-            {/* عرض الـ select بناءً على حالة showSelect */}
             {showSelect && (
               <>
                 <select
@@ -161,51 +138,70 @@ const CheefuiPage = () => {
                   value={selectedOption}
                   onChange={(e) => setSelectedOption(e.target.value)}
                 >
-                  <option value="" disabled>
-                    Order Type
-                  </option>
-                  <option className="optionselect" value="option1">
-                    In Restaurant
-                  </option>
-                  <option className="optionselect" value="option2">
-                    Delivery
-                  </option>
+                  <option value="" disabled>Order Type</option>
+                  <option value="option1">In Restaurant</option>
+                  <option value="option2">Delivery</option>
                 </select>
                 <select
                   className="chifSelectpage"
                   value={selectedOption}
                   onChange={(e) => setSelectedOption(e.target.value)}
                 >
-                  <option value="" disabled>
-                    Dish Type
-                  </option>
-                  <option className="optionselect" value="option1">
-                    Dessert
-                  </option>
-                  <option className="optionselect" value="option2">
-                    Appetizers
-                  </option>
-                  <option className="optionselect" value="option3">
-                    Main
-                  </option>
+                  <option value="" disabled>Dish Type</option>
+                  <option value="option1">Dessert</option>
+                  <option value="option2">Appetizers</option>
+                  <option value="option3">Main</option>
                 </select>
               </>
             )}
           </div>
         </div>
-        <div className="CheefuiPageContintCared  ">
-          
-          <div className="NewOrders  ">
-            
-            {/* New Orders */}
-          <div className="chifNewOrders">
-            <div className="chifNewOrdersText">
-              <h2>New Orders</h2>
+
+        <div className="CheefuiPageContintCared">
+          {/* New Orders */}
+          <div className="NewOrders">
+            <div className="chifNewOrders">
+              <div className="chifNewOrdersText"><h2>New Orders</h2></div>
+              <div className="chifNewOrderscardsContainer">
+                {newOrdersData.map((card) => (
+                  <div
+                    key={card.id}
+                    className="cardallchifuipageprosser"
+                    onClick={() => handleCardClick(card.id)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <div className="cardchifuipageprosser">
+                      <div className="cardchifuipageprosserImg">
+                        <img src={card.image} alt={card.title} />
+                      </div>
+                      <div className="cardchifuipageprosserTextt">
+                        <h3>{card.title}</h3>
+                        <p>{card.items} items</p>
+                      </div>
+                      <div className="cardchifuipageprosserIcon">
+                        <img src={card.icon} alt="Icon" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="chifNewOrderscardsContainer">
-              {newOrdersData.map((card) => (
-                <div key={card.id} className="cardallchifuipageprosser">
-                  <div className="cardchifuipageprosser">
+          </div>
+
+          <div className="NewOrderslines"></div>
+
+          {/* In Progress */}
+          <div className="InProgress">
+            <div className="chifInProgress">
+              <div className="chifInProgressText"><h2>In Progress</h2></div>
+              <div className="chifNewOrderscardsContainer">
+                {inProgressData.map((card) => (
+                  <div
+                    key={card.id}
+                    className="cardchifuipageprosser"
+                    onClick={() => handleInProgressCardClick(card.id)}
+                    style={{ cursor: "pointer" }}
+                  >
                     <div className="cardchifuipageprosserImg">
                       <img src={card.image} alt={card.title} />
                     </div>
@@ -217,70 +213,60 @@ const CheefuiPage = () => {
                       <img src={card.icon} alt="Icon" />
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-             </div>
-          <div className="NewOrderslines"> </div>
-
-
-          <div className="InProgress  ">
-            
-  {/* In Progress */}
-          <div className="chifInProgress">
-            <div className="chifInProgressText">
-              <h2>In Progress</h2>
-            </div>
-            <div className="chifNewOrderscardsContainer">
-              {inProgressData.map((card) => (
-                <div key={card.id} className="cardchifuipageprosser">
-                  <div className="cardchifuipageprosserImg">
-                    <img src={card.image} alt={card.title} />
-                  </div>
-                  <div className="cardchifuipageprosserTextt">
-                    <h3>{card.title}</h3>
-                    <p>{card.items} items</p>
-                  </div>
-                  <div className="cardchifuipageprosserIcon">
-                    <img src={card.icon} alt="Icon" />
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
 
-          </div>
-          <div className="InProgresslines"> </div>
-          <div className="ReadytoServe  "> 
-{/* Ready to Serve */}
-<div className="chifReadytoServe">
-            <div className="chifReadytoServeText">
-              <h2>Ready to Serve</h2>
+          <div className="InProgresslines"></div>
+
+          {/* Ready to Serve */}
+          <div className="ReadytoServe">
+            <div className="chifReadytoServe">
+              <div className="chifReadytoServeText"><h2>Ready to Serve</h2></div>
+              <div className="chifNewOrderscardsContainer">
+                {readyToServeData.map((card) => (
+                  <div
+                    key={card.id}
+                    className="cardchifuipageprosser"
+                    onClick={() => handleReadyCardClick(card.id)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <div className="cardchifuipageprosserImg">
+                      <img src={card.image} alt={card.title} />
+                    </div>
+                    <div className="cardchifuipageprosserTextt">
+                      <h3>{card.title}</h3>
+                      <p>{card.items} items</p>
+                    </div>
+                    <div className="cardchifuipageprosserIcon">
+                      <img src={card.icon} alt="Icon" />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="chifNewOrderscardsContainer">
-              {readyToServeData.map((card) => (
-                <div key={card.id} className="cardchifuipageprosser">
-                  <div className="cardchifuipageprosserImg">
-                    <img src={card.image} alt={card.title} />
-                  </div>
-                  <div className="cardchifuipageprosserTextt">
-                    <h3>{card.title}</h3>
-                    <p>{card.items} items</p>
-                  </div>
-                  <div className="cardchifuipageprosserIcon">
-                    <img src={card.icon} alt="Icon" />
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
+        </div>
 
+        {/* Modal Alerts */}
+        {selectedOrderId && (
+          <div className="orderPageOverlay">
+            <OrderPage orderId={selectedOrderId} onClose={closeOrderPage} />
+          </div>
+        )}
 
-                        
-             </div>
-           </div>
+        {selectedInProgressOrderId && (
+          <div className="orderPageOverlay">
+            <OrderPageProssesing orderId={selectedInProgressOrderId} onClose={closeInProgressAlert} />
+          </div>
+        )}
 
+        {selectedReadyOrderId && (
+          <div className="orderPageOverlay">
+            <AlertChiefReady orderId={selectedReadyOrderId} onClose={closeReadyAlert} />
+          </div>
+        )}
       </div>
     </div>
   );
