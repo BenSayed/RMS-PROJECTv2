@@ -257,6 +257,13 @@ height: 569px;
   padding-bottom: 30px;
 }
 @media (max-width: 1366px) {
+  .CheefuiPage {
+    background-image: url(src/chiefUiPage/Elements.svg);
+    POSITION: absolute;
+    WIDTH: 99%;
+    HEIGHT: 133%;
+}
+
   .cardchifuipageprosser {
     max-height: 447px;
     width: 390px;

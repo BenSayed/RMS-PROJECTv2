@@ -1,4 +1,4 @@
-import "./CheefuiPage.css";
+import "/src/chiefUiPage/CheefuiPage.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import * as signalR from "@microsoft/signalr";
