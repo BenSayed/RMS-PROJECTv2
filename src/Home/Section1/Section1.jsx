@@ -48,7 +48,7 @@ const Section1 = () => {
 
         <div className="container22">
           <div className="search-bar">
-            <input type="text" className="search-input" placeholder="Search..." />
+            <input type="text" className="search-input1" placeholder="Search..." />
             <button className="mic-button">
               <img src={imgeHome2} alt="Search Icon" />
             </button>

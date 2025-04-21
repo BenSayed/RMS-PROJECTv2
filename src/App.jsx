@@ -1,4 +1,4 @@
-//import Home from "./Home/Home";
+import Home from "./Home/Home";
  
 
 
@@ -91,7 +91,7 @@ function App() {
  
 
          <Header />
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/login" element={<Login />} />
@@ -105,9 +105,10 @@ function App() {
         <Route path="/DeliveryHistory" element={<DeliveryHistory />} />
         <Route path="/Reservation" element={<Reservation />} />
         <Route path="/WatingPage" element={<WatingPage/>} />
+        <Route path="/HomeProfile" element={<HomeProfile/>} />
 
-      </Routes> */}
-<HomeProfile/>
+      </Routes> 
+{/* <HomeProfile/> */}
 
       <Footer />  
       {/* <WatingPage/> */}

@@ -4,32 +4,43 @@ import Headerimg1 from "/public/Logo 1.svg";
 import Headerimg2 from "/HeaderIMG/akar-icons_cart.svg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import ComHeader from "./ComHeader";
+import HeaderMobileUser from "../HeaderMobile/HeaderMobileUser/HeaderMobileUser.jsx";
 
 const Header = () => {
   const location = useLocation();
-  const [showModel, setShowModel] = useState(false); // state لإظهار/إخفاء ComHeader
+  const [showModel, setShowModel] = useState(false);
+  const [showMobileUser, setShowMobileUser] = useState(false);
   const navigate = useNavigate();
-  const comHeaderRef = useRef(null); // ref لتتبع ComHeader
+  const comHeaderRef = useRef(null);
 
-  // دالة للانتقال إلى صفحة تسجيل الدخول
   const handleLoginClick = () => {
     navigate("/login");
   };
 
-  // دالة لإغلاق ComHeader عند النقر خارج المكون
   const handleClickOutside = (event) => {
-    if (comHeaderRef.current && !comHeaderRef.current.contains(event.target)) {
+    if (
+      comHeaderRef.current &&
+      !comHeaderRef.current.contains(event.target)
+    ) {
       setShowModel(false);
+      setShowMobileUser(false);
     }
   };
 
-  // إضافة event listener لتتبع النقر خارج المكون
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const handleIconMenuClick = () => {
+    if (location.pathname === "/HomeProfile") {
+      setShowMobileUser(true);
+    } else {
+      setShowModel(!showModel);
+    }
+  };
 
   return (
     <div className="Headerall">
@@ -97,6 +108,7 @@ const Header = () => {
               </nav>
             </div>
           </div>
+
           <div className="HeaderContinentlogoButton">
             <Link to="/SalesPages">
               <img
@@ -112,14 +124,23 @@ const Header = () => {
               Login
             </button>
             <button
-              onClick={() => setShowModel(!showModel)} // تبديل حالة showModel
+              onClick={handleIconMenuClick}
               className="icon-menu"
             ></button>
 
-            {/* إظهار ComHeader إذا كانت showModel تساوي true */}
+            {/* عرض ComHeader لو مش في HomeProfile */}
             {showModel && (
               <div ref={comHeaderRef}>
                 <ComHeader onClose={() => setShowModel(false)} />
+              </div>
+            )}
+
+            {/* عرض HeaderMobileUser كـ alert فوق الصفحة */}
+            {showMobileUser && (
+              <div className="modal-overlay">
+                <div className="modal-content" ref={comHeaderRef}>
+                  <HeaderMobileUser onClose={() => setShowMobileUser(false)} />
+                </div>
               </div>
             )}
           </div>

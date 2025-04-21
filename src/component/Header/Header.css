@@ -9,6 +9,27 @@ padding-right: 64px;
 
 }
 
+
+.modal-overlay {
+  position: fixed;
+  top: -280px;
+  left: 0;
+  width: 100vw;
+  height: 160vh;
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* يخليه فوق أي عنصر تاني */
+  background-color: rgba(0, 0, 0, 0.5); /* خلفية شبه شفافة */
+
+}
+
+.modal-content {
+/* box-shadow: 0px 120px 99px rgb(0 0 0 / 91%); */
+ }
+
+
+
 .Header {
   width: 100%;
   box-sizing: border-box;
