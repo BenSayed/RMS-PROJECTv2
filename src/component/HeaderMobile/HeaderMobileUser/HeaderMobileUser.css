@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-margin-top: -90px;
+ 
 }
 
 .HeaderMobileUser {
@@ -67,6 +67,17 @@ margin-top: -90px;
   font-family: "Inter", serif;
   color: #151716;
 }
+
+
+@media (max-width: 425px) {
+  .HeaderMobileUseraber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -220px;
+  }
+}
+
 @media (max-width: 375px) {
   .HeaderMobileUserContint {
     max-width: 410px;
