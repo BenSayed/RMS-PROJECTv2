@@ -12,7 +12,7 @@
 .HeaderMobileUserContint {
   max-width: 410px;
   max-height: 440px;
-  width: 352px;
+  width: 372px;
   height: 440px;
   padding: 48px;
   gap: 10px;
@@ -31,7 +31,7 @@
   flex-direction: column;
 }
 .HeaderMobileUserContintDataGE {
-  width: 248px;
+  width: 278px;
 
   height: 56px;
   border-radius: 16px;
