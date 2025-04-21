@@ -506,6 +506,24 @@ button.icon-menu{
 }
  
 }
+
+
+
+@media (max-width: 425px) {
+  .modal-overlay {
+    position: fixed;
+    top: -280px;
+    left: 0;
+    width: 100vw;
+    height: 160vh;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* يخليه فوق أي عنصر تاني */
+    background-color: rgba(0, 0, 0, 0.5); /* خلفية شبه شفافة */
+  
+  }
+}
 @media (max-width: 375px) {
   .HeaderContinent{
     width: 362px;
