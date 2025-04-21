@@ -2,11 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import "./ComHeader.css";
 import imgcar from "./Ellipse 1924.svg";
 import imgcar22 from "./akar-icons_cart.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // ✅ ضفنا useNavigate
 
 const ComHeader = ({ onClose }) => {
   const [activeLink, setActiveLink] = useState(null);
   const cardRef = useRef(null);
+  const navigate = useNavigate(); // ✅ تهيئة التنقل
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -26,16 +27,19 @@ const ComHeader = ({ onClose }) => {
     onClose();
   };
 
+  // ✅ دالة التنقل إلى صفحة البروفايل
+  const handleProfileClick = () => {
+    onClose();
+    navigate('/HomeProfile');
+  };
+
   return (
     <div className="ComHeader">
       <div className="ComHeader1">
         <div className="ComHeaderCard23" ref={cardRef}>
           
-          {/* ✅ التعديل هنا */}
-          <div className="ComHeaderCardPro" onClick={() => {
-            onClose();
-            window.location.href = '/HomeProfile';
-          }}>
+          {/* ✅ الصورة والاسم مع التنقل */}
+          <div className="ComHeaderCardPro" onClick={handleProfileClick}>
             <img src={imgcar} alt="" />
             <h2>Ronald Richards</h2>
           </div>
