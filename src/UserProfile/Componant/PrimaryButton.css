@@ -56,3 +56,14 @@ padding: 8.09px;
 
 
   }
+  
+@media (max-width: 425px) {
+  .button-icon {
+ 
+    width: 27px;
+    height: 27px;
+    gap: 8.09px;
+    border-radius: 8.95px;
+    padding: 8.09px;
+}
+}

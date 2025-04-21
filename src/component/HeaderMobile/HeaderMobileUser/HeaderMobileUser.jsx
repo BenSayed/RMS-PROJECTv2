@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./HeaderMobileUser.css";
 import { useNavigate, useLocation } from 'react-router-dom';
+import profileHeader1 from './Vector (3).svg' ;
+import profileHeader2 from './Vector (4).svg';
+import profileHeader3 from './material-symbols_settings-rounded.svg' ;
+import profileHeader4 from './Vector (5).svg' ;
+import profileHeader5 from './solar_heart-bold.svg' ;
+
 
 const HeaderMobileUser = () => {
   const [activeTab, setActiveTab] = useState(null);
@@ -51,7 +57,7 @@ const HeaderMobileUser = () => {
               className={`HeaderMobileUserContintDataGE ${activeTab === 'General' ? 'active' : ''}`}
               onClick={() => handleClick('General', '/HomeProfile')}
             >
-              <img src="src/component/HeaderMobile/HeaderMobileUser/Vector (3).svg" alt="" />
+              <img src={profileHeader1} alt="" />
               <h2>General</h2>
             </div>
 
@@ -59,7 +65,7 @@ const HeaderMobileUser = () => {
               className={`HeaderMobileUserContintDataGE ${activeTab === 'History' ? 'active' : ''}`}
               onClick={() => handleClick('History', '/history')}
             >
-              <img src="src/component/HeaderMobile/HeaderMobileUser/Vector (4).svg" alt="" />
+              <img src={profileHeader2}alt="" />
               <h2>History</h2>
             </div>
 
@@ -67,7 +73,7 @@ const HeaderMobileUser = () => {
               className={`HeaderMobileUserContintDataGE ${activeTab === 'Account settings' ? 'active' : ''}`}
               onClick={() => handleClick('Account settings', '/settings')}
             >
-              <img src="src/component/HeaderMobile/HeaderMobileUser/material-symbols_settings-rounded.svg" alt="" />
+              <img src={profileHeader3} alt="" />
               <h2>Account settings</h2>
             </div>
 
@@ -75,7 +81,7 @@ const HeaderMobileUser = () => {
               className={`HeaderMobileUserContintDataGE ${activeTab === 'Rating' ? 'active' : ''}`}
               onClick={() => handleClick('Rating', '/rating')}
             >
-              <img src="src/component/HeaderMobile/HeaderMobileUser/Vector (5).svg" alt="" />
+              <img src={profileHeader4} alt="" />
               <h2>Rating</h2>
             </div>
 
@@ -83,7 +89,7 @@ const HeaderMobileUser = () => {
               className={`HeaderMobileUserContintDataGE ${activeTab === 'Favorite' ? 'active' : ''}`}
               onClick={() => handleClick('Favorite', '/favorite')}
             >
-              <img src="src/component/HeaderMobile/HeaderMobileUser/solar_heart-bold.svg" alt="" />
+              <img src={profileHeader5} alt="" />
               <h2>Favorite</h2>
             </div>
 
