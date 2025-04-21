@@ -1,0 +1,88 @@
+.HeaderMobileUseraber {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.HeaderMobileUser {
+  box-shadow: 0px 120px 999px rgb(0 0 0 / 91%);
+  cursor: pointer; /* لجعل حدود الجروب قابلة للنقر */
+}
+
+.HeaderMobileUserContint {
+  max-width: 410px;
+  max-height: 440px;
+  width: 393px;
+  height: 440px;
+  padding: 48px;
+  gap: 10px;
+  top: 318px;
+  left: 46081px;
+  border-bottom-right-radius: 48px;
+  border-bottom-left-radius: 48px;
+  background-color: #FFF4E6;
+}
+
+.HeaderMobileUserContintData {
+  width: 297px;
+  height: 344px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.HeaderMobileUserContintDataGE {
+  width: 297px;
+  height: 56px;
+  border-radius: 16px;
+  gap: 10px;
+  padding-top: 16px;
+  padding-right: 24px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer; /* لجعل العناصر قابلة للنقر */
+}
+
+.HeaderMobileUserContintDataGE.active {
+  background-color: #FF9500;
+}
+
+ 
+
+.HeaderMobileUserContintDataGE img {
+  width: 24px;
+  height: 24px;
+  gap: 10px;
+}
+
+.HeaderMobileUserContintDataGE h2 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  font-family: "Inter", serif;
+  color: #151716;
+}
+@media (max-width: 375px) {
+  .HeaderMobileUserContint {
+    max-width: 410px;
+    max-height: 440px;
+    width: 331px;
+  }
+  .HeaderMobileUserContintDataGE {
+    width: 240px;
+  }
+  .HeaderMobileUserContint {
+    max-width: 410px;
+    max-height: 440px;
+    width: 271px;
+}
+.HeaderMobileUserContintData {
+  width: 241px;
+}
+}

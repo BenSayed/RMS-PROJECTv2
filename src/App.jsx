@@ -1,4 +1,7 @@
-import Home from "./Home/Home";
+//import Home from "./Home/Home";
+ 
+
+
 import Header from "./component/Header/Header";
 import AboutPage from "./About/About";
 import { Routes, Route } from "react-router-dom";
@@ -25,6 +28,13 @@ import PageErorr500 from "./Page Erorr/Page500/pageErorr500";
 import DeliveryProfile from "./Delivery pages/DeliveryProfile/DeliveryProfile";
 import WatingPage from "./Wating Page/WatingPage";
 import OrderPageProssesing from "./chiefUiPage/alertChief - Prosessing/alertProsessing";
+import HeaderMobileUser from "./component/HeaderMobile/HeaderMobileUser/HeaderMobileUser";
+import FavoritePage from "./UserProfile/Componant/FavoritePage";
+import RatingPage from "./UserProfile/Componant/RatingPage";
+import SettingsPage from "./UserProfile/Componant/SettingsPage";
+ import Home2 from "./UserProfile/Componant/HomeProfile";
+import HomeProfile from "./UserProfile/Componant/HomeProfile";
+import HistoryPage from "./UserProfile/Componant/HistoryPage";
  
 function App() {
   return (
@@ -38,9 +48,9 @@ function App() {
 
        {/* <OrderPageProssesing/> */}
       
-       <Routes>
+       {/* <Routes>
         <Route path="/" element={<CheefuiPage/>} />
-       </Routes>
+       </Routes> */}
 
 
  
@@ -57,10 +67,31 @@ function App() {
 
       </Routes> */}
 
+ {/* <HeaderMobileUser/> */}
+ {/* <HomeProfile/> */}
+ {/* <HistoryPage /> */}
+
+ {/* <Routes>
+ 
+ <Route path="/HomeProfile" element={<HomeProfile/>} />
+ 
+</Routes>  */}
+
+
+
+ 
+{/*  
+      <Routes>
+ 
+        <Route path="/history" element={<HistoryPage />} />
+        <Route path="/settings" element={<SettingsPage />} />
+        <Route path="/rating" element={<RatingPage />} />
+        <Route path="/favorite" element={<FavoritePage />} />
+      </Routes> */}
  
 
-       {/* <Header />
-      <Routes>
+         <Header />
+      {/* <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/login" element={<Login />} />
@@ -75,10 +106,10 @@ function App() {
         <Route path="/Reservation" element={<Reservation />} />
         <Route path="/WatingPage" element={<WatingPage/>} />
 
-      </Routes>
+      </Routes> */}
+<HomeProfile/>
 
-
-      <Footer />  */}
+      <Footer />  
       {/* <WatingPage/> */}
     </div>
   );
