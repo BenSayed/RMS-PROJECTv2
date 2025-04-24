@@ -21,7 +21,7 @@ const HeaderMobileUser = ({ onClose }) => {
       case "/history":
         setActiveTab("History");
         break;
-      case "/settings":
+      case "/AccountSettings":
         setActiveTab("Account settings");
         break;
       case "/OrderFavProfile":
@@ -60,7 +60,7 @@ const HeaderMobileUser = ({ onClose }) => {
 
             <div
               className={`HeaderMobileUserContintDataGE ${activeTab === 'History' ? 'active' : ''}`}
-              onClick={() => handleClick('History', '/history')}
+              onClick={() => handleClick('History', 'HistoryProfile')}
             >
               <img src={profileHeader2} alt="" />
               <h2>History</h2>
@@ -68,7 +68,7 @@ const HeaderMobileUser = ({ onClose }) => {
 
             <div
               className={`HeaderMobileUserContintDataGE ${activeTab === 'Account settings' ? 'active' : ''}`}
-              onClick={() => handleClick('Account settings', '/settings')}
+              onClick={() => handleClick('Account settings', '/AccountSettings')}
             >
               <img src={profileHeader3} alt="" />
               <h2>Account settings</h2>

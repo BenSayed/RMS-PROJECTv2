@@ -272,6 +272,12 @@ button.icon-menu {
 }
 
 
+.HeaderContinentlogoButtonuser{
+  width: 35px;
+}
+.HeaderContinentlogoButtonuserNet{
+  width: 25px;
+}
 
 @media (max-width: 1428px) {
  
@@ -428,6 +434,13 @@ flex-wrap: wrap;
 }
 }
 @media (max-width: 768px) {
+  .HeaderContinentlogoButtonuser{
+display: none;  
+}
+  .HeaderContinentlogoButtonuserNet{
+    display: none;  
+  }
+
   .Header{
     padding-left: 0px;
     padding-right: 0px;
@@ -473,6 +486,13 @@ font-size: 30px;
 }
 @media (max-width: 490px) {
 
+  .HeaderContinentlogoButtonuser{
+    display: none;  
+    }
+      .HeaderContinentlogoButtonuserNet{
+        display: none;  
+      }
+    
   .Header {
     width: 1100px;
     box-sizing: border-box;

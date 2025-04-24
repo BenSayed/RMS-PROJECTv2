@@ -1,0 +1,354 @@
+.HistoryProfile {
+  height: auto;
+  display: flex;
+  justify-content: center;
+
+  padding: 20px 77px;
+  gap: 20px;
+}
+.HistoryProfileContintCard {
+  width: 978px;
+  height: 886px;
+  top: 145px;
+  left: 397px;
+  border-radius: 48px;
+  padding: 48px;
+  gap: 48px;
+  background-color: #fff4e6;
+  display: flex
+;
+  flex-direction: column;
+  gap: 81px;
+
+}
+
+.HistoryProfileContintCardAll::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari */
+}
+
+
+.HistoryProfileContint {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 998px;
+}
+.HistoryProfileContintCardAll {
+  gap: 21px;
+  display: flex
+;
+  flex-direction: column;
+  max-height: 891px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 889px;
+  height: 800px;
+}
+
+.HistoryProfileContintCardAlliteam {
+  width: 883px;
+  height: 164px;
+  border-radius: 48px;
+  border-width: 1px;
+  border: 1px solid #ff9500;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+ 
+}
+.HistoryProfileContintCardAlliteamContint {
+  width: 940px;
+  height: 160px;
+}
+.HistoryProfileContintCardAlliteamContintData {
+  display: flex
+;
+  justify-content: space-around;
+  align-items: center;
+  gap: 19px;
+}
+
+.HistoryProfileContintCardAlliteamContintData img {
+  width: 32px;
+}
+
+.HistoryProfileContintCardAlliteamContintData h2{
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+   color: #1517168e;
+}
+.HistoryProfileContintCardAlliteamContintData h2 span
+
+{
+color: #E88800;
+}
+.HistoryProfileContintCardAlliteamContintData h3{
+font-family: "Inter", serif;
+font-weight: 400;
+font-size: 16px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+color: #151716;
+}
+.HistoryProfileContintCardAlliteamContintData h3 span{ 
+  font-family: "Cormorant Upright", serif;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  ;
+  color: #151716;
+}
+.HistoryProfileContintCardAlliteamContintData2 {
+  display: flex
+  ;
+  gap: 93px;
+  margin-top: -8px;
+      justify-content: space-around;
+  }
+  .ContintCardAlliteamContintData2line {
+    width: 2px;
+    height: 82px;
+    background-color: #FF9500;
+    margin-top: 7px;
+}
+
+  .ContintCardAlliteamContintData2 h2{
+    font-family: "Cormorant Upright", serif;
+    font-weight: 700;
+font-size: 32px;
+line-height: 100%;
+letter-spacing: 0%;
+ 
+color: #151716;
+
+margin-bottom: -5px;
+ 
+
+  }
+
+  .ContintCardAlliteamContintData2 p{
+    font-family: "Inter", serif;
+        font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+ 
+    
+    
+color: #15171680;
+  }
+  .ContintCardAlliteamContintData2button button {
+    width: 153px;
+    height: 45px;
+    background-color: #FF9500;
+    border-radius: 12.95px;
+    gap: 6.47px;
+    padding-top: 3.24px;
+    padding-right: 3.24px;
+    padding-bottom: 3.24px;
+    padding-left: 12.95px;
+    border: none;
+    color: #151716;
+    position: relative;
+    left: 0px;
+    top: 30px;
+    display: flex
+;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Inter", serif;
+ font-weight: 500;
+font-size: 14.56px;
+line-height: 21.85px;
+letter-spacing: 0%;
+text-align: center;
+
+
+}
+  .ContintCardAlliteamContintData2button button img {
+    width: 38.83636474609375px;
+    height: 38.83636474609375px;
+    border-radius: 12.95px;
+    padding: 8.09px;
+    gap: 8.09px;
+    background-color: #151716;
+}
+
+@media (max-width: 1366px) {
+
+  .HistoryProfileContintCard {
+    width: 937px;
+    height: 664px;
+    display: flex
+    ;
+      flex-direction: column;
+      gap: 81px;
+      align-items: center;
+
+}
+}
+
+@media (max-width: 1024px) {
+
+  .HistoryProfileContintCard {
+    width: 603px;
+  }
+  .HistoryProfileContintCardAll {
+    gap: 21px;
+    display: flex
+;
+    flex-direction: column;
+    max-height: 891px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 573px;
+}
+.HistoryProfileContintCardAlliteam {
+  width: 543px;
+}
+.HistoryProfileContintCardAlliteamContintData h2 {
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+ 
+}
+@media (max-width: 425px) {
+  .HistoryProfileContintCard {
+    width: 363px;
+}
+
+.HistoryProfileContintCardAll {
+  gap: 21px;
+  display: flex
+;
+  flex-direction: column;
+  max-height: 891px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 336px;
+  align-items: center;
+}
+.HistoryProfileContintCardAlliteam {
+  width: 291px;
+  height: 333px;
+  border-radius: 33.6px;
+  border-width: 0.7px;
+  display: flex
+;
+  flex-direction: column;
+}
+.HistoryProfileContintCardAlliteamContintData {
+  display: flex
+;
+  align-items: center;
+  gap: 9px;
+  justify-content: center;
+}
+
+.HistoryProfileContintCardAlliteamContintData h3 span {
+  font-family: "Cormorant Upright", serif;
+  font-weight: 700;
+  font-size: 16px;
+
+}
+.HistoryProfileContintCardAlliteamContintData h2 {
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 10px;
+}
+
+.HistoryProfileContintCardAlliteamContintData {
+  display: flex
+;
+  align-items: center;
+  gap: 9px;
+  justify-content: center;
+}
+.HistoryProfileContintCardAlliteamContintData h3 {
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 10px;
+}
+
+.HistoryProfileContintCardAlliteamContintData img {
+  width: 22px;
+}
+.HistoryProfileContintCardAlliteamContintData2 {
+  display: flex
+;
+  gap: 0px;
+  margin-top: -8px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ContintCardAlliteamContintData2 h2 {
+  font-family: "Cormorant Upright", serif;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.ContintCardAlliteamContintData2line {
+display: none;
+}
+
+.ContintCardAlliteamContintData2 p {
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 15px;
+
+}
+.ContintCardAlliteamContintData2{
+  margin-top: -8px;
+}
+
+.ContintCardAlliteamContintData2button{
+  margin-top: -38px;
+}
+.ContintCardAlliteamContintData2button button {
+  width: 122px;
+  height: 36px;
+  background-color: #FF9500;
+  border-radius: 6.95px;
+  gap: 9.47px;
+  padding-top: 10.24px;
+    border: none;
+    color: #151716;
+    position: relative;
+    left: 0px;
+    top: 31px;
+    display: flex
+;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Inter", serif;
+    font-weight: 500;
+    font-size: 11.56px;
+    line-height: 21.85px;
+    letter-spacing: 0%;
+    text-align: center;
+    white-space: nowrap;
+}
+.ContintCardAlliteamContintData2button button img {
+  width: 37.836365px;
+  height: 30.836365px;
+  border-radius: 8.95px;
+  position: relative;
+  top: -3px;
+  left: -5px;
+}
+
+
+}
+ 

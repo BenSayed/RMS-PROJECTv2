@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Header.css";
 import Headerimg1 from "/public/Logo 1.svg";
 import Headerimg2 from "/HeaderIMG/akar-icons_cart.svg";
+import Headerimguser from "./Ellipse 33.svg";
+import Headerimgusernet from "./Vecto221.svg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import ComHeader from "./ComHeader";
 import HeaderMobileUser from "../HeaderMobile/HeaderMobileUser/HeaderMobileUser.jsx";
@@ -10,6 +12,7 @@ const Header = () => {
   const location = useLocation();
   const [showModel, setShowModel] = useState(false);
   const [showMobileUser, setShowMobileUser] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
   const comHeaderRef = useRef(null);
 
@@ -34,14 +37,24 @@ const Header = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const token = localStorage.getItem("token"); // عدل اسم التوكن حسب مشروعك
+    setIsLoggedIn(!!token);
+  }, []);
+
   const handleIconMenuClick = () => {
-    if (location.pathname === "/HomeProfile" || location.pathname === "/OrderFavProfile") {
+    const profilePaths = [
+      "/HomeProfile",
+      "/OrderFavProfile",
+      "/HistoryProfile",
+      "/AccountSettings",
+    ];
+    if (profilePaths.includes(location.pathname)) {
       setShowMobileUser(true);
     } else {
-      setShowModel(prev => !prev);
+      setShowModel((prev) => !prev);
     }
   };
-  
 
   return (
     <div className="Headerall">
@@ -111,6 +124,27 @@ const Header = () => {
           </div>
 
           <div className="HeaderContinentlogoButton">
+            {isLoggedIn && (
+              <>
+                <Link to="/HomeProfile">
+                  <img
+                    className="HeaderContinentlogoButtonuserNet"
+                    src={Headerimgusernet}
+                    alt=""
+                    style={{ cursor: "pointer" }}
+                  />
+                </Link>
+                <Link to="/HomeProfile">
+                  <img
+                    className="HeaderContinentlogoButtonuser"
+                    src={Headerimguser}
+                    alt=""
+                    style={{ cursor: "pointer" }}
+                  />
+                </Link>
+              </>
+            )}
+
             <Link to="/SalesPages">
               <img
                 className="HeaderContinentlogoButton2"
@@ -118,25 +152,24 @@ const Header = () => {
                 alt=""
               />
             </Link>
-            <button
-              className="HeaderContinentlogoButton1"
-              onClick={handleLoginClick}
-            >
-              Login
-            </button>
-            <button
-              onClick={handleIconMenuClick}
-              className="icon-menu"
-            ></button>
 
-            {/* عرض ComHeader لو مش في HomeProfile */}
+            {!isLoggedIn && (
+              <button
+                className="HeaderContinentlogoButton1"
+                onClick={handleLoginClick}
+              >
+                Login
+              </button>
+            )}
+
+            <button onClick={handleIconMenuClick} className="icon-menu"></button>
+
             {showModel && (
               <div ref={comHeaderRef}>
                 <ComHeader onClose={() => setShowModel(false)} />
               </div>
             )}
 
-            {/* عرض HeaderMobileUser كـ alert فوق الصفحة */}
             {showMobileUser && (
               <div className="modal-overlay">
                 <div className="modal-content" ref={comHeaderRef}>

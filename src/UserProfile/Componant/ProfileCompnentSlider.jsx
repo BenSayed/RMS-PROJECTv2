@@ -34,7 +34,7 @@ const Sidebar = () => {
           <span>General</span>
         </NavLink>
         <NavLink
-          to="/history"
+          to="/HistoryProfile"
           className="nav-item"
           activeClassName="active"
         >
@@ -47,7 +47,7 @@ const Sidebar = () => {
           <span>History</span>
         </NavLink>
         <NavLink
-          to="/settings"
+          to="/AccountSettings"
           className="nav-item"
           activeClassName="active"
         >

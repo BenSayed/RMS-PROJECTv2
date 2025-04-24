@@ -1,0 +1,431 @@
+.AccountSettings{
+  height: auto;
+  display: flex;
+  justify-content: center;
+
+  padding: 20px 77px;
+  gap: 20px;
+}
+.AccountSettingsContint{
+  display: flex
+;
+    flex-direction: column;
+    gap: 20px;
+
+
+}
+.AccountSettingsContintCard{
+  width: 979px;
+height: 338px;
+top: 145px;
+left: 397px;
+border-radius: 48px;
+padding: 48px;
+gap: 48px;
+background-color: #FFF4E6;
+}
+.AccountSettingsContintCard2{
+  width: 979px;
+  height: 338px;
+  display: flex;
+  gap: 15px;
+}
+.AccountSettingsContintCard2Data1{
+  width: 535px;
+height: 464.30908203125px;
+top: 503px;
+left: 397px;
+border-radius: 48px;
+padding: 48px;
+gap: 48px;
+background-color: #FFF4E6;
+}
+.AccountSettingsContintCard2Data2{
+  width: 535px;
+height: 464.30908203125px;
+top: 503px;
+left: 397px;
+border-radius: 48px;
+padding: 48px;
+gap: 48px;
+background-color: #FFF4E6;
+}
+
+.AccountSettingsContintCard h2{
+  font-family: "Inter", serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  color: #151716;
+}
+ 
+.AccountSettingsContintCardgroup2 {
+  display: flex
+;
+  gap: 30px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.AccountSettingsContintCardline{
+  width: auto;
+  border: 1px solid #FF9500;
+}
+ 
+.AccountSettingsContintCardgroup2{
+  display: flex;
+  gap: 30px;
+}
+.AccountSettingsbutton1 {
+  width: 190.49090576171875px;
+  height: 45.3090934753418px;
+  border-radius: 12.95px;
+  gap: 6.47px;
+  padding-top: 3.24px;
+  padding-right: 3.24px;
+  padding-bottom: 3.24px;
+  padding-left: 12.95px;
+  background-color: #FF9500;
+  border: none;
+  display: flex
+;
+  align-items: center;
+  justify-content: space-between;
+ font-weight: 500;
+font-size: 14.56px;
+line-height: 21.85px;
+letter-spacing: 0%;
+text-align: center;
+font-family: "Inter", serif;
+
+}
+.AccountSettingsbutton2{
+  width: 124.89545440673828px;
+height: 45.310001373291016px;
+border-radius: 12.95px;
+gap: 6.47px;
+padding-top: 12.95px;
+padding-right: 12.95px;
+padding-bottom: 12.95px;
+padding-left: 12.95px;
+border-width: 1px;
+background-color: #FFF4E6;
+border: 1px solid #FF9500 ;
+
+  font-family: "Inter", serif;
+ 
+font-weight: 500;
+font-size: 14.56px;
+line-height: 21.85px;
+letter-spacing: 0%;
+text-align: center;
+color: #151716;
+white-space: nowrap;
+ }
+ .AccountSettingsbutton1 img{
+  width: 38.83636474609375px;
+height: 38.83636474609375px;
+border-radius: 12.95px;
+padding: 8.09px;
+gap: 8.09px;
+background-color: #151716;
+ } 
+ .AccountSettingsContintCard2Data1hero h2{
+  font-family: "Inter", serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  color: #151716;
+ }
+ .AccountSettingsContintCard2Data2Hero h2{
+  font-family: "Inter", serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  color: #151716;
+ }
+ .AccountSettingsContintCardinputs{
+ 
+    display: flex
+;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 27px;
+}
+ .AccountSettingsContintCardinputs input{
+  width: 384px;
+height: 52px;
+border-radius: 16px;
+justify-content: space-between;
+padding-top: 2px;
+padding-right: 16px;
+padding-bottom: 2px;
+padding-left: 16px;
+border-width: 1px;
+border: 1px solid #FF9500;
+font-family: "Inter", serif;
+background-color: #FFF4E6;
+ }
+ .AccountSettingsContintCardinputseyys {
+  gap: 18px;
+  display: flex
+;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  z-index: 9999;
+}
+.AccountSettingspassinptueyye{
+  position: absolute;
+  left: 330px;
+  top: 44px;
+}
+.AccountSettingspassinptueyye2{
+  position: absolute;
+  left: 330px;
+  top: 112px;
+
+}
+
+.AccountSettingspassinptueyye3{
+  position: absolute;
+  left: 330px;
+  top: 184px;
+
+}
+
+.AccountSettingsContintCard2Data1hero button{
+  width: 384px;
+height: 59px;
+border-radius: 16px;
+padding: 16px;
+gap: 8px;
+background-color: #FF9500;
+border: none;
+margin-top: 20px;
+font-family: "Inter", serif;
+ color: #151716;
+font-weight: 500;
+font-size: 18px;
+line-height: 27px;
+letter-spacing: 0%;
+text-align: center;
+
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px; width: 26px;
+  left: 4px; bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #FF9500;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.AccountSettingsContintCardSwitch{
+  
+    display: flex
+;
+    flex-direction: column;
+    gap: 31px;
+    margin-top: 30px;
+
+}
+.AccountSettingsContintCardtitrlswitch{
+  display: flex
+  ;
+      gap: 94px;
+  }
+
+  .AccountSettingsContintCardSwitchtitel h2{
+     font-weight: 500;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    font-family: "Inter", serif;
+  }
+  @media (max-width: 1366px) {
+    .AccountSettingsContintCard {
+      width: 951px;
+      height: 327px;
+    }
+
+    .AccountSettingsContintCard2 {
+      width: 947px;
+      height: 457px;
+
+    }
+  }
+  @media (max-width: 1024px) {
+
+    .AccountSettingsContintCard {
+      width: 598px;
+    }
+  .AccountSettingsContintCard2 {
+    width: 517px;
+    height: 457px;
+}
+.AccountSettingsContintCard2Data1 {
+  width: 366px;
+}
+.AccountSettingsContintCard2Data2 {
+  width: 317px;
+}
+.AccountSettingsContintCardinputs input {
+  width: 271px;
+
+}
+.AccountSettingsContintCard2Data1hero button {
+  width: 269px;
+}
+.AccountSettingsContintCard2Data2 {
+  width: 231px;
+}
+.AccountSettingsContintCardSwitchtitel h2 {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.AccountSettingsContintCardtitrlswitch {
+  display: flex
+;
+  gap: 0px;
+}
+.AccountSettingsContintCardSwitchtitel{
+ 
+    display: flex
+;
+    flex-direction: column;
+    gap: 24px;
+}
+.AccountSettingspassinptueyye {
+  position: absolute;
+  left: 217px;
+  top: 44px;
+}
+.AccountSettingspassinptueyye2 {
+  position: absolute;
+  left: 217px;  top: 112px;
+}
+.AccountSettingspassinptueyye3 {
+  position: absolute;
+  left: 217px;
+  top: 184px;
+}
+
+
+
+
+
+
+
+  }
+
+  @media (max-width: 425px) {
+    .AccountSettingsContintCard{
+      width: 361px;
+height: 357px;
+top: 191px;
+left: 16px;
+border-radius: 33.6px;
+padding: 33.6px;
+gap: 33.6px;
+
+    }
+    .AccountSettingsContintCard2
+    {
+      display: flex;
+      flex-direction: column;
+    }
+    .AccountSettingsContintCardgroup2 {
+      display: flex
+  ;
+      gap: 30px;
+      flex-direction: column;
+  }
+  .AccountSettings {
+    height: 1493px;
+  }
+  .AccountSettingsContint {
+    display: flex
+;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.AccountSettingsContintCard2 {
+  display: flex
+;
+  flex-direction: column;
+  align-items: center;
+}
+.AccountSettingsContintCard2 {
+  width: 378px;
+}
+.AccountSettingsContintCard2Data2 {
+  width: 362px;
+}
+.AccountSettingsContintCardtitrlswitch {
+  display: flex
+;
+  gap: 94px;
+}
+.AccountSettingsContintCardSwitchtitel h2 {
+  font-weight: 500;
+  font-size: 19px;
+}
+.AccountSettingsContintCard h2 {
+  font-family: "Inter", serif;
+  font-weight: 700;
+  font-size: 24px;
+}
+.AccountSettingsContintCardgroup2imaa {
+  width: 117px;
+}
+.AccountSettingsContintCardgroup2 {
+  display: flex
+;
+  gap: 11px;
+}
+.AccountSettingsbutton2 {
+  width: 188.895454px;
+}
+
+  }

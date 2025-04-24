@@ -36,6 +36,8 @@ import SettingsPage from "./UserProfile/Componant/SettingsPage";
 import HomeProfile from "./UserProfile/Componant/HomeProfile";
 import HistoryPage from "./UserProfile/Componant/HistoryPage";
 import OrderFavProfile from "./UserProfile/Componant/OrderFavProfile";
+import HistoryProfile from "./UserProfile/Componant/HistoryProfile";
+import AccountSettings from "./UserProfile/Componant/AccountSettings";
  
 function App() {
   return (
@@ -47,7 +49,7 @@ function App() {
        {/* <PageEror404/> */}
        {/* <PageErorr500/> */}
 
-       {/* <OrderPageProssesing/> */}
+       
       
        {/* <Routes>
         <Route path="/" element={<CheefuiPage/>} />
@@ -68,9 +70,7 @@ function App() {
 
       </Routes> */}
 
- {/* <HeaderMobileUser/> */}
- {/* <HomeProfile/> */}
- {/* <HistoryPage /> */}
+ 
 
  
 
@@ -103,13 +103,16 @@ function App() {
         <Route path="/WatingPage" element={<WatingPage/>} />
         <Route path="/HomeProfile" element={<HomeProfile/>} />
         <Route path="/OrderFavProfile" element={<OrderFavProfile/>} />
+        <Route path="/HistoryProfile" element={<HistoryProfile/>} />
+        <Route path="/AccountSettings" element={<AccountSettings/>} />
+
+
         
 
       </Routes> 
  
       <Footer />  
-      {/* <WatingPage/> */}
-    </div>
+     </div>
   );
 }
 
