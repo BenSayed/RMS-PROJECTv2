@@ -103,6 +103,7 @@ function App() {
         <Route path="/WatingPage" element={<WatingPage/>} />
         <Route path="/HomeProfile" element={<HomeProfile/>} />
         <Route path="/OrderFavProfile" element={<OrderFavProfile/>} />
+        
 
       </Routes> 
  
