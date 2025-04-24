@@ -35,12 +35,13 @@ const Header = () => {
   }, []);
 
   const handleIconMenuClick = () => {
-    if (location.pathname === "/HomeProfile") {
+    if (location.pathname === "/HomeProfile" || location.pathname === "/OrderFavProfile") {
       setShowMobileUser(true);
     } else {
-      setShowModel(!showModel);
+      setShowModel(prev => !prev);
     }
   };
+  
 
   return (
     <div className="Headerall">

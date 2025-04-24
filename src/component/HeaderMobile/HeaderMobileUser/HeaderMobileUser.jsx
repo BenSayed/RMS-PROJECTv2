@@ -1,19 +1,18 @@
+// HeaderMobileUser.jsx
 import React, { useState, useEffect } from "react";
 import "./HeaderMobileUser.css";
 import { useNavigate, useLocation } from 'react-router-dom';
-import profileHeader1 from './Vector (3).svg' ;
+
+import profileHeader1 from './Vector (3).svg';
 import profileHeader2 from './Vector (4).svg';
-import profileHeader3 from './material-symbols_settings-rounded.svg' ;
-import profileHeader4 from './Vector (5).svg' ;
-import profileHeader5 from './solar_heart-bold.svg' ;
+import profileHeader3 from './material-symbols_settings-rounded.svg';
+import profileHeader5 from './solar_heart-bold.svg';
 
-
-const HeaderMobileUser = () => {
+const HeaderMobileUser = ({ onClose }) => {
   const [activeTab, setActiveTab] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
 
-  // لما يفتح الكمبوننت، حدث الـ activeTab بناءً على الـ path
   useEffect(() => {
     switch (location.pathname) {
       case "/HomeProfile":
@@ -25,10 +24,7 @@ const HeaderMobileUser = () => {
       case "/settings":
         setActiveTab("Account settings");
         break;
-      case "/rating":
-        setActiveTab("Rating");
-        break;
-      case "/favorite":
+      case "/OrderFavProfile":
         setActiveTab("Favorite");
         break;
       default:
@@ -40,6 +36,7 @@ const HeaderMobileUser = () => {
     setActiveTab(tabName);
     if (path) {
       navigate(path);
+      if (onClose) onClose(); // ← هنا بنقفل الـ alert بعد التنقل
     }
   };
 
@@ -65,7 +62,7 @@ const HeaderMobileUser = () => {
               className={`HeaderMobileUserContintDataGE ${activeTab === 'History' ? 'active' : ''}`}
               onClick={() => handleClick('History', '/history')}
             >
-              <img src={profileHeader2}alt="" />
+              <img src={profileHeader2} alt="" />
               <h2>History</h2>
             </div>
 
@@ -78,16 +75,8 @@ const HeaderMobileUser = () => {
             </div>
 
             <div
-              className={`HeaderMobileUserContintDataGE ${activeTab === 'Rating' ? 'active' : ''}`}
-              onClick={() => handleClick('Rating', '/rating')}
-            >
-              <img src={profileHeader4} alt="" />
-              <h2>Rating</h2>
-            </div>
-
-            <div
               className={`HeaderMobileUserContintDataGE ${activeTab === 'Favorite' ? 'active' : ''}`}
-              onClick={() => handleClick('Favorite', '/favorite')}
+              onClick={() => handleClick('Favorite', '/OrderFavProfile')}
             >
               <img src={profileHeader5} alt="" />
               <h2>Favorite</h2>

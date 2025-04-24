@@ -35,6 +35,7 @@ import SettingsPage from "./UserProfile/Componant/SettingsPage";
  import Home2 from "./UserProfile/Componant/HomeProfile";
 import HomeProfile from "./UserProfile/Componant/HomeProfile";
 import HistoryPage from "./UserProfile/Componant/HistoryPage";
+import OrderFavProfile from "./UserProfile/Componant/OrderFavProfile";
  
 function App() {
   return (
@@ -71,12 +72,7 @@ function App() {
  {/* <HomeProfile/> */}
  {/* <HistoryPage /> */}
 
- {/* <Routes>
  
- <Route path="/HomeProfile" element={<HomeProfile/>} />
- 
-</Routes>  */}
-
 
 
  
@@ -106,10 +102,10 @@ function App() {
         <Route path="/Reservation" element={<Reservation />} />
         <Route path="/WatingPage" element={<WatingPage/>} />
         <Route path="/HomeProfile" element={<HomeProfile/>} />
+        <Route path="/OrderFavProfile" element={<OrderFavProfile/>} />
 
       </Routes> 
-{/* <HomeProfile/> */}
-
+ 
       <Footer />  
       {/* <WatingPage/> */}
     </div>

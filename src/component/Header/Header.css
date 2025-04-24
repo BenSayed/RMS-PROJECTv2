@@ -512,7 +512,8 @@ button.icon-menu{
 @media (max-width: 425px) {
   .modal-overlay {
     position: fixed;
-    top: -280px;
+    /* top: -280px; */
+    top: -110px;
     left: 0;
     width: 100vw;
     height: 160vh;

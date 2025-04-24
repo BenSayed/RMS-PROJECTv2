@@ -1,0 +1,225 @@
+
+
+.OrderFavProfile{
+  height: auto;
+display: flex;
+justify-content: center;
+ 
+padding: 20px 77px;
+gap: 20px;
+
+}
+.OrderFavProfileeFAV {
+  width: 998px;
+  height: auto;
+  border-radius: 48px;
+  display: flex
+;
+  flex-direction: column;
+  align-items: center;
+}
+.OrderFavProfileeFAVContint{
+  width: 979px;
+  height: 859px;
+  top: 145px;
+left: 397px;
+border-radius: 48px;
+padding: 48px;
+gap: 48px;
+background-color: #FFF4E6;
+margin-top: 20px;
+}
+.OrderFavProfileeFAVContintHeder
+{
+  width: 883PX;
+height: 39PX;
+margin-top: -30px;
+
+
+ }
+ .OrderFavProfileeFAVContintHederline{
+  border-bottom: 2px solid #FF9500;
+
+ }
+.OrderFavProfileeFAVContintHeder h2{
+  font-family: "Inter", serif;font-weight: 700;
+font-size: 32px;
+line-height: 100%;
+letter-spacing: 0%;
+ color: #151716;
+text-align: left;
+margin-bottom: 15px;
+
+ }
+ .OrderFavProfileeFAVContintcard {
+  margin-top: 45px;
+  max-width: 923px;
+  display: flex
+;
+  gap: 20px;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  max-height: 534px;
+  overflow-x: hidden;
+  justify-content: flex-start;
+}
+.OrderFavProfileeFAVContintcard::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari */
+}
+ .itemcard{
+  width: 278px;
+height: 330px;
+border-radius: 41.44px;
+background-color: #FFF4E6;
+backdrop-filter: blur(17.265033721923828px) ;
+
+box-shadow: 0px 17.27px 74.53px 99px #131313bd;
+
+box-shadow: 0px 12.95px 25.9px 0px #0000001A;
+
+box-shadow: 0px 4.32px 8.63px 0px #0000001A;
+
+
+ }
+
+ .itemcardtextcont{
+  width: 278px;
+height: 34px;
+border-radius: 41.44px;
+padding: 10.81px;
+margin-left: 2px;
+
+
+ }
+ .itemcardtextconttitel {
+  display: flex
+;
+
+  gap: 62px;
+  align-items: center;
+  justify-content: center;
+  margin-top: -14px;
+  margin-left: -8px;
+  align-content: space-around;
+  width: 250px;
+ }
+ 
+  .itemcardtextconttitel h2{
+    width: 170px ;
+height: 33px;
+ font-weight: 700;
+font-size: 27.62px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+font-family: "Cormorant Upright", serif;
+color: #151716;
+margin-left: -18px;
+
+  }
+  .itemcardtextdiscrib{
+    width: 278px;
+    height: 34px;
+
+    margin-top: -24px;
+  }
+  .itemcardtextdiscrib h2{
+ font-weight: 400;
+ font-size: 13.81px;
+line-height: 100%;
+letter-spacing: 0%;
+ font-family: "Inter", serif;
+  }
+
+  .itemcardtextprise{
+    display: flex
+;
+    align-items: center;
+    gap: 100px;
+    width: 278px;
+    height: 34px;
+
+  }
+  .itemcardtextprise h2{
+    
+    
+ font-weight: 700;
+font-size: 34.53px;
+ letter-spacing: 0%;
+text-align: center;
+ 
+   font-family: "Cormorant Upright", serif;
+  }
+  .itemcardtextprise h3{
+color: #FFB854;
+
+  }
+  
+  @media (max-width: 1366px) {
+    .OrderFavProfileeFAVContint {
+      width: 979px;
+      height: 663px;
+
+    }
+    .OrderFavProfileeFAVContint {
+      width: 947px;
+      height: 663px;
+  }
+
+
+  }
+
+  @media (max-width: 1024px) {
+    .OrderFavProfileeFAVContintHeder {
+      width: 606PX;
+    }
+    .OrderFavProfileeFAVContintHederline {
+      border-bottom: 2px solid #FF9500;
+       width: 490px;
+  }
+  .OrderFavProfileeFAVContint {
+    width: 597px;
+    height: 663px;
+}
+
+.search-barProfile {
+  width: 604px;
+}
+
+
+  }
+  @media (max-width: 425px) {
+
+    .OrderFavProfileeFAVContint {
+      width: 344px;
+      display: flex
+;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .OrderFavProfileeFAVContintHederline {
+    border-bottom: 2px solid #FF9500;
+    width: 292px;
+}
+.search-barProfile {
+  width: 355px;
+}
+.OrderFavProfileeFAVContintcard {
+  margin-top: 45px;
+  max-width: 923px;
+  display: flex
+;
+  gap: 20px;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  max-height: 534px;
+  overflow-x: hidden;
+  justify-content: flex-start;
+}
+.OrderFavProfileeFAVContintHeder {
+  width: 292PX;
+}
+
+
+  }
