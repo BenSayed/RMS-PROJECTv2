@@ -6,6 +6,28 @@
  
   justify-content: center;
 }
+
+.input-edit {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+  color: #333;
+  padding: 4px 0;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+.buttons-header{
+  gap: 20px;
+    display: flex
+;
+}
+
+.input-edit:focus {
+  border-bottom: 1px solid #000;
+}
+
 .search-barProfile {
   background: #fff4e6;
   border-radius: 48px;
@@ -255,7 +277,7 @@ padding: 48px;
   gap: 6px;
   width: 94.49091339111328px;
   height: 45.3090934753418px;
-  gap: 6.47px;
+  gap: 4.47px;
   border-radius: 12.95px;
   padding-top: 3.24px;
   padding-right: 3.24px;

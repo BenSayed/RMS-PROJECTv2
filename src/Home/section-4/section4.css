@@ -434,15 +434,14 @@
 
   .cards {
     overflow: hidden;
-    overflow-x: scroll;  /* تفعيل الاسكرول الأفقي */
-     scroll-behavior: smooth;  /* تجعل التمرير ناعماً */
-    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    display: flex
+;
     justify-content: space-evenly;
     gap: -10px;
-    width: 1200px;
-    
-  
-   }
+    width: 921px;
+}
 
    .card {
     width: 278px;

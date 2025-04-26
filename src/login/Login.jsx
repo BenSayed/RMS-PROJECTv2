@@ -8,7 +8,7 @@ import imgiphone from "./apple .svg";
 import imglin6 from "./Line 16.svg";
 import imgline from "./Line 17.svg";
 import Recting from "./Rectangle 1162.svg";
-import { Link, useNavigate } from "react-router-dom"; // استيراد useNavigate
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -16,14 +16,14 @@ function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
 
-  const navigate = useNavigate(); // تهيئة الدالة navigate
+  const navigate = useNavigate();
 
   const togglePassword = () => {
     setPasswordVisible(!passwordVisible);
   };
 
   const handleLogin = async (e) => {
-    e.preventDefault();  // منع التحميل التلقائي للصفحة عند الضغط على الزر
+    e.preventDefault();
 
     if (!email || !password) {
       setError("Please fill in both email and password.");
@@ -39,7 +39,9 @@ function Login() {
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
         alert("Login successful!!");
-        navigate("/"); // استخدام navigate للتوجيه إلى الصفحة الرئيسية
+        navigate("/");
+
+        window.location.reload();
       } else {
         setError("Login failed. Please check your credentials.");
       }
@@ -84,13 +86,16 @@ function Login() {
                       alt="eye icon"
                       onClick={togglePassword}
                     />
-                    <h3>Forget password </h3>
+                    <Link to="/ForgetPassword">
+                      <h3 style={{ cursor: "pointer" }}>Forget password</h3>
+                    </Link>
                   </div>
                   <div className="remember">
                     <input className="InputRem" type="checkbox" id="remember" />
                     <label htmlFor="remember">Remember me</label>
                   </div>
                 </div>
+
                 <div className="lineDive">
                   <img src={imgline} alt="" />
                   <h3>or login with</h3>
@@ -98,11 +103,11 @@ function Login() {
                 </div>
 
                 <div className="social-buttons">
-                  <button>
+                  <button type="button">
                     <img src={imgegoogel} alt="Google Icon" />
                     Google
                   </button>
-                  <button>
+                  <button type="button">
                     <img src={imgiphone} alt="Apple Icon" />
                     Apple
                   </button>

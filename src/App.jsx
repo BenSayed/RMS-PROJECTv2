@@ -38,6 +38,8 @@ import HistoryPage from "./UserProfile/Componant/HistoryPage";
 import OrderFavProfile from "./UserProfile/Componant/OrderFavProfile";
 import HistoryProfile from "./UserProfile/Componant/HistoryProfile";
 import AccountSettings from "./UserProfile/Componant/AccountSettings";
+import ForgetPassword from "./ForgetPassword/ForgetPassword";
+import EmailConfirmation from "./ConfirmEmail/ConfirmEmail";
  
 function App() {
   return (
@@ -105,6 +107,9 @@ function App() {
         <Route path="/OrderFavProfile" element={<OrderFavProfile/>} />
         <Route path="/HistoryProfile" element={<HistoryProfile/>} />
         <Route path="/AccountSettings" element={<AccountSettings/>} />
+        <Route path="/ForgetPassword" element={<ForgetPassword/>} />
+        <Route path="/EmailConfirmation" element={<EmailConfirmation/>} />
+
 
 
         

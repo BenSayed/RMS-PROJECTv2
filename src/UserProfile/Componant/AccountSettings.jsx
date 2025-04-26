@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Sidebar from "./ProfileCompnentSlider.jsx";
 import SearchProfile from "./searchProfile.jsx";
 import imgedit from "./Vecto).svg";
 import imgeyye from "./Vector2.svg";
 import pimgprofilesiting from "./Ellipse 1928.svg";
-import { useNavigate } from "react-router-dom"; // استيراد useNavigate
+import { useNavigate } from "react-router-dom";
 import "./AccountSettings.css";
 
 const AccountSettings = () => {
@@ -13,7 +13,10 @@ const AccountSettings = () => {
   const [offersEnabled, setOffersEnabled] = useState(false);
   const [newsEnabled, setNewsEnabled] = useState(false);
 
-  const navigate = useNavigate(); // تهيئة التنقل
+  const [profileImage, setProfileImage] = useState(pimgprofilesiting); // صورة البروفايل
+  const fileInputRef = useRef(null); // ريفرنس للفايل انبوت
+
+  const navigate = useNavigate();
 
   const toggleNotification = () => {
     setNotificationsEnabled((prev) => !prev);
@@ -32,7 +35,23 @@ const AccountSettings = () => {
   };
 
   const handleBackToHome = () => {
-    navigate("/"); // التنقل إلى صفحة الهوم
+    navigate("/");
+  };
+
+  const handleEditPicture = () => {
+    fileInputRef.current.click(); // يفتحلك اختيار فايل
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setProfileImage(imageUrl); // يعرضلك الصورة المختارة
+    }
+  };
+
+  const handleDeletePicture = () => {
+    setProfileImage(pimgprofilesiting); // يرجع الصورة الأصلية (أو تخليها صورة فاضية لو حبيت)
   };
 
   return (
@@ -45,25 +64,42 @@ const AccountSettings = () => {
           </div>
 
           <div className="AccountSettingsContintCard">
-            <h2>Profile Picture </h2>
-            <div className="AccountSettingsContintCardline"> </div>
+            <h2>Profile Picture</h2>
+            <div className="AccountSettingsContintCardline"></div>
 
             <div className="AccountSettingsContintCardgroup2">
-              <img className="AccountSettingsContintCardgroup2imaa" src={pimgprofilesiting} alt="" />
-              <button className="AccountSettingsbutton1">
+              <img
+                className="AccountSettingsContintCardgroup2imaa"
+                src={profileImage}
+                alt="Profile"
+              />
+              <button
+                className="AccountSettingsbutton1"
+                onClick={handleEditPicture}
+              >
                 Edit Profile Picture <img src={imgedit} alt="" />
               </button>
-              <button className="AccountSettingsbutton2">
+              <button
+                className="AccountSettingsbutton2"
+                onClick={handleDeletePicture}
+              >
                 Delete Picture
               </button>
+              <input
+                type="file"
+                accept="image/*"
+                ref={fileInputRef}
+                style={{ display: "none" }}
+                onChange={handleFileChange}
+              />
             </div>
           </div>
 
           <div className="AccountSettingsContintCard2">
             <div className="AccountSettingsContintCard2Data1">
               <div className="AccountSettingsContintCard2Data1hero">
-                <h2>Change Password </h2>
-                <div className="AccountSettingsContintCardline"> </div>
+                <h2>Change Password</h2>
+                <div className="AccountSettingsContintCardline"></div>
                 <div className="AccountSettingsContintCardinputseyys">
                   <img
                     className="AccountSettingspassinptueyye"
@@ -88,15 +124,15 @@ const AccountSettings = () => {
                   <input type="password" placeholder="Confirm Password" />
                 </div>
 
-                <button onClick={handleBackToHome}>Back to Home</button> {/* إضافة onClick هنا */}
+                <button onClick={handleBackToHome}>Back to Home</button>
               </div>
-              <div> </div>
+              <div></div>
             </div>
 
             <div className="AccountSettingsContintCard2Data2">
               <div className="AccountSettingsContintCard2Data2Hero">
-                <h2>Notification </h2>
-                <div className="AccountSettingsContintCardline"> </div>
+                <h2>Notification</h2>
+                <div className="AccountSettingsContintCardline"></div>
                 <div className="AccountSettingsContintCardtitrlswitch">
                   <div className="AccountSettingsContintCardSwitchtitel">
                     <h2>Notification</h2>
@@ -143,6 +179,7 @@ const AccountSettings = () => {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>

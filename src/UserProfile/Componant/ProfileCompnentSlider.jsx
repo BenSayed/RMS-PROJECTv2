@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../assest/Logo 1.svg";
 import fa6SolidUser from "../assest/fa6-solid_user.svg";
 import flowbiteEditOutline from "../assest/material-symbols_history-rounded.svg";
@@ -9,6 +9,23 @@ import Vector from "../assest/Vector.svg";
 import "./HomeProfile.css";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // عرض الـ confirm alert
+    const confirmLogout = window.confirm("Are you sure you want to logout?");
+    if (confirmLogout) {
+      // حذف التوكن من localStorage
+      localStorage.removeItem("token");
+
+      // إعادة توجيه المستخدم إلى صفحة login
+      navigate("/login");
+
+      // عمل reload للصفحة بعد الخروج
+      window.location.reload();
+    }
+  };
+
   return (
     <div className="sidebar">
       <div className="logo-container">
@@ -25,11 +42,7 @@ const Sidebar = () => {
       </div>
 
       <div className="nav-links">
-        <NavLink
-          to="/HomeProfile"
-          className="nav-item"
-          activeClassName="active"  // إضافة كلاس عند التفعيل
-        >
+        <NavLink to="/HomeProfile" className="nav-item" activeClassName="active">
           <img src={fa6SolidUser} width="24" height="24" alt="User Icon" />
           <span>General</span>
         </NavLink>
@@ -69,7 +82,12 @@ const Sidebar = () => {
         </NavLink>
       </div>
 
-      <div className="logout">
+      {/* زرار اللوج اوت بكليك وكونفرم */}
+      <div
+        className="logout"
+        onClick={handleLogout}
+        style={{ cursor: "pointer" }}
+      >
         <img src={Vector} width="24" height="24" alt="Logout Icon" />
         <span>Logout</span>
       </div>

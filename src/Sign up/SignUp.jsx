@@ -44,7 +44,7 @@ const SignUp = () => {
       });
       console.log("Success:", response.data);
       alert("Account created successfully!");
-      navigate("/");  // التوجيه إلى الصفحة الرئيسية بعد التسجيل
+      navigate("/login");  // التوجيه إلى الصفحة الرئيسية بعد التسجيل
     } catch (error) {
       console.error("Error:", error);
       alert("Failed to create account.");

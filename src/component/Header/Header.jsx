@@ -1,46 +1,50 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Header.css";
 import Headerimg1 from "/public/Logo 1.svg";
 import Headerimg2 from "/HeaderIMG/akar-icons_cart.svg";
 import Headerimguser from "./Ellipse 33.svg";
 import Headerimgusernet from "./Vecto221.svg";
-import { Link, useLocation, useNavigate } from "react-router-dom";
 import ComHeader from "./ComHeader";
 import HeaderMobileUser from "../HeaderMobile/HeaderMobileUser/HeaderMobileUser.jsx";
 
 const Header = () => {
   const location = useLocation();
-  const [showModel, setShowModel] = useState(false);
-  const [showMobileUser, setShowMobileUser] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
   const comHeaderRef = useRef(null);
 
-  const handleLoginClick = () => {
-    navigate("/login");
-  };
-
-  const handleClickOutside = (event) => {
-    if (
-      comHeaderRef.current &&
-      !comHeaderRef.current.contains(event.target)
-    ) {
-      setShowModel(false);
-      setShowMobileUser(false);
-    }
-  };
+  const [showModel, setShowModel] = useState(false);
+  const [showMobileUser, setShowMobileUser] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    setIsLoggedIn(!!token);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (comHeaderRef.current && !comHeaderRef.current.contains(event.target)) {
+        setShowModel(false);
+        setShowMobileUser(false);
+      }
+    };
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
-  useEffect(() => {
-    const token = localStorage.getItem("token"); // عدل اسم التوكن حسب مشروعك
-    setIsLoggedIn(!!token);
-  }, []);
+  const handleLoginClick = (e) => {
+    e.preventDefault();
+    navigate("/login");
+  };
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    navigate("/");
+  };
 
   const handleIconMenuClick = () => {
     const profilePaths = [
@@ -49,6 +53,7 @@ const Header = () => {
       "/HistoryProfile",
       "/AccountSettings",
     ];
+
     if (profilePaths.includes(location.pathname)) {
       setShowMobileUser(true);
     } else {
@@ -61,76 +66,51 @@ const Header = () => {
       <header className="Header">
         <div className="HeaderContinent">
           <div className="HeaderContinentlogo">
-            <div className="HeaderContinentlogoImgTitel">
-              <img src={Headerimg1} alt="notEror" />
+            <div
+              className="HeaderContinentlogoImgTitel"
+              onClick={handleLogoClick}
+              style={{ cursor: "pointer" }}
+            >
+              <img src={Headerimg1} alt="Flavor Haven Logo" />
               <h2>Flavor Haven</h2>
             </div>
+
             <div className="HeaderContinentNavBar">
               <nav className="navbar">
                 <ul className="navbar-list">
-                  <li>
-                    <Link
-                      to="/"
-                      className={`navbar-item ${
-                        location.pathname === "/" ? "active" : ""
-                      }`}
-                    >
-                      Home
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/MenuItems"
-                      className={`navbar-item ${
-                        location.pathname === "/MenuItems" ? "active" : ""
-                      }`}
-                    >
-                      Menu
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/reservation"
-                      className={`navbar-item ${
-                        location.pathname === "/Reservation" ? "active" : ""
-                      }`}
-                    >
-                      Reservation
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/About"
-                      className={`navbar-item ${
-                        location.pathname === "/About" ? "active" : ""
-                      }`}
-                    >
-                      About
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/Contautus"
-                      className={`navbar-item ${
-                        location.pathname === "/Contautus" ? "active" : ""
-                      }`}
-                    >
-                      Contact us
-                    </Link>
-                  </li>
+                  {[
+                    { path: "/", label: "Home" },
+                    { path: "/MenuItems", label: "Menu" },
+                    { path: "/reservation", label: "Reservation" },
+                    { path: "/About", label: "About" },
+                    { path: "/Contautus", label: "Contact us" },
+                  ].map((item) => (
+                    <li key={item.path}>
+                      <Link
+                        to={item.path}
+                        className={`navbar-item ${
+                          location.pathname.toLowerCase() === item.path.toLowerCase()
+                            ? "active"
+                            : ""
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </nav>
             </div>
           </div>
 
           <div className="HeaderContinentlogoButton">
-            {isLoggedIn && (
+         {isLoggedIn ? (
               <>
                 <Link to="/HomeProfile">
                   <img
                     className="HeaderContinentlogoButtonuserNet"
                     src={Headerimgusernet}
-                    alt=""
+                    alt="Profile Icon"
                     style={{ cursor: "pointer" }}
                   />
                 </Link>
@@ -138,22 +118,12 @@ const Header = () => {
                   <img
                     className="HeaderContinentlogoButtonuser"
                     src={Headerimguser}
-                    alt=""
+                    alt="Profile Icon"
                     style={{ cursor: "pointer" }}
                   />
                 </Link>
               </>
-            )}
-
-            <Link to="/SalesPages">
-              <img
-                className="HeaderContinentlogoButton2"
-                src={Headerimg2}
-                alt=""
-              />
-            </Link>
-
-            {!isLoggedIn && (
+            ) : (
               <button
                 className="HeaderContinentlogoButton1"
                 onClick={handleLoginClick}
@@ -161,6 +131,15 @@ const Header = () => {
                 Login
               </button>
             )}
+
+            <Link to="/SalesPages">
+              <img
+                className="HeaderContinentlogoButton2"
+                src={Headerimg2}
+                alt="Cart"
+              />
+            </Link>
+
 
             <button onClick={handleIconMenuClick} className="icon-menu"></button>
 

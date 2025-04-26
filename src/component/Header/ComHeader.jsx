@@ -2,12 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 import "./ComHeader.css";
 import imgcar from "./Ellipse 1924.svg";
 import imgcar22 from "./akar-icons_cart.svg";
-import { Link, useNavigate } from "react-router-dom"; // ✅ ضفنا useNavigate
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 const ComHeader = ({ onClose }) => {
   const [activeLink, setActiveLink] = useState(null);
   const cardRef = useRef(null);
-  const navigate = useNavigate(); // ✅ تهيئة التنقل
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // ✅ حالة تسجيل الدخول
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -27,7 +28,6 @@ const ComHeader = ({ onClose }) => {
     onClose();
   };
 
-  // ✅ دالة التنقل إلى صفحة البروفايل
   const handleProfileClick = () => {
     onClose();
     navigate('/HomeProfile');
@@ -37,68 +37,84 @@ const ComHeader = ({ onClose }) => {
     <div className="ComHeader">
       <div className="ComHeader1">
         <div className="ComHeaderCard23" ref={cardRef}>
-          
-          {/* ✅ الصورة والاسم مع التنقل */}
+
+          {/* ✅ صورة واسم البروفايل */}
           <div className="ComHeaderCardPro" onClick={handleProfileClick}>
-            <img src={imgcar} alt="" />
+            <img src={imgcar} alt="Profile" />
             <h2>Ronald Richards</h2>
           </div>
 
           <div className="ComHeaderCardNav">
             <ul className="ComHeaderCardNavUi">
               <li>
-                <Link
-                  className={`linkmodel ${activeLink === "Home" ? "active" : ""}`}
+                <NavLink
+                  className={({ isActive }) => isActive ? "linkmodel active" : "linkmodel"}
                   to="/"
                   onClick={() => handleLinkClick("Home")}
                 >
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
-                  className={`linkmodel ${activeLink === "Menu" ? "active" : ""}`}
+                <NavLink
+                  className={({ isActive }) => isActive ? "linkmodel active" : "linkmodel"}
                   to="/MenuItems"
                   onClick={() => handleLinkClick("Menu")}
                 >
                   Menu
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
-                  className={`linkmodel ${activeLink === "Reservation" ? "active" : ""}`}
+                <NavLink
+                  className={({ isActive }) => isActive ? "linkmodel active" : "linkmodel"}
                   to="/Reservation"
                   onClick={() => handleLinkClick("Reservation")}
                 >
                   Reservation
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
-                  className={`linkmodel ${activeLink === "About" ? "active" : ""}`}
+                <NavLink
+                  className={({ isActive }) => isActive ? "linkmodel active" : "linkmodel"}
                   to="/about"
                   onClick={() => handleLinkClick("About")}
                 >
                   About
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
-                  className={`linkmodel ${activeLink === "Contact us" ? "active" : ""}`}
+                <NavLink
+                  className={({ isActive }) => isActive ? "linkmodel active" : "linkmodel"}
                   to="/Contautus"
                   onClick={() => handleLinkClick("Contact us")}
                 >
                   Contact us
-                </Link>
+                </NavLink>
               </li>
             </ul>
-            <Link
-              to="/SalesPages"
-              onClick={() => handleLinkClick("SalesPages")}
-            >
-              <img src={imgcar22} alt="" />
-            </Link>
+
+            {/* ✅ مكان السلة أو اللوجين كـ NavLink */}
+            <div className="cart-or-login">
+              {isLoggedIn ? (
+                <NavLink
+                  to="/SalesPages"
+                  onClick={() => handleLinkClick("SalesPages")}
+                >
+                  <img src={imgcar22} alt="Cart Icon" />
+                </NavLink>
+              ) : (
+                <NavLink
+                  to="/login"
+                  className={({ isActive }) => isActive ? "login-text active" : "login-text"}
+                  onClick={() => handleLinkClick("Login")}
+                >
+                  Login
+                </NavLink>
+              )}
+            </div>
+
           </div>
+
         </div>
       </div>
     </div>
