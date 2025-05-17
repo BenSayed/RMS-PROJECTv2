@@ -12,16 +12,33 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // عرض الـ confirm alert
     const confirmLogout = window.confirm("Are you sure you want to logout?");
     if (confirmLogout) {
-      // حذف التوكن من localStorage
-      localStorage.removeItem("token");
+      // قائمة بأسماء العناصر اللي عايز تمسحها من localStorage
+      // const itemsToRemove = [
+      //   "token",
+      //   "email",
+      //   "firstName",
+      //   "lastName",
+      //   "profileImage",
+      //   "profileImagePath",
+      //   "userInfo",
+      //   "activeCategory",
+      //   "addresses",
+      //   "baseUrl",
+      //   "userId", // لو كنت بتخزن الـ userId بشكل منفصل
+      //   // أضف أي عناصر تانية خاصة بالحساب هنا
+      // ];
 
-      // إعادة توجيه المستخدم إلى صفحة login
+      // // قم بمسح كل عنصر في القائمة من localStorage
+      // itemsToRemove.forEach((itemKey) => {
+      //   localStorage.removeItem(itemKey);
+      // });
+
+      // إعادة التوجيه لصفحة تسجيل الدخول
       navigate("/login");
 
-      // عمل reload للصفحة بعد الخروج
+      // إعادة تحميل الصفحة (اختياري، لكن ممكن يكون مفيد لتنظيف الـ state)
       window.location.reload();
     }
   };
@@ -82,7 +99,6 @@ const Sidebar = () => {
         </NavLink>
       </div>
 
-      {/* زرار اللوج اوت بكليك وكونفرم */}
       <div
         className="logout"
         onClick={handleLogout}

@@ -1,0 +1,449 @@
+.waiter-dashboard {
+  padding: 64px;
+  color: #fff1d5;
+  background-color: #1a1a1a;
+  background: url("/src/WaiterPage/Pattern.svg") no-repeat;
+}
+
+.waiter-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+
+  height: 48px;
+  justify-content: space-between;
+  top: 47px;
+  left: 64px;
+}
+
+.waiter-logo-name {
+  display: flex;
+  align-items: center;
+}
+
+.waiter-logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.waiter-brand {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: Cormorant Upright;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 30px;
+  letter-spacing: 0%;
+  text-align: right;
+  color: #fff4e6;
+}
+
+.waiter-user-section {
+  display: flex;
+  align-items: center;
+}
+
+.waiter-user-text {
+  margin-right: 10px;
+}
+
+.waiter-user-img,
+.waiter-notification-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.waiter-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 5%;
+}
+
+.waiter-tables {
+  width: 40%;
+}
+
+.waiter-table-count {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 19.25px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+  color: #fff4e6;
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 30px;
+}
+.waiter-table-count span {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 19.25px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+  color: #ffaa33;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.waiter-tables-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 69px;
+}
+
+.waiter-table {
+  position: relative;
+  text-align: center;
+}
+
+.waiter-chair-img {
+  width: 80px;
+}
+
+.waiter-table-number {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+}
+
+.waiter-legend {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.legend-item {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.legend-container {
+  display: flex;
+
+  justify-content: center;
+  padding: 10px 20px;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  width: 19;
+  height: 364;
+  top: 810px;
+  left: 64px;
+  angle: 90 deg;
+  gap: 48px;
+  padding-top: 38px;
+}
+
+.legend-label {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 8px;
+  border-radius: 2px;
+  border: 1px solid #999;
+}
+
+.waiter-orders {
+  width: 80%;
+  height: 682px;
+  top: 123px;
+  left: 488px;
+  border-top-left-radius: 48px;
+  border-bottom-left-radius: 48px;
+  background: #fff4e6;
+}
+
+.waiter-orders-title {
+  width: 609px;
+  height: 46px;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 38.06px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ff9500;
+}
+
+.waiter-orders-list {
+  max-height: 550px;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.waiter-orders-list::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+.waiter-order-card {
+  background: #151716;
+  color: white;
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: 20px;
+  width: 95%;
+  height: 337.92913818359375px;
+  border-radius: 43.96px;
+  gap: 21.98px;
+  padding: 21.98px;
+}
+
+.waiter-order-header {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.colornum {
+  color: #ffaa33;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 18.32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+}
+.victor {
+  padding-right: 10px;
+}
+.waiter-order-table {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 18.32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+  color: #fff4e6;
+  margin-left: 10px;
+}
+.waiter-order-persons {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 18.32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+  color: #fff4e6;
+  margin-left: 53px;
+}
+.waiter-order-body {
+  display: flex;
+}
+
+.waiter-order-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-right: 15px;
+  object-fit: cover;
+  width: 176.74732971191406px;
+  height: 169.42108154296875px;
+  border-radius: 29.31px;
+}
+
+.waiter-order-info {
+  display: flex;
+  flex-direction: row;
+}
+.waiter-order-list h3 {
+  font-family: Cormorant;
+  font-weight: 700;
+  font-size: 29.31px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  display: flex;
+  margin-top: 10px;
+  margin-left: 8%;
+}
+.waiter-order-list ul {
+  list-style: disc;
+  margin-left: 2px;
+  margin-bottom: 10px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14.65px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin-top: -7px;
+  color: #fff4e6;
+  margin-left: -8%;
+}
+.waiter-order-list li {
+  margin-bottom: 5px;
+}
+.waiter-order-notes p {
+  font-size: 14px;
+  color: #fff4e6;
+  
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12.82px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  white-space: pre-line; /* يحافظ على فواصل الأسطر الموجودة في النص */
+margin-top: -15px;
+ 
+}
+.waiter-order-notes {
+  width: 179.49473571777344px;
+  height: 80px;
+  gap: 14.65px;
+}
+.waiter-order-notes h3 {
+  font-family: Cormorant;
+  font-weight: 700;
+  font-size: 29.31px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #fff4e6;
+  margin-top: 7%;
+}
+.button-con{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.waiter-confirm-btn {
+width: 207.88421630859375px;
+height: 51.284217834472656px;
+justify-content: space-between;
+border-radius: 14.65px;
+padding-top: 3.66px;
+padding-right: 3.66px;
+padding-bottom: 3.66px;
+padding-left: 14.65px;
+background: #FF9500;
+font-family: Inter;
+font-weight: 500;
+font-size: 16.48px;
+line-height: 24.73px;
+letter-spacing: 0%;
+text-align: center;
+color: #151716;
+display: flex;
+align-items: center;
+}
+.check-icon{
+  width: 43.957889556884766px;
+height: 43.957889556884766px;
+justify-content: space-between;
+border-radius: 14.65px;
+padding: 9.16px;
+background: #151716;
+
+}
+@media (max-width: 1024px) {
+  .waiter-dashboard {
+    padding: 32px;
+  }
+
+  .waiter-brand {
+    font-size: 24px;
+  }
+
+  .waiter-tables {
+    width: 100%;
+  }
+
+  .waiter-orders {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .waiter-order-info {
+    flex-direction: column;
+  }
+
+  .waiter-order-image {
+    width: 120px;
+    height: 115px;
+  }
+
+  .waiter-order-list h3,
+  .waiter-order-notes h3 {
+    font-size: 20px;
+  }
+
+  .waiter-order-list ul,
+  .waiter-order-notes p {
+    font-size: 12px;
+  }
+
+  .waiter-confirm-btn {
+    width: 160px;
+    font-size: 14px;
+  }
+
+  .check-icon {
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+  }
+}
+@media (max-width: 1010px){
+.button-con {
+  display: flex
+;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
+}
+}
+
+@media (max-width: 768px) {
+  .waiter-brand {
+    font-size: 20px;
+  }
+
+  .waiter-chair-img {
+    width: 60px;
+  }
+
+  .waiter-table-count {
+    font-size: 16px;
+  }
+
+  .legend-label,
+  .legend-item {
+    font-size: 14px;
+  }
+
+  .waiter-orders-title {
+    font-size: 28px;
+  }
+
+  .waiter-order-card {
+    padding: 16px;
+  }
+
+  .waiter-order-table,
+  .waiter-order-persons {
+    font-size: 14px;
+  }
+}
+

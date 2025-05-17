@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import "./Login.css";
 import axios from "axios";
-
 import eyeImage from "./Mdi_eye-outline.svg";
-import imgegoogel from "./google .svg";
-import imgiphone from "./apple .svg";
-import imglin6 from "./Line 16.svg";
-import imgline from "./Line 17.svg";
-import Recting from "./Rectangle 1162.svg";
+import googleIcon from "./google .svg";
+import appleIcon from "./apple .svg";
+import line2 from "./Line 16.svg";
+import line1 from "./Line 17.svg";
+import sideImage from "./Rectangle 1162.svg";
 import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
@@ -24,6 +23,7 @@ function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setError(null); // امسح الخطأ السابق
 
     if (!email || !password) {
       setError("Please fill in both email and password.");
@@ -31,24 +31,69 @@ function Login() {
     }
 
     try {
-      const response = await axios.post("http://flavorhaven.runasp.net/api/User/Login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "http://flavorhaven.runasp.net/api/User/Login",
+        {
+          email,
+          password,
+        }
+      );
 
-      if (response.data.token) {
-        localStorage.setItem("token", response.data.token);
-        alert("Login successful!!");
+      const { token, userId } = response.data;
+
+      if (token) {
+        localStorage.setItem("token", token);
+        localStorage.setItem("userId", userId);
+        localStorage.setItem("baseUrl", "http://flavorhaven.runasp.net");
+
+        const config = {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        };
+
+        try {
+          const userRes = await axios.get(
+            `http://flavorhaven.runasp.net/api/User/GetUserById/${userId}`,
+            config
+          );
+
+          const user = userRes.data;
+
+          localStorage.setItem("email", user.email);
+          localStorage.setItem("firstName", user.firstName);
+          localStorage.setItem("lastName", user.lastName);
+          localStorage.setItem("profileImage", user.profileImage);
+          localStorage.setItem("userInfo", JSON.stringify(user));
+
+          const addressRes = await axios.get(
+            `http://flavorhaven.runasp.net/api/User/GetAddress/${userId}`,
+            config
+          );
+
+          localStorage.setItem("addresses", JSON.stringify(addressRes.data));
+        } catch (userError) {
+          console.error("Error fetching user info or address:", userError);
+          setError("Login succeeded, but failed to load user data.");
+        }
+
+        // لا تستخدم alert، نعيد التوجيه فقط
         navigate("/");
-
         window.location.reload();
       } else {
-        setError("Login failed. Please check your credentials.");
+        setError("Login failed. Please check your password.");
       }
-
     } catch (err) {
       console.error("Login error:", err);
-      setError("An error occurred while logging in. Please try again.");
+
+      // جرب نعرض رسالة الخطأ من السيرفر إذا متوفرة
+      const serverMessage =
+        err.response?.data?.message || err.response?.data || err.message;
+
+      setError(
+        "Login failed: " +
+          (typeof serverMessage === "string" ? serverMessage : JSON.stringify(serverMessage))
+      );
     }
   };
 
@@ -64,8 +109,21 @@ function Login() {
                   Don’t have an account? <Link to="/SignUp">Sign up</Link>
                 </p>
               </div>
+
               <form onSubmit={handleLogin} className="formatcontentee">
-                {error && <p style={{ color: "red" }}>{error}</p>}
+                {/* رسالة الخطأ تظهر هنا */}
+                {error && (
+                  <p
+                    style={{
+                      color: "red",
+                      marginBottom: "10px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {error}
+                  </p>
+                )}
+
                 <div className="formatcontenteeInput">
                   <input
                     type="email"
@@ -73,6 +131,7 @@ function Login() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
+
                   <div className="password-container">
                     <input
                       type={passwordVisible ? "text" : "password"}
@@ -90,6 +149,7 @@ function Login() {
                       <h3 style={{ cursor: "pointer" }}>Forget password</h3>
                     </Link>
                   </div>
+
                   <div className="remember">
                     <input className="InputRem" type="checkbox" id="remember" />
                     <label htmlFor="remember">Remember me</label>
@@ -97,28 +157,30 @@ function Login() {
                 </div>
 
                 <div className="lineDive">
-                  <img src={imgline} alt="" />
+                  <img src={line1} alt="" />
                   <h3>or login with</h3>
-                  <img src={imglin6} alt="" />
+                  <img src={line2} alt="" />
                 </div>
 
                 <div className="social-buttons">
                   <button type="button">
-                    <img src={imgegoogel} alt="Google Icon" />
+                    <img src={googleIcon} alt="Google Icon" />
                     Google
                   </button>
                   <button type="button">
-                    <img src={imgiphone} alt="Apple Icon" />
+                    <img src={appleIcon} alt="Apple Icon" />
                     Apple
                   </button>
                 </div>
 
-                <button className="login-btn" type="submit">Login</button>
+                <button className="login-btn" type="submit">
+                  Login
+                </button>
               </form>
             </div>
 
             <div className="image-section020">
-              <img src={Recting} alt="" />
+              <img src={sideImage} alt="" />
             </div>
           </div>
         </div>

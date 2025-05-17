@@ -1,6 +1,5 @@
+import React, { useState, useEffect } from "react";
 import Home from "./Home/Home";
- 
-
 
 import Header from "./component/Header/Header";
 import AboutPage from "./About/About";
@@ -32,7 +31,6 @@ import HeaderMobileUser from "./component/HeaderMobile/HeaderMobileUser/HeaderMo
 import FavoritePage from "./UserProfile/Componant/FavoritePage";
 import RatingPage from "./UserProfile/Componant/RatingPage";
 import SettingsPage from "./UserProfile/Componant/SettingsPage";
- import Home2 from "./UserProfile/Componant/HomeProfile";
 import HomeProfile from "./UserProfile/Componant/HomeProfile";
 import HistoryPage from "./UserProfile/Componant/HistoryPage";
 import OrderFavProfile from "./UserProfile/Componant/OrderFavProfile";
@@ -40,55 +38,30 @@ import HistoryProfile from "./UserProfile/Componant/HistoryProfile";
 import AccountSettings from "./UserProfile/Componant/AccountSettings";
 import ForgetPassword from "./ForgetPassword/ForgetPassword";
 import EmailConfirmation from "./ConfirmEmail/ConfirmEmail";
+import PasswordRecovery from "./PasswordRecovery/PasswordRecovery";
+import Cart from "./MiniCart/MiniCart";
+import DeliveryMap from "./Delivery pages/DeliveryMap/DeliveryMap";
+import WaiterDashboard from "./WaiterPage/Waiter";
  
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("userInfo");
+    if (storedUser) {
+      const parsedUser = JSON.parse(storedUser);
+
+      // خزنه في الـ state
+      setUser(parsedUser);
+
+      // ضيف التوكن في هيدر axios لجميع الطلبات
+      axios.defaults.headers.common["Authorization"] = `Bearer ${parsedUser.token}`;
+    }
+  }, []);
+
   return (
     <div className="allapp">
-
-   
- 
-
-       {/* <PageEror404/> */}
-       {/* <PageErorr500/> */}
-
-       
-      
-       {/* <Routes>
-        <Route path="/" element={<CheefuiPage/>} />
-       </Routes> */}
-
-
- 
-      {/* <HeaderMobilee/> */}
-
-
-
-       {/* <Routes>
-        <Route path="/" element={<DeliveryHome/>} />
-        <Route path="/DeliveryLogin" element={ <DeliveryLogin/>} />
-        <Route path="/DeliveryHistory" element={ <DeliveryHistory/>} />
-        <Route path="/DeliverypageDeteils" element={ <DeliverypageDeteils/>} />
-        <Route path="/DeliveryProfile" element={ <DeliveryProfile/>} />
-
-      </Routes> */}
-
- 
-
- 
-
-
- 
-{/*  
-      <Routes>
- 
-        <Route path="/history" element={<HistoryPage />} />
-        <Route path="/settings" element={<SettingsPage />} />
-        <Route path="/rating" element={<RatingPage />} />
-        <Route path="/favorite" element={<FavoritePage />} />
-      </Routes> */}
- 
-
-         <Header />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
@@ -102,22 +75,20 @@ function App() {
         <Route path="/DeliveryHome" element={<DeliveryHome />} />
         <Route path="/DeliveryHistory" element={<DeliveryHistory />} />
         <Route path="/Reservation" element={<Reservation />} />
-        <Route path="/WatingPage" element={<WatingPage/>} />
-        <Route path="/HomeProfile" element={<HomeProfile/>} />
-        <Route path="/OrderFavProfile" element={<OrderFavProfile/>} />
-        <Route path="/HistoryProfile" element={<HistoryProfile/>} />
-        <Route path="/AccountSettings" element={<AccountSettings/>} />
-        <Route path="/ForgetPassword" element={<ForgetPassword/>} />
-        <Route path="/EmailConfirmation" element={<EmailConfirmation/>} />
+        <Route path="/WatingPage" element={<WatingPage />} />
+        <Route path="/HomeProfile" element={<HomeProfile />} />
+        <Route path="/OrderFavProfile" element={<OrderFavProfile />} />
+        <Route path="/HistoryProfile" element={<HistoryProfile />} />
+        <Route path="/AccountSettings" element={<AccountSettings />} />
+        <Route path="/ForgetPassword" element={<ForgetPassword />} />
+        <Route path="/EmailConfirmation" element={<EmailConfirmation />} />
+        <Route path="/PasswordRecovery" element={<PasswordRecovery />} />
+        <Route path="/WaiterDashboard" element={<WaiterDashboard />} />
 
-
-
-        
-
-      </Routes> 
- 
-      <Footer />  
-     </div>
+      </Routes>
+      <Cart />
+      <Footer />
+    </div>
   );
 }
 

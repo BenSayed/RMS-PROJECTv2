@@ -7,7 +7,7 @@ import imgegoogel from "./google .svg";
 import imgiphone from "./apple .svg";
 import imgline from "./Line 17.svg";
 import imgline2 from "./Line 16.svg";
-import { Link, useNavigate } from "react-router-dom";  // استيراد useNavigate
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +19,7 @@ const SignUp = () => {
     agree: false,
   });
 
-  const navigate = useNavigate();  // تهيئة الدالة navigate
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -31,20 +31,31 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords do not match!");
       return;
     }
+
     try {
-      const response = await axios.post("/api/User/Register", {
+      const response = await axios.post("http://flavorhaven.runasp.net/api/User/Register", {
         firstName: formData.firstName,
         lastName: formData.lastName,
         email: formData.email,
         password: formData.password,
       });
-      console.log("Success:", response.data);
+
+      const user = response.data;
+
+      localStorage.setItem("userInfo", JSON.stringify(user));
+      console.log("تم تخزين المستخدم في LocalStorage:", localStorage.getItem("userInfo"));
+console.log("بيانات المستخدم كاملة من الـ API:", user);
+      axios.defaults.headers.common["Authorization"] = `Bearer ${user.token}`;
+
       alert("Account created successfully!");
-      navigate("/login");  // التوجيه إلى الصفحة الرئيسية بعد التسجيل
+      navigate(" /login");
+      window.location.reload();
+
     } catch (error) {
       console.error("Error:", error);
       alert("Failed to create account.");
@@ -55,85 +66,37 @@ const SignUp = () => {
     <div>
       <section className="SignUpPage">
         <div className="containerSignUp">
-          <div className="form-sectionSignUp  ">
+          <div className="form-sectionSignUp">
             <div className="sectionSignUptexttt">
-              <h1 style={{ fontFamily: "'Cormorant Upright'" }}>
-                Create an Account
-              </h1>
-              <p>
-                Already have an account? <Link to="/login">Login</Link>
-              </p>
+              <h1 style={{ fontFamily: "'Cormorant Upright'" }}>Create an Account</h1>
+              <p>Already have an account? <Link to="/login">Login</Link></p>
             </div>
 
             <div className="sectionSignUpbuttonandform">
-              <form className="" onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit}>
                 <div className="input-groupsuinuo">
                   <div className="input-group">
-                    <input
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      placeholder="First name"
-                      type="text"
-                      required
-                    />
-                    <input
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      placeholder="Last name"
-                      type="text"
-                      required
-                    />
+                    <input name="firstName" value={formData.firstName} onChange={handleChange} placeholder="First name" type="text" required />
+                    <input name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Last name" type="text" required />
                   </div>
 
                   <div className="full-width showPassword">
-                    <input
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="Email"
-                      type="email"
-                      required
-                    />
+                    <input name="email" value={formData.email} onChange={handleChange} placeholder="Email" type="email" required />
                   </div>
 
                   <div className="full-width showPassword">
-                    <input
-                      name="password"
-                      value={formData.password}
-                      onChange={handleChange}
-                      placeholder="Password"
-                      type="password"
-                      required
-                    />
+                    <input name="password" value={formData.password} onChange={handleChange} placeholder="Password" type="password" required />
                     <img alt="Show Password" src={imgsuin1} />
                   </div>
 
                   <div className="full-width showPassword">
-                    <input
-                      name="confirmPassword"
-                      value={formData.confirmPassword}
-                      onChange={handleChange}
-                      placeholder="Confirm Password"
-                      type="password"
-                      required
-                    />
+                    <input name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} placeholder="Confirm Password" type="password" required />
                     <img alt="Show Password" src={imgsuin1} />
                   </div>
 
                   <div className="checkbox-group">
-                    <input
-                      id="terms"
-                      name="agree"
-                      checked={formData.agree}
-                      onChange={handleChange}
-                      type="checkbox"
-                      required
-                    />
-                    <label htmlFor="terms">
-                      You agree to our friendly privacy policy
-                    </label>
+                    <input id="terms" name="agree" checked={formData.agree} onChange={handleChange} type="checkbox" required />
+                    <label htmlFor="terms">You agree to our friendly privacy policy</label>
                   </div>
                 </div>
 
@@ -145,24 +108,21 @@ const SignUp = () => {
                   </div>
 
                   <div className="social-buttons">
-                    <button>
-                      <img src={imgegoogel} alt="Google Icon" />
-                      Google
+                    <button type="button">
+                      <img src={imgegoogel} alt="Google Icon" /> Google
                     </button>
-                    <button>
-                      <img src={imgiphone} alt="Apple Icon" />
-                      Apple
+                    <button type="button">
+                      <img src={imgiphone} alt="Apple Icon" /> Apple
                     </button>
                   </div>
                 </div>
 
-                <button className="submit-btn " type="submit">
-                  Create an account
-                </button>
+                <button className="submit-btn" type="submit">Create an account</button>
               </form>
             </div>
           </div>
-          <div className="image-section3  ">
+
+          <div className="image-section3">
             <img src={imgsuin2} alt="" />
           </div>
         </div>

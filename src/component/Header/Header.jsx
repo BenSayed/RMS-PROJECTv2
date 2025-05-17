@@ -3,10 +3,11 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Header.css";
 import Headerimg1 from "/public/Logo 1.svg";
 import Headerimg2 from "/HeaderIMG/akar-icons_cart.svg";
-import Headerimguser from "./Ellipse 33.svg";
+import HeaderimguserDefault from "./Ellipse 33.svg"; // الصورة الافتراضية
 import Headerimgusernet from "./Vecto221.svg";
 import ComHeader from "./ComHeader";
 import HeaderMobileUser from "../HeaderMobile/HeaderMobileUser/HeaderMobileUser.jsx";
+import axios from "axios";
 
 const Header = () => {
   const location = useLocation();
@@ -17,10 +18,45 @@ const Header = () => {
   const [showMobileUser, setShowMobileUser] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  // الصورة اللي هتظهر في الهيدر للبروفايل
+  const [profileImage, setProfileImage] = useState(HeaderimguserDefault);
+
+  const userId = localStorage.getItem("userId");
+  const baseUrl = localStorage.getItem("baseUrl");
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     setIsLoggedIn(!!token);
   }, []);
+
+  useEffect(() => {
+    // تحميل صورة البروفايل من localStorage أو API
+    const storedProfileImage = localStorage.getItem("profileImagePath");
+
+    if (storedProfileImage) {
+      setProfileImage(storedProfileImage);
+    } else {
+      const fetchProfileImage = async () => {
+        try {
+          if (userId && baseUrl) {
+            const response = await axios.get(`${baseUrl}/api/User/UpdateUser/${userId}`);
+            // تأكد أن response.data.imagePath هو المسار الصحيح لصورة البروفايل
+            const imagePath = response.data.imagePath;
+            if (imagePath) {
+              setProfileImage(imagePath);
+              localStorage.setItem("profileImagePath", imagePath);
+            } else {
+              setProfileImage(HeaderimguserDefault);
+            }
+          }
+        } catch (error) {
+          console.error("Failed to fetch profile image:", error);
+          setProfileImage(HeaderimguserDefault);
+        }
+      };
+      fetchProfileImage();
+    }
+  }, [userId, baseUrl]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -104,7 +140,7 @@ const Header = () => {
           </div>
 
           <div className="HeaderContinentlogoButton">
-         {isLoggedIn ? (
+            {isLoggedIn ? (
               <>
                 <Link to="/HomeProfile">
                   <img
@@ -117,7 +153,7 @@ const Header = () => {
                 <Link to="/HomeProfile">
                   <img
                     className="HeaderContinentlogoButtonuser"
-                    src={Headerimguser}
+                    src={profileImage}  // الصورة الآن من الحالة مع التحقق
                     alt="Profile Icon"
                     style={{ cursor: "pointer" }}
                   />
@@ -139,7 +175,6 @@ const Header = () => {
                 alt="Cart"
               />
             </Link>
-
 
             <button onClick={handleIconMenuClick} className="icon-menu"></button>
 

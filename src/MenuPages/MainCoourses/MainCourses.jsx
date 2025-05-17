@@ -8,7 +8,7 @@ const MainCourses = () => {
   const [menuItems, setMenuItems] = useState([]);
 
   const baseUrl = 'http://flavorhaven.runasp.net';
-  const categoryId = 'fb7bcef1-dd70-41bd-964d-c7a2f531ac30';
+  const categoryId = 'c27ae538-dbe1-401a-8171-5be5b4314e2c';  
   const userId = '3fa85f64-5717-4562-b3fc-2c963f66afa6';
 
   useEffect(() => {

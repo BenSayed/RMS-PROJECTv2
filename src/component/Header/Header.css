@@ -273,7 +273,10 @@ button.icon-menu {
 
 
 .HeaderContinentlogoButtonuser{
-  width: 35px;
+   width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .HeaderContinentlogoButtonuserNet{
   width: 25px;

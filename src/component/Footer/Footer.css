@@ -51,22 +51,25 @@ footer {
   margin: 20px 0;
 }
 
+/* هنا التعديل الجديد للانبت والزر مع بعض */
 .email-subscribe00 {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  background: #fff4e6;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #ff9500;
 }
 
 .email-subscribe00 input {
-  width: 320px;
-  max-width: 100%;
+  flex: 1;
   height: 48px;
-  border-radius: 16px;
-  border: 1px solid #ff9500;
-  background: #fff4e6;
-  padding: 10px;
+  border: none;
+  background: transparent;
+  padding: 0 15px;
   font-family: Inter, sans-serif;
   font-size: 16px;
   color: #151716;
@@ -76,8 +79,7 @@ footer {
 .email-subscribe00 button {
   height: 48px;
   padding: 0 20px;
-  border:1px solid #ff9500;
-  border-radius: 16px;
+  border: none;
   background: #151716;
   color: #fff4e6;
   font-family: Inter, sans-serif;
@@ -85,9 +87,11 @@ footer {
   cursor: pointer;
   transition: 0.3s;
   white-space: nowrap;
-
+  border-left: 1px solid #ff9500;
+  border-radius: 15px;
 }
 
+/* فوتر مينيو */
 .footer-menu0 {
   display: flex;
   flex-wrap: wrap;
@@ -163,18 +167,9 @@ footer {
     font-size: 18px;
   }
 
+  /* ما نغير flex direction نخليه جنب بعض */
   .email-subscribe00 {
-    flex-direction: column;
-  }
-
-  .email-subscribe00 input,
-  .email-subscribe00 button {
-    width: 100%;
-    max-width: 400px;
-  }
-
-  .email-subscribe00 button {
-    margin-top: 10px;
+    max-width: 100%;
   }
 }
 
@@ -191,10 +186,28 @@ footer {
     font-size: 14px;
   }
 
-  .email-subscribe00 input{
+  .email-subscribe00 {
     max-width: 100%;
-  }  
+  }
+}
+
+/* تحسين على الشاشات الصغيرة جدا */
+@media (max-width: 375px) {
+  .email-subscribe00 input {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
   .email-subscribe00 button {
-    max-width: 50%;
+    font-size: 14px;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 320px) {
+  .email-subscribe00 input,
+  .email-subscribe00 button {
+    font-size: 13px;
+    height: 44px;
   }
 }

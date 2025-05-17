@@ -44,6 +44,12 @@
   align-items: flex-start;
   animation: fade-in-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
+.profimmmmg{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 
 /* تعريف الأنميشن fade-in-top */
 @-webkit-keyframes fade-in-top {
@@ -72,13 +78,16 @@
   }
 }
 
-.ComHeaderCardPro {
-  width: 265px;
-  height: 64px;
-  display: flex;
-  gap: 20px;
+.ComHeaderCardPro
+ 
+ {
+    width: 265px;
+    height: 64px;
+    display: flex
+;
+    gap: 20px;
+    justify-content: center;
 }
-
 .ComHeaderCardPro h2 {
   font-family: "Inter", serif;
   font-weight: 500;
@@ -128,13 +137,13 @@
   margin-left: -35px;
 }
 .ComHeaderCardNav img {
-  margin-left: 310px;
+  /* margin-left: 310px;
   width: 40px;
   height: 40px;
   position: absolute;
   top: 304px;
   left: 310px;
-  cursor: pointer;
+  cursor: pointer; */
 }
 
 .cart-or-login{
@@ -145,8 +154,8 @@
 .cart-or-login {
   
   position: absolute;
-  top: 304px;
-  left: 290px;
+  top: 0px;
+  left: -20px;
   width: 40px;
   height: 40px;
   display: flex;
@@ -274,5 +283,11 @@
     cursor: pointer;
 }
 
+.cart-or-login {
+  
+  position: absolute;
+  top: 0px;
+  left: 20px;
+}
 
 }

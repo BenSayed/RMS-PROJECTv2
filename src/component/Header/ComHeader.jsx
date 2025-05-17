@@ -8,7 +8,10 @@ const ComHeader = ({ onClose }) => {
   const [activeLink, setActiveLink] = useState(null);
   const cardRef = useRef(null);
   const navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // ✅ حالة تسجيل الدخول
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const [profileImage, setProfileImage] = useState(imgcar);
+  const [fullName, setFullName] = useState("Guest User");
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -22,6 +25,29 @@ const ComHeader = ({ onClose }) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [onClose]);
+
+  useEffect(() => {
+    // تحميل بيانات المستخدم من localStorage
+    const imagePath = localStorage.getItem("profileImagePath");
+    const firstName = localStorage.getItem("firstName") || "";
+    const lastName = localStorage.getItem("lastName") || "";
+
+    // تعيين صورة البروفايل لو موجودة
+    if (imagePath) {
+      setProfileImage(imagePath);
+    }
+
+    // تعيين الاسم
+    const name = `${firstName} ${lastName}`.trim();
+    if (name !== "") {
+      setFullName(name);
+    }
+
+    // تحديد حالة تسجيل الدخول بناءً على وجود اسم المستخدم
+    if (firstName) {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   const handleLinkClick = (linkName) => {
     setActiveLink(linkName);
@@ -37,11 +63,10 @@ const ComHeader = ({ onClose }) => {
     <div className="ComHeader">
       <div className="ComHeader1">
         <div className="ComHeaderCard23" ref={cardRef}>
-
           {/* ✅ صورة واسم البروفايل */}
           <div className="ComHeaderCardPro" onClick={handleProfileClick}>
-            <img src={imgcar} alt="Profile" />
-            <h2>Ronald Richards</h2>
+            <img className="profimmmmg" src={profileImage} alt="Profile" />
+            <h2>{fullName}</h2>
           </div>
 
           <div className="ComHeaderCardNav">
@@ -93,7 +118,7 @@ const ComHeader = ({ onClose }) => {
               </li>
             </ul>
 
-            {/* ✅ مكان السلة أو اللوجين كـ NavLink */}
+            {/* ✅ تسجيل دخول أو السلة حسب حالة المستخدم */}
             <div className="cart-or-login">
               {isLoggedIn ? (
                 <NavLink
@@ -114,7 +139,6 @@ const ComHeader = ({ onClose }) => {
             </div>
 
           </div>
-
         </div>
       </div>
     </div>

@@ -70,7 +70,7 @@ const ComHeaderMobile = ({ onClose }) => {
               <li>
                 <Link
                   className={`linkmodel ${activeLink === "Map" ? "active" : ""}`}
-                  to="/about"
+                  to="/DeliveryMap"
                   onClick={() => handleLinkClick("Map")}
                 >
                   Map

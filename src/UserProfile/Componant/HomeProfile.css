@@ -158,6 +158,12 @@
 }
 
 /* Main content */
+.hello-section img {
+  width: 102px;
+  height: 102px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 .main-content {
   flex: 1;
   display: flex;
@@ -219,6 +225,7 @@ padding: 48px;
 
 }
 
+ 
 .section-header {
   display: flex;
   justify-content: space-between;
@@ -413,9 +420,7 @@ width: 35px;
   line-height: 100%;
 
 }
-.hello-section img{
-  width: 80px;
-}
+ 
 .user-info {
   gap: 48px;
   border-radius: 48px;
@@ -464,10 +469,36 @@ width: 35px;
       width: 700px;
       height: 60px;
     }
+    
   .hello-section {
     width: 700px;
     height: 60px;
     }
+
+    .hello-section img
+ 
+ {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.hello-section h3 
+ {
+        font-family: "Inter", serif;
+        font-weight: 600px;
+        color: #000;
+        width: 503px;
+        height: 66px;
+        font-weight: 400;
+        font-size: 38.24px;
+        line-height: 100%;
+        text-align: center;
+        margin-top: 63px;
+        margin-left: -89px;
+    }
+
+
     .user-info {
       width: 700px;
       height: 260px;
@@ -522,6 +553,11 @@ display: none;
       gap: 20px;
       align-items: center;
   }
+  .hello-section img {
+    width: 106px;
+    height: 106px;
+}
+
   
     .search-barProfile {
       width: 330px;
