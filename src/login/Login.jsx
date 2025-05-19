@@ -23,7 +23,7 @@ function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError(null); // امسح الخطأ السابق
+    setError(null);
 
     if (!email || !password) {
       setError("Please fill in both email and password.");
@@ -33,66 +33,82 @@ function Login() {
     try {
       const response = await axios.post(
         "http://flavorhaven.runasp.net/api/User/Login",
-        {
-          email,
-          password,
-        }
+        { email, password }
       );
 
-      const { token, userId } = response.data;
+      const data = response.data;
+      console.log("Login response data:", data);
 
-      if (token) {
-        localStorage.setItem("token", token);
-        localStorage.setItem("userId", userId);
+      if (data.token) {
+        // حفظ البيانات في localStorage
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("userId", data.id);
         localStorage.setItem("baseUrl", "http://flavorhaven.runasp.net");
+        localStorage.setItem("userInfo", JSON.stringify(data));
 
-        const config = {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        };
-
-        try {
-          const userRes = await axios.get(
-            `http://flavorhaven.runasp.net/api/User/GetUserById/${userId}`,
-            config
-          );
-
-          const user = userRes.data;
-
-          localStorage.setItem("email", user.email);
-          localStorage.setItem("firstName", user.firstName);
-          localStorage.setItem("lastName", user.lastName);
-          localStorage.setItem("profileImage", user.profileImage);
-          localStorage.setItem("userInfo", JSON.stringify(user));
-
-          const addressRes = await axios.get(
-            `http://flavorhaven.runasp.net/api/User/GetAddress/${userId}`,
-            config
-          );
-
-          localStorage.setItem("addresses", JSON.stringify(addressRes.data));
-        } catch (userError) {
-          console.error("Error fetching user info or address:", userError);
-          setError("Login succeeded, but failed to load user data.");
+        if (data.imagePath) {
+          localStorage.setItem("profileImagePath", data.imagePath);
+        } else {
+          localStorage.removeItem("profileImagePath");
         }
 
-        // لا تستخدم alert، نعيد التوجيه فقط
-        navigate("/");
-        window.location.reload();
+        // إعداد الهيدر بشكل مركزي في axios
+        axios.defaults.headers.common["Authorization"] = `Bearer ${data.token}`;
+
+        try {
+          const addressRes = await axios.get(
+            `http://flavorhaven.runasp.net/api/User/GetUserAddresses/${data.id}`
+          );
+          localStorage.setItem("addresses", JSON.stringify(addressRes.data));
+          console.log("Addresses fetched:", addressRes.data);
+        } catch (userError) {
+          console.error("Error fetching user address:", userError);
+        }
+
+        // الدور يتم تحويله للحروف الصغيرة عشان الـ RequireRole يعتمد على lowercase
+        const role = (data.roles?.[1] || data.roles?.[0] || "").toLowerCase();
+
+        if (!role) {
+          setError("Login failed: No role assigned to your account. Please contact support.");
+          return;
+        }
+
+        switch (role) {
+          case "admin":
+            navigate("/admin");
+            break;
+          case "customer":
+            navigate("/");
+            break;
+          case "cashier":
+            navigate("/cashier");
+            break;
+          case "chef":
+            navigate("/CheefuiPage");
+            break;
+          case "delivery":
+            navigate("/DeliveryHome");
+            break;
+          case "waiter":
+            navigate("/WaiterDashboard");
+            break;
+          default:
+            setError("Unknown role. Contact support.");
+            return;
+        }
       } else {
         setError("Login failed. Please check your password.");
       }
     } catch (err) {
       console.error("Login error:", err);
-
-      // جرب نعرض رسالة الخطأ من السيرفر إذا متوفرة
       const serverMessage =
         err.response?.data?.message || err.response?.data || err.message;
 
       setError(
         "Login failed: " +
-          (typeof serverMessage === "string" ? serverMessage : JSON.stringify(serverMessage))
+          (typeof serverMessage === "string"
+            ? serverMessage
+            : JSON.stringify(serverMessage))
       );
     }
   };
@@ -111,15 +127,8 @@ function Login() {
               </div>
 
               <form onSubmit={handleLogin} className="formatcontentee">
-                {/* رسالة الخطأ تظهر هنا */}
                 {error && (
-                  <p
-                    style={{
-                      color: "red",
-                      marginBottom: "10px",
-                      fontWeight: "bold",
-                    }}
-                  >
+                  <p style={{ color: "red", marginBottom: "10px", fontWeight: "bold" }}>
                     {error}
                   </p>
                 )}

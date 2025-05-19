@@ -1,79 +1,118 @@
 import React, { useState, useEffect } from "react";
-import Home from "./Home/Home";
-
-import Header from "./component/Header/Header";
-import AboutPage from "./About/About";
-import { Routes, Route } from "react-router-dom";
-import Login from "./login/Login";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import axios from "axios";
+
+// صفحات عامة (كاستومر)
+import Home from "./Home/Home";
+import AboutPage from "./About/About";
 import SignUp from "./Sign up/SignUp";
+import Login from "./login/Login";
+
 import Contautus from "./Contaut us/Contautus";
 import MenuItems from "./MenuPages/MenuItems1/MenuItems";
 import SalesPages from "./pageSales1/SalesPages";
-import ComHeader from "./component/Header/ComHeader";
-import OrderPage from "./chiefUiPage/alertChief/alert";
-import CheefuiPage from "./chiefUiPage/CheefuiPage.jsx";
-import DeliveryLogin from "./Delivery pages/DeliveryLogin";
-import DeliveryHome from "./Delivery pages/Delivery Home/DeliveryHome";
-import DeliveryHistory from "./Delivery pages/DeliveryHistory/DeliveryHistory";
-import DeliverypageDeteils from "./Delivery pages/DeliverypageDeteils/DeliverypageDeteils";
-import ComHeaderMobile from "./component/HeaderMobile/ComHeaderMobile";
-import HeaderMobilee from "./component/HeaderMobile/HeaderMobilee";
 import MainCourses from "./MenuPages/MainCoourses/MainCourses";
 import Reservation from "./Reservation/ReservationN";
-import Footer from "./component/Footer/Footer";
-import PageEror404 from "./Page Erorr/page404/PageEror404";
-import PageErorr500 from "./Page Erorr/Page500/pageErorr500";
-import DeliveryProfile from "./Delivery pages/DeliveryProfile/DeliveryProfile";
 import WatingPage from "./Wating Page/WatingPage";
-import OrderPageProssesing from "./chiefUiPage/alertChief - Prosessing/alertProsessing";
-import HeaderMobileUser from "./component/HeaderMobile/HeaderMobileUser/HeaderMobileUser";
-import FavoritePage from "./UserProfile/Componant/FavoritePage";
-import RatingPage from "./UserProfile/Componant/RatingPage";
-import SettingsPage from "./UserProfile/Componant/SettingsPage";
 import HomeProfile from "./UserProfile/Componant/HomeProfile";
-import HistoryPage from "./UserProfile/Componant/HistoryPage";
 import OrderFavProfile from "./UserProfile/Componant/OrderFavProfile";
 import HistoryProfile from "./UserProfile/Componant/HistoryProfile";
 import AccountSettings from "./UserProfile/Componant/AccountSettings";
 import ForgetPassword from "./ForgetPassword/ForgetPassword";
 import EmailConfirmation from "./ConfirmEmail/ConfirmEmail";
 import PasswordRecovery from "./PasswordRecovery/PasswordRecovery";
-import Cart from "./MiniCart/MiniCart";
+
+// صفحات الشيف
+import CheefuiPage from "./chiefUiPage/CheefuiPage";
+
+// صفحات الدليفري
+import DeliveryHome from "./Delivery pages/Delivery Home/DeliveryHome";
+import DeliveryHistory from "./Delivery pages/DeliveryHistory/DeliveryHistory";
 import DeliveryMap from "./Delivery pages/DeliveryMap/DeliveryMap";
+import DeliveryProfile from "./Delivery pages/DeliveryProfile/DeliveryProfile";
+import DeliverypageDeteils from "./Delivery pages/DeliverypageDeteils/DeliverypageDeteils";
+
+// صفحات الويتر
 import WaiterDashboard from "./WaiterPage/Waiter";
- 
+
+// عناصر ثابتة
+import Header from "./component/Header/Header";
+import Footer from "./component/Footer/Footer";
+import Cart from "./MiniCart/MiniCart";
+
+// صفحات خطأ
+import PageEror404 from "./Page Erorr/page404/PageEror404";
+import PageErorr500 from "./Page Erorr/Page500/pageErorr500";
+
+import HeaderMobilee from "./component/HeaderMobile/HeaderMobilee";
+
+// ✅ عنصر لحماية الصفحات حسب الدور
+function RequireRole({ role, children }) {
+  const storedUser = localStorage.getItem("userInfo");
+
+  if (!storedUser) {
+    return <Navigate to="/login" replace />;
+  }
+
+  const user = JSON.parse(storedUser);
+  const roles = (user.roles || []).map((r) => r.toLowerCase());
+
+  if (!roles.includes(role.toLowerCase())) {
+    return <Navigate to="/page404" replace />;
+  }
+
+  return children;
+}
+
 function App() {
   const [user, setUser] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     const storedUser = localStorage.getItem("userInfo");
     if (storedUser) {
       const parsedUser = JSON.parse(storedUser);
-
-      // خزنه في الـ state
       setUser(parsedUser);
-
-      // ضيف التوكن في هيدر axios لجميع الطلبات
       axios.defaults.headers.common["Authorization"] = `Bearer ${parsedUser.token}`;
     }
   }, []);
 
+  // مسارات صفحات الدليفري
+  const deliveryPaths = [
+    "/DeliveryHome",
+    "/DeliveryHistory",
+    "/DeliveryMap",
+    "/DeliveryProfile",
+    "/DeliverypageDeteils",
+  ];
+
+  // هل الصفحة الحالية صفحة دليفري؟
+  const isDeliveryPage = deliveryPaths.includes(location.pathname);
+
   return (
     <div className="allapp">
-      <Header />
+      {/* الهيدر المناسب حسب الصفحة */}
+      {isDeliveryPage ? <HeaderMobilee /> : <Header />}
+
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* صفحة الهوم متاحة فقط للكاستومر */}
+        <Route
+          path="/"
+          element={
+            <RequireRole role="customer">
+              <Home />
+            </RequireRole>
+          }
+        />
+
+        {/* صفحات عامة (كاستومر) */}
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/Contautus" element={<Contautus />} />
         <Route path="/MenuItems" element={<MenuItems />} />
         <Route path="/MainCourses" element={<MainCourses />} />
         <Route path="/SalesPages" element={<SalesPages />} />
-        <Route path="/DeliverypageDeteils" element={<DeliverypageDeteils />} />
-        <Route path="/DeliveryHome" element={<DeliveryHome />} />
-        <Route path="/DeliveryHistory" element={<DeliveryHistory />} />
         <Route path="/Reservation" element={<Reservation />} />
         <Route path="/WatingPage" element={<WatingPage />} />
         <Route path="/HomeProfile" element={<HomeProfile />} />
@@ -83,10 +122,77 @@ function App() {
         <Route path="/ForgetPassword" element={<ForgetPassword />} />
         <Route path="/EmailConfirmation" element={<EmailConfirmation />} />
         <Route path="/PasswordRecovery" element={<PasswordRecovery />} />
-        <Route path="/WaiterDashboard" element={<WaiterDashboard />} />
 
+        {/* صفحات الشيف */}
+        <Route
+          path="/CheefuiPage"
+          element={
+            // <RequireRole role="chef">
+              <CheefuiPage />
+         
+          }
+        />
+
+        {/* صفحات الدليفري */}
+        <Route
+          path="/DeliveryHome"
+          element={
+            <RequireRole role="delivery">
+              <DeliveryHome />
+            </RequireRole>
+          }
+        />
+        <Route
+          path="/DeliveryHistory"
+          element={
+            <RequireRole role="delivery">
+              <DeliveryHistory />
+            </RequireRole>
+          }
+        />
+        <Route
+          path="/DeliveryMap"
+          element={
+            <RequireRole role="delivery">
+              <DeliveryMap />
+            </RequireRole>
+          }
+        />
+        <Route
+          path="/DeliveryProfile"
+          element={
+            <RequireRole role="delivery">
+              <DeliveryProfile />
+            </RequireRole>
+          }
+        />
+        <Route
+          path="/DeliverypageDeteils"
+          element={
+            <RequireRole role="delivery">
+              <DeliverypageDeteils />
+            </RequireRole>
+          }
+        />
+
+        {/* صفحات الويتر */}
+        <Route
+          path="/WaiterDashboard"
+          element={
+            <RequireRole role="waiter">
+              <WaiterDashboard />
+            </RequireRole>
+          }
+        />
+
+        {/* صفحات الخطأ */}
+        <Route path="/page404" element={<PageEror404 />} />
+        <Route path="/page500" element={<PageErorr500 />} />
       </Routes>
-      <Cart />
+
+      {/* عرض الـ Cart فقط في غير صفحات الدليفري */}
+      {!isDeliveryPage && <Cart />}
+
       <Footer />
     </div>
   );

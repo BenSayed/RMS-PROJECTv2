@@ -27,25 +27,29 @@ const ComHeader = ({ onClose }) => {
   }, [onClose]);
 
   useEffect(() => {
-    // تحميل بيانات المستخدم من localStorage
-    const imagePath = localStorage.getItem("profileImagePath");
-    const firstName = localStorage.getItem("firstName") || "";
-    const lastName = localStorage.getItem("lastName") || "";
+    // جلب بيانات المستخدم من userInfo في localStorage
+    const userInfoStr = localStorage.getItem("userInfo");
+    if (userInfoStr) {
+      try {
+        const userInfo = JSON.parse(userInfoStr);
+        const firstName = userInfo.firstName || "";
+        const lastName = userInfo.lastName || "";
+        const imagePath = userInfo.imagePath || "";
 
-    // تعيين صورة البروفايل لو موجودة
-    if (imagePath) {
-      setProfileImage(imagePath);
-    }
+        // تعيين صورة البروفايل لو موجودة
+        if (imagePath) {
+          setProfileImage(imagePath);
+        }
 
-    // تعيين الاسم
-    const name = `${firstName} ${lastName}`.trim();
-    if (name !== "") {
-      setFullName(name);
-    }
-
-    // تحديد حالة تسجيل الدخول بناءً على وجود اسم المستخدم
-    if (firstName) {
-      setIsLoggedIn(true);
+        // تعيين الاسم الكامل
+        const name = `${firstName} ${lastName}`.trim();
+        if (name !== "") {
+          setFullName(name);
+          setIsLoggedIn(true);
+        }
+      } catch (err) {
+        console.error("Error parsing userInfo from localStorage:", err);
+      }
     }
   }, []);
 
@@ -56,7 +60,7 @@ const ComHeader = ({ onClose }) => {
 
   const handleProfileClick = () => {
     onClose();
-    navigate('/HomeProfile');
+    navigate("/HomeProfile");
   };
 
   return (
@@ -73,7 +77,9 @@ const ComHeader = ({ onClose }) => {
             <ul className="ComHeaderCardNavUi">
               <li>
                 <NavLink
-                  className={({ isActive }) => isActive ? "linkmodel active" : "linkmodel"}
+                  className={({ isActive }) =>
+                    isActive ? "linkmodel active" : "linkmodel"
+                  }
                   to="/"
                   onClick={() => handleLinkClick("Home")}
                 >
@@ -82,7 +88,9 @@ const ComHeader = ({ onClose }) => {
               </li>
               <li>
                 <NavLink
-                  className={({ isActive }) => isActive ? "linkmodel active" : "linkmodel"}
+                  className={({ isActive }) =>
+                    isActive ? "linkmodel active" : "linkmodel"
+                  }
                   to="/MenuItems"
                   onClick={() => handleLinkClick("Menu")}
                 >
@@ -91,7 +99,9 @@ const ComHeader = ({ onClose }) => {
               </li>
               <li>
                 <NavLink
-                  className={({ isActive }) => isActive ? "linkmodel active" : "linkmodel"}
+                  className={({ isActive }) =>
+                    isActive ? "linkmodel active" : "linkmodel"
+                  }
                   to="/Reservation"
                   onClick={() => handleLinkClick("Reservation")}
                 >
@@ -100,7 +110,9 @@ const ComHeader = ({ onClose }) => {
               </li>
               <li>
                 <NavLink
-                  className={({ isActive }) => isActive ? "linkmodel active" : "linkmodel"}
+                  className={({ isActive }) =>
+                    isActive ? "linkmodel active" : "linkmodel"
+                  }
                   to="/about"
                   onClick={() => handleLinkClick("About")}
                 >
@@ -109,7 +121,9 @@ const ComHeader = ({ onClose }) => {
               </li>
               <li>
                 <NavLink
-                  className={({ isActive }) => isActive ? "linkmodel active" : "linkmodel"}
+                  className={({ isActive }) =>
+                    isActive ? "linkmodel active" : "linkmodel"
+                  }
                   to="/Contautus"
                   onClick={() => handleLinkClick("Contact us")}
                 >
@@ -130,14 +144,15 @@ const ComHeader = ({ onClose }) => {
               ) : (
                 <NavLink
                   to="/login"
-                  className={({ isActive }) => isActive ? "login-text active" : "login-text"}
+                  className={({ isActive }) =>
+                    isActive ? "login-text active" : "login-text"
+                  }
                   onClick={() => handleLinkClick("Login")}
                 >
                   Login
                 </NavLink>
               )}
             </div>
-
           </div>
         </div>
       </div>

@@ -19,6 +19,9 @@ const SignUp = () => {
     agree: false,
   });
 
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -29,36 +32,46 @@ const SignUp = () => {
     });
   };
 
+  const toggleShowPassword = () => setShowPassword((prev) => !prev);
+  const toggleShowConfirmPassword = () => setShowConfirmPassword((prev) => !prev);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage("");
 
     if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match!");
+      setErrorMessage("Passwords do not match!");
       return;
     }
 
     try {
-      const response = await axios.post("http://flavorhaven.runasp.net/api/User/Register", {
-        firstName: formData.firstName,
-        lastName: formData.lastName,
-        email: formData.email,
-        password: formData.password,
-      });
+      const response = await axios.post(
+        "http://flavorhaven.runasp.net/api/User/Register",
+        {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          password: formData.password,
+        }
+      );
 
       const user = response.data;
 
+      // تخزين بيانات المستخدم في localStorage
       localStorage.setItem("userInfo", JSON.stringify(user));
-      console.log("تم تخزين المستخدم في LocalStorage:", localStorage.getItem("userInfo"));
-console.log("بيانات المستخدم كاملة من الـ API:", user);
       axios.defaults.headers.common["Authorization"] = `Bearer ${user.token}`;
 
       alert("Account created successfully!");
-      navigate(" /login");
+      navigate("/login"); // التوجيه لصفحة اللوجن بعد التسجيل
       window.location.reload();
-
     } catch (error) {
       console.error("Error:", error);
-      alert("Failed to create account.");
+      if (error.response && error.response.data) {
+        // لو السيرفر رجع رسالة خطأ نعرضها
+        setErrorMessage(error.response.data.message || "Failed to create account.");
+      } else {
+        setErrorMessage("Failed to create account.");
+      }
     }
   };
 
@@ -69,35 +82,105 @@ console.log("بيانات المستخدم كاملة من الـ API:", user);
           <div className="form-sectionSignUp">
             <div className="sectionSignUptexttt">
               <h1 style={{ fontFamily: "'Cormorant Upright'" }}>Create an Account</h1>
-              <p>Already have an account? <Link to="/login">Login</Link></p>
+              <p>
+                Already have an account? <Link to="/login">Login</Link>
+              </p>
             </div>
 
             <div className="sectionSignUpbuttonandform">
               <form onSubmit={handleSubmit}>
                 <div className="input-groupsuinuo">
                   <div className="input-group">
-                    <input name="firstName" value={formData.firstName} onChange={handleChange} placeholder="First name" type="text" required />
-                    <input name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Last name" type="text" required />
+                    <input
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      placeholder="First name"
+                      type="text"
+                      required
+                    />
+                    <input
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      placeholder="Last name"
+                      type="text"
+                      required
+                    />
                   </div>
 
                   <div className="full-width showPassword">
-                    <input name="email" value={formData.email} onChange={handleChange} placeholder="Email" type="email" required />
+                    <input
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="Email"
+                      type="email"
+                      required
+                    />
                   </div>
 
-                  <div className="full-width showPassword">
-                    <input name="password" value={formData.password} onChange={handleChange} placeholder="Password" type="password" required />
-                    <img alt="Show Password" src={imgsuin1} />
+                  <div className="full-width showPassword" style={{ position: "relative" }}>
+                    <input
+                      name="password"
+                      value={formData.password}
+                      onChange={handleChange}
+                      placeholder="Password"
+                      type={showPassword ? "text" : "password"}
+                      required
+                    />
+                    <img
+                      alt={showPassword ? "Hide Password" : "Show Password"}
+                      src={imgsuin1}
+                      onClick={toggleShowPassword}
+                      style={{
+                        position: "absolute",
+                        right: "10px",
+                        top: "50%",
+                        transform: "translateY(-50%)",
+                        cursor: "pointer",
+                      }}
+                    />
                   </div>
 
-                  <div className="full-width showPassword">
-                    <input name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} placeholder="Confirm Password" type="password" required />
-                    <img alt="Show Password" src={imgsuin1} />
+                  <div className="full-width showPassword" style={{ position: "relative" }}>
+                    <input
+                      name="confirmPassword"
+                      value={formData.confirmPassword}
+                      onChange={handleChange}
+                      placeholder="Confirm Password"
+                      type={showConfirmPassword ? "text" : "password"}
+                      required
+                    />
+                    <img
+                      alt={showConfirmPassword ? "Hide Password" : "Show Password"}
+                      src={imgsuin1}
+                      onClick={toggleShowConfirmPassword}
+                      style={{
+                        position: "absolute",
+                        right: "10px",
+                        top: "50%",
+                        transform: "translateY(-50%)",
+                        cursor: "pointer",
+                      }}
+                    />
                   </div>
 
                   <div className="checkbox-group">
-                    <input id="terms" name="agree" checked={formData.agree} onChange={handleChange} type="checkbox" required />
+                    <input
+                      id="terms"
+                      name="agree"
+                      checked={formData.agree}
+                      onChange={handleChange}
+                      type="checkbox"
+                      required
+                    />
                     <label htmlFor="terms">You agree to our friendly privacy policy</label>
                   </div>
+
+                  {errorMessage && (
+                    <div style={{ color: "red", marginTop: "10px" }}>{errorMessage}</div>
+                  )}
                 </div>
 
                 <div className="buutonandlinesuinuo">
@@ -117,7 +200,9 @@ console.log("بيانات المستخدم كاملة من الـ API:", user);
                   </div>
                 </div>
 
-                <button className="submit-btn" type="submit">Create an account</button>
+                <button className="submit-btn" type="submit">
+                  Create an account
+                </button>
               </form>
             </div>
           </div>

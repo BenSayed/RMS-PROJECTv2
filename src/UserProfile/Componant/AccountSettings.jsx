@@ -47,6 +47,7 @@ const AccountSettings = () => {
     fileInputRef.current.click();
   };
 
+  // تحديث صورة المستخدم مع إرسال بيانات المستخدم كاملة مع تعديل imagePath فقط
   const updateImageOnly = async (newImagePath) => {
     if (!userInfo || !userInfo.id) {
       console.error("❌ userInfo أو id مش موجودين في localStorage");
@@ -54,9 +55,15 @@ const AccountSettings = () => {
     }
 
     try {
+      // تحضير بيانات المستخدم مع تعديل imagePath فقط
+      const updatedUserData = {
+        ...userInfo,
+        imagePath: newImagePath,
+      };
+
       await axios.put(
-        `/api/User/UpdateUserImage/${userInfo.id}`,
-        { imagePath: newImagePath },
+        `/api/User/UpdateUser/${userInfo.id}`,
+        updatedUserData,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -65,6 +72,7 @@ const AccountSettings = () => {
         }
       );
 
+      // تحديث localStorage بالمسار الجديد
       const updatedUser = { ...userInfo, imagePath: newImagePath };
       localStorage.setItem("userInfo", JSON.stringify(updatedUser));
     } catch (error) {
@@ -93,7 +101,8 @@ const AccountSettings = () => {
         setProfileImage(filePath);
         await updateImageOnly(filePath);
 
-        // إعادة تحميل الصفحة تلقائيًا بعد رفع الصورة
+        // إعادة تحميل الصفحة وكتابة رسالة في الكونسول
+        console.log("✅ تم تحديث الصورة بنجاح.");
         window.location.reload();
       } else {
         alert("⚠️ لم يتم الحصول على رابط الصورة من الخادم.");
@@ -107,10 +116,18 @@ const AccountSettings = () => {
     }
   };
 
-  const handleDeletePicture = () => {
-    setProfileImage(pimgprofilesiting);
-    localStorage.removeItem("profileImagePath");
-    updateImageOnly("");
+  const handleDeletePicture = async () => {
+    try {
+      setProfileImage(pimgprofilesiting);
+      localStorage.removeItem("profileImagePath");
+      await updateImageOnly("");
+
+      // إعادة تحميل الصفحة وكتابة رسالة في الكونسول
+      console.log("✅ تم حذف الصورة بنجاح.");
+      window.location.reload();
+    } catch (error) {
+      console.error("❌ خطأ أثناء حذف الصورة:", error);
+    }
   };
 
   const handleChangePassword = async () => {
