@@ -7,7 +7,6 @@ import Home from "./Home/Home";
 import AboutPage from "./About/About";
 import SignUp from "./Sign up/SignUp";
 import Login from "./login/Login";
-
 import Contautus from "./Contaut us/Contautus";
 import MenuItems from "./MenuPages/MenuItems1/MenuItems";
 import SalesPages from "./pageSales1/SalesPages";
@@ -22,7 +21,6 @@ import ForgetPassword from "./ForgetPassword/ForgetPassword";
 import EmailConfirmation from "./ConfirmEmail/ConfirmEmail";
 import PasswordRecovery from "./PasswordRecovery/PasswordRecovery";
 import MenuItem from "./MenuPages/MenuItem/MenuItem";
-
 
 // صفحات الشيف
 import CheefuiPage from "./chiefUiPage/CheefuiPage";
@@ -41,12 +39,11 @@ import WaiterDashboard from "./WaiterPage/Waiter";
 import Header from "./component/Header/Header";
 import Footer from "./component/Footer/Footer";
 import Cart from "./MiniCart/MiniCart";
+import HeaderMobilee from "./component/HeaderMobile/HeaderMobilee";
 
 // صفحات خطأ
 import PageEror404 from "./Page Erorr/page404/PageEror404";
 import PageErorr500 from "./Page Erorr/Page500/pageErorr500";
-
-import HeaderMobilee from "./component/HeaderMobile/HeaderMobilee";
 
 // ✅ عنصر لحماية الصفحات حسب الدور
 function RequireRole({ role, children }) {
@@ -79,7 +76,6 @@ function App() {
     }
   }, []);
 
-  // مسارات صفحات الدليفري
   const deliveryPaths = [
     "/DeliveryHome",
     "/DeliveryHistory",
@@ -88,12 +84,10 @@ function App() {
     "/DeliverypageDeteils",
   ];
 
-  // هل الصفحة الحالية صفحة دليفري؟
   const isDeliveryPage = deliveryPaths.includes(location.pathname);
 
   return (
     <div className="allapp">
-      {/* الهيدر المناسب حسب الصفحة */}
       {isDeliveryPage ? <HeaderMobilee /> : <Header />}
 
       <Routes>
@@ -124,16 +118,17 @@ function App() {
         <Route path="/ForgetPassword" element={<ForgetPassword />} />
         <Route path="/EmailConfirmation" element={<EmailConfirmation />} />
         <Route path="/PasswordRecovery" element={<PasswordRecovery />} />
-        <Route path="/MenuItem" element={<MenuItem />} />
 
+        {/* ✅ تعديل هنا: MenuItem بياخد id من الراوتر */}
+        <Route path="/MenuItem/:id" element={<MenuItem />} />
 
         {/* صفحات الشيف */}
         <Route
           path="/CheefuiPage"
           element={
             // <RequireRole role="chef">
-              <CheefuiPage />
-         
+            <CheefuiPage />
+            // </RequireRole>
           }
         />
 
@@ -194,9 +189,7 @@ function App() {
         <Route path="/page500" element={<PageErorr500 />} />
       </Routes>
 
-      {/* عرض الـ Cart فقط في غير صفحات الدليفري */}
       {!isDeliveryPage && <Cart />}
-
       <Footer />
     </div>
   );

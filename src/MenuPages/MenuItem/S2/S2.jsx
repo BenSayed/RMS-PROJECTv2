@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import "./S2.css";
+import React, { useState } from 'react';
+import './S2.css';
 
-export default function S2() {
+export default function S2({ name, price, description }) {
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState("150 gm");
 
@@ -9,31 +9,18 @@ export default function S2() {
     <div className="product-container">
       <div className="product-details">
         <div className="product-card">
-          <h1>Wagyu Steak</h1>
-          <h2 className="product-price">68.99$</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
-          </p>
+          <h1>{name || 'Loading...'}</h1>
+          <h2 className="product-price">{price ? `${price}$` : ''}</h2>
+          <p>{description || ''}</p>
           <div className="product-info">
-            <span>
-              <img src="src/MenuPages/MenuItem/S2/hugeicons_steak.svg" alt="" />
-              250g Lean beef
-            </span>
-            <span>
-              <img src="src/MenuPages/MenuItem/S2/Vector (7).svg" alt="" />
-              Butter sous
-            </span>
-            <span>
-              <img src="src/MenuPages/MenuItem/S2/fluent-emoji-high-contrast_potato.svg" alt="" />
-              Smashed potato
-            </span>
+            {/* يمكنك اضافة أيقونات أو معلومات أخرى هنا */}
           </div>
         </div>
 
         <div className="size-selector">
           <h3>Size</h3>
           <div className="size-options">
-            {["150 gm","250 gm","350 gm"].map((s) => (
+            {["150 gm", "250 gm", "350 gm"].map((s) => (
               <label key={s}>
                 <input
                   type="radio"
@@ -64,5 +51,5 @@ export default function S2() {
         </button>
       </div>
     </div>
-);
+  );
 }

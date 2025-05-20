@@ -1,24 +1,11 @@
 import React, { useState } from 'react';
 import './S1.css';
 
-const images = [
-  'src/MenuPages/MenuItem/S1/Rectangle 11523.svg',
-  'src/MenuPages/MenuItem/S1/Rectangle 11523.svg',
-  'src/MenuPages/MenuItem/S1/Rectangle 11523.svg',
-  'src/MenuPages/MenuItem/S1/Rectangle 11523.svg',
-  'src/MenuPages/MenuItem/S1/Rectangle 11523.svg',
-  'src/MenuPages/MenuItem/S1/Rectangle 11523.svg',
-  'src/MenuPages/MenuItem/S1/Rectangle 11523.svg',
- 
-   
-  
- 
- 
-];
+export default function S1({ imagePath }) {
+  const images = [imagePath || ''];
 
-export default function  S1() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(''); // "left" or "right"
+  const [direction, setDirection] = useState('');
   const [isAnimating, setIsAnimating] = useState(false);
 
   const changeSlide = (newIndex, dir) => {
@@ -27,7 +14,7 @@ export default function  S1() {
     setTimeout(() => {
       setCurrentIndex(newIndex);
       setIsAnimating(false);
-    }, 300); // لازم تساوي مدة الانميشن بالـ CSS
+    }, 300);
   };
 
   const goToNext = () => {
@@ -40,9 +27,12 @@ export default function  S1() {
     changeSlide(prevIndex, 'left');
   };
 
+  if (!imagePath) return null;
+
   return (
     <div className="slider-container">
-      <button className="nav-button left" onClick={goToPrevious}><img src="src\MenuPages\MenuItem\S1\Vector.svg" alt="" />
+      <button className="nav-button left" onClick={goToPrevious}>
+        <img src="src/MenuPages/MenuItem/S1/Vector.svg" alt="Prev" />
       </button>
 
       <img
@@ -51,7 +41,9 @@ export default function  S1() {
         className={`slider-image ${isAnimating ? (direction === 'right' ? 'slide-right' : 'slide-left') : ''}`}
       />
 
-      <button className="nav-button right" onClick={goToNext}><img src="src\MenuPages\MenuItem\S1\Vector (1).svg" alt="" /></button>
+      <button className="nav-button right" onClick={goToNext}>
+        <img src="src/MenuPages/MenuItem/S1/Vector (1).svg" alt="Next" />
+      </button>
 
       <div className="dots">
         {images.map((_, index) => (
