@@ -21,6 +21,8 @@ import AccountSettings from "./UserProfile/Componant/AccountSettings";
 import ForgetPassword from "./ForgetPassword/ForgetPassword";
 import EmailConfirmation from "./ConfirmEmail/ConfirmEmail";
 import PasswordRecovery from "./PasswordRecovery/PasswordRecovery";
+import MenuItem from "./MenuPages/MenuItem/MenuItem";
+
 
 // صفحات الشيف
 import CheefuiPage from "./chiefUiPage/CheefuiPage";
@@ -122,6 +124,8 @@ function App() {
         <Route path="/ForgetPassword" element={<ForgetPassword />} />
         <Route path="/EmailConfirmation" element={<EmailConfirmation />} />
         <Route path="/PasswordRecovery" element={<PasswordRecovery />} />
+        <Route path="/MenuItem" element={<MenuItem />} />
+
 
         {/* صفحات الشيف */}
         <Route

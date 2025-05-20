@@ -10,7 +10,7 @@ const ExploreMenu = () => {
 
   // دالة لتوجيه المستخدم إلى صفحة MainCourses
   const handleShowAllClick = () => {
-    navigate("/MainCourses");  // توجيه المستخدم إلى صفحة MainCourses
+    navigate("/MainCourses");
   };
 
   const SectionTitle = ({ title, cards }) => {
@@ -21,7 +21,7 @@ const ExploreMenu = () => {
             <h2>{title}</h2>
           </div>
           <div className="MainCoursesContintTopDealsAllButton">
-            <button onClick={handleShowAllClick}>  {/* ربط الزرار مع الدالة */}
+            <button onClick={handleShowAllClick}>
               Show All
               <span className="MainCoursesArrow">
                 <img src={ArrowIcon1} alt="" />
@@ -39,8 +39,19 @@ const ExploreMenu = () => {
   };
 
   const Card = ({ id, altText, title, description, price }) => {
+    const navigate = useNavigate();
+
+    const handleCardClick = () => {
+      navigate("/MenuItem");
+    };
+
     return (
-      <section className="MainCoursesContintExploreMenuCardssection" id={id}>
+      <section
+        className="MainCoursesContintExploreMenuCardssection"
+        id={id}
+        onClick={handleCardClick}
+        style={{ cursor: "pointer" }}
+      >
         <div className="cardd1">
           <img src={imgSrc} alt={altText} />
           <div className="content1">
@@ -162,7 +173,7 @@ const ExploreMenu = () => {
                 <h2>Explore Menu</h2>
               </div>
               <div className="MainCoursesContintExploreMenuButton">
-                <button onClick={handleShowAllClick}>  {/* ربط الزرار مع الدالة */}
+                <button onClick={handleShowAllClick}>
                   Show All
                   <span className="MainCoursesArrow">
                     <img src={ArrowIcon1} alt="" />

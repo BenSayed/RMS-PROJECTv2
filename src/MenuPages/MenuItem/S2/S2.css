@@ -1,0 +1,254 @@
+/* Base colors & fonts */
+:root {
+  --bg-light: #fef3e7;
+  --bg-card: #fff4e6;
+  --orange: #ff9500;
+  --dark: #151716;
+  --text: #333;
+  --shadow: rgba(0,0,0,0.1);
+  --radius-lg: 48px;
+  --radius-md: 24px;
+}
+
+/* 1. Layout */
+.product-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  color: var(--text);
+  flex-wrap: wrap;
+}
+
+.product-details {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-section {
+  flex: 1 1 30%;
+  background: var(--bg-light);
+  box-shadow: 0 6px 10px var(--shadow);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 2. Product Card */
+.product-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: 0 6px 10px var(--shadow);
+}
+
+.product-card h1 {
+  font-family: "Cormorant Upright", serif;
+  font-size: 32px;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.product-price {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.product-card p {
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.product-info {
+  display: flex;
+  gap: 30px;
+}
+
+.product-info img {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* 3. Size Selector */
+.size-selector {
+  background: var(--bg-light);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: 0 6px 10px var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.size-selector h3 {
+  font-family: "Cormorant Upright", serif;
+  font-size: 32px;
+  color: var(--dark);
+  margin: 0;
+}
+
+.size-options {
+  display: flex;
+  gap: 20px;
+}
+
+.size-options label {
+  font-size: 14px;
+  color: var(--dark);
+}
+
+.select99 {
+  background: var(--bg-card);
+  border: 1px solid var(--orange);
+  border-radius: 16px;
+  padding: 0 16px;
+  height: 48px;
+  font-size: 14px;
+  color: #888;
+}
+
+/* 4. Order Section */
+.order-title {
+  font-family: "Cormorant Upright", serif;
+  font-size: 48px;
+  color: var(--dark);
+  margin-bottom: 24px;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--orange);
+  border-radius: 16px;
+  width: 200px;
+  height: 56px;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.quantity-button {
+  background: var(--orange);
+  border: none;
+  border-radius: 16px;
+  width: 48px;
+  height: 48px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+}
+
+.quantity-display {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.add-to-cart-btn {
+  background: var(--orange);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: Inter, sans-serif;
+  color: var(--dark);
+  cursor: pointer;
+  width: 100%;
+}
+
+/* 5. Breakpoints */
+/* iPad and large tablets */
+@media (max-width: 1024px) {
+  .order-section { flex: 1 1 100%; }
+  .product-details { flex: 1 1 100%; }
+}
+
+/* Small tablets */
+@media (max-width: 768px) {
+  .size-selector { flex-direction: column; align-items: flex-start; }
+  .product-info { flex-wrap: wrap; gap: 10px; }
+  .select99 {
+    height: 52px;
+    font-size: 16px; /* كانت 14 */
+    width: 100%;
+    color:#15171680;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .product-container { padding: 10px; }
+  .product-card h1 { font-size: 24px; }
+  .product-price { font-size: 32px; }
+  .size-selector h3 { font-size: 24px; }
+  .order-title { font-size: 32px; }
+  .quantity-selector { width: 160px; height: 48px; }
+  .add-to-cart-btn { padding: 12px; font-size: 16px; }
+  
+}
+@media (max-width: 480px) {
+  .product-container {
+    padding: 10px;
+    width: 340px;
+  }
+
+  .product-card h1 {
+    font-size: 28px; /* كانت 24 */
+  }
+
+  .product-price {
+    font-size: 36px; /* كانت 32 */
+  }
+
+  .product-card p {
+    font-size: 16px; /* ممكن تسيبيها أو تزوديها شوية لو حسيتيها صغيرة */
+  }
+
+  .size-selector h3 {
+    font-size: 28px; /* كانت 24 */
+  }
+
+  .size-options label {
+    font-size: 16px; /* كانت 14 */
+  }
+
+  .select99 {
+    height: 52px;
+    font-size: 16px; /* كانت 14 */
+    width: 100%;
+    color:#15171680;
+  }
+.option1{
+   color:#15171680;
+}
+  .order-title {
+    font-size: 36px; /* كانت 32 */
+  }
+
+  .quantity-selector {
+    width: 280px;
+    height: 52px; /* كانت 48 */
+
+  }
+
+  .quantity-button {
+    width: 52px;
+    height: 52px;
+    font-size: 36px; /* كانت 32 */
+  }
+
+  .quantity-display {
+    font-size: 26px; /* كانت 24 */
+  }
+
+  .add-to-cart-btn {
+    padding: 14px;
+    font-size: 18px; /* كانت 16 */
+  }
+}
+
