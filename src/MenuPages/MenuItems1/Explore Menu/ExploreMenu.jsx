@@ -14,6 +14,7 @@ const Card = ({ id, imagePath, name, description, price, averageRating }) => {
     navigate(`/MenuItem/${id}`);
   };
 
+  
   const toggleHeart = (e) => {
     e.stopPropagation(); // عشان ما يفتحش صفحة المنتج
     setIsLiked((prev) => !prev);
