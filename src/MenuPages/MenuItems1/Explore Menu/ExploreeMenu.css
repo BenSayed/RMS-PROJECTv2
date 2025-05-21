@@ -280,15 +280,16 @@ height: auto;
   font-family: Cormorant Upright;
 }
 .cardd1 .heart112 img {
-  width: 42px;
-  height: 42px;
+  width: 35px;
+  height: 35px;
   font-size: 11px;
-  color: black;
+ ;
   font-weight: bold;
   text-align: right;
   position: relative;
   top: -34px;
   left: -110px;
+ 
 }
 
 
@@ -339,6 +340,28 @@ height: auto;
   position: relative;
   top: -12px;
 }
+.cardd1 .heart112 img {
+    width: 35px;
+    height: 35px;
+    font-size: 11px;
+    color: black;
+    font-weight: bold;
+    text-align: right;
+    position: relative;
+    top: -34px;
+    left: -128px;
+}
+    .cardd1 .price12 {
+        font-size: 40px;
+        font-weight: bold;
+        color: black;
+        margin: 0;
+        font-weight: bold;
+        text-align: right;
+        position: relative;
+        top: 39px;
+        left: -94px;
+    }
 
 }
 

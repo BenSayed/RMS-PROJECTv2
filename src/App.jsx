@@ -119,7 +119,7 @@ function App() {
         <Route path="/EmailConfirmation" element={<EmailConfirmation />} />
         <Route path="/PasswordRecovery" element={<PasswordRecovery />} />
 
-        {/* ✅ تعديل هنا: MenuItem بياخد id من الراوتر */}
+        {/* هنا عدلت الـ route ليصبح يستقبل باراميتر id */}
         <Route path="/MenuItem/:id" element={<MenuItem />} />
 
         {/* صفحات الشيف */}

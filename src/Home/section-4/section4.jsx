@@ -1,45 +1,61 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import "./section4.css";
-import image31 from "./1.svg";
-import image32 from "./2.svg";
-import image33 from "./3.svg";
-import image34 from "./4.svg";
 import image35 from "./Vector (1).svg";
 import { Link } from "react-router-dom";
 import CardComponent from "/src/component/Card/CardComponent.jsx";
-  
-const foodItems = [
-  { id: 1, image: image31, title: "Wagyu Steak", description: "250g of lean steak With sous and potato With", price: "25$", rating: 4, category: "mainCourses" },
-  { id: 2, image: image31, title: "Anal Steak", description: "With sous and potato", price: "65$", rating: 3, category: "mainCourses" },
-  { id: 3, image: image32, title: "Delicious Main", description: "Tempting main course", price: "25$", rating: 4, category: "mainCourses" },
-  { id: 4, image: image32, title: "Another Main", description: "Flavorful main dish", price: "30$", rating: 4, category: "mainCourses" },
-  { id: 5, image: image33, title: "Crispy Appetizer", description: "Crispy starter", price: "10$", rating: 3, category: "appetizers" },
-  { id: 6, image: image33, title: "Appetizer 2", description: "Another appetizer", price: "10$", rating: 3, category: "appetizers" },
-  { id: 7, image: image33, title: "Appetizer 3", description: "Yummy starter", price: "10$", rating: 3, category: "appetizers" },
-  { id: 8, image: image34, title: "Fresh Seafood", description: "Fresh seafood selection", price: "40$", rating: 4, category: "seafood" },
-  { id: 9, image: image31, title: "Sweet Dessert", description: "Sweet treat", price: "15$", rating: 4, category: "desserts" },
-  { id: 10, image: image32, title: "Refreshing", description: "Cool beverage", price: "5$", rating: 4, category: "beverages" },
-  { id: 11, image: image33, title: "Another Appetizer", description: "Great starter", price: "12$", rating: 4, category: "appetizers" },
-  { id: 12, image: image34, title: "Grilled Platter", description: "Grilled seafood", price: "55$", rating: 5, category: "seafood" },
-  { id: 13, image: image31, title: "Chocolate Cake", description: "Molten chocolate", price: "20$", rating: 5, category: "desserts" },
-  { id: 16, image: image31, title: "Chocolate Cake", description: "Molten chocolate", price: "20$", rating: 5, category: "desserts" },
-
-  { id: 14, image: image32, title: "Iced Lemonade", description: "Refreshing drink", price: "7$", rating: 4, category: "beverages" },
-];
+import axios from "axios";
 
 const Section4 = () => {
-  const [activeButton, setActiveButton] = useState(() => {
-    return localStorage.getItem("activeCategory") || "mainCourses";
-  });
+  const [categories, setCategories] = useState([]);
+  const [activeCategoryId, setActiveCategoryId] = useState(null);
+  const [menuItems, setMenuItems] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  const filteredFoodItems = useMemo(() => {
-    return foodItems.filter((item) => item.category === activeButton);
-  }, [activeButton]);
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const baseUrl = localStorage.getItem("baseUrl");
+      try {
+        const response = await axios.get(`${baseUrl}/api/Menu/GetCategories`);
+        setCategories(response.data);
+        if (response.data.length > 0) {
+          setActiveCategoryId(response.data[0].id);
+        }
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      }
+    };
 
-  const handleButtonClick = (category) => {
-    setActiveButton(category);
-    localStorage.setItem("activeCategory", category);
+    fetchCategories();
+  }, []);
+
+  useEffect(() => {
+    const fetchMenuItems = async () => {
+      const baseUrl = localStorage.getItem("baseUrl");
+      const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+      if (!activeCategoryId || !userInfo?.id) return;
+
+      setLoading(true);
+      try {
+        const response = await axios.get(
+          `${baseUrl}/api/Menu/GetMenuItemsByCategory/${activeCategoryId}?userId=${userInfo.id}`
+        );
+        setMenuItems(response.data);
+      } catch (error) {
+        console.error("Error fetching menu items:", error);
+        setMenuItems([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMenuItems();
+  }, [activeCategoryId]);
+
+  const handleButtonClick = (categoryId) => {
+    setActiveCategoryId(categoryId);
   };
+
+  const baseUrl = localStorage.getItem("baseUrl");
 
   return (
     <div>
@@ -51,35 +67,56 @@ const Section4 = () => {
             </h2>
           </div>
 
+          {/* Navbar of categories */}
           <div className="navbarscroll">
             <div className="navbar22">
-              {["mainCourses", "appetizers", "seafood", "desserts", "beverages"].map((cat) => (
+              {categories.map((cat) => (
                 <button
-                  key={cat}
-                  className={`navbar225 ${activeButton === cat ? "navbar224" : ""}`}
-                  onClick={() => handleButtonClick(cat)}
+                  key={cat.id}
+                  className={`navbar225 ${
+                    activeCategoryId === cat.id ? "navbar224" : ""
+                  }`}
+                  onClick={() => handleButtonClick(cat.id)}
                 >
-                  {cat.charAt(0).toUpperCase() + cat.slice(1)}
+                  {cat.name}
                 </button>
               ))}
             </div>
           </div>
 
+          {/* Menu Items Section */}
           <div className="cardsection">
             <div className="cards">
-              {filteredFoodItems.map((food, index) => (
-                <CardComponent
-                  key={food.id || index}
-                  image={food.image}
-                  title={food.title}
-                  description={food.description}
-                  price={food.price}
-                  rating={food.rating}
-                />
-              ))}
+              {loading ? (
+                <p>Loading...</p>
+              ) : menuItems.length === 0 ? (
+                <p style={{ textAlign: "center", width: "100%" }}>
+                  لا توجد أطعمة في هذا القسم.
+                </p>
+              ) : (
+                menuItems.map((food, index) => {
+                  const imageUrl = food.imagePath
+                    ? food.imagePath.startsWith("http")
+                      ? food.imagePath
+                      : `${baseUrl}/${food.imagePath}`
+                    : "";
+
+                  return (
+                    <CardComponent
+                      key={food.id || index}
+                      imgSrc={imageUrl}
+                      altText={food.name}
+                      title={food.name}
+                      description={food.description}
+                      price={food.price}
+                    />
+                  );
+                })
+              )}
             </div>
           </div>
 
+          {/* Show All Button */}
           <div className="buutonshowall">
             <Link to="/MenuItems" className="show-all-button">
               <span>Show All</span>

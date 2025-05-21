@@ -6,7 +6,6 @@ import imgReservation1 from './Rectangle 1162 (2).svg';
 function Reservation() {
   const [time, setTime] = useState('');
   const [date, setDate] = useState('');
-  const [branch, setBranch] = useState('');
   const [guests, setGuests] = useState('2');
 
   // حجوزات سابقة (تقدر تيجي من API بعدين)
@@ -21,31 +20,66 @@ function Reservation() {
     setDate(formattedDate);
   }, []);
 
-  // فانكشن بتتحقق لو المعاد اتحجز قبل كده
   const isAlreadyBooked = (date, time) => {
-    const selectedDateTime = new Date(`${date}T${time}`).toISOString();
+    // دمج التاريخ والوقت وتحويلهم لـ ISO
+    const timeWithSeconds = time.length === 5 ? time + ":00" : time;
+    const selectedDateTime = new Date(`${date}T${timeWithSeconds}`).toISOString();
     return previousBookings.includes(selectedDateTime);
   };
 
   const handleConfirmClick = async () => {
-    const bookingTime = new Date(`${date}T${time}`).toISOString();
+    const baseUrl = localStorage.getItem('baseUrl');
+    const userInfo = JSON.parse(localStorage.getItem('userInfo') || '{}');
+
+    if (!userInfo.token) {
+      alert("انت غير مسجل الدخول");
+      return;
+    }
+
+    if (!date) {
+      alert("من فضلك اختر التاريخ");
+      return;
+    }
+
+    if (!time) {
+      alert("من فضلك اختر الوقت");
+      return;
+    }
+
+    // نضيف الثواني لو مش موجودة
+    const timeWithSeconds = time.length === 5 ? time + ":00" : time;
 
     if (isAlreadyBooked(date, time)) {
       alert("المعاد ده اتحجز قبل كده!");
       return;
     }
 
+    const customerId = userInfo.id;
+    const tableId = "a8fb267c-4e3d-4183-a1bc-dee8af1dc1f2"; // ثابت مؤقتًا
+    const transactionId = crypto.randomUUID(); // معرف معاملة عشوائي
+    const duration = "01:00:00"; // مدة الحجز ساعة بصيغة HH:mm:ss
+
+    const bookingDateTime = new Date(`${date}T${timeWithSeconds}`).toISOString();
+
     const requestData = {
-      tableId: "a8fb267c-4e3d-4183-a1bc-dee8af1dc1f2",
-      customerId: "a95d2ee4-54d0-411c-7cc9-08dd6d626407",
-      bookingTime: bookingTime,
+      date: bookingDateTime,
+      time: timeWithSeconds,
+      duration: duration,
+      guestCount: parseInt(guests, 10),
+      transactionId: transactionId,
+      customerId: customerId,
+      tableId: tableId
     };
 
     try {
-      await axios.post("http://flavorhaven.runasp.net/api/tables/BookTable", requestData);
+      await axios.post(`${baseUrl}/api/Booking/CreateBooking`, requestData, {
+        headers: {
+          Authorization: `Bearer ${userInfo.token}`
+        }
+      });
+
       alert("تم الحجز بنجاح!");
-      // بعد الحجز الناجح بنضيف المعاد عشان ميتحجزش تاني
-      setPreviousBookings(prev => [...prev, bookingTime]);
+      setPreviousBookings(prev => [...prev, bookingDateTime]);
     } catch (error) {
       console.error("خطأ أثناء الحجز:", error);
       alert("حصلت مشكلة أثناء الحجز.");
@@ -60,27 +94,24 @@ function Reservation() {
           <div className="reservation-image">
             <img src={imgReservation1} alt="Restaurant Interior" />
           </div>
-          <form className="reservation-form">
+          <form className="reservation-form" onSubmit={e => e.preventDefault()}>
             <input
               className='reservation-forminput'
               type="time"
               value={time}
               onChange={(e) => setTime(e.target.value)}
               placeholder="Time"
+              required
             />
             <input
               className='reservation-forminput'
               type="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
+              required
             />
-            <select value={branch} onChange={(e) => setBranch(e.target.value)}>
-              <option>Branch</option>
-              <option value="Downtown">Downtown</option>
-              <option value="Suburbia">Suburbia</option>
-            </select>
             <select value={guests} onChange={(e) => setGuests(e.target.value)}>
-              <option>Number of Guests</option>
+              <option value="" disabled>Number of Guests</option>
               <option value="1">1 Guest</option>
               <option value="2">2 Guests</option>
               <option value="3">3 Guests</option>

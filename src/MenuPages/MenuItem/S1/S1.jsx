@@ -1,11 +1,24 @@
 import React, { useState } from 'react';
 import './S1.css';
 
-export default function S1({ imagePath }) {
-  const images = [imagePath || ''];
+const images = [
+  'src/MenuPages/MenuItem/S1/Rectangle 11523.svg',
+  'src/MenuPages/MenuItem/S1/Rectangle 11523.svg',
+  'src/MenuPages/MenuItem/S1/Rectangle 11523.svg',
+  'src/MenuPages/MenuItem/S1/Rectangle 11523.svg',
+  'src/MenuPages/MenuItem/S1/Rectangle 11523.svg',
+  'src/MenuPages/MenuItem/S1/Rectangle 11523.svg',
+  'src/MenuPages/MenuItem/S1/Rectangle 11523.svg',
+ 
+   
+  
+ 
+ 
+];
 
+export default function  S1() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState('');
+  const [direction, setDirection] = useState(''); // "left" or "right"
   const [isAnimating, setIsAnimating] = useState(false);
 
   const changeSlide = (newIndex, dir) => {
@@ -14,7 +27,7 @@ export default function S1({ imagePath }) {
     setTimeout(() => {
       setCurrentIndex(newIndex);
       setIsAnimating(false);
-    }, 300);
+    }, 300); // لازم تساوي مدة الانميشن بالـ CSS
   };
 
   const goToNext = () => {
@@ -27,12 +40,9 @@ export default function S1({ imagePath }) {
     changeSlide(prevIndex, 'left');
   };
 
-  if (!imagePath) return null;
-
   return (
     <div className="slider-container">
-      <button className="nav-button left" onClick={goToPrevious}>
-        <img src="src/MenuPages/MenuItem/S1/Vector.svg" alt="Prev" />
+      <button className="nav-button left" onClick={goToPrevious}><img src="src\MenuPages\MenuItem\S1\Vector.svg" alt="" />
       </button>
 
       <img
@@ -41,9 +51,7 @@ export default function S1({ imagePath }) {
         className={`slider-image ${isAnimating ? (direction === 'right' ? 'slide-right' : 'slide-left') : ''}`}
       />
 
-      <button className="nav-button right" onClick={goToNext}>
-        <img src="src/MenuPages/MenuItem/S1/Vector (1).svg" alt="Next" />
-      </button>
+      <button className="nav-button right" onClick={goToNext}><img src="src\MenuPages\MenuItem\S1\Vector (1).svg" alt="" /></button>
 
       <div className="dots">
         {images.map((_, index) => (

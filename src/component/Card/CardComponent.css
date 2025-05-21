@@ -129,17 +129,7 @@
   position: relative;
   top: 0px;
 }
-.cardd1 .price12 {
-  font-size: 40px;
-  font-weight: bold;
-  color: black;
-  margin: 0;
-  font-weight: bold;
-  text-align: right;
-  position: relative;
-  top: 39px;
-  left: -75px;
-}
+ 
 .cardd1 .stars12 {
   color: #ffb854;
   font-weight: bold;
@@ -148,6 +138,20 @@
   position: relative;
   top: -12px;
 }
+
+.cardd1 .price12 {
+        font-size: 40px;
+        font-weight: bold;
+        color: black;
+        margin: 0;
+        font-weight: bold;
+        text-align: right;
+        position: relative;
+        top: 39px;
+        left: -94px;
+    }
+    
+ 
 
 }
 
@@ -179,15 +183,15 @@
   top: 9px;
 }
 .cardd1 .heart112 img {
-  width: 29px;
-  height: 32px;
-  font-size: 11px;
-  color: black;
-  font-weight: bold;
-  text-align: right;
-  position: relative;
-  top: -34px;
-  left: -118px;
+    width: 42px;
+    height: 42px;
+    font-size: 11px;
+    color: black;
+    font-weight: bold;
+    text-align: right;
+    position: relative;
+    top: -34px;
+    left: -139px;
 }
 .cardd1 p {
   font-size: 13px;
