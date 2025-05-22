@@ -16,12 +16,14 @@
   display: flex;
 }
 
-.extras-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 4rem;
+.extras-grid
+  {
+    display: grid
+;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 106px;
+    margin-left: -52px;
 }
-
 .extra-item {
   background: #fff4e6;
   color: #151716;
@@ -35,8 +37,12 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease,
     background-color 0.2s ease, color 0.2s ease;
   cursor: pointer;
-  width: 115%;
-  height: 110%;
+ 
+  width: 424px;
+height: 127px;
+border-radius: 48px;
+padding: 16px;
+
 }
 
 .extra-item:hover,
@@ -48,11 +54,10 @@
 }
 
 .extra-image {
-  flex-shrink: 0;
-  width: 100حء;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 32px;
+width: 220px;
+height: 95px;
+border-radius: 32px;
+
 }
 
 .extra-content {

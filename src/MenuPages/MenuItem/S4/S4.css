@@ -20,23 +20,25 @@ letter-spacing: 0%;
 }
 
 .grid22 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
-  width: 100%;
+    display: grid
+;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+    width: 98%;
 }
-
 .box7 {
-  display: flex;
-  background-color: #fef2e7;
-  border-radius: 25px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  max-width: 100%;
-  transition: transform 0.3s ease;
-  height: 200px;
-  border-radius: 48px;
-  align-items: flex-end;
+    display: flex
+;
+    background-color: #fef2e7;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 421px;
+    height: 197px;
+    border-radius: 48px;
+    transition: transform 0.3s ease;
+    border-radius: 48px;
+    align-items: flex-end;
 }
 
 .box7:hover {

@@ -1,42 +1,53 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./ComHeader.Mobil.css";
-import imgcar from "./Ellipse 1924.svg";
+import imgcar from "./Ellipse 1924.svg"; // صورة افتراضية لو مفيش من اليوزر
 import imgcar22 from "./akar-icons_cart.svg";
 import { Link } from "react-router-dom";
 
 const ComHeaderMobile = ({ onClose }) => {
   const [activeLink, setActiveLink] = useState(null);
-  const cardRef = useRef(null); // تعريف المرجع للإشارة إلى الكارد
+  const cardRef = useRef(null);
 
-  // التعامل مع النقرات خارج الكارد
+  const [userName, setUserName] = useState("");
+  const [userImage, setUserImage] = useState(null);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
-      // إذا تم النقر خارج الكارد، يتم إغلاقه
       if (cardRef.current && !cardRef.current.contains(event.target)) {
         onClose();
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside); // إضافة مستمع للنقر
+    document.addEventListener("mousedown", handleClickOutside);
 
-    // تنظيف المستمع عند تفكيك المكون
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [onClose]);
 
+  // تحميل بيانات المستخدم من localStorage
+  useEffect(() => {
+    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+
+    if (userInfo) {
+      const fullName = `${userInfo.firstName || ""} ${userInfo.lastName || ""}`.trim();
+      setUserName(fullName || userInfo.userName); // fallback للايميل لو الاسم مش موجود
+      setUserImage(userInfo.imagePath); // ممكن يكون null
+    }
+  }, []);
+
   const handleLinkClick = (linkName) => {
     setActiveLink(linkName);
-    onClose(); // تنفيذ onClose بعد تحديد اللينك النشط
+    onClose();
   };
 
   return (
     <div className="ComHeader">
       <div className="ComHeader12">
-        <div className="ComHeaderCard2" ref={cardRef}> {/* إضافة المرجع هنا */}
+        <div className="ComHeaderCard2" ref={cardRef}>
           <div className="ComHeaderCardPro">
-            <img src={imgcar} alt="" />
-            <h2>Ronald Richards</h2>
+            <img src={userImage || imgcar} alt="user" />
+            <h2>{userName}</h2>
           </div>
           <div className="ComHeaderCardNav">
             <ul className="ComHeaderCardNavUi">

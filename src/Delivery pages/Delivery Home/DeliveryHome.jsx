@@ -1,14 +1,13 @@
-import React from "react";
-import { useNavigate } from "react-router-dom"; // استيراد useNavigate
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./DeliveryHome.css";
 
-// DeliveryCard component to avoid repetition
+// DeliveryCard component
 const DeliveryCard = ({ name, location, status, imgSrc }) => {
-  const navigate = useNavigate(); // تعريف navigate لاستخدامه في التوجيه
+  const navigate = useNavigate();
 
-  // دالة للتوجيه إلى صفحة DeliveryPageDetails
   const handleAccept = () => {
-    navigate("/DeliverypageDeteils"); // التوجيه إلى الصفحة المطلوبة
+    navigate("/DeliverypageDeteils");
   };
 
   return (
@@ -29,34 +28,70 @@ const DeliveryCard = ({ name, location, status, imgSrc }) => {
             </p>
           </div>
         </div>
-        <button onClick={handleAccept}>Accept</button> {/* إضافة onClick هنا */}
+        <button onClick={handleAccept}>Accept</button>
       </div>
     </div>
   );
 };
 
 const DeliveryHome = () => {
+  const [fullName, setFullName] = useState("Loading...");
+  const [profileImage, setProfileImage] = useState(null);
+  const [deliveryDetails, setDeliveryDetails] = useState(null);
+
+  useEffect(() => {
+    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    const token = localStorage.getItem("token");
+    const baseUrl = localStorage.getItem("baseUrl");
+
+    if (userInfo) {
+      const fullName = `${userInfo.firstName || ""} ${userInfo.lastName || ""}`.trim();
+      setFullName(fullName);
+
+      if (userInfo.imagePath) {
+        setProfileImage(userInfo.imagePath);
+      }
+    }
+
+    if (userInfo && token && baseUrl) {
+      const id = userInfo.id;
+
+      fetch(`${baseUrl}/api/Delivery/Details/${id}`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setDeliveryDetails(data);
+        })
+        .catch((err) => {
+          console.error("Failed to fetch delivery details:", err);
+        });
+    }
+  }, []);
+
+  // If you want to use deliveryDetails to show actual cards, you can replace below dummy data with that
+
   const cardData = [
     {
       name: "Mohamed Ali",
       location: "Assiut, City, street 24",
       status: "Ready to deliver",
-      imgSrc:
-        "src/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
+      imgSrc: "src/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
     },
     {
       name: "Mohamed Ali",
       location: "Assiut, City, street 24",
       status: "Ready to deliver",
-      imgSrc:
-        "src/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
+      imgSrc: "src/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
     },
     {
       name: "Mohamed Ali",
       location: "Assiut, City, street 24",
       status: "Ready to deliver",
-      imgSrc:
-        "src/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
+      imgSrc: "src/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
     },
   ];
 
@@ -65,8 +100,7 @@ const DeliveryHome = () => {
       name: "Mohamed Ali",
       location: "Assiut, City, street 24",
       status: "On the way",
-      imgSrc:
-        "src/Delivery pages/Delivery Home/Rectangle 1191 (2).svg",
+      imgSrc: "src/Delivery pages/Delivery Home/Rectangle 1191 (2).svg",
     },
   ];
 
@@ -75,8 +109,7 @@ const DeliveryHome = () => {
       name: "Ali Ali",
       location: "Assiut, City, street 24",
       status: "Done",
-      imgSrc:
-        "src/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
+      imgSrc: "src/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
     },
   ];
 
@@ -84,10 +117,10 @@ const DeliveryHome = () => {
     <div className="DeliveryHome">
       <div className="DeliveryHomeHeader">
         <img
-          src="src/Delivery pages/Delivery Home/Rectangle 1191.png"
+          src={profileImage || "src/Delivery pages/Delivery Home/Rectangle 1191.png"}
           alt="Profile"
         />
-        <h2>Ahmed Mahmoud</h2>
+        <h2>{fullName}</h2>
       </div>
 
       <div className="DeliveryHomeCards">

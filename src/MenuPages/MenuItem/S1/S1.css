@@ -11,8 +11,11 @@
 }
 
 .slider-image {
-  width: 100%;
-  height: auto;
+  width: 1312px;
+height: 467px;
+ 
+border-radius: 48px;
+
   border-radius: 48px;
   object-fit: cover;
 }

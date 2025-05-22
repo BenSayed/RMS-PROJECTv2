@@ -1,39 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+
 import "./MenuItem.css";
 import './S1/S1.css';
 import './S2/S2.css';
 import './S3/S3.css';
 import './S4/S4.css';
 
-
-import imgGrilledVegetables from "./S3/Rectangle 1153.svg";
-import imgMushroomSauce from "./S3/Rectangle 1153 (1).svg";
-import imgGarlicSauce from "./S3/Rectangle 1153 (2).svg";
-import imgFrenchFries from "./S3/Rectangle 1153 (3).svg";
-import imgCaesarSalad from "./S3/Rectangle 1153 (4).svg";
-import imgGarlicBread from "./S3/Rectangle 1153 (5).svg";
-import imgParmesanCheese from "./S3/Rectangle 1153 (6).svg";
-import imgCrispyOnionRings from "./S3/Rectangle 1153 (7).svg";
-import imgAvocadoSlices from "./S3/Rectangle 1153 (8).svg";
-
-import steakImg from "./S4/Rectangle 11.svg";
-
-// ------------------- S1 Section -------------------
-// ------------------- S1 Section -------------------
-import slide1 from "./S1/Rectangle 11523.svg";
-import slide2 from "./S1/Rectangle 11523.svg";
-import slide3 from "./S1/Rectangle 11523.svg";
-import slide4 from "./S1/Rectangle 11523.svg";
-import slide5 from "./S1/Rectangle 11523.svg";
-import slide6 from "./S1/Rectangle 11523.svg";
-import slide7 from "./S1/Rectangle 11523.svg";
-
+// ------------------- S1 -------------------
 import vectorLeft from "./S1/Vector.svg";
 import vectorRight from "./S1/Vector (1).svg";
 
-const images = [slide1, slide2, slide3, slide4, slide5, slide6, slide7];
-
-function S1() {
+function S1({ menuItem }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState("");
   const [isAnimating, setIsAnimating] = useState(false);
@@ -48,14 +27,16 @@ function S1() {
   };
 
   const goToNext = () => {
-    const nextIndex = (currentIndex + 1) % images.length;
+    const nextIndex = (currentIndex + 1) % 1;
     changeSlide(nextIndex, "right");
   };
 
   const goToPrevious = () => {
-    const prevIndex = (currentIndex - 1 + images.length) % images.length;
+    const prevIndex = (currentIndex - 1 + 1) % 1;
     changeSlide(prevIndex, "left");
   };
+
+  if (!menuItem) return <div>Loading...</div>;
 
   return (
     <div className="slider-container">
@@ -64,8 +45,8 @@ function S1() {
       </button>
 
       <img
-        src={images[currentIndex]}
-        alt="slider"
+        src={menuItem.imagePath}
+        alt={menuItem.name}
         className={`slider-image ${
           isAnimating ? (direction === "right" ? "slide-right" : "slide-left") : ""
         }`}
@@ -74,131 +55,100 @@ function S1() {
       <button className="nav-button right" onClick={goToNext}>
         <img src={vectorRight} alt="Next" />
       </button>
-
-      <div className="dots">
-        {images.map((_, index) => (
-          <span
-            key={index}
-            className={`dot ${index === currentIndex ? "active" : ""}`}
-            onClick={() => {
-              const dir = index > currentIndex ? "right" : "left";
-              changeSlide(index, dir);
-            }}
-          ></span>
-        ))}
-      </div>
     </div>
   );
 }
 
+// ------------------- S2 -------------------
+function S2({ 
+  menuItem, 
+  quantity, 
+  setQuantity, 
+  selectedSizeId, 
+  setSelectedSizeId, 
+  onAddToCart 
+}) {
+  useEffect(() => {
+    if (menuItem && Array.isArray(menuItem.sizes) && menuItem.sizes.length > 0) {
+      setSelectedSizeId(menuItem.sizes[0].id);
+    }
+  }, [menuItem, setSelectedSizeId]);
 
-// ------------------- S2 Section -------------------
-function S2() {
-  const [quantity, setQuantity] = useState(1);
-  const [size, setSize] = useState("150 gm");
+  const handleSizeChange = (e) => {
+    setSelectedSizeId(e.target.value);
+  };
+
+  if (!menuItem) return <div>Loading...</div>;
+
+  const selectedSize = menuItem.sizes?.find((s) => s.id === selectedSizeId);
+  const displayPrice = selectedSize?.price || menuItem.price;
 
   return (
     <div className="product-container">
       <div className="product-details">
         <div className="product-card">
-          <h1>Wagyu Steak</h1>
-          <h2 className="product-price">68.99$</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim.
-          </p>
-          <div className="product-info">
-            <span>
-              <img src="src/MenuPages/MenuItem/S2/hugeicons_steak.svg" alt="" />
-              250g Lean beef
-            </span>
-            <span>
-              <img src="src/MenuPages/MenuItem/S2/Vector (7).svg" alt="" />
-              Butter sous
-            </span>
-            <span>
-              <img
-                src="src/MenuPages/MenuItem/S2/fluent-emoji-high-contrast_potato.svg"
-                alt=""
-              />
-              Smashed potato
-            </span>
-          </div>
+          <h1>{menuItem.name}</h1>
+          <h2 className="product-price">{displayPrice.toFixed(2)}$</h2>
+          <p>{menuItem.description}</p>
         </div>
 
         <div className="size-selector">
           <h3>Size</h3>
-          <div className="size-options">
-            {["150 gm", "250 gm", "350 gm"].map((s) => (
-              <label key={s}>
-                <input
-                  type="radio"
-                  name="size"
-                  value={s}
-                  checked={size === s}
-                  onChange={() => setSize(s)}
-                />
-                {s}
-              </label>
-            ))}
-          </div>
-          <select
-            onChange={(e) => setSize(e.target.value)}
-            className="select99"
-            value=""
-          >
-            <option disabled className="option1">
-              Other size
-            </option>
-          </select>
+          {Array.isArray(menuItem.sizes) && menuItem.sizes.length > 0 ? (
+            <div className="size-options">
+              {menuItem.sizes.map((s) => (
+                <label key={s.id}>
+                  <input
+                    type="radio"
+                    name="size"
+                    value={s.id}
+                    checked={selectedSizeId === s.id}
+                    onChange={handleSizeChange}
+                  />
+                  {s.grams} gm
+                </label>
+              ))}
+            </div>
+          ) : (
+            <p>No sizes available</p>
+          )}
         </div>
       </div>
 
       <div className="order-section">
         <h2 className="order-title">Order Now</h2>
         <div className="quantity-selector">
-          <button
-            onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-            className="quantity-button"
-          >
-            −
-          </button>
-          <span className="quantity-display">{quantity}</span>
-          <button
-            onClick={() => setQuantity((q) => q + 1)}
-            className="quantity-button"
-          >
-            +
-          </button>
+          <button onClick={() => setQuantity((q) => Math.max(1, q - 1))}>−</button>
+          <span>{quantity}</span>
+          <button onClick={() => setQuantity((q) => q + 1)}>+</button>
         </div>
-        <button className="add-to-cart-btn">
-          <span>Add to cart</span>
-        </button>
+        <button className="add-to-cart-btn" onClick={onAddToCart}>Add to cart</button>
       </div>
     </div>
   );
 }
 
-// ------------------- S3 Section -------------------
-const extras = [
-  { name: "Grilled Vegetables", price: "1.5$", image: imgGrilledVegetables },
-  { name: "Mushroom Sauce", price: "2.5$", image: imgMushroomSauce },
-  { name: "Garlic Sauce", price: "1.5$", image: imgGarlicSauce },
-  { name: "French Fries", price: "4.99$", image: imgFrenchFries },
-  { name: "Caesar Salad", price: "6$", image: imgCaesarSalad },
-  { name: "Garlic Bread", price: "5.99$", image: imgGarlicBread },
-  { name: "Parmesan Cheese", price: "8$", image: imgParmesanCheese },
-  { name: "Crispy Onion Rings", price: "4.5$", image: imgCrispyOnionRings },
-  { name: "Avocado Slices", price: "3$", image: imgAvocadoSlices },
-];
+// ------------------- S3 -------------------
+function S3({ menuItemId, selectedExtras, setSelectedExtras }) {
+  const [extras, setExtras] = React.useState([]);
+  const baseUrl = localStorage.getItem("baseUrl") || "http://flavorhaven.runasp.net";
 
-function S3() {
-  const [selectedItems, setSelectedItems] = useState([]);
+  React.useEffect(() => {
+    if (!menuItemId) return;
 
-  const handleSelect = (index) => {
-    setSelectedItems((prev) =>
-      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    axios
+      .get(`${baseUrl}/api/Menu/GetExtrasOfMenuItem/${menuItemId}`)
+      .then((res) => {
+        setExtras(res.data);
+      })
+      .catch((err) => {
+        console.error("Error fetching extras:", err);
+      });
+  }, [menuItemId, baseUrl]);
+
+  const handleSelect = (id) => {
+    setSelectedExtras((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
     );
   };
 
@@ -206,16 +156,16 @@ function S3() {
     <section className="extras-container">
       <h2 className="extras-title">Extras</h2>
       <div className="extras-grid">
-        {extras.map((item, idx) => (
+        {extras.map((item) => (
           <button
-            key={idx}
-            className={`extra-item ${selectedItems.includes(idx) ? "selected" : ""}`}
-            onClick={() => handleSelect(idx)}
+            key={item.id}
+            className={`extra-item ${selectedExtras.includes(item.id) ? "selected" : ""}`}
+            onClick={() => handleSelect(item.id)}
           >
-            <img src={item.image} alt={item.name} className="extra-image" />
+            <img src={item.imagePath} alt={item.name} className="extra-image" />
             <div className="extra-content">
               <span className="extra-name">{item.name}</span>
-              <span className="extra-price">{item.price}</span>
+              <span className="extra-price">{item.price.toFixed(2)}$</span>
             </div>
           </button>
         ))}
@@ -224,48 +174,125 @@ function S3() {
   );
 }
 
-// ------------------- S4 Section -------------------
-const RandomCard = () => (
-  <div className="box7">
-    <img src={steakImg} alt="Wagyu Steak" className="img91" />
-    <div className="txt99">
-      <h3>Wagyu Steak</h3>
-      <p>250g of lean steak with sous and smashed potato or rice</p>
-      <div className="line55">
-        <span className="star77">★★★★★</span>
-        <span className="price44">68$</span>
-      </div>
-    </div>
-  </div>
-);
+// ------------------- S4 -------------------
+function S4({ menuItemId }) {
+  const [suggestions, setSuggestions] = useState([]);
+  const baseUrl = localStorage.getItem("baseUrl") || "http://flavorhaven.runasp.net";
 
-function S4() {
+  useEffect(() => {
+    if (!menuItemId) return;
+
+    axios
+      .get(`${baseUrl}/api/Menu/${menuItemId}/suggestions`)
+      .then((res) => {
+        setSuggestions(res.data);
+        console.log("Fetched suggestions successfully");
+      })
+      .catch((err) => {
+        console.error("Error fetching suggestions:", err);
+      });
+  }, [menuItemId, baseUrl]);
+
+  if (suggestions.length === 0) return null;
+
   return (
     <section className="wrap88">
       <h2 className="head33">Combo Options</h2>
       <div className="grid22">
-        {Array(5)
-          .fill(0)
-          .map((_, i) => (
-            <RandomCard key={i} />
-          ))}
+        {suggestions.map((item) => (
+          <div key={item.id} className="box7">
+            <img src={item.imageUrl} alt={item.name} className="img91" />
+            <div className="txt99">
+              <h3>{item.name}</h3>
+              <p>{item.descritpion}</p>
+              <div className="line55">
+                <span className="star77">{"★★★★★".slice(0, item.totalRating)}</span>
+                <span className="price44">{item.price.toFixed(2)}$</span>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
 }
 
-// ------------------- Final Exported Component -------------------
-const MenuItem = () => {
+// ------------------- Main Component -------------------
+function MenuItem() {
+  const { id } = useParams();
+  const [menuItem, setMenuItem] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const baseUrl = localStorage.getItem("baseUrl") || "http://flavorhaven.runasp.net";
+
+  // الحالة الجديدة اللي هتتحكم في الكمية، الحجم، والاكسسترا
+  const [quantity, setQuantity] = useState(1);
+  const [selectedSizeId, setSelectedSizeId] = useState("");
+  const [selectedExtras, setSelectedExtras] = useState([]);
+
+  useEffect(() => {
+    setLoading(true);
+    axios
+      .get(`${baseUrl}/api/Menu/GetMenuItem/${id}`)
+      .then((res) => {
+        setMenuItem(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching menu item:", err);
+        setLoading(false);
+      });
+  }, [id, baseUrl]);
+
+  const addToCart = () => {
+    if (!menuItem) return;
+
+    // بيانات الحجم المختار
+    const selectedSize = menuItem.sizes?.find((s) => s.id === selectedSizeId);
+
+    // بيانات الاكسترا المختارة بالكامل (حسب الـ IDs)
+    // نجيب بيانات الاكسترا من قاعدة البيانات مخزنة في S3 (extras)
+    // لذلك نخزنها داخل addToCart في شكل بسيط ب IDs بس أو ممكن تضيف التفاصيل لو حبيت
+    // هنا سنخزن IDs فقط
+
+    // بيانات الكارد اللي هنخزنها في اللوكل استورج
+    const card = {
+      id: menuItem.id,
+      name: menuItem.name,
+      description: menuItem.description,
+      imagePath: menuItem.imagePath,
+      price: selectedSize ? selectedSize.price : menuItem.price,
+      sizeId: selectedSizeId,
+      sizeGrams: selectedSize ? selectedSize.grams : null,
+      quantity,
+      extras: selectedExtras, // array of selected extra IDs
+    };
+
+    localStorage.setItem("card", JSON.stringify(card));
+    console.log("Card stored in localStorage:", card);
+  };
+
+  if (loading) return <div>Loading...</div>;
+  if (!menuItem) return <div>Menu item not found.</div>;
+
   return (
-    <div>
-      <div className="menuuu">
-        <S1 />
-        <S2 />
-        <S3 />
-        <S4 />
-      </div>
+    <div className="MenuItem">
+      <S1 menuItem={menuItem} />
+      <S2
+        menuItem={menuItem}
+        quantity={quantity}
+        setQuantity={setQuantity}
+        selectedSizeId={selectedSizeId}
+        setSelectedSizeId={setSelectedSizeId}
+        onAddToCart={addToCart}
+      />
+      <S3 
+        menuItemId={id} 
+        selectedExtras={selectedExtras} 
+        setSelectedExtras={setSelectedExtras} 
+      />
+      <S4 menuItemId={id} />
     </div>
   );
-};
+}
 
 export default MenuItem;

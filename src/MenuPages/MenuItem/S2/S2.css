@@ -102,6 +102,17 @@
   color: var(--dark);
 }
 
+.quantity-selector button{
+background: #FF9500;
+width: 48px;
+height: 48px;
+ 
+border-radius: 16px;
+
+color: #fef3e7;
+font-size: 30px;
+border: none;
+}
 .select99 {
   background: var(--bg-card);
   border: 1px solid var(--orange);
@@ -121,15 +132,17 @@
 }
 
 .quantity-selector {
-  display: flex;
-  align-items: center;
-  background: var(--bg-card);
-  border: 1px solid var(--orange);
-  border-radius: 16px;
-  width: 200px;
-  height: 56px;
-  justify-content: space-between;
-  margin-bottom: 24px;
+    display: flex
+;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--orange);
+    border-radius: 16px;
+    width: 204px;
+    height: 56px;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding: 4px;
 }
 
 .quantity-button {

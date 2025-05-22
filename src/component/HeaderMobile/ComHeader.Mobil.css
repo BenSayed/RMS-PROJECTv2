@@ -78,6 +78,12 @@
   display: flex;
   gap: 20px;
 }
+.ComHeaderCardPro img{
+      width: 67px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
 
 .ComHeaderCardPro h2 {
   font-family: "Inter", serif;
