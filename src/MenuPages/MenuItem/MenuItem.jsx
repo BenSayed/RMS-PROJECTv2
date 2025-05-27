@@ -60,6 +60,7 @@ function S1({ menuItem }) {
 }
 
 // ------------------- S2 -------------------
+// ------------------- S2 -------------------
 function S2({ 
   menuItem, 
   quantity, 
@@ -70,12 +71,19 @@ function S2({
 }) {
   useEffect(() => {
     if (menuItem && Array.isArray(menuItem.sizes) && menuItem.sizes.length > 0) {
-      setSelectedSizeId(menuItem.sizes[0].id);
+      const savedSizeId = localStorage.getItem("selectedSizeId");
+      if (savedSizeId && menuItem.sizes.some(s => s.id === savedSizeId)) {
+        setSelectedSizeId(savedSizeId);
+      } else {
+        setSelectedSizeId(menuItem.sizes[0].id);
+      }
     }
   }, [menuItem, setSelectedSizeId]);
 
   const handleSizeChange = (e) => {
-    setSelectedSizeId(e.target.value);
+    const sizeId = e.target.value;
+    setSelectedSizeId(sizeId);
+    localStorage.setItem("selectedSizeId", sizeId); // ✅ تخزين sizeId في localStorage
   };
 
   if (!menuItem) return <div>Loading...</div>;

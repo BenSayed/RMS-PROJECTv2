@@ -65,6 +65,7 @@ function RequireRole({ role, children }) {
 
 function App() {
   const [user, setUser] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const location = useLocation();
 
   useEffect(() => {
@@ -74,6 +75,13 @@ function App() {
       setUser(parsedUser);
       axios.defaults.headers.common["Authorization"] = `Bearer ${parsedUser.token}`;
     }
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const deliveryPaths = [
@@ -85,10 +93,11 @@ function App() {
   ];
 
   const isDeliveryPage = deliveryPaths.includes(location.pathname);
+  const isChefPage = location.pathname === "/CheefuiPage";
 
   return (
     <div className="allapp">
-      {isDeliveryPage ? <HeaderMobilee /> : <Header />}
+      {!isChefPage && (isDeliveryPage ? <HeaderMobilee /> : <Header />)}
 
       <Routes>
         {/* صفحة الهوم متاحة فقط للكاستومر */}
@@ -118,8 +127,6 @@ function App() {
         <Route path="/ForgetPassword" element={<ForgetPassword />} />
         <Route path="/EmailConfirmation" element={<EmailConfirmation />} />
         <Route path="/PasswordRecovery" element={<PasswordRecovery />} />
-
-        {/* هنا عدلت الـ route ليصبح يستقبل باراميتر id */}
         <Route path="/MenuItem/:id" element={<MenuItem />} />
 
         {/* صفحات الشيف */}
@@ -189,8 +196,10 @@ function App() {
         <Route path="/page500" element={<PageErorr500 />} />
       </Routes>
 
-      {!isDeliveryPage && <Cart />}
-      <Footer />
+      {/* ✅ عرض الكارد فقط إذا لم يكن موبايل ولا شيف ولا دليفري */}
+      {!isDeliveryPage && !isChefPage && !isMobile && <Cart />}
+
+      {!isChefPage && <Footer />}
     </div>
   );
 }

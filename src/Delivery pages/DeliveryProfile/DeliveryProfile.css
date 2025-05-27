@@ -6,8 +6,7 @@
   padding: 16px;
    margin-top: 87px;
   width: 361px;
-  height: 1323px;
-  top: 243px;
+   top: 243px;
   left: 16px;
   padding-bottom: 24px;
   gap: 24px;
@@ -27,10 +26,11 @@
 }
 
 .profile-img {
-  border-radius: 10%;
-  width: 72px;
-  height: 72px;
-  border-radius: 16px;
+    border-radius: 10%;
+    width: 72px;
+    height: 72px;
+    border-radius: 41px;
+    object-fit: cover;
 }
 
 .profile-info {
@@ -333,7 +333,7 @@ letter-spacing: 0%;
   border-radius: 16px;
   gap: 8px;
   padding: 16px;
-  
+  border: none;
   background-color: #ff9500;
   color: black;
   font-family: "Inter", serif;
@@ -364,7 +364,7 @@ margin-left: -30px;
   border-radius: 16px;
   gap: 8px;
   padding: 16px;
-  
+  border: none;
  
   font-family: "Inter", serif;
   font-weight: 500;

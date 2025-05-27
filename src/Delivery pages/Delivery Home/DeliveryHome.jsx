@@ -38,6 +38,9 @@ const DeliveryHome = () => {
   const [fullName, setFullName] = useState("Loading...");
   const [profileImage, setProfileImage] = useState(null);
   const [deliveryDetails, setDeliveryDetails] = useState(null);
+  const [readyOrders, setReadyOrders] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
@@ -69,53 +72,34 @@ const DeliveryHome = () => {
         .catch((err) => {
           console.error("Failed to fetch delivery details:", err);
         });
+
+      fetch(`${baseUrl}/api/Order/GetReadyDeliveryOrders`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setReadyOrders(data);
+        })
+        .catch((err) => {
+          console.error("Failed to fetch ready orders:", err);
+        });
     }
   }, []);
 
-  // If you want to use deliveryDetails to show actual cards, you can replace below dummy data with that
-
-  const cardData = [
-    {
-      name: "Mohamed Ali",
-      location: "Assiut, City, street 24",
-      status: "Ready to deliver",
-      imgSrc: "src/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
-    },
-    {
-      name: "Mohamed Ali",
-      location: "Assiut, City, street 24",
-      status: "Ready to deliver",
-      imgSrc: "src/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
-    },
-    {
-      name: "Mohamed Ali",
-      location: "Assiut, City, street 24",
-      status: "Ready to deliver",
-      imgSrc: "src/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
-    },
-  ];
-
-  const takaweyData = [
-    {
-      name: "Mohamed Ali",
-      location: "Assiut, City, street 24",
-      status: "On the way",
-      imgSrc: "src/Delivery pages/Delivery Home/Rectangle 1191 (2).svg",
-    },
-  ];
-
-  const doneData = [
-    {
-      name: "Ali Ali",
-      location: "Assiut, City, street 24",
-      status: "Done",
-      imgSrc: "src/Delivery pages/Delivery Home/Rectangle 1191 (1).svg",
-    },
-  ];
+  const handleProfileClick = () => {
+    navigate("/DeliveryProfile");
+  };
 
   return (
     <div className="DeliveryHome">
-      <div className="DeliveryHomeHeader">
+      <div
+        className="DeliveryHomeHeader"
+        onClick={handleProfileClick}
+        style={{ cursor: "pointer" }}
+      >
         <img
           src={profileImage || "src/Delivery pages/Delivery Home/Rectangle 1191.png"}
           alt="Profile"
@@ -124,8 +108,14 @@ const DeliveryHome = () => {
       </div>
 
       <div className="DeliveryHomeCards">
-        {cardData.map((card, index) => (
-          <DeliveryCard key={index} {...card} />
+        {readyOrders.map((order, index) => (
+          <DeliveryCard
+            key={index}
+            name={order.customerName || "Unknown"}
+            location={order.address || "Unknown address"}
+            status="Ready to deliver"
+            imgSrc={order.imagePath || "src/Delivery pages/Delivery Home/Rectangle 1191 (1).svg"}
+          />
         ))}
       </div>
 
@@ -134,18 +124,7 @@ const DeliveryHome = () => {
           <h2>On The way</h2>
         </div>
         <div className="DeliveryHomeCards2">
-          {takaweyData.map((card, index) => (
-            <div className="DeliveryHomeCardTakaweyCard" key={index}>
-              <img src={card.imgSrc} alt={card.name} />
-              <div className="DeliveryHomeCardTakaweyCardContenttext">
-                <h2>{card.name}</h2>
-                <p>
-                  {card.location} <br />
-                  State: <span>{card.status}</span>
-                </p>
-              </div>
-            </div>
-          ))}
+          {/* You can dynamically load these from API as well later */}
         </div>
       </div>
 
@@ -154,18 +133,7 @@ const DeliveryHome = () => {
           <h2>Done</h2>
         </div>
         <div className="DeliveryHomeCards3">
-          {doneData.map((card, index) => (
-            <div className="DeliveryHomeCardDoneCard" key={index}>
-              <img src={card.imgSrc} alt={card.name} />
-              <div className="DeliveryHomeCardDoneCardContenttext">
-                <h2>{card.name}</h2>
-                <p>
-                  {card.location} <br />
-                  State: <span>{card.status}</span>
-                </p>
-              </div>
-            </div>
-          ))}
+          {/* You can dynamically load these from API as well later */}
         </div>
       </div>
     </div>

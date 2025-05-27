@@ -72,7 +72,7 @@ const ComHeaderMobile = ({ onClose }) => {
               <li>
                 <Link
                   className={`linkmodel ${activeLink === "Chat" ? "active" : ""}`}
-                  to="/reservation"
+                  to=""
                   onClick={() => handleLinkClick("Chat")}
                 >
                   Chat

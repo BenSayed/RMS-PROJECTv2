@@ -112,14 +112,18 @@ cursor: pointer;
   
   cursor: pointer;
 }
-.DeliveryHistoryCards{
-  display: flex;
-  flex-direction: column;
-width: 361px;
-margin-top: 15px;
-gap: 16px
+.DeliveryHistoryCards {
+    display: flex
 ;
- 
+    flex-direction: column;
+    width: 361px;
+    margin-top: 15px;
+    gap: 16px;
+    overflow-y: auto;
+    height: 657px;
+}
+.DeliveryHistoryCards::-webkit-scrollbar {
+  display: none;
 }
 .DeliveryHistoryCardOntheway{
   width: 361px;
@@ -278,3 +282,254 @@ gap:24px;
 .DeliveryHistoryCardOnthewayContentText{
   margin-top: -25px;
 }
+.DeliveryHistoryCardPendingContent{
+      width: 360px;
+    height: 123px;
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 24px;
+    display: flex
+;
+    align-items: center;
+    gap: 24px;
+}
+.DeliveryHistoryCardPendingContentText h2{
+ font-weight: 700;
+font-size: 24px;
+line-height: 100%;
+letter-spacing: 0%;
+font-family: "Inter", serif;
+color:  #FF9500;
+    margin-bottom: -7px;
+
+}
+.DeliveryHistoryCardPendingContentText p{
+ font-weight: 500;
+font-size: 16px;
+line-height: 100%;
+letter-spacing: 0%;
+font-family: "Inter", serif;
+color:    #151716;
+  line-height: 1.6;
+ 
+}
+.DeliveryHistoryCardPendingContentText span{
+  color: #FFB854;
+}
+ 
+.DeliveryHistoryCardPaidContent h2{
+ font-weight: 700;
+font-size: 24px;
+line-height: 100%;
+letter-spacing: 0%;
+font-family: "Inter", serif;
+color:  #FF9500;
+    margin-bottom: -7px;
+
+}
+.DeliveryHistoryCardPaidContent p{
+ font-weight: 500;
+font-size: 16px;
+line-height: 100%;
+letter-spacing: 0%;
+font-family: "Inter", serif;
+color:    #151716;
+  line-height: 1.6;
+ 
+}
+.DeliveryHistoryCardPaidContent span{
+  color: #34C759;
+}
+.DeliveryHistoryCardPaidContent{
+      width: 360px;
+    height: 123px;
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 24px;
+    display: flex
+;
+    align-items: center;
+    gap: 24px;
+}
+
+
+
+.DeliveryHistoryCardCancelledContent{
+      width: 360px;
+    height: 123px;
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 24px;
+    display: flex
+;
+    align-items: center;
+    gap: 24px;
+}
+
+
+
+
+.DeliveryHistoryCardCancelledContent h2{
+ font-weight: 700;
+font-size: 24px;
+line-height: 100%;
+letter-spacing: 0%;
+font-family: "Inter", serif;
+color:  #FF9500;
+    margin-bottom: -7px;
+
+}
+.DeliveryHistoryCardCancelledContent p{
+ font-weight: 500;
+font-size: 16px;
+line-height: 100%;
+letter-spacing: 0%;
+font-family: "Inter", serif;
+color:    #151716;
+  line-height: 1.6;
+ 
+}
+.DeliveryHistoryCardCancelledContent span{
+  color: #a10000;
+}
+
+
+
+
+
+
+.DeliveryHistoryCardReadyContent{
+      width: 360px;
+    height: 123px;
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 24px;
+    display: flex
+;
+    align-items: center;
+    gap: 24px;
+}
+
+
+
+
+.DeliveryHistoryCardReadyContent h2{
+ font-weight: 700;
+font-size: 24px;
+line-height: 100%;
+letter-spacing: 0%;
+font-family: "Inter", serif;
+color:  #FF9500;
+    margin-bottom: -7px;
+
+}
+.DeliveryHistoryCardReadyContent p{
+ font-weight: 500;
+font-size: 16px;
+line-height: 100%;
+letter-spacing: 0%;
+font-family: "Inter", serif;
+color:    #151716;
+  line-height: 1.6;
+ 
+}
+.DeliveryHistoryCardReadyContent span{
+  color: #34C759;
+}
+
+
+
+
+
+
+.DeliveryHistoryCardCompletedContent{
+      width: 360px;
+    height: 123px;
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 24px;
+    display: flex
+;
+    align-items: center;
+    gap: 24px;
+}
+
+
+
+
+.DeliveryHistoryCardCompletedContent h2{
+ font-weight: 700;
+font-size: 24px;
+line-height: 100%;
+letter-spacing: 0%;
+font-family: "Inter", serif;
+color:  #FF9500;
+    margin-bottom: -7px;
+
+}
+.DeliveryHistoryCardCompletedContent p{
+ font-weight: 500;
+font-size: 16px;
+line-height: 100%;
+letter-spacing: 0%;
+font-family: "Inter", serif;
+color:    #151716;
+  line-height: 1.6;
+ 
+}
+.DeliveryHistoryCardCompletedContent span{
+  color: #00dfcc;
+}
+
+
+
+
+
+.DeliveryHistoryCardInProgressContent{
+      width: 360px;
+    height: 123px;
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 24px;
+    display: flex
+;
+    align-items: center;
+    gap: 24px;
+}
+
+
+
+
+.DeliveryHistoryCardInProgressContent h2{
+ font-weight: 700;
+font-size: 24px;
+line-height: 100%;
+letter-spacing: 0%;
+font-family: "Inter", serif;
+color:  #FF9500;
+    margin-bottom: -7px;
+
+}
+.DeliveryHistoryCardInProgressContent p{
+ font-weight: 500;
+font-size: 16px;
+line-height: 100%;
+letter-spacing: 0%;
+font-family: "Inter", serif;
+color:    #151716;
+  line-height: 1.6;
+ 
+}
+.DeliveryHistoryCardInProgressContent span{
+  color: #a10000;
+}
+
+
+
+
+
+
+
+
+
+

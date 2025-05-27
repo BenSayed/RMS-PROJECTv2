@@ -30,37 +30,28 @@ const CheefuiPage = () => {
   const [selectedInProgressOrderId, setSelectedInProgressOrderId] = useState(null);
   const [selectedReadyOrderId, setSelectedReadyOrderId] = useState(null);
 
-  const handleCardClick = (id) => {
-    setSelectedOrderId(id);
-  };
+  const token = localStorage.getItem("token");
+  const baseUrl = localStorage.getItem("baseUrl");
 
-  const closeOrderPage = () => {
-    setSelectedOrderId(null);
-  };
+  const handleCardClick = (id) => setSelectedOrderId(id);
+  const closeOrderPage = () => setSelectedOrderId(null);
 
-  const handleInProgressCardClick = (id) => {
-    setSelectedInProgressOrderId(id);
-  };
+  const handleInProgressCardClick = (id) => setSelectedInProgressOrderId(id);
+  const closeInProgressAlert = () => setSelectedInProgressOrderId(null);
 
-  const closeInProgressAlert = () => {
-    setSelectedInProgressOrderId(null);
-  };
+  const handleReadyCardClick = (id) => setSelectedReadyOrderId(id);
+  const closeReadyAlert = () => setSelectedReadyOrderId(null);
 
-  const handleReadyCardClick = (id) => {
-    setSelectedReadyOrderId(id);
-  };
-
-  const closeReadyAlert = () => {
-    setSelectedReadyOrderId(null);
-  };
-
-  const handleButtonClick = () => {
-    setShowSelect(!showSelect);
-  };
+  const handleButtonClick = () => setShowSelect(!showSelect);
 
   const fetchOrders = async () => {
     try {
-      const response = await axios.get("http://flavorhaven.runasp.net/api/Order/GetGroupedActiveOrders");
+      const response = await axios.get(`${baseUrl}/api/Order/GetGroupedActiveOrders`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
       const { Paid = [], InProgress = [], Ready = [] } = response.data;
 
       const mapOrderToCard = (order, iconSrc) => ({
@@ -83,11 +74,14 @@ const CheefuiPage = () => {
     fetchOrders();
 
     const connection = new signalR.HubConnectionBuilder()
-      .withUrl("http://flavorhaven.runasp.net/orderHub")
+      .withUrl(`${baseUrl}/orderHub`, {
+        accessTokenFactory: () => token,
+      })
       .withAutomaticReconnect()
       .build();
 
-    connection.start()
+    connection
+      .start()
       .then(() => {
         console.log("✅ SignalR connected.");
       })
@@ -133,20 +127,12 @@ const CheefuiPage = () => {
             </button>
             {showSelect && (
               <>
-                <select
-                  className="chifSelectpage"
-                  value={selectedOption}
-                  onChange={(e) => setSelectedOption(e.target.value)}
-                >
+                <select className="chifSelectpage" value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)}>
                   <option value="" disabled>Order Type</option>
                   <option value="option1">In Restaurant</option>
                   <option value="option2">Delivery</option>
                 </select>
-                <select
-                  className="chifSelectpage"
-                  value={selectedOption}
-                  onChange={(e) => setSelectedOption(e.target.value)}
-                >
+                <select className="chifSelectpage" value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)}>
                   <option value="" disabled>Dish Type</option>
                   <option value="option1">Dessert</option>
                   <option value="option2">Appetizers</option>
@@ -164,23 +150,11 @@ const CheefuiPage = () => {
               <div className="chifNewOrdersText"><h2>New Orders</h2></div>
               <div className="chifNewOrderscardsContainer">
                 {newOrdersData.map((card) => (
-                  <div
-                    key={card.id}
-                    className="cardallchifuipageprosser"
-                    onClick={() => handleCardClick(card.id)}
-                    style={{ cursor: "pointer" }}
-                  >
+                  <div key={card.id} className="cardallchifuipageprosser" onClick={() => handleCardClick(card.id)} style={{ cursor: "pointer" }}>
                     <div className="cardchifuipageprosser">
-                      <div className="cardchifuipageprosserImg">
-                        <img src={card.image} alt={card.title} />
-                      </div>
-                      <div className="cardchifuipageprosserTextt">
-                        <h3>{card.title}</h3>
-                        <p>{card.items} items</p>
-                      </div>
-                      <div className="cardchifuipageprosserIcon">
-                        <img src={card.icon} alt="Icon" />
-                      </div>
+                      <div className="cardchifuipageprosserImg"><img src={card.image} alt={card.title} /></div>
+                      <div className="cardchifuipageprosserTextt"><h3>{card.title}</h3><p>{card.items} items</p></div>
+                      <div className="cardchifuipageprosserIcon"><img src={card.icon} alt="Icon" /></div>
                     </div>
                   </div>
                 ))}
@@ -196,22 +170,10 @@ const CheefuiPage = () => {
               <div className="chifInProgressText"><h2>In Progress</h2></div>
               <div className="chifNewOrderscardsContainer">
                 {inProgressData.map((card) => (
-                  <div
-                    key={card.id}
-                    className="cardchifuipageprosser"
-                    onClick={() => handleInProgressCardClick(card.id)}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <div className="cardchifuipageprosserImg">
-                      <img src={card.image} alt={card.title} />
-                    </div>
-                    <div className="cardchifuipageprosserTextt">
-                      <h3>{card.title}</h3>
-                      <p>{card.items} items</p>
-                    </div>
-                    <div className="cardchifuipageprosserIcon">
-                      <img src={card.icon} alt="Icon" />
-                    </div>
+                  <div key={card.id} className="cardchifuipageprosser" onClick={() => handleInProgressCardClick(card.id)} style={{ cursor: "pointer" }}>
+                    <div className="cardchifuipageprosserImg"><img src={card.image} alt={card.title} /></div>
+                    <div className="cardchifuipageprosserTextt"><h3>{card.title}</h3><p>{card.items} items</p></div>
+                    <div className="cardchifuipageprosserIcon"><img src={card.icon} alt="Icon" /></div>
                   </div>
                 ))}
               </div>
@@ -226,22 +188,10 @@ const CheefuiPage = () => {
               <div className="chifReadytoServeText"><h2>Ready to Serve</h2></div>
               <div className="chifNewOrderscardsContainer">
                 {readyToServeData.map((card) => (
-                  <div
-                    key={card.id}
-                    className="cardchifuipageprosser"
-                    onClick={() => handleReadyCardClick(card.id)}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <div className="cardchifuipageprosserImg">
-                      <img src={card.image} alt={card.title} />
-                    </div>
-                    <div className="cardchifuipageprosserTextt">
-                      <h3>{card.title}</h3>
-                      <p>{card.items} items</p>
-                    </div>
-                    <div className="cardchifuipageprosserIcon">
-                      <img src={card.icon} alt="Icon" />
-                    </div>
+                  <div key={card.id} className="cardchifuipageprosser" onClick={() => handleReadyCardClick(card.id)} style={{ cursor: "pointer" }}>
+                    <div className="cardchifuipageprosserImg"><img src={card.image} alt={card.title} /></div>
+                    <div className="cardchifuipageprosserTextt"><h3>{card.title}</h3><p>{card.items} items</p></div>
+                    <div className="cardchifuipageprosserIcon"><img src={card.icon} alt="Icon" /></div>
                   </div>
                 ))}
               </div>
@@ -250,23 +200,9 @@ const CheefuiPage = () => {
         </div>
 
         {/* Modal Alerts */}
-        {selectedOrderId && (
-          <div className="orderPageOverlay">
-            <OrderPage orderId={selectedOrderId} onClose={closeOrderPage} />
-          </div>
-        )}
-
-        {selectedInProgressOrderId && (
-          <div className="orderPageOverlay">
-            <OrderPageProssesing orderId={selectedInProgressOrderId} onClose={closeInProgressAlert} />
-          </div>
-        )}
-
-        {selectedReadyOrderId && (
-          <div className="orderPageOverlay">
-            <AlertChiefReady orderId={selectedReadyOrderId} onClose={closeReadyAlert} />
-          </div>
-        )}
+        {selectedOrderId && <div className="orderPageOverlay"><OrderPage orderId={selectedOrderId} onClose={closeOrderPage} /></div>}
+        {selectedInProgressOrderId && <div className="orderPageOverlay"><OrderPageProssesing orderId={selectedInProgressOrderId} onClose={closeInProgressAlert} /></div>}
+        {selectedReadyOrderId && <div className="orderPageOverlay"><AlertChiefReady orderId={selectedReadyOrderId} onClose={closeReadyAlert} /></div>}
       </div>
     </div>
   );

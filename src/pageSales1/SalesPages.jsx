@@ -6,63 +6,100 @@ import imgesales1 from "./Rectangle 1153 (1).svg";
 import imgesales2 from "./Rectangle 1153.svg";
 import imgesales3 from "./Rectangle 1153Mobil.svg";
 
-// Sub-component to display items in the cart
-const CartItem = ({ image, name, description, price, quantity, onIncrease, onDecrease }) => {
-  return (
-    <div className="CartSection2">
-      <div className="car-img-text" style={{ display: "flex" }}>
-        <img src={image} alt="product" />
-        <div className="cart-text">
-          <h2>{name}</h2>
-          <p>{description}</p>
-        </div>
-      </div>
-      <div className="cost-qty-div">
-        <h3>{price}$</h3>
-        <div className="button-actoion">
-          <button className="button-actoion-" onClick={onDecrease}>-</button>
-          <h2>{quantity}</h2>
-          <button className="button-actoion+" onClick={onIncrease}>+</button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// Component to display products in the ComboOptions list
-const ComboOptionsCard = ({ image, name, description, price, rating }) => {
-  return (
-    <div className="ComboOptionsCardSalesCard">
-      <div className="ComboOptionsCardSalesCardimg">
-        <img src={image} alt="product" />
-      </div>
-      <div className="ComboOptionsCardSalesCardcontent">
+const CartItem = ({
+  image,
+  name,
+  description,
+  price,
+  quantity,
+  onIncrease,
+  onDecrease,
+}) => (
+  <div className="CartSection2">
+    <div className="car-img-text" style={{ display: "flex" }}>
+      <img src={image} alt="product" />
+      <div className="cart-text">
         <h2>{name}</h2>
         <p>{description}</p>
-        <div className="ComboOptionsCardSalesCardcontentstars">
-          <h3>{'★'.repeat(rating)}{'☆'.repeat(5 - rating)}</h3>
-          <h4>{price}$</h4>
-        </div>
       </div>
     </div>
-  );
-};
+    <div className="cost-qty-div">
+      <h3>{price}$</h3>
+      <div className="button-actoion">
+        <button className="button-actoion-" onClick={onDecrease}>
+          -
+        </button>
+        <h2>{quantity}</h2>
+        <button className="button-actoion+" onClick={onIncrease}>
+          +
+        </button>
+      </div>
+    </div>
+  </div>
+);
+
+const ComboOptionsCard = ({ image, name, description, price, rating }) => (
+  <div className="ComboOptionsCardSalesCard">
+    <div className="ComboOptionsCardSalesCardimg">
+      <img src={image} alt="product" />
+    </div>
+    <div className="ComboOptionsCardSalesCardcontent">
+      <h2>{name}</h2>
+      <p>{description}</p>
+      <div className="ComboOptionsCardSalesCardcontentstars">
+        <h3>
+          {"★".repeat(rating)}
+          {"☆".repeat(5 - rating)}
+        </h3>
+        <h4>{price}$</h4>
+      </div>
+    </div>
+  </div>
+);
 
 const SalesPages = () => {
   const [cartItems, setCartItems] = useState([]);
   const [specialRequests, setSpecialRequests] = useState("");
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const navigate = useNavigate(); // <-- add this
+  const navigate = useNavigate();
 
-  const [comboOptions, setComboOptions] = useState([
-    { id: 1, name: "Wagyu Steak", description: "250g of lean steak with sous and smashed potato or rice", price: 99, rating: 5, image: imgesales1 },
-    { id: 2, name: "Wagyu Steak", description: "250g of lean steak with sous and smashed potato or rice", price: 99, rating: 4, image: imgesales1 },
-    { id: 3, name: "Wagyu Steak", description: "250g of lean steak with sous and smashed potato or rice", price: 99, rating: 3, image: imgesales1 },
-    { id: 4, name: "Wagyu Steak", description: "250g of lean steak with sous and smashed potato or rice", price: 99, rating: 4, image: imgesales1 },
+  const [comboOptions] = useState([
+    {
+      id: 1,
+      name: "Wagyu Steak",
+      description: "250g of lean steak with sous and smashed potato or rice",
+      price: 99,
+      rating: 5,
+      image: imgesales1,
+    },
+    {
+      id: 2,
+      name: "Wagyu Steak",
+      description: "250g of lean steak with sous and smashed potato or rice",
+      price: 99,
+      rating: 4,
+      image: imgesales1,
+    },
+    {
+      id: 3,
+      name: "Wagyu Steak",
+      description: "250g of lean steak with sous and smashed potato or rice",
+      price: 99,
+      rating: 3,
+      image: imgesales1,
+    },
+    {
+      id: 4,
+      name: "Wagyu Steak",
+      description: "250g of lean steak with sous and smashed potato or rice",
+      price: 99,
+      rating: 4,
+      image: imgesales1,
+    },
   ]);
 
   const increaseQuantity = (id) => {
-    const updatedCart = cartItems.map(item =>
+    const updatedCart = cartItems.map((item) =>
       item.id === id ? { ...item, quantity: item.quantity + 1 } : item
     );
     setCartItems(updatedCart);
@@ -70,8 +107,10 @@ const SalesPages = () => {
   };
 
   const decreaseQuantity = (id) => {
-    const updatedCart = cartItems.map(item =>
-      item.id === id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
+    const updatedCart = cartItems.map((item) =>
+      item.id === id && item.quantity > 1
+        ? { ...item, quantity: item.quantity - 1 }
+        : item
     );
     setCartItems(updatedCart);
     localStorage.setItem("card", JSON.stringify(updatedCart));
@@ -94,15 +133,18 @@ const SalesPages = () => {
       if (Array.isArray(parsedCart)) {
         setCartItems(parsedCart);
       } else if (parsedCart && typeof parsedCart === "object") {
-        setCartItems([{
-          id: parsedCart.id || 1,
-          name: parsedCart.name,
-          description: parsedCart.description,
-          price: parsedCart.price,
-          quantity: parsedCart.quantity || 1,
-          image: parsedCart.imagePath || imgesales2,
-          size: parsedCart.sizeGrams ? `${parsedCart.sizeGrams} gm` : undefined,
-        }]);
+        setCartItems([
+          {
+            id: parsedCart.id || 1,
+            name: parsedCart.name || "Unnamed",
+            description: parsedCart.description || "",
+            price: parsedCart.price || 0,
+            quantity: parsedCart.quantity || 1,
+            image: parsedCart.imagePath || imgesales2,
+            sizeId: parsedCart.sizeId || null,
+            sizeGrams: parsedCart.sizeGrams || null,
+          },
+        ]);
       } else {
         setCartItems([]);
       }
@@ -112,65 +154,75 @@ const SalesPages = () => {
     }
   }, []);
 
-  const getImageForCartItem = (image) => {
-    return windowWidth < 768 ? imgesales1 : image;
+  const getResponsiveImage = (image) => {
+    if (!image) return imgesales2;
+    return windowWidth < 768 ? imgesales3 : image;
   };
 
-  const orderCost = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const orderCost = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
   const taxes = +(orderCost * 0.1).toFixed(2);
   const deliveryFees = 20;
   const total = +(orderCost + taxes + deliveryFees).toFixed(2);
+const handleCheckout = async () => {
+  try {
+    if (cartItems.length === 0) {
+      alert("لا يمكن إتمام الطلب، العربة فارغة!");
+      return;
+    }
 
-  const handleCheckout = async () => {
     const token = localStorage.getItem("token");
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    const addresses = JSON.parse(localStorage.getItem("addresses")) || [];
 
-    const getSpicyLevelValue = (level) => {
-      switch (level) {
-        case 'Normal': return 0;
-        case 'Medium': return 1;
-        case 'Hot': return 2;
-        default: return 0;
-      }
-    };
-
-    const orderData = {
-      id: "",
-      orderDate: new Date().toISOString(),
-      status: "Pending",
-      type: "Delivery",
-      price: orderCost,
-      deliveryFee: 12,
-      latitude: "lat",
-      longitude: "lan",
-      address: "Egypt, Assiut",
+    const orderDetails = {
+      type: "DineIn",
       paymentSystem: "Online",
-      transactionId: "",
-      note: specialRequests,
+      transactionId: "123456",
+      deliveryFee: deliveryFees,
+      note: specialRequests || "",
+      latitude: "lat",
+      longitude: "long",
+      address:
+        addresses.length > 0
+          ? `${addresses[0].country}, ${addresses[0].city}`
+          : "Unknown",
       customerId: userInfo.id,
-      deliveryId: "7281c7f9-0b18-443d-eb5f-08dd861a359a",
-      waiterId: null,
-      cashierId: null,
-      tableId: null,
-      estimatedPreparationTime: "00:12:00",
-      orderItems: cartItems.map(item => ({
-        id: "",
+      orderItems: cartItems.map((item) => ({
         quantity: item.quantity,
         note: "",
-        spicyLevel: getSpicyLevelValue(item.spicyLevel || 'Normal'),
-        price: item.price,
+        spicyLevel: "Medium",
         menuItemId: item.id,
-        menuItemName: item.name,
-        menuItemSizeId: item.sizeId || "",
-        menuItemSizePrice: item.sizePrice || 0,
-        extras: null,
+        menuItemSizeId:
+          item.sizeId || item.sizeId === null ? item.sizeId : undefined,
       })),
     };
 
+    const response = await axios.post(
+      "/api/Order/CreateOrder",
+      orderDetails,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    alert("✅ تم إنشاء الطلب بنجاح!");
+
+    const orderId = response.data.id || response.data.orderId;
+    if (!orderId) {
+      alert("⚠️ لم يتم استلام معرف الطلب للمتابعة.");
+      return;
+    }
+
     try {
-      await axios.post(
-        "http://flavorhaven.runasp.net/api/Order/CreateOrder",
-        orderData,
+      await axios.put(
+        `/api/Order/UpdateStatus/${orderId}`,
+        { status: "Paid" },
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -178,48 +230,72 @@ const SalesPages = () => {
           },
         }
       );
-      alert("Order placed successfully!");
-      setCartItems([]);
-      localStorage.removeItem("card");
-      setSpecialRequests("");
-    } catch (error) {
-      console.error("Error creating order:", error.response || error.message);
-      alert("Failed to create order. Please try again.");
-      if (error.response?.data?.errors) {
-        const validationErrors = error.response.data.errors;
-        let errorMessage = "Please review the following data:\n";
-        for (const key in validationErrors) {
-          errorMessage += `- ${validationErrors[key].join(', ')}\n`;
-        }
-        alert(errorMessage);
+      alert("✅ تم تحديث حالة الطلب إلى 'مدفوع'.");
+    } catch (updateError) {
+      console.error("خطأ تحديث الحالة:", updateError);
+
+      if (updateError.response) {
+        alert(
+          `فشل تحديث الحالة. رمز الخطأ: ${updateError.response.status}\n` +
+            `الرسالة: ${JSON.stringify(updateError.response.data)}`
+        );
+      } else if (updateError.request) {
+        alert(
+          "لم نتلق رد من السيرفر أثناء تحديث حالة الطلب. " +
+            "تأكد من الاتصال أو إعدادات السيرفر."
+        );
+      } else {
+        alert("حدث خطأ أثناء تحديث حالة الطلب: " + updateError.message);
       }
     }
-  };
+  } catch (error) {
+    console.error("خطأ إنشاء الطلب:", error);
+
+    if (error.response) {
+      alert(
+        `فشل إنشاء الطلب. رمز الخطأ: ${error.response.status}\n` +
+          `الرسالة: ${JSON.stringify(error.response.data)}`
+      );
+    } else if (error.request) {
+      alert(
+        "لم نتلق رد من السيرفر أثناء إنشاء الطلب. " +
+          "تأكد من الاتصال أو إعدادات السيرفر."
+      );
+    } else {
+      alert("حدث خطأ أثناء إنشاء الطلب: " + error.message);
+    }
+  }
+};
+
 
   return (
     <div className="SalesPages">
       <div className="slaespageshero" style={{ display: "flex" }}>
         <div className="SalesCard">
           <div className="CartSection">
-            <h2> Cart </h2>
+            <h2>Cart</h2>
             <div className="last-textt">
               <span>Cost</span>
               <span>Qty</span>
             </div>
           </div>
           <div className="allcardsection1">
-            {cartItems.map(item => (
-              <CartItem
-                key={item.id}
-                image={getImageForCartItem(item.image)}
-                name={item.name}
-                description={item.description}
-                price={item.price}
-                quantity={item.quantity}
-                onIncrease={() => increaseQuantity(item.id)}
-                onDecrease={() => decreaseQuantity(item.id)}
-              />
-            ))}
+            {cartItems.length === 0 ? (
+              <p>Your cart is empty</p>
+            ) : (
+              cartItems.map((item) => (
+                <CartItem
+                  key={item.id}
+                  image={getResponsiveImage(item.image)}
+                  name={item.name}
+                  description={item.description}
+                  price={item.price}
+                  quantity={item.quantity}
+                  onIncrease={() => increaseQuantity(item.id)}
+                  onDecrease={() => decreaseQuantity(item.id)}
+                />
+              ))
+            )}
           </div>
         </div>
 
@@ -228,20 +304,20 @@ const SalesPages = () => {
           <textarea
             placeholder="Write here..."
             value={specialRequests}
-            onChange={e => setSpecialRequests(e.target.value)}
+            onChange={(e) => setSpecialRequests(e.target.value)}
           />
         </div>
       </div>
 
       <div className="salesComboOptions">
         <div className="ComboOptions">
-          <h1> Combo Options </h1>
+          <h1>Combo Options</h1>
           <div className="ComboOptionsCardSales">
             <div className="ComboOptionsCardSalesCards">
-              {comboOptions.map(option => (
+              {comboOptions.map((option) => (
                 <ComboOptionsCard
                   key={option.id}
-                  image={getImageForCartItem(option.image)}
+                  image={getResponsiveImage(option.image)}
                   name={option.name}
                   description={option.description}
                   price={option.price}
@@ -255,13 +331,33 @@ const SalesPages = () => {
         <div className="OrderSummary">
           <h2 className="card-title">Order Summary</h2>
           <div className="details">
-            <div className="row"><span>Order</span><span>{orderCost.toFixed(2)}$</span></div>
-            <div className="row"><span>Taxes (10%)</span><span>{taxes}$</span></div>
-            <div className="row"><span>Delivery fees</span><span>{deliveryFees}$</span></div>
-            <div className="total"><span>Total</span><span>{total}$</span></div>
+            <div className="row">
+              <span>Order</span>
+              <span>{orderCost.toFixed(2)}$</span>
+            </div>
+            <div className="row">
+              <span>Taxes (10%)</span>
+              <span>{taxes}$</span>
+            </div>
+            <div className="row">
+              <span>Delivery fees</span>
+              <span>{deliveryFees}$</span>
+            </div>
+            <div className="total">
+              <span>Total</span>
+              <span>{total}$</span>
+            </div>
           </div>
-          <button className="add-items" onClick={() => navigate("/MenuItems")}>+ Add More Items</button>
-          <button className="checkout" onClick={handleCheckout}>Checkout</button>
+          <button className="add-items" onClick={() => navigate("/MenuItems")}>
+            + Add More Items
+          </button>
+          <button
+            className="checkout"
+            onClick={handleCheckout}
+            disabled={cartItems.length === 0}
+          >
+            Checkout
+          </button>
         </div>
       </div>
     </div>

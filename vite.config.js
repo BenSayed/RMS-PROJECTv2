@@ -1,5 +1,6 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+// vite.config.js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
@@ -9,8 +10,13 @@ export default defineConfig({
       '/api': {
         target: 'http://flavorhaven.runasp.net',
         changeOrigin: true,
-        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+      '/orderHub': {
+        target: 'http://flavorhaven.runasp.net',
+        ws: true,
+        changeOrigin: true,
       },
     },
   },
-});
+})
