@@ -6,15 +6,7 @@ import imgesales1 from "./Rectangle 1153 (1).svg";
 import imgesales2 from "./Rectangle 1153.svg";
 import imgesales3 from "./Rectangle 1153Mobil.svg";
 
-const CartItem = ({
-  image,
-  name,
-  description,
-  price,
-  quantity,
-  onIncrease,
-  onDecrease,
-}) => (
+const CartItem = ({ image, name, description, price, quantity, onIncrease, onDecrease }) => (
   <div className="CartSection2">
     <div className="car-img-text" style={{ display: "flex" }}>
       <img src={image} alt="product" />
@@ -26,13 +18,9 @@ const CartItem = ({
     <div className="cost-qty-div">
       <h3>{price}$</h3>
       <div className="button-actoion">
-        <button className="button-actoion-" onClick={onDecrease}>
-          -
-        </button>
+        <button className="button-actoion-" onClick={onDecrease}>-</button>
         <h2>{quantity}</h2>
-        <button className="button-actoion+" onClick={onIncrease}>
-          +
-        </button>
+        <button className="button-actoion+" onClick={onIncrease}>+</button>
       </div>
     </div>
   </div>
@@ -47,10 +35,7 @@ const ComboOptionsCard = ({ image, name, description, price, rating }) => (
       <h2>{name}</h2>
       <p>{description}</p>
       <div className="ComboOptionsCardSalesCardcontentstars">
-        <h3>
-          {"★".repeat(rating)}
-          {"☆".repeat(5 - rating)}
-        </h3>
+        <h3>{"★".repeat(rating)}{"☆".repeat(5 - rating)}</h3>
         <h4>{price}$</h4>
       </div>
     </div>
@@ -98,31 +83,26 @@ const SalesPages = () => {
     },
   ]);
 
-  const increaseQuantity = (id) => {
-    const updatedCart = cartItems.map((item) =>
-      item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-    );
+  const saveCartToStorage = (updatedCart) => {
     setCartItems(updatedCart);
     localStorage.setItem("card", JSON.stringify(updatedCart));
+  };
+
+  const increaseQuantity = (id) => {
+    const updatedCart = cartItems.map(item =>
+      item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+    );
+    saveCartToStorage(updatedCart);
   };
 
   const decreaseQuantity = (id) => {
-    const updatedCart = cartItems.map((item) =>
-      item.id === id && item.quantity > 1
-        ? { ...item, quantity: item.quantity - 1 }
-        : item
+    const updatedCart = cartItems.map(item =>
+      item.id === id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
     );
-    setCartItems(updatedCart);
-    localStorage.setItem("card", JSON.stringify(updatedCart));
+    saveCartToStorage(updatedCart);
   };
 
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
+  const loadCartFromStorage = () => {
     try {
       const cartData = localStorage.getItem("card");
       if (!cartData) {
@@ -131,7 +111,11 @@ const SalesPages = () => {
       }
       const parsedCart = JSON.parse(cartData);
       if (Array.isArray(parsedCart)) {
-        setCartItems(parsedCart);
+        const updatedCart = parsedCart.map(item => ({
+          ...item,
+          image: item.imagePath || imgesales2,
+        }));
+        setCartItems(updatedCart);
       } else if (parsedCart && typeof parsedCart === "object") {
         setCartItems([
           {
@@ -152,6 +136,35 @@ const SalesPages = () => {
       console.error("Error parsing 'card' from localStorage:", error);
       setCartItems([]);
     }
+  };
+
+  useEffect(() => {
+    // Update on first render
+    loadCartFromStorage();
+
+    // Listen to storage changes from other tabs
+    const handleStorageChange = (event) => {
+      if (event.key === "card") {
+        loadCartFromStorage();
+      }
+    };
+    window.addEventListener("storage", handleStorageChange);
+
+    // Polling every second to detect local changes
+    const intervalId = setInterval(() => {
+      loadCartFromStorage();
+    }, 1000);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+      clearInterval(intervalId);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const getResponsiveImage = (image) => {
@@ -159,114 +172,85 @@ const SalesPages = () => {
     return windowWidth < 768 ? imgesales3 : image;
   };
 
-  const orderCost = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
+  const orderCost = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const taxes = +(orderCost * 0.1).toFixed(2);
   const deliveryFees = 20;
   const total = +(orderCost + taxes + deliveryFees).toFixed(2);
-const handleCheckout = async () => {
-  try {
+
+  const handleCheckout = async () => {
     if (cartItems.length === 0) {
       alert("لا يمكن إتمام الطلب، العربة فارغة!");
       return;
     }
 
-    const token = localStorage.getItem("token");
-    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-    const addresses = JSON.parse(localStorage.getItem("addresses")) || [];
+    try {
+      const token = localStorage.getItem("token");
+      const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+      const addresses = JSON.parse(localStorage.getItem("addresses")) || [];
 
-    const orderDetails = {
-      type: "DineIn",
-      paymentSystem: "Online",
-      transactionId: "123456",
-      deliveryFee: deliveryFees,
-      note: specialRequests || "",
-      latitude: "lat",
-      longitude: "long",
-      address:
-        addresses.length > 0
+      if (!token || !userInfo || !userInfo.id) {
+        alert("يجب تسجيل الدخول لإتمام الطلب");
+        navigate("/login");
+        return;
+      }
+
+      const orderDetails = {
+        type: "DineIn",
+        paymentSystem: "Online",
+        transactionId: "123456",
+        deliveryFee: deliveryFees,
+        note: specialRequests || "",
+        latitude: "lat",
+        longitude: "long",
+        address: addresses.length > 0
           ? `${addresses[0].country}, ${addresses[0].city}`
           : "Unknown",
-      customerId: userInfo.id,
-      orderItems: cartItems.map((item) => ({
-        quantity: item.quantity,
-        note: "",
-        spicyLevel: "Medium",
-        menuItemId: item.id,
-        menuItemSizeId:
-          item.sizeId || item.sizeId === null ? item.sizeId : undefined,
-      })),
-    };
+        customerId: userInfo.id,
+        orderItems: cartItems.map(item => ({
+          quantity: item.quantity,
+          note: "",
+          spicyLevel: "Medium",
+          menuItemId: item.id,
+          menuItemSizeId: item.sizeId || null,
+        })),
+      };
 
-    const response = await axios.post(
-      "/api/Order/CreateOrder",
-      orderDetails,
-      {
+      const response = await axios.post("/api/Order/CreateOrder", orderDetails, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
+      });
+
+      alert("✅ تم إنشاء الطلب بنجاح!");
+
+      const orderId = response.data.id || response.data.orderId;
+      if (!orderId) {
+        alert("⚠️ لم يتم استلام معرف الطلب للمتابعة.");
+        return;
       }
-    );
 
-    alert("✅ تم إنشاء الطلب بنجاح!");
-
-    const orderId = response.data.id || response.data.orderId;
-    if (!orderId) {
-      alert("⚠️ لم يتم استلام معرف الطلب للمتابعة.");
-      return;
-    }
-
-    try {
-      await axios.put(
-        `/api/Order/UpdateStatus/${orderId}`,
-        { status: "Paid" },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      alert("✅ تم تحديث حالة الطلب إلى 'مدفوع'.");
-    } catch (updateError) {
-      console.error("خطأ تحديث الحالة:", updateError);
-
-      if (updateError.response) {
-        alert(
-          `فشل تحديث الحالة. رمز الخطأ: ${updateError.response.status}\n` +
-            `الرسالة: ${JSON.stringify(updateError.response.data)}`
+      try {
+        await axios.put(
+          `/api/Order/UpdateStatus/${orderId}`,
+          { status: "Paid" },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
+          }
         );
-      } else if (updateError.request) {
-        alert(
-          "لم نتلق رد من السيرفر أثناء تحديث حالة الطلب. " +
-            "تأكد من الاتصال أو إعدادات السيرفر."
-        );
-      } else {
-        alert("حدث خطأ أثناء تحديث حالة الطلب: " + updateError.message);
+        alert("✅ تم تحديث حالة الطلب إلى 'مدفوع'.");
+      } catch (updateError) {
+        console.error("خطأ تحديث الحالة:", updateError);
+        alert("⚠️ فشل تحديث حالة الطلب.");
       }
+    } catch (error) {
+      console.error("خطأ إنشاء الطلب:", error);
+      alert("⚠️ فشل إنشاء الطلب.");
     }
-  } catch (error) {
-    console.error("خطأ إنشاء الطلب:", error);
-
-    if (error.response) {
-      alert(
-        `فشل إنشاء الطلب. رمز الخطأ: ${error.response.status}\n` +
-          `الرسالة: ${JSON.stringify(error.response.data)}`
-      );
-    } else if (error.request) {
-      alert(
-        "لم نتلق رد من السيرفر أثناء إنشاء الطلب. " +
-          "تأكد من الاتصال أو إعدادات السيرفر."
-      );
-    } else {
-      alert("حدث خطأ أثناء إنشاء الطلب: " + error.message);
-    }
-  }
-};
-
+  };
 
   return (
     <div className="SalesPages">

@@ -95,14 +95,24 @@
   margin-bottom: 1.25rem;
   margin-top: 1px;
 }
+
+.cartSidebarscrol{
+  
+    height: 512px;
+    overflow-y: auto;
+    padding-right: 20px;
+}
+
 .cart-item {
-  position: relative;
-  display: flex;
-  background: #fff4e6;
-  border-radius: 1.5rem;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.25rem;
+    position: relative;
+    display: flex
+;
+    background: #fff4e6;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.25rem;
+    height: 147px;
 }
 .cart-item img {
   width: 35%;

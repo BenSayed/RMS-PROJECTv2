@@ -7,8 +7,16 @@
 padding-left: 64px;
 padding-right: 64px;
 
-}
 
+}
+.imgselscar
+
+ {
+    width: 26px;
+    position: absolute;
+    right: 63px;
+    top: 36px;
+}
 
 .modal-overlay {
   position: fixed;

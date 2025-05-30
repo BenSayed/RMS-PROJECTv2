@@ -3,8 +3,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Header.css";
 import Headerimg1 from "/public/Logo 1.svg";
 import Headerimg2 from "/HeaderIMG/akar-icons_cart.svg";
-import HeaderimguserDefault from "./Ellipse 33.svg"; // الصورة الافتراضية
+import HeaderimguserDefault from "./Ellipse 33.svg";
 import Headerimgusernet from "./Vecto221.svg";
+import imgselscar from "./Untitled-1 copy.png";
+
 import ComHeader from "./ComHeader";
 import HeaderMobileUser from "../HeaderMobile/HeaderMobileUser/HeaderMobileUser.jsx";
 import axios from "axios";
@@ -17,8 +19,7 @@ const Header = () => {
   const [showModel, setShowModel] = useState(false);
   const [showMobileUser, setShowMobileUser] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  // الصورة اللي هتظهر في الهيدر للبروفايل
+  const [showImgSelScar, setShowImgSelScar] = useState(false);
   const [profileImage, setProfileImage] = useState(HeaderimguserDefault);
 
   const userId = localStorage.getItem("userId");
@@ -30,7 +31,6 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    // تحميل صورة البروفايل من localStorage أو API
     const storedProfileImage = localStorage.getItem("profileImagePath");
 
     if (storedProfileImage) {
@@ -40,7 +40,6 @@ const Header = () => {
         try {
           if (userId && baseUrl) {
             const response = await axios.get(`${baseUrl}/api/User/UpdateUser/${userId}`);
-            // تأكد أن response.data.imagePath هو المسار الصحيح لصورة البروفايل
             const imagePath = response.data.imagePath;
             if (imagePath) {
               setProfileImage(imagePath);
@@ -69,6 +68,40 @@ const Header = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const checkCartAndUpdateImage = () => {
+    try {
+      const cartRaw = localStorage.getItem("card");
+      if (cartRaw) {
+        const cart = JSON.parse(cartRaw);
+        setShowImgSelScar(Array.isArray(cart) && cart.length > 0);
+      } else {
+        setShowImgSelScar(false);
+      }
+    } catch {
+      setShowImgSelScar(false);
+    }
+  };
+
+  useEffect(() => {
+    checkCartAndUpdateImage();
+
+    const handleStorageChange = (e) => {
+      if (e.key === "card") {
+        checkCartAndUpdateImage();
+      }
+    };
+
+    const handleCartChanged = () => checkCartAndUpdateImage();
+
+    window.addEventListener("storage", handleStorageChange);
+    window.addEventListener("cartChanged", handleCartChanged);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+      window.removeEventListener("cartChanged", handleCartChanged);
     };
   }, []);
 
@@ -114,7 +147,7 @@ const Header = () => {
             <div className="HeaderContinentNavBar">
               <nav className="navbar">
                 <ul className="navbar-list">
-                  {[
+                  {[ 
                     { path: "/", label: "Home" },
                     { path: "/MenuItems", label: "Menu" },
                     { path: "/reservation", label: "Reservation" },
@@ -153,7 +186,7 @@ const Header = () => {
                 <Link to="/HomeProfile">
                   <img
                     className="HeaderContinentlogoButtonuser"
-                    src={profileImage}  // الصورة الآن من الحالة مع التحقق
+                    src={profileImage}
                     alt="Profile Icon"
                     style={{ cursor: "pointer" }}
                   />
@@ -175,6 +208,11 @@ const Header = () => {
                 alt="Cart"
               />
             </Link>
+
+            {/* ✅ صورة تظهر تلقائياً لو فيه عناصر بالكارت بشرط ألا تكون في SalesPages */}
+            {showImgSelScar && !location.pathname.startsWith("/SalesPages") && (
+              <img className="imgselscar" src={imgselscar} alt="added to cart" />
+            )}
 
             <button onClick={handleIconMenuClick} className="icon-menu"></button>
 

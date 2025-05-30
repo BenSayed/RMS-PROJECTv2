@@ -11,13 +11,11 @@
 }
 
 .slider-image {
-  width: 1312px;
-height: 467px;
- 
-border-radius: 48px;
-
-  border-radius: 48px;
-  object-fit: cover;
+    width: 1263px;
+    height: 455px;
+    border-radius: 48px;
+    border-radius: 48px;
+    object-fit: cover;
 }
 
 .nav-button {
@@ -41,7 +39,7 @@ border-radius: 48px;
 }
 
 .nav-button.right {
-  right: 10px;
+    right: 45px;
 }
 
 .nav-button:hover {

@@ -20,13 +20,21 @@
   margin-left: 20px;
 }
 
-.allcardsection1{
-  display: flex
-  ;
-      flex-direction: column;
-      gap: 20px;
-  
+.allcardsection1 {
+    display: flex
+;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    height: 211px;
+    scrollbar-width: none; /* للفايرفوكس */
+  -ms-overflow-style: none;
 }
+.allcardsection1::-webkit-scrollbar {
+  display: none; /* للكروم والسفاري */
+
+}
+
 .SalesCard {
   width: 868px;
   height: auto;
