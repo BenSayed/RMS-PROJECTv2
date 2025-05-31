@@ -10,10 +10,24 @@ const Section4 = () => {
   const [activeCategoryId, setActiveCategoryId] = useState(null);
   const [menuItems, setMenuItems] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const baseUrl = localStorage.getItem("baseUrl");
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
   useEffect(() => {
+    // التأكد من أن المستخدم مسجل دخول
+    if (userInfo && userInfo.id && localStorage.getItem("token")) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isLoggedIn) return;
+
     const fetchCategories = async () => {
-      const baseUrl = localStorage.getItem("baseUrl");
       try {
         const response = await axios.get(`${baseUrl}/api/Menu/GetCategories`);
         setCategories(response.data);
@@ -26,14 +40,12 @@ const Section4 = () => {
     };
 
     fetchCategories();
-  }, []);
+  }, [isLoggedIn]);
 
   useEffect(() => {
-    const fetchMenuItems = async () => {
-      const baseUrl = localStorage.getItem("baseUrl");
-      const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-      if (!activeCategoryId || !userInfo?.id) return;
+    if (!isLoggedIn || !activeCategoryId || !userInfo?.id) return;
 
+    const fetchMenuItems = async () => {
       setLoading(true);
       try {
         const response = await axios.get(
@@ -49,13 +61,21 @@ const Section4 = () => {
     };
 
     fetchMenuItems();
-  }, [activeCategoryId]);
+  }, [activeCategoryId, isLoggedIn]);
 
   const handleButtonClick = (categoryId) => {
     setActiveCategoryId(categoryId);
   };
 
-  const baseUrl = localStorage.getItem("baseUrl");
+  if (!isLoggedIn) {
+    return (
+      <div className="section4">
+        <p style={{ textAlign: "center", marginTop: "20px" }}>
+          يجب تسجيل الدخول لعرض قائمة الطعام.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -108,7 +128,7 @@ const Section4 = () => {
                       altText={food.name}
                       title={food.name}
                       description={food.description}
-                      price={food.price}
+                      price={`${food.price}$`}
                     />
                   );
                 })

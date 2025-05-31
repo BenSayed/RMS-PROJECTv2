@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import axios from "axios";
 
-// صفحات عامة (كاستومر)
+// صفحات عامة
 import Home from "./Home/Home";
 import AboutPage from "./About/About";
 import SignUp from "./Sign up/SignUp";
@@ -13,14 +13,16 @@ import SalesPages from "./pageSales1/SalesPages";
 import MainCourses from "./MenuPages/MainCoourses/MainCourses";
 import Reservation from "./Reservation/ReservationN";
 import WatingPage from "./Wating Page/WatingPage";
-import HomeProfile from "./UserProfile/Componant/HomeProfile";
-import OrderFavProfile from "./UserProfile/Componant/OrderFavProfile";
-import HistoryProfile from "./UserProfile/Componant/HistoryProfile";
-import AccountSettings from "./UserProfile/Componant/AccountSettings";
 import ForgetPassword from "./ForgetPassword/ForgetPassword";
 import EmailConfirmation from "./ConfirmEmail/ConfirmEmail";
 import PasswordRecovery from "./PasswordRecovery/PasswordRecovery";
 import MenuItem from "./MenuPages/MenuItem/MenuItem";
+
+// صفحات الملف الشخصي (محمية)
+import HomeProfile from "./UserProfile/Componant/HomeProfile";
+import OrderFavProfile from "./UserProfile/Componant/OrderFavProfile";
+import HistoryProfile from "./UserProfile/Componant/HistoryProfile";
+import AccountSettings from "./UserProfile/Componant/AccountSettings";
 
 // صفحات الشيف
 import CheefuiPage from "./chiefUiPage/CheefuiPage";
@@ -56,7 +58,11 @@ function RequireRole({ role, children }) {
   const user = JSON.parse(storedUser);
   const roles = (user.roles || []).map((r) => r.toLowerCase());
 
-  if (!roles.includes(role.toLowerCase())) {
+  // دعم أكثر من دور
+  const allowedRoles = Array.isArray(role) ? role.map(r => r.toLowerCase()) : [role.toLowerCase()];
+  const hasAccess = roles.some((r) => allowedRoles.includes(r));
+
+  if (!hasAccess) {
     return <Navigate to="/page404" replace />;
   }
 
@@ -100,17 +106,8 @@ function App() {
       {!isChefPage && (isDeliveryPage ? <HeaderMobilee /> : <Header />)}
 
       <Routes>
-        {/* صفحة الهوم متاحة فقط للكاستومر */}
-        <Route
-          path="/"
-          element={
-            <RequireRole role="customer">
-              <Home />
-            </RequireRole>
-          }
-        />
-
-        {/* صفحات عامة (كاستومر) */}
+        {/* صفحات عامة مفتوحة للجميع */}
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
@@ -120,22 +117,52 @@ function App() {
         <Route path="/SalesPages" element={<SalesPages />} />
         <Route path="/Reservation" element={<Reservation />} />
         <Route path="/WatingPage" element={<WatingPage />} />
-        <Route path="/HomeProfile" element={<HomeProfile />} />
-        <Route path="/OrderFavProfile" element={<OrderFavProfile />} />
-        <Route path="/HistoryProfile" element={<HistoryProfile />} />
-        <Route path="/AccountSettings" element={<AccountSettings />} />
         <Route path="/ForgetPassword" element={<ForgetPassword />} />
         <Route path="/EmailConfirmation" element={<EmailConfirmation />} />
         <Route path="/PasswordRecovery" element={<PasswordRecovery />} />
         <Route path="/MenuItem/:id" element={<MenuItem />} />
 
+        {/* صفحات الملف الشخصي (كاستومر + ادمن) */}
+        <Route
+          path="/HomeProfile"
+          element={
+            <RequireRole role={["customer", "admin"]}>
+              <HomeProfile />
+            </RequireRole>
+          }
+        />
+        <Route
+          path="/OrderFavProfile"
+          element={
+            <RequireRole role={["customer", "admin"]}>
+              <OrderFavProfile />
+            </RequireRole>
+          }
+        />
+        <Route
+          path="/HistoryProfile"
+          element={
+            <RequireRole role={["customer", "admin"]}>
+              <HistoryProfile />
+            </RequireRole>
+          }
+        />
+        <Route
+          path="/AccountSettings"
+          element={
+            <RequireRole role={["customer", "admin"]}>
+              <AccountSettings />
+            </RequireRole>
+          }
+        />
+
         {/* صفحات الشيف */}
         <Route
           path="/CheefuiPage"
           element={
-            // <RequireRole role="chef">
-            <CheefuiPage />
-            // </RequireRole>
+            <RequireRole role="chef">
+              <CheefuiPage />
+            </RequireRole>
           }
         />
 
@@ -196,9 +223,8 @@ function App() {
         <Route path="/page500" element={<PageErorr500 />} />
       </Routes>
 
-      {/* ✅ عرض الكارد فقط إذا لم يكن موبايل ولا شيف ولا دليفري */}
+      {/* ✅ الكارت يظهر فقط على الأجهزة الكبيرة، وليس للشيف أو الدليفري */}
       {!isDeliveryPage && !isChefPage && !isMobile && <Cart />}
-
       {!isChefPage && <Footer />}
     </div>
   );

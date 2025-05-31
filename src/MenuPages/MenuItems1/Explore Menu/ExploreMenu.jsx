@@ -14,7 +14,6 @@ const Card = ({ id, imagePath, name, description, price, averageRating }) => {
     navigate(`/MenuItem/${id}`);
   };
 
-  
   const toggleHeart = (e) => {
     e.stopPropagation(); // عشان ما يفتحش صفحة المنتج
     setIsLiked((prev) => !prev);
@@ -55,9 +54,12 @@ const ExploreMenu = () => {
   const [categories, setCategories] = useState([]);
   const [menuItemsByCategory, setMenuItemsByCategory] = useState({});
 
-  const baseUrl = localStorage.getItem("baseUrl");
-  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-  const userId = userInfo?.id;
+  // ✅ استخدم قيمة افتراضية لو مفيش baseUrl في localStorage
+  const storedBaseUrl = localStorage.getItem("baseUrl");
+  const baseUrl = storedBaseUrl || "http://flavorhaven.runasp.net"; // ✅ غيّرها لو عندك رابط تاني
+
+  const userInfo = localStorage.getItem("userInfo");
+  const userId = userInfo ? JSON.parse(userInfo).id : null;
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -72,12 +74,16 @@ const ExploreMenu = () => {
   }, [baseUrl]);
 
   useEffect(() => {
-    if (categories.length === 0 || !userId) return;
+    if (categories.length === 0) return;
 
     const fetchMenuItems = async () => {
       try {
         const promises = categories.map((category) =>
-          axios.get(`${baseUrl}/api/Menu/GetMenuItemsByCategory/${category.id}?userId=${userId}`)
+          axios.get(
+            `${baseUrl}/api/Menu/GetMenuItemsByCategory/${category.id}${
+              userId ? `?userId=${userId}` : ""
+            }`
+          )
         );
         const results = await Promise.all(promises);
         const itemsMap = {};

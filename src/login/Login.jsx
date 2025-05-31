@@ -40,7 +40,6 @@ function Login() {
       console.log("Login response data:", data);
 
       if (data.token) {
-        // حفظ البيانات في localStorage
         localStorage.setItem("token", data.token);
         localStorage.setItem("userId", data.id);
         localStorage.setItem("baseUrl", "http://flavorhaven.runasp.net");
@@ -52,7 +51,6 @@ function Login() {
           localStorage.removeItem("profileImagePath");
         }
 
-        // إعداد الهيدر بشكل مركزي في axios
         axios.defaults.headers.common["Authorization"] = `Bearer ${data.token}`;
 
         try {
@@ -65,7 +63,6 @@ function Login() {
           console.error("Error fetching user address:", userError);
         }
 
-        // الدور يتم تحويله للحروف الصغيرة عشان الـ RequireRole يعتمد على lowercase
         const role = (data.roles?.[1] || data.roles?.[0] || "").toLowerCase();
 
         if (!role) {
@@ -76,21 +73,27 @@ function Login() {
         switch (role) {
           case "admin":
             navigate("/admin");
+            window.location.reload(); // Reload after navigating to admin
             break;
           case "customer":
             navigate("/");
+            window.location.reload();
             break;
           case "cashier":
             navigate("/cashier");
+            window.location.reload();
             break;
           case "chef":
             navigate("/CheefuiPage");
+            window.location.reload();
             break;
           case "delivery":
             navigate("/DeliveryHome");
+            window.location.reload();
             break;
           case "waiter":
             navigate("/WaiterDashboard");
+            window.location.reload();
             break;
           default:
             setError("Unknown role. Contact support.");

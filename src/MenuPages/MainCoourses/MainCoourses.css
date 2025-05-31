@@ -81,20 +81,22 @@ justify-content: flex-start;
   margin: 0 0 8px 0; /* إزالة الهوامش العلوية 
   والجانبية وجعل الهامش السفلي 8px */
 }
-.cardd p {
-  font-size: 16px;
-  /* font-weight: bold; */
-  font-family: Inter;
-  color: black;
-  margin: 0;
-  margin: 0px 0 15px 0;
-  line-height: 10px;
-  line-height: 21px;
-  word-wrap: break-word;
-  word-wrap: break-word;
-  white-space: normal;
-  width: 272px;
-  height: 38px;
+.cardd1 p
+ 
+ {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Inter;
+    color: black;
+    margin: 0;
+    margin: 0px 0 15px 0;
+    line-height: 10px;
+    line-height: 21px;
+    word-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+    width: 231px;
+    height: 38px;
 }
 .cardd .stars {
   color: #ffb854; /* لون النجوم */
@@ -104,30 +106,27 @@ justify-content: flex-start;
   position: relative; /* لجعل تأثير التحريك يعمل */
   top: -2px; /* تحريك النجوم لأسفل - يمكنك تعديل القيمة حسب الحاجة */
 }
-.cardd .price {
-  font-size: 40px; /* حجم النص */
-  font-weight: bold; /* سمك النص */
-  color: black; /* لون السعر */
-  margin: 0;
-  font-weight: bold; /* سمك النص */
-
-  text-align: right; /* اجعليها right أو left أو center حسب الاتجاه المطلوب */
-
-  position: relative;
-  top: 47px; /* لتحريكه لأسفل */
-  left: -63px; /* لتحريكه لليمين */
-  font-family: Cormorant Upright;
+.cardd1 .price12 {
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    margin: 0;
+    font-weight: bold;
+    text-align: right;
+    position: relative;
+    top: 47px;
+    left: -40px;
+    font-family: Cormorant Upright;
 }
-.cardd .heart img {
-  width: 42px;
-  height: 42px;
-  font-size: 11px;
-  color: black;
-  font-weight: bold;
-  text-align: right;
-  position: relative;
-  top: -34px;
-  left: -110px;
+.cardd1 .heart112 img {
+    width: 41px;
+    height: 35px;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: right;
+    position: relative;
+    top: -41px;
+    left: -65px;
 }
 
 
